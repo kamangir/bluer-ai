@@ -1,43 +1,56 @@
-# 🌀 blue-plugin
+# 🪄 blue-ai
 
-🌀 `@plugin` is a git template for an 🪄 [`awesome-bash-cli`](https://github.com/kamangir/awesome-bash-cli) (`abcli`) plugin, to build [things like these](https://github.com/kamangir?tab=repositories), that out-of-the-box support,
+🪄 `blue-ai` is an implementation of 🔻 [giza](https://github.com/kamangir/giza) and a language [to speak AI](https://github.com/kamangir/kamangir).
 
-- a [github repo](https://github.com/) with [actions](https://github.com/features/actions).
-- [pylint](https://pypi.org/project/pylint/).
-- [pytest](https://docs.pytest.org/).
-- a pip-installable python + bash package published to [pypi](https://pypi.org/).
-- a bash [command interface](./blue_plugin/.abcli/blue_plugin.sh).
-- [bash testing](./.github/workflows/bashtest.yml).
-- secret management through [ssm](https://docs.aws.amazon.com/secretsmanager/).
-- in-repo [compiled](https://github.com/kamangir/blue-objects/tree/main/blue_objects/README) READMEs. example: [template.md](https://github.com/kamangir/palisades/blob/main/palisades/docs/damage-analytics-template.md) -> [README.md](https://github.com/kamangir/palisades/blob/main/palisades/docs/damage-analytics.md).
-- [object management](https://github.com/kamangir/blue-objects) on [Amazon S3](https://aws.amazon.com/s3/) with metadata tracking by [MLflow](https://mlflow.org/).
-- [workflow management](https://github.com/kamangir/notebooks-and-scripts/tree/main/blueflow/workflow) on [AWS Batch](https://aws.amazon.com/batch/).
-- [docker](https://github.com/kamangir/notebooks-and-scripts/blob/main/blueflow/.abcli/docker.sh) and [SageMaker](https://github.com/kamangir/notebooks-and-scripts/blob/main/blueflow/.abcli/sagemaker.sh) enabled.
+![image](https://github.com/kamangir/assets/blob/main/awesome-bash-cli/marquee-2024-10-26.jpg?raw=true)
 
-## installation
+# release install
+
+not recommended.
 
 ```bash
-pip install blue-plugin
+pip install blue_ai
 ```
 
-## creating a blue-plugin
+# dev install
 
-1️⃣ create a new repository from [this template](https://github.com/kamangir/blue-plugin),
-
-2️⃣ complete `<repo-name>` and `<plugin-name>` and run,
+on macOS:
 
 ```bash
-@git clone <repo-name> cd
+# change shell to bash
+chsh -s /bin/bash
 
-@plugins transform <repo-name>
+mkdir git
+cd git
+git clone git@github.com:kamangir/blue-ai.git
 
-@init
-<plugin-name> help
+nano ~/.bash_profile
+# add "source $HOME/git/blue-ai/blue_ai/.abcli/abcli.sh"
+# restart the terminal
+
+cd ~/Downloads
+curl -o Miniconda3-latest-MacOSX-x86_64.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
+bash ./Miniconda3-latest-MacOSX-x86_64.sh
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install awscli
+
+aws configure
+
+git config --global user.name kamangir
+git config --global user.email arash@kamangir.net
 ```
 
-## features
+on other environments:
 
-items:::
+- [Amazon EC2 instances](https://github.com/kamangir/awesome-bash-cli/wiki/ec2)
+- [Amazon SageMaker](https://github.com/kamangir/awesome-bash-cli/wiki/SageMaker)
+- [Jetson Nano](https://github.com/kamangir/awesome-bash-cli/wiki/Jetson-Nano)
+- [Raspberry Pi](https://github.com/kamangir/awesome-bash-cli/wiki/Raspberry-Pi)
+
+# configuration
+
+create a copy of [`sample.env`](./blue_ai/sample.env) as `.env` and fill in the secrets.
 
 ---
 
