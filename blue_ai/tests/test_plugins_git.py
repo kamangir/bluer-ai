@@ -1,4 +1,4 @@
-from blue_objects import file, path
+from bluer_objects import file, path
 
 from blue_ai.plugins.git import version
 

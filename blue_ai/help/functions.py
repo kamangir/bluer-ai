@@ -26,7 +26,6 @@ from blue_ai.help.mlflow import help_functions as help_mlflow
 from blue_ai.help.notebooks import help_functions as help_notebooks
 from blue_ai.help.object import help_functions as help_object
 from blue_ai.help.open import help_open
-from blue_ai.help.papertrail import help_functions as help_papertrail
 from blue_ai.help.pause import help_pause
 from blue_ai.help.plugins import help_functions as help_plugins
 from blue_ai.help.publish import help_functions as help_publish
@@ -94,7 +93,6 @@ help_functions.update(
         "source_path": help_source_path,
         "ssm": help_ssm,
         "terraform": help_terraform,
-        "trail": help_papertrail,
         "upload": help_upload,
         "watch": help_watch,
     }

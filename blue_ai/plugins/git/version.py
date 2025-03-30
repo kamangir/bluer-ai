@@ -3,7 +3,7 @@ import glob
 import os
 
 from blueness import module
-from blue_objects import file
+from bluer_objects import file
 
 from blue_ai import NAME
 from blue_ai.logger import logger

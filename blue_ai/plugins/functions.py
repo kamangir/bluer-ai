@@ -3,8 +3,8 @@ import pkg_resources
 import glob
 import os
 
-from blue_objects import file, path
-from blue_objects.env import abcli_path_git
+from bluer_objects import file, path
+from bluer_objects.env import abcli_path_git
 
 
 def get_plugin_name(repo_name: str) -> str:

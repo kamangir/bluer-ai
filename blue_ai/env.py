@@ -1,7 +1,6 @@
 import os
 
 from blue_options.env import load_config, load_env
-from blue_objects.env import ABCLI_AWS_S3_BUCKET_NAME, ABCLI_AWS_S3_PREFIX
 
 load_env(__name__)
 load_config(__name__)
@@ -22,9 +21,6 @@ ABCLI_MESSENGER_RECIPIENTS = os.getenv("ABCLI_MESSENGER_RECIPIENTS", "")
 abcli_path_abcli = os.getenv("abcli_path_abcli", "")
 
 ABCLI_PATH_IGNORE = os.getenv("ABCLI_PATH_IGNORE", "")
-
-abcli_papertrail_dest_host = os.getenv("abcli_papertrail_dest_host", "")
-abcli_papertrail_dest_port = os.getenv("abcli_papertrail_dest_port", "")
 
 VANWATCH_TEST_OBJECT = os.getenv("VANWATCH_TEST_OBJECT", "vanwatch-test-object-v2")
 

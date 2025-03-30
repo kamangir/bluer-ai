@@ -26,10 +26,10 @@ def lxde(_):
 
 
 def poster(filename: str) -> bool:
-    from blue_objects.graphics.text import render_text
-    from blue_objects.graphics.frame import add_frame
-    from blue_objects.graphics import screen
-    from blue_objects import file
+    from bluer_objects.graphics.text import render_text
+    from bluer_objects.graphics.frame import add_frame
+    from bluer_objects.graphics import screen
+    from bluer_objects import file
 
     logger.debug("{}.poster({})".format(NAME, filename))
 

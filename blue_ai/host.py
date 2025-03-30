@@ -1,7 +1,7 @@
 from typing import List
 
 from blue_options.host import signature as blue_options_signature
-from blue_objects import fullname as blue_objects_fullname
+from bluer_objects import fullname as blue_objects_fullname
 
 from blue_ai import fullname
 

@@ -1,6 +1,6 @@
 import os
 
-from blue_objects import file, README
+from bluer_objects import file, README
 
 from blue_ai import NAME, VERSION, ICON, REPO_NAME
 
