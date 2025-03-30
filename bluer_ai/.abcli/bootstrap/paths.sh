@@ -16,4 +16,4 @@ export ABCLI_PATH_IGNORE=$abcli_path_temp/ignore
 
 mkdir -pv $ABCLI_PATH_IGNORE
 
-export abcli_path_assets=$abcli_path_abcli/abcli/assets
+export abcli_path_assets=$abcli_path_abcli/bluer_ai/assets
