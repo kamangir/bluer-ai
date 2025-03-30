@@ -7,7 +7,7 @@ def help_select(
     tokens: List[str],
     mono: bool,
 ) -> str:
-    options = xtra("open,type=<type>,~trail", mono=mono)
+    options = xtra("open,type=<type>", mono=mono)
 
     return show_usage(
         [

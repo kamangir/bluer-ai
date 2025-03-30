@@ -5,7 +5,7 @@ function abcli_unpack_keyword() {
 }
 
 function abcli_unpack_repo_name() {
-    local repo_name=${$1:-blue-ai}
+    local repo_name=${1:-blue-ai}
 
     repo_name=$(echo "$repo_name" | tr _ -)
 

@@ -14,7 +14,7 @@ function abcli_source_dependencies() {
     source $(python3 -m blue_options locate)/.bash/blue_options.sh
 
     local module_name
-    for module_name in blue_ai modules plugins; do
+    for module_name in abcli modules plugins; do
         pushd $abcli_path_bash/$module_name >/dev/null
 
         if [ "$module_name" == "plugins" ]; then

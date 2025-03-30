@@ -51,8 +51,6 @@ alias @ssm=abcli_ssm
 
 alias @storage=abcli_storage
 
-alias @trail=abcli_trail
-
 alias @version="blue_ai version"
 
 alias @wifi=abcli_wifi
