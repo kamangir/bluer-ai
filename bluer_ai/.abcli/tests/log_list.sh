@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-function test_abcli_log_list() {
+function test_bluer_ai_log_list() {
     abcli_log_list this+that \
         --before "list of" \
         --delim + \

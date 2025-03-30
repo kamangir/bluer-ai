@@ -62,25 +62,25 @@ function abcli_string_before() {
         "th"
 }
 
-function test_abcli_string_random() {
+function test_bluer_ai_string_random() {
     abcli_assert \
         $(abcli_string_random) \
         - non-empty
 }
 
-function test_abcli_string_timestamp() {
+function test_bluer_ai_string_timestamp() {
     abcli_assert \
         $(abcli_string_timestamp) \
         - non-empty
 }
 
-function test_abcli_string_timestamp_short() {
+function test_bluer_ai_string_timestamp_short() {
     abcli_assert \
         $(abcli_string_timestamp_short) \
         - non-empty
 }
 
-function test_abcli_string_today() {
+function test_bluer_ai_string_today() {
     abcli_assert \
         $(abcli_string_today) \
         - non-empty

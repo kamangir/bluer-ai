@@ -42,13 +42,13 @@ function test_bluer_ai_list_len() {
         3
 }
 
-function test_abcli_list_nonempty() {
+function test_bluer_ai_list_nonempty() {
     abcli_assert \
         $(abcli_list_nonempty this,,that) \
         this,that
 }
 
-function test_abcli_list_next() {
+function test_bluer_ai_list_next() {
     abcli_assert \
         $(abcli_list_next what what,which,this,that,something) \
         which
@@ -69,7 +69,7 @@ function test_abcli_list_next() {
         - empty
 }
 
-function test_abcli_list_prev() {
+function test_bluer_ai_list_prev() {
     abcli_assert \
         "$(abcli_list_prev what what,which,this,that,something)" \
         - empty
@@ -90,7 +90,7 @@ function test_abcli_list_prev() {
         - empty
 }
 
-function test_abcli_list_resize() {
+function test_bluer_ai_list_resize() {
     abcli_assert \
         $(abcli_list_resize this,that,which 2) \
         this,that
@@ -106,7 +106,7 @@ function test_abcli_list_resize() {
         - empty
 }
 
-function test_abcli_list_sort() {
+function test_bluer_ai_list_sort() {
     abcli_assert \
         $(abcli_list_sort this,that) \
         that,this

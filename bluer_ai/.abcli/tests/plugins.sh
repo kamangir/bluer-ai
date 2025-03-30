@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-function test_abcli_plugin_name_from_repo() {
+function test_bluer_ai_plugin_name_from_repo() {
     local options=$1
 
     if [[ "$abcli_is_github_workflow" == true ]]; then
@@ -41,7 +41,7 @@ function test_abcli_plugin_name_from_repo() {
         notebooks_and_scripts
 }
 
-function test_abcli_get_module_name_from_plugin() {
+function test_bluer_ai_get_module_name_from_plugin() {
     if [[ "$abcli_is_github_workflow" == true ]]; then
         abcli_log_warning "plugins are not present in the github workflow."
         return

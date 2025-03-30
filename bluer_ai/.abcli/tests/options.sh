@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-function test_abcli_options() {
+function test_bluer_ai_options() {
     local options=$1
 
     options="a,~b,c=1,d=0,var_e,-f,g=2,h=that"
@@ -33,7 +33,7 @@ function test_abcli_options() {
     abcli_assert $(abcli_option "$options" other default) default
 }
 
-function test_abcli_options_choice() {
+function test_bluer_ai_options_choice() {
     local options=$1
 
     abcli_assert \
@@ -51,7 +51,7 @@ function test_abcli_options_choice() {
             "x=1,~y,attached,z=12" comma,separated,list) ""
 }
 
-function test_abcli_options_int() {
+function test_bluer_ai_options_int() {
     local options=$1
 
     options="a,~b,c=1,d=0,var_e,-f"
@@ -85,7 +85,7 @@ function test_abcli_options_int() {
     abcli_assert $(abcli_option_int "$options" g 1) 1
 }
 
-function test_abcli_options_subset() {
+function test_bluer_ai_options_subset() {
     abcli_assert \
         $(abcli_option_subset \
             "x=3,z=4" \

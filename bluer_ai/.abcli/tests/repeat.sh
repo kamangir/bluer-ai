@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-function test_abcli_repeat() {
+function test_bluer_ai_repeat() {
     abcli_repeat - ls
     abcli_assert "$?" 0
 
