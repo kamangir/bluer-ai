@@ -12,7 +12,7 @@ function bluer_ai() {
     fi
 }
 
-function abcli_version() {
+function bluer_ai_version() {
     echo $abcli_fullname
 }
 

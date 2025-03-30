@@ -1,11 +1,11 @@
 #! /usr/bin/env bash
 
 function abcli_refresh_branch_and_version() {
-    export abcli_version=$(python3 -c "import bluer_ai; print(bluer_ai.VERSION)")
+    export bluer_ai_version=$(python3 -c "import bluer_ai; print(bluer_ai.VERSION)")
 
     export abcli_git_branch=$(abcli_git bluer-ai get_branch)
 
-    export abcli_fullname=bluer_ai-$abcli_version.$abcli_git_branch
+    export abcli_fullname=bluer_ai-$bluer_ai_version.$abcli_git_branch
 }
 
 # internal function for abcli_seed.

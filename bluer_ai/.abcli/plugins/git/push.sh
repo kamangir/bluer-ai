@@ -63,6 +63,6 @@ function abcli_git_push() {
 
     local build_options=$3
     if [[ $(abcli_option_int "$build_options" build 0) == 1 ]]; then
-        abcli_pypi_build $build_options,plugin=$plugin_name
+        bluer_ai_pypi_build $build_options,plugin=$plugin_name
     fi
 }

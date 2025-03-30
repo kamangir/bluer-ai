@@ -11,7 +11,7 @@ alias @perform_action=abcli_perform_action
 
 alias @batch=abcli_aws_batch
 
-alias @build_README=abcli_build_README
+alias @build_README=bluer_ai_build_README
 
 alias @conda=abcli_conda
 
@@ -39,7 +39,7 @@ alias @pip=abcli_pip
 
 alias @plugins=abcli_plugins
 
-alias @pypi=abcli_pypi
+alias @pypi=bluer_ai_pypi
 
 alias @random=abcli_string_random
 

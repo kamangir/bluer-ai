@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-function abcli_build_README() {
+function bluer_ai_build_README() {
     local options=$1
     local plugin_name=$(abcli_option "$options" plugin bluer_ai)
     local do_push=$(abcli_option_int "$options" push 0)

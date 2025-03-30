@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-function abcli_pypi_browse() {
+function bluer_ai_pypi_browse() {
     local options=$1
     local plugin_name=$(abcli_option "$options" plugin bluer_ai)
     local do_token=$(abcli_option_int "$options" token 0)

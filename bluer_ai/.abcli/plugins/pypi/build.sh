@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-function abcli_pypi_build() {
+function bluer_ai_pypi_build() {
     local options=$1
 
     local plugin_name=$(abcli_option "$options" plugin bluer_ai)
@@ -10,7 +10,7 @@ function abcli_pypi_build() {
     local rm_dist=$(abcli_option_int "$options" rm_dist 1)
 
     [[ "$do_install" == 1 ]] &&
-        abcli_pypi_install
+        bluer_ai_pypi_install
 
     local repo_name=$(abcli_unpack_repo_name $plugin_name)
     if [[ ! -d "$abcli_path_git/$repo_name" ]]; then
@@ -34,7 +34,7 @@ function abcli_pypi_build() {
     popd >/dev/null
 
     [[ "$do_browse" == 1 ]] &&
-        abcli_pypi_browse "$@"
+        bluer_ai_pypi_browse "$@"
 
     return 0
 }
