@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 function abcli() {
-    local task=$(abcli_unpack_keyword $1 version)
+    local task=$1
 
     local function_name=abcli_$task
     if [[ $(type -t $function_name) == "function" ]]; then

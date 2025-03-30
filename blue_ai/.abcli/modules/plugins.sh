@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 function abcli_plugins() {
-    local task=$(abcli_unpack_keyword "$1")
+    local task=$1
 
     local function_name="abcli_plugins_$1"
     if [[ $(type -t $function_name) == "function" ]]; then

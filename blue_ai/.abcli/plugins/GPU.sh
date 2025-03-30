@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 function abcli_gpu() {
-    local task=$(abcli_unpack_keyword $1 status)
+    local task=${1:-status}
 
     local function_name=abcli_gpu_$task
     if [[ $(type -t $function_name) == "function" ]]; then
@@ -19,7 +19,7 @@ function abcli_gpu() {
 }
 
 function abcli_gpu_status() {
-    local task=$(abcli_unpack_keyword $1 show)
+    local task=${1:-show}
 
     if [ $task == "get" ]; then
         local options=$2

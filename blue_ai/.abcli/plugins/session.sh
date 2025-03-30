@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 function abcli_session() {
-    local task=$(abcli_unpack_keyword $1 start)
+    local task=${1:-start}
 
     if [ $task == "start" ]; then
         local options=$2

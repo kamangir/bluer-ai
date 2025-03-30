@@ -3,7 +3,7 @@
 #! /usr/bin/env bash
 
 function abcli_wifi() {
-    local task=$(abcli_unpack_keyword $1 help)
+    local task=$1
 
     if [ "$task" == "help" ]; then
         abcli_show_usage "@wifi get_ssid" \

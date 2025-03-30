@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 function abcli_latex() {
-    local task=$(abcli_unpack_keyword $1 help)
+    local task=$1
 
     local function_name=abcli_latex_$task
     if [[ $(type -t $function_name) == "function" ]]; then

@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 function abcli_plugins_install() {
-    local plugin_name=$(abcli_unpack_keyword $1 all)
+    local plugin_name=${1:-all}
 
     if [[ "$plugin_name" == all ]]; then
         pushd $abcli_path_git >/dev/null

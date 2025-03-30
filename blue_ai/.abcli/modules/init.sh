@@ -15,7 +15,7 @@ function abcli_init() {
     elif [ "$plugin_name" == "clear" ]; then
         abcli_init - clear
     else
-        local plugin_name=$(abcli_unpack_keyword $1)
+        local plugin_name=$1
         local module_name=$(abcli_get_module_name_from_plugin $plugin_name)
 
         for filename in $(python3 -m $module_name locate)/.abcli/*.sh; do

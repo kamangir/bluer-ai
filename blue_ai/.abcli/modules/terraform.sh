@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 function abcli_terraform() {
-    local task=$(abcli_unpack_keyword $1)
+    local task=$1
 
     if [ "$task" == "cat" ]; then
 

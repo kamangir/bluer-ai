@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 function abcli_screen() {
-    local task=$(abcli_unpack_keyword $1)
+    local task=$1
 
     if [ "$task" == "help" ]; then
         abcli_show_usage "@screen <name>" \

@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 function abcli_git() {
-    local task=$(abcli_unpack_keyword $1)
+    local task=$1
     [[ "$task" == "increment" ]] && task="increment_version"
     [[ "$task" == "++" ]] && task="increment_version"
 

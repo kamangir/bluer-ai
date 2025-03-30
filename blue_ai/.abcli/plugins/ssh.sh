@@ -15,7 +15,7 @@ function abcli_add_ssh_keys() {
 }
 
 function abcli_ssh() {
-    local task=$(abcli_unpack_keyword $1 help)
+    local task=$1
 
     if [ "$task" == "help" ]; then
         abcli_show_usage "@ssh add$ABCUL<filename>" \

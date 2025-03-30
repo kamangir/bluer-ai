@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 function abcli_pypi() {
-    local task=$(abcli_unpack_keyword $1 help)
+    local task=$1
 
     local options=$2
     local plugin_name=$(abcli_option "$options" plugin blue_ai)

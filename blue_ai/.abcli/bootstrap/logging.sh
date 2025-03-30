@@ -1,10 +1,10 @@
 #! /usr/bin/env bash
 
 function abcli_log() {
-    local task=$(abcli_unpack_keyword "$1")
+    local task=$1
 
     if [ "$task" == "verbose" ]; then
-        local what=${2-on}
+        local what=${2:-on}
 
         if [ "$what" == "on" ]; then
             touch $abcli_path_git/verbose
