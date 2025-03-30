@@ -54,4 +54,8 @@ create a copy of [`sample.env`](./blue_ai/sample.env) as `.env` and fill in the 
 
 ---
 
+> 🪄 [`abcli`](https://github.com/kamangir/awesome-bash-cli) for the [Global South](https://github.com/kamangir/blue-south).
+
+---
+
 signature:::

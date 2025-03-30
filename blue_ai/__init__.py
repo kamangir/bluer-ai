@@ -6,7 +6,7 @@ ICON = "🪄"
 
 DESCRIPTION = f"{ICON} A language to speak AI."
 
-VERSION = "11.7.1"
+VERSION = "11.8.1"
 
 REPO_NAME = "blue-ai"
 
