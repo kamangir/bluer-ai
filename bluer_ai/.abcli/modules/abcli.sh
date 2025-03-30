@@ -16,5 +16,5 @@ function bluer_ai_version() {
     echo $abcli_fullname
 }
 
-abcli_env_dot_load \
+bluer_ai_env_dot_load \
     caller,filename=config.env,suffix=/../..

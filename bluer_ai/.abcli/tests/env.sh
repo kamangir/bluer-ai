@@ -1,14 +1,14 @@
 #! /usr/bin/env bash
 
 function test_bluer_ai_env() {
-    abcli env
-    abcli env path
+    bluer_ai env
+    bluer_ai env path
 
-    abcli env dot cat config
-    abcli env dot cat
-    abcli env dot cat nurah
+    bluer_ai env dot cat config
+    bluer_ai env dot cat
+    bluer_ai env dot cat nurah
 
-    abcli env dot get TBD
+    bluer_ai env dot get TBD
 
-    abcli env dot list
+    bluer_ai env dot list
 }
