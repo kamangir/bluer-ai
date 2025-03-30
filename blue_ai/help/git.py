@@ -1,6 +1,6 @@
 from typing import List
 
-from blue_options.terminal import show_usage, xtra
+from bluer_options.terminal import show_usage, xtra
 
 from blue_ai.help.pypi import build_options as pypi_build_options
 

@@ -1,6 +1,6 @@
 from typing import List, Dict, Callable, Union
 
-from blue_options.terminal import show_usage, xtra
+from bluer_options.terminal import show_usage, xtra
 
 build_options = "browse,install,~rm_dist,~upload"
 

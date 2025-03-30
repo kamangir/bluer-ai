@@ -1,6 +1,6 @@
 from typing import List
 
-from blue_options.terminal import show_usage
+from bluer_options.terminal import show_usage
 
 from blue_ai.help.eval import options as eval_options
 

@@ -1,6 +1,6 @@
 from typing import List
 
-from blue_options.terminal import show_usage, xtra
+from bluer_options.terminal import show_usage, xtra
 
 from blue_ai.help.mlflow.cache import help_functions as help_cache
 from blue_ai.help.mlflow.tags import help_functions as help_tags

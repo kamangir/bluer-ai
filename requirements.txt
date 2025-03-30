@@ -1,5 +1,3 @@
 blueness
-blue-options
-blue-objects
-
-boto3
+bluer-options
+bluer-objects

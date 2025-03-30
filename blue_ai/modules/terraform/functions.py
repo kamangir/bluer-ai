@@ -4,9 +4,9 @@ import numpy as np
 import platform
 
 from blueness import module
-from blue_options import host, string
-from blue_options.logger import crash_report
-from blue_options.env import abcli_wifi_ssid
+from bluer_options import host, string
+from bluer_options.logger import crash_report
+from bluer_options.env import abcli_wifi_ssid
 
 from blue_ai import NAME, fullname
 from blue_ai.logger import logger

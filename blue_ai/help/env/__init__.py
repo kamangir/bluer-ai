@@ -1,6 +1,6 @@
 from typing import List
 
-from blue_options.terminal import show_usage
+from bluer_options.terminal import show_usage
 
 from blue_ai.help.env.backup import help_functions as help_backup
 from blue_ai.help.env.dot import help_functions as help_dot

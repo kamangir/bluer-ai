@@ -2,7 +2,7 @@ from typing import List
 
 from blue_ai import env
 
-from blue_options.terminal import show_usage, xtra
+from bluer_options.terminal import show_usage, xtra
 
 
 def help_browse(

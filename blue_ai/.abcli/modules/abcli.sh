@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-function abcli() {
+function blue_ai() {
     local task=$1
 
     local function_name=abcli_$task
