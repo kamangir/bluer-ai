@@ -18,7 +18,7 @@ function bluer_ai_action_git_before_push() {
     bluer_ai build_README
     [[ $? -ne 0 ]] && return 1
 
-    [[ "$(abcli_git get_branch)" != "current" ]] &&
+    [[ "$(abcli_git get_branch)" != "main" ]] &&
         return 0
 
     bluer_ai pypi build
