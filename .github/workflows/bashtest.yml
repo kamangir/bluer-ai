@@ -20,4 +20,4 @@ jobs:
           pip install opencv-python
       - name: Run bash tests
         run: |
-          ./.github/workflows/bashtest.sh blue_ai
+          ./.github/workflows/bashtest.sh bluer_ai
