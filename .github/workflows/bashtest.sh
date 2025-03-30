@@ -8,7 +8,7 @@ function bashtest() {
     cd ..
     git clone https://github.com/kamangir/blue-ai.git
 
-    source $(pwd)/blue-ai/blue_ai/.abcli/abcli.sh ~terraform \
+    source $(pwd)/blue-ai/blue_ai/.abcli/blue_ai.sh ~terraform \
         $plugin_name test
 
     return

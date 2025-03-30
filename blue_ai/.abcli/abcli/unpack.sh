@@ -1,5 +1,9 @@
 #! /usr/bin/env bash
 
+function abcli_unpack_keyword() {
+    echo "$@"
+}
+
 function abcli_unpack_repo_name() {
     local repo_name=${$1:-blue-ai}
 

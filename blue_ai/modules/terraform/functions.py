@@ -19,7 +19,7 @@ def lxde(_):
         ["/etc/xdg/lxsession/LXDE/autostart"],
         [
             [
-                "@bash /home/pi/git/blue-ai/blue_ai/.abcli/abcli.sh - blue_ai session start"
+                "@bash /home/pi/git/blue-ai/blue_ai/.abcli/blue_ai.sh - blue_ai session start"
             ]
         ],
     )
@@ -56,7 +56,7 @@ def mac(user):
     return terraform(
         ["/Users/{}/.bash_profile".format(user)],
         [
-            ["source ~/git/blue-ai/blue_ai/.abcli/abcli.sh"],
+            ["source ~/git/blue-ai/blue_ai/.abcli/blue_ai.sh"],
         ],
     )
 
@@ -70,7 +70,7 @@ def rpi(
         ["/home/pi/.bashrc"],
         [
             [
-                "source /home/pi/git/blue-ai/blue_ai/.abcli/abcli.sh{}".format(
+                "source /home/pi/git/blue-ai/blue_ai/.abcli/blue_ai.sh{}".format(
                     "  - blue_ai session start" if is_headless else ""
                 )
             ]
@@ -82,7 +82,7 @@ def rpi(
             ["/etc/xdg/lxsession/LXDE-pi/autostart"],
             [
                 [
-                    "@sudo -E bash /home/pi/git/blue-ai/blue_ai/.abcli/abcli.sh - blue_ai session start",
+                    "@sudo -E bash /home/pi/git/blue-ai/blue_ai/.abcli/blue_ai.sh - blue_ai session start",
                 ]
             ],
         ):
@@ -177,6 +177,6 @@ def ubuntu(user):
     return terraform(
         ["/home/{}/.bashrc".format(user)],
         [
-            ["source /home/{}/git/blue-ai/blue_ai/.abcli/abcli.sh".format(user)],
+            ["source /home/{}/git/blue-ai/blue_ai/.abcli/blue_ai.sh".format(user)],
         ],
     )

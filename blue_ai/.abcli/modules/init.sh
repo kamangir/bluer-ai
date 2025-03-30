@@ -11,7 +11,7 @@ function abcli_init() {
         [[ "$abcli_is_mac" == true ]] &&
             local options=~terraform,$options
 
-        source $abcli_path_abcli/blue_ai/.abcli/abcli.sh "$options" "${@:3}"
+        source $abcli_path_abcli/blue_ai/.abcli/blue_ai.sh "$options" "${@:3}"
     elif [ "$plugin_name" == "clear" ]; then
         abcli_init - clear
     else

@@ -25,7 +25,7 @@ cd git
 git clone git@github.com:kamangir/blue-ai.git
 
 nano ~/.bash_profile
-# add "source $HOME/git/blue-ai/blue_ai/.abcli/abcli.sh"
+# add "source $HOME/git/blue-ai/blue_ai/.abcli/blue_ai.sh"
 # restart the terminal
 
 cd ~/Downloads
