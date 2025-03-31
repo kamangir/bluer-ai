@@ -1,9 +1,9 @@
 #! /usr/bin/env bash
 
-function abcli_gpu() {
+function bluer_ai_gpu() {
     local task=${1:-status}
 
-    local function_name=abcli_gpu_$task
+    local function_name=bluer_ai_gpu_$task
     if [[ $(type -t $function_name) == "function" ]]; then
         $function_name "${@:2}"
         return
@@ -18,7 +18,7 @@ function abcli_gpu() {
     return 1
 }
 
-function abcli_gpu_status() {
+function bluer_ai_gpu_status() {
     local task=${1:-show}
 
     if [ $task == "get" ]; then
@@ -27,16 +27,16 @@ function abcli_gpu_status() {
 
         local status=""
         [[ "$from_cache" == 1 ]] &&
-            local status=$abcli_gpu_status_cache
+            local status=$bluer_ai_gpu_status_cache
 
         [[ -z "$status" ]] &&
             local status=$(python3 -m bluer_ai.plugins.gpu \
                 status \
                 "${@:3}")
 
-        export abcli_gpu_status_cache=$status
+        export bluer_ai_gpu_status_cache=$status
 
-        $abcli_gpu_status_cache && local message="found. ✅" || local message='not found.'
+        $bluer_ai_gpu_status_cache && local message="found. ✅" || local message='not found.'
         abcli_log "🔋 gpu: $message"
         return
     fi
@@ -46,9 +46,9 @@ function abcli_gpu_status() {
 
         abcli_log "CUDA_VISIBLE_DEVICES=$CUDA_VISIBLE_DEVICES"
 
-        abcli_gpu_status get
+        bluer_ai_gpu_status get
 
-        abcli_gpu validate
+        bluer_ai_gpu validate
 
         return
     fi
@@ -57,5 +57,5 @@ function abcli_gpu_status() {
     return 1
 }
 
-abcli_gpu_status get
-$abcli_gpu_status_cache && export abcli_status_icons="🔋 $abcli_status_icons"
+bluer_ai_gpu_status get
+$bluer_ai_gpu_status_cache && export abcli_status_icons="🔋 $abcli_status_icons"

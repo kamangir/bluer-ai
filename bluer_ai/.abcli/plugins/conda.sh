@@ -1,9 +1,9 @@
 #! /usr/bin/env bash
 
-function abcli_conda() {
+function bluer_ai_conda() {
     local task=$1
 
-    local function_name="abcli_conda_$task"
+    local function_name="bluer_ai_conda_$task"
     if [[ $(type -t $function_name) == "function" ]]; then
         $function_name "${@:2}"
         return
@@ -12,4 +12,4 @@ function abcli_conda() {
     conda "$@"
 }
 
-abcli_source_caller_suffix_path /conda
+bluer_ai_source_caller_suffix_path /conda

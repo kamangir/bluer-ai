@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-function abcli_plugins_transform() {
+function bluer_ai_plugins_transform() {
     local repo_name=$1
     if [[ -z "$repo_name" ]]; then
         abcli_log_error "@plugins: transform: $repo_name: repo not found."

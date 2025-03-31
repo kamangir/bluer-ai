@@ -1,10 +1,10 @@
 #! /usr/bin/env bash
 
-function abcli_conda_rm() {
+function bluer_ai_conda_rm() {
     local options=$1
     local environment_name=$(abcli_option "$options" name bluer_ai)
 
-    local exists=$(abcli_conda_exists name=$environment_name)
+    local exists=$(bluer_ai_conda_exists name=$environment_name)
     if [[ "$exists" == 0 ]]; then
         abcli_log_warning "@conda: $environment_name does not exist."
         return 0

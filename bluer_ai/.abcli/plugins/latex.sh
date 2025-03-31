@@ -1,9 +1,9 @@
 #! /usr/bin/env bash
 
-function abcli_latex() {
+function bluer_ai_latex() {
     local task=$1
 
-    local function_name=abcli_latex_$task
+    local function_name=bluer_ai_latex_$task
     if [[ $(type -t $function_name) == "function" ]]; then
         $function_name "${@:2}"
         return
@@ -13,4 +13,4 @@ function abcli_latex() {
     return 1
 }
 
-abcli_source_caller_suffix_path /latex
+bluer_ai_source_caller_suffix_path /latex

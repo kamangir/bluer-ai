@@ -11,7 +11,7 @@ function bluer_ai_pypi_browse() {
     [[ "$do_token" == 1 ]] &&
         url="https://pypi.org/manage/account/token/"
 
-    abcli_browse $url
+    bluer_ai_browse $url
 
     [[ "$do_token" == 0 ]] && return 0
 

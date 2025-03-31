@@ -4,7 +4,7 @@ function abcli_add_ssh_keys() {
     if [ -z "$abcli_ssh_keys_added" ] || [ "$1" == "force" ]; then
         eval "$(ssh-agent -s)"
 
-        ssh-add -k $HOME/.ssh/$abcli_git_ssh_key_name
+        ssh-add -k $HOME/.ssh/$bluer_ai_git_ssh_key_name
 
         if [ -f "$HOME/.ssh/abcli" ]; then
             ssh-add -k $HOME/.ssh/abcli
@@ -77,7 +77,7 @@ function abcli_ssh_args() {
         local address="$user@$url"
 
         if [ "$copy_seed" == 1 ]; then
-            abcli_seed ec2 clipboard,env=worker,~log
+            bluer_ai_seed ec2 clipboard,env=worker,~log
         fi
 
         local pem_filename=$ABCLI_PATH_IGNORE/$abcli_aws_ec2_key_name.pem

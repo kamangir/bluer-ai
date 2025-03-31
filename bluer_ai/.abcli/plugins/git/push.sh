@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-function abcli_git_push() {
+function bluer_ai_git_push() {
     local message=$1
     if [[ -z "$message" ]]; then
         abcli_log_error "@git: push: message not found."
@@ -17,18 +17,18 @@ function abcli_git_push() {
     local run_workflows=$(abcli_option_int "$options" workflow 1)
 
     if [[ "$do_increment_version" == 1 ]]; then
-        abcli_git_increment_version
+        bluer_ai_git_increment_version
         [[ $? -ne 0 ]] && return 1
     fi
 
     [[ "$show_status" == 1 ]] &&
         git status
 
-    local repo_name=$(abcli_git_get_repo_name)
+    local repo_name=$(bluer_ai_git_get_repo_name)
     local plugin_name=$(abcli_plugin_name_from_repo $repo_name)
 
     if [[ "$do_action" == 1 ]]; then
-        abcli_perform_action \
+        bluer_ai_perform_action \
             action=git_before_push,plugin=$plugin_name
         if [[ $? -ne 0 ]]; then
             abcli_log_error "@git: push: action failed."
@@ -48,18 +48,18 @@ function abcli_git_push() {
 
     local extra_args=""
     [[ "$first_push" == 1 ]] &&
-        extra_args="--set-upstream origin $(abcli_git get_branch)"
+        extra_args="--set-upstream origin $(bluer_ai_git get_branch)"
 
     git push $extra_args
     [[ $? -ne 0 ]] && return 1
 
     if [[ "$create_pull_request" == 1 ]]; then
-        abcli_git create_pull_request
+        bluer_ai_git create_pull_request
         [[ $? -ne 0 ]] && return 1
     fi
 
     [[ "$do_browse" == 1 ]] &&
-        abcli_git_browse . actions
+        bluer_ai_git_browse . actions
 
     local build_options=$3
     if [[ $(abcli_option_int "$build_options" build 0) == 1 ]]; then

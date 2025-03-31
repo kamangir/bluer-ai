@@ -13,4 +13,4 @@ function abcli_ffmpeg() {
     return 1
 }
 
-abcli_source_caller_suffix_path /ffmpeg
+bluer_ai_source_caller_suffix_path /ffmpeg

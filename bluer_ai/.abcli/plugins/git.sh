@@ -1,12 +1,16 @@
 #! /usr/bin/env bash
 
 function abcli_git() {
+    bluer_ai_git "$@"
+}
+
+function bluer_ai_git() {
     local task=$1
     [[ "$task" == "increment" ]] && task="increment_version"
     [[ "$task" == "++" ]] && task="increment_version"
 
     if [ "$task" == "seed" ]; then
-        abcli_seed git "${@:2}"
+        bluer_ai_seed git "${@:2}"
         return
     fi
 
@@ -18,28 +22,28 @@ function abcli_git() {
         fi
 
         pushd $abcli_path_git/$repo_name >/dev/null
-        abcli_git "${@:2}"
+        bluer_ai_git "${@:2}"
         local status="$?"
         popd >/dev/null
 
         return $status
     fi
 
-    local function_name="abcli_git_$task"
+    local function_name="bluer_ai_git_$task"
     if [[ $(type -t $function_name) == "function" ]]; then
         $function_name "${@:2}"
         return
     fi
 
-    local repo_name=$(abcli_git_get_repo_name)
+    local repo_name=$(bluer_ai_git_get_repo_name)
     if [[ "$repo_name" == "unknown" ]]; then
         abcli_log_error "@git: $task: $(pwd): repo not found."
         return 1
     fi
 
     if [[ "$task" == "create_pull_request" ]]; then
-        abcli_browse \
-            https://github.com/kamangir/$repo_name/compare/$(abcli_git get_branch)?expand=1
+        bluer_ai_browse \
+            https://github.com/kamangir/$repo_name/compare/$(bluer_ai_git get_branch)?expand=1
         return
     fi
 
@@ -78,6 +82,6 @@ function abcli_git() {
     git "$@"
 }
 
-abcli_source_caller_suffix_path /git
+bluer_ai_source_caller_suffix_path /git
 
 abcli_refresh_branch_and_version

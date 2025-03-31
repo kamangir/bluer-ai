@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-function abcli_conda_create() {
+function bluer_ai_conda_create() {
     local options=$1
     local clone_from=$(abcli_option "$options" clone auto)
     local do_recreate=$(abcli_option_int "$options" recreate 1)
@@ -11,7 +11,7 @@ function abcli_conda_create() {
 
     conda init bash
 
-    if [[ "$do_recreate" == 0 ]] && [[ $(abcli_conda exists $environment_name) == 1 ]]; then
+    if [[ "$do_recreate" == 0 ]] && [[ $(bluer_ai_conda exists $environment_name) == 1 ]]; then
         abcli_eval - conda activate $environment_name
         return
     fi
@@ -40,7 +40,7 @@ function abcli_conda_create() {
     popd >/dev/null
 
     if [[ "$install_plugin" == 1 ]]; then
-        abcli_plugins install $repo_name
+        bluer_ai_plugins install $repo_name
 
         pip3 uninstall -y bluer_ai
         pushd $abcli_path_git/bluer-ai >/dev/null

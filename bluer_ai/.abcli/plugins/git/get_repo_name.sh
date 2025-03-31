@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-function abcli_git_get_repo_name() {
+function bluer_ai_git_get_repo_name() {
     local repo_name="unknown"
 
     if [[ "$PWD" == "$abcli_path_git"* ]]; then

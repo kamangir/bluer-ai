@@ -7,9 +7,9 @@ function test_bluer_ai_clarify_object_no_default() {
 
     local var
 
-    abcli_select $object_3
-    abcli_select $object_2
-    abcli_select $object_1
+    bluer_ai_select $object_3
+    bluer_ai_select $object_2
+    bluer_ai_select $object_1
 
     abcli_assert \
         $(abcli_clarify_object some-value) \
@@ -44,9 +44,9 @@ function test_bluer_ai_clarify_object_some_default() {
 
     local var
 
-    abcli_select $object_3
-    abcli_select $object_2
-    abcli_select $object_1
+    bluer_ai_select $object_3
+    bluer_ai_select $object_2
+    bluer_ai_select $object_1
 
     abcli_assert \
         $(abcli_clarify_object some-value some-default) \
@@ -81,9 +81,9 @@ function test_bluer_ai_clarify_object_dot_default() {
 
     local var
 
-    abcli_select $object_3
-    abcli_select $object_2
-    abcli_select $object_1
+    bluer_ai_select $object_3
+    bluer_ai_select $object_2
+    bluer_ai_select $object_1
 
     abcli_assert \
         $(abcli_clarify_object some-value .) \
@@ -118,9 +118,9 @@ function test_bluer_ai_clarify_object_dot_dot_default() {
 
     local var
 
-    abcli_select $object_3
-    abcli_select $object_2
-    abcli_select $object_1
+    bluer_ai_select $object_3
+    bluer_ai_select $object_2
+    bluer_ai_select $object_1
 
     abcli_assert \
         $(abcli_clarify_object some-value ..) \
@@ -155,9 +155,9 @@ function test_bluer_ai_clarify_object_dot_dot_dot_default() {
 
     local var
 
-    abcli_select $object_3
-    abcli_select $object_2
-    abcli_select $object_1
+    bluer_ai_select $object_3
+    bluer_ai_select $object_2
+    bluer_ai_select $object_1
 
     abcli_assert \
         $(abcli_clarify_object some-value ...) \

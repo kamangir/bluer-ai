@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-function abcli_git_clone() {
+function bluer_ai_git_clone() {
     local repo_address=$1
     local repo_name=$(abcli_unpack_repo_name $repo_address .)
     [[ "$repo_address" != http* ]] && [[ "$repo_address" != git@* ]] &&

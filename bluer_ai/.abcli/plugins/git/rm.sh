@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-function abcli_git_rm() {
+function bluer_ai_git_rm() {
     local repo_name=${1:-void}
 
     if [[ ! -d "$abcli_path_git/$repo_name" ]]; then

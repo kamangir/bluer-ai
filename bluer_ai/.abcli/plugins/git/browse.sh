@@ -1,13 +1,13 @@
 #! /usr/bin/env bash
 
-function abcli_git_browse() {
+function bluer_ai_git_browse() {
     local repo_name=$1
 
     local options=$2
     local browse_actions=$(abcli_option_int "$options" actions 0)
 
     if [[ ",,.,-," == *",$repo_name,"* ]]; then
-        repo_name=$(abcli_git_get_repo_name)
+        repo_name=$(bluer_ai_git_get_repo_name)
     else
         repo_name=$(abcli_unpack_repo_name $repo_name)
     fi
@@ -15,5 +15,5 @@ function abcli_git_browse() {
     local url=https://github.com/kamangir/$repo_name
     [[ "$browse_actions" == 1 ]] && url="$url/actions"
 
-    abcli_browse $url
+    bluer_ai_browse $url
 }

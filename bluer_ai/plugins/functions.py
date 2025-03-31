@@ -55,7 +55,7 @@ def list_of_external(repo_names=False) -> List[str]:
 def list_of_installed(return_path: bool = False) -> List[str]:
     output = []
     for module in pkg_resources.working_set:
-        if module.key in ["abcli", "bluer_ai"]:
+        if module.key in ["abcli", "bluer-ai"]:
             continue
 
         if module.module_path is None:

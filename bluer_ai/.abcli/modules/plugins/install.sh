@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-function abcli_plugins_install() {
+function bluer_ai_plugins_install() {
     local plugin_name=${1:-all}
 
     if [[ "$plugin_name" == all ]]; then

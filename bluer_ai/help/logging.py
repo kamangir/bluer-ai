@@ -43,7 +43,7 @@ def help_log_list(
 
     return show_usage(
         [
-            "abcli_log_list",
+            "bluer_ai_log_list",
             "<this,that>",
         ]
         + args,

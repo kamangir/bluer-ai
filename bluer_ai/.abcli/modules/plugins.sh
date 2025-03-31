@@ -1,9 +1,9 @@
 #! /usr/bin/env bash
 
-function abcli_plugins() {
+function bluer_ai_plugins() {
     local task=$1
 
-    local function_name="abcli_plugins_$1"
+    local function_name="bluer_ai_plugins_$1"
     if [[ $(type -t $function_name) == "function" ]]; then
         $function_name "${@:2}"
         return
@@ -27,4 +27,4 @@ function abcli_plugins() {
     python3 -m bluer_ai.plugins "$task" "${@:2}"
 }
 
-abcli_source_caller_suffix_path /plugins
+bluer_ai_source_caller_suffix_path /plugins

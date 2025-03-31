@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-function abcli_session() {
+function bluer_ai_session() {
     local task=${1:-start}
 
     if [ $task == "start" ]; then
@@ -14,13 +14,13 @@ function abcli_session() {
 
         while true; do
             [[ "$do_pull" == 1 ]] &&
-                abcli_git_pull init
+                bluer_ai_git_pull init
 
             abcli_log "session initialized: username=$USER, hostname=$(hostname), EUID=$EUID, python3=$(which python3)"
 
             if [[ "$abcli_is_mac" == false ]]; then
                 sudo rm -v $ABCLI_PATH_IGNORE/session_reply_*
-                abcli_storage clear
+                bluer_ai_storage clear
             else
                 rm -v $ABCLI_PATH_IGNORE/session_reply_*
             fi
@@ -35,7 +35,7 @@ function abcli_session() {
                 else
                     abcli_log_error "@session: plugin: $plugin_name: plugin not found."
                 fi
-                abcli_sleep seconds=60
+                bluer_ai_sleep seconds=60
             fi
 
             abcli_log "session closed."
@@ -53,8 +53,8 @@ function abcli_session() {
             if [ -f "$ABCLI_PATH_IGNORE/session_reply_seed" ]; then
                 abcli_log "reply_to_bash(seed)"
 
-                abcli_git_pull
-                abcli_init
+                bluer_ai_git_pull
+                bluer_ai_init
 
                 cat "$ABCLI_PATH_IGNORE/session_reply_seed" | while read line; do
                     abcli_log "executing: $line"
@@ -75,7 +75,7 @@ function abcli_session() {
                 return
             fi
 
-            abcli_sleep seconds=5
+            bluer_ai_sleep seconds=5
         done
 
         return

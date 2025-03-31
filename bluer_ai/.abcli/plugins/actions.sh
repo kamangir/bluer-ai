@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-function abcli_perform_action() {
+function bluer_ai_perform_action() {
     local options=$1
     local action_name=$(abcli_option "$options" action void)
     local plugin_name=$(abcli_option "$options" plugin bluer_ai)
@@ -18,7 +18,7 @@ function bluer_ai_action_git_before_push() {
     bluer_ai build_README
     [[ $? -ne 0 ]] && return 1
 
-    [[ "$(abcli_git get_branch)" != "main" ]] &&
+    [[ "$(bluer_ai_git get_branch)" != "main" ]] &&
         return 0
 
     bluer_ai pypi build
