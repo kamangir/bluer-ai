@@ -54,7 +54,7 @@ create a copy of [`sample.env`](./bluer_ai/sample.env) as `.env` and fill in the
 
 ---
 
-> 🪄 [`abcli`](https://github.com/kamangir/awesome-bash-cli) for the [Global South](https://github.com/kamangir/blue-south).
+> 🪄 [`abcli`](https://github.com/kamangir/awesome-bash-cli) for the [Global South](https://github.com/kamangir/bluer-south).
 
 ---
 
