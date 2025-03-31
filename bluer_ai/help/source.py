@@ -13,7 +13,7 @@ def help_source_caller_suffix_path(
 
     return show_usage(
         [
-            "abcli_source_caller_suffix_path",
+            "bluer_ai_source_caller_suffix_path",
             "<suffix>",
             f"[{options}]",
         ],
@@ -30,7 +30,7 @@ def help_source_path(
 
     return show_usage(
         [
-            "abcli_source_path",
+            "bluer_ai_source_path",
             "<path>",
             f"[{options}]",
         ],

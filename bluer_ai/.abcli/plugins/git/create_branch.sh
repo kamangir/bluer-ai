@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-function abcli_git_create_branch() {
+function bluer_ai_git_create_branch() {
     local branch_name=$1
     if [[ -z "$branch_name" ]]; then
         abcli_log_error "@git: create_brach: branch name not found."
@@ -13,7 +13,7 @@ function abcli_git_create_branch() {
     local do_timestamp=$(abcli_option_int "$options" timestamp 1)
 
     if [[ "$do_increment_version" == 1 ]]; then
-        abcli_git_increment_version
+        bluer_ai_git_increment_version
         [[ $? -ne 0 ]] && return 1
     fi
 
@@ -30,6 +30,6 @@ function abcli_git_create_branch() {
     [[ $? -ne 0 ]] && return 1
 
     if [[ "$do_push" == 1 ]]; then
-        abcli_git_push "start of $branch_name 🪄" first
+        bluer_ai_git_push "start of $branch_name 🪄" first
     fi
 }

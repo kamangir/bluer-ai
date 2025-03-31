@@ -36,12 +36,12 @@ function abcli_main() {
     do_terraform=$(abcli_option_int "$options" terraform $do_terraform)
 
     [[ "$do_terraform" == 1 ]] &&
-        abcli_terraform
+        bluer_ai_terraform
 
     abcli_initialize
 
     [[ "$abcli_is_in_notebook" == false ]] &&
-        abcli_select $abcli_object_name
+        bluer_ai_select $abcli_object_name
 
     abcli_log "🪄 $abcli_fullname"
 

@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-function abcli_init() {
+function bluer_ai_init() {
     local plugin_name=$(abcli_clarify_input "$1" all)
 
     local options=$2
@@ -13,7 +13,7 @@ function abcli_init() {
 
         source $abcli_path_abcli/bluer_ai/.abcli/bluer_ai.sh "$options" "${@:3}"
     elif [ "$plugin_name" == "clear" ]; then
-        abcli_init - clear
+        bluer_ai_init - clear
     else
         local plugin_name=$1
         local module_name=$(abcli_get_module_name_from_plugin $plugin_name)

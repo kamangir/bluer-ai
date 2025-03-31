@@ -10,7 +10,7 @@ function abcli_unpack_repo_name() {
     repo_name=$(echo "$repo_name" | tr _ -)
 
     [[ "$repo_name" == "." ]] &&
-        repo_name=$(abcli_git_get_repo_name)
+        repo_name=$(bluer_ai_git_get_repo_name)
 
     echo $repo_name
 }

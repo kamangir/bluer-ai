@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-function abcli_git_pull() {
+function bluer_ai_git_pull() {
     local options=$1
     local do_all=$(abcli_option_int "$options" all 1)
     local do_init=$(abcli_option_int "$options" init 0)
@@ -14,7 +14,7 @@ function abcli_git_pull() {
         git pull
 
         local repo
-        for repo in $(abcli_plugins list_of_external --delim space --log 0 --repo_names 1); do
+        for repo in $(bluer_ai_plugins list_of_external --delim space --log 0 --repo_names 1); do
             if [ -d "$abcli_path_git/$repo" ]; then
                 abcli_log $repo
                 cd ../$repo
@@ -35,5 +35,5 @@ function abcli_git_pull() {
     fi
 
     abcli_log "version change: $abcli_fullname_before -> $abcli_fullname"
-    abcli_init
+    bluer_ai_init
 }

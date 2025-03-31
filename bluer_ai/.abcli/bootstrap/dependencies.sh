@@ -22,7 +22,7 @@ function abcli_source_dependencies() {
             local plugins=${plugins[*]}
             local plugins=$(python3 -c "print('$plugins'.replace('.sh',''))")
             [[ "$abcli_is_in_notebook" == false ]] &&
-                abcli_log_list "$plugins" \
+                bluer_ai_log_list "$plugins" \
                     --before "loading" \
                     --delim space \
                     --after "plugin(s)"
@@ -35,13 +35,13 @@ function abcli_source_dependencies() {
         popd >/dev/null
     done
 
-    abcli_source_caller_suffix_path /../tests
+    bluer_ai_source_caller_suffix_path /../tests
 
     [[ "$abcli_is_in_notebook" == true ]] && return
 
     local repo_name
-    for repo_name in $(abcli_plugins list_of_external --log 0 --delim space --repo_names 1); do
-        local module_name=$(abcli_plugins get_module_name $repo_name)
+    for repo_name in $(bluer_ai_plugins list_of_external --log 0 --delim space --repo_names 1); do
+        local module_name=$(bluer_ai_plugins get_module_name $repo_name)
         pushd $abcli_path_git/$repo_name/$module_name/.abcli >/dev/null
 
         local filename
@@ -51,19 +51,19 @@ function abcli_source_dependencies() {
         popd >/dev/null
     done
 
-    local list_of_installed_plugins=$(abcli_plugins list_of_installed \
+    local list_of_installed_plugins=$(bluer_ai_plugins list_of_installed \
         --log 0 \
         --delim space)
     if [[ -z "$list_of_installed_plugins" ]]; then
         abcli_log "🌀 no pip-installed plugins."
         return 0
     else
-        abcli_log_list "$list_of_installed_plugins" \
+        bluer_ai_log_list "$list_of_installed_plugins" \
             --before "🌀 loading" \
             --delim space \
             --after "pip-installed plugin(s)"
 
-        local paths_of_installed_plugins=$(abcli_plugins list_of_installed \
+        local paths_of_installed_plugins=$(bluer_ai_plugins list_of_installed \
             --log 0 \
             --delim space \
             --return_path 1)

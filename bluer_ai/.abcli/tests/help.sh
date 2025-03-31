@@ -7,12 +7,6 @@ function test_bluer_ai_help() {
     for module in \
         "@badge" \
         \
-        "@batch browse" \
-        "@batch cat" \
-        "@batch eval" \
-        "@batch list" \
-        "@batch submit" \
-        \
         "@browse" \
         \
         "@build_README" \
@@ -66,18 +60,13 @@ function test_bluer_ai_help() {
         "@git status" \
         "@git sync_fork" \
         \
+        "@gpu" \
+        "@gpu status" \
         "@gpu status get" \
         "@gpu status show" \
         "@gpu validate" \
         \
         "@init" \
-        \
-        "@instance" \
-        "@instance from_image" \
-        "@instance from_template" \
-        "@instance get_ip" \
-        "@instance list" \
-        "@instance terminate" \
         \
         "@latex" \
         "@latex bibclean" \
@@ -109,8 +98,8 @@ function test_bluer_ai_help() {
         "@plugins list_of_installed" \
         "@plugins transform" \
         \
-        "abcli_publish" \
-        "abcli_publish tar" \
+        "@publish" \
+        "@publish tar" \
         \
         "@pylint" \
         \
@@ -134,11 +123,6 @@ function test_bluer_ai_help() {
         \
         "@sleep" \
         \
-        "@ssm" \
-        "@ssm get" \
-        "@ssm put" \
-        "@ssm rm" \
-        \
         "@storage" \
         "@storage clear" \
         "@storage download_file" \
@@ -155,20 +139,15 @@ function test_bluer_ai_help() {
         "@terraform disable" \
         "@terraform enable" \
         \
-        "@trail" \
-        "@trail stop" \
-        \
         "@watch" \
         \
-        "abcli_log_list" \
-        "abcli_source_caller_suffix_path" \
-        "abcli_source_path" \
-        \
-        "abcli_blueness" \
+        "bluer_ai_log_list" \
+        "bluer_ai_source_caller_suffix_path" \
+        "bluer_ai_source_path" \
         \
         "bluer_ai"; do
         abcli_eval ,$options \
-            abcli_help $module
+            bluer_ai_help $module
         [[ $? -ne 0 ]] && return 1
 
         abcli_hr

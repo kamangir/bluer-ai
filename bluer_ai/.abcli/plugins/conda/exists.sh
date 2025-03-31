@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-function abcli_conda_exists() {
+function bluer_ai_conda_exists() {
     local options=$1
     local environment_name=$(abcli_option "$options" name bluer_ai)
 

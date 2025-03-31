@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-function abcli_git_checkout() {
+function bluer_ai_git_checkout() {
     local thing=$1
 
     if [[ -z "$thing" ]]; then
@@ -29,6 +29,6 @@ function abcli_git_checkout() {
     fi
 
     if [[ "$do_rebuild" == 1 ]]; then
-        abcli_git_push "rebuild"
+        bluer_ai_git_push "rebuild"
     fi
 }

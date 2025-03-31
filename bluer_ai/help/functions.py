@@ -1,7 +1,6 @@
 from bluer_ai.help.generic import help_functions as generic_help_functions
 from bluer_ai.help.actions import help_perform_action
 from bluer_ai.help.assets import help_functions as help_assets
-from bluer_ai.help.aws_batch import help_functions as help_aws_batch
 from bluer_ai.help.blueness import help_blueness
 from bluer_ai.help.browse import help_browse
 from bluer_ai.help.conda import help_functions as help_conda
@@ -40,7 +39,6 @@ from bluer_ai.help.source import (
     help_source_caller_suffix_path,
     help_source_path,
 )
-from bluer_ai.help.ssm import help_functions as help_ssm
 from bluer_ai.help.terminal import help_badge
 from bluer_ai.help.terraform import help_functions as help_terraform
 from bluer_ai.help.upload import help_upload
@@ -52,7 +50,6 @@ help_functions = generic_help_functions(plugin_name="bluer_ai")
 help_functions.update(
     {
         "assets": help_assets,
-        "aws_batch": help_aws_batch,
         "badge": help_badge,
         "blueness": help_blueness,
         "browse": help_browse,
@@ -91,7 +88,6 @@ help_functions.update(
         "storage": help_storage,
         "source_caller_suffix_path": help_source_caller_suffix_path,
         "source_path": help_source_path,
-        "ssm": help_ssm,
         "terraform": help_terraform,
         "upload": help_upload,
         "watch": help_watch,

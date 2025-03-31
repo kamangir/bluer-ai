@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-function abcli_latex_install() {
+function bluer_ai_latex_install() {
     local options=$1
 
     if [[ "$abcli_is_mac" == true ]]; then

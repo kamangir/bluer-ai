@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-function abcli_terraform() {
+function bluer_ai_terraform() {
     local task=$1
 
     if [ "$task" == "cat" ]; then

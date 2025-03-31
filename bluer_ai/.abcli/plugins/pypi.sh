@@ -16,4 +16,4 @@ function bluer_ai_pypi() {
     return 1
 }
 
-abcli_source_caller_suffix_path /pypi
+bluer_ai_source_caller_suffix_path /pypi

@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-function abcli_latex_build() {
+function bluer_ai_latex_build() {
     local options=$1
     local do_dryrun=$(abcli_option_int "$options" dryrun 0)
     local do_install=$(abcli_option_int "$options" install 0)
@@ -9,7 +9,7 @@ function abcli_latex_build() {
     local bib_file=$(abcli_option "$options" bib)
 
     [[ "$do_install" == 1 ]] &&
-        abcli_latex_install $options
+        bluer_ai_latex_install $options
 
     local full_path=$2
     if [[ ! -f "$full_path" ]]; then
