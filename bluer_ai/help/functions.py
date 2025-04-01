@@ -4,7 +4,6 @@ from bluer_ai.help.assets import help_functions as help_assets
 from bluer_ai.help.blueness import help_blueness
 from bluer_ai.help.browse import help_browse
 from bluer_ai.help.conda import help_functions as help_conda
-from bluer_ai.help.clone import help_clone
 from bluer_ai.help.docker import help_functions as help_docker
 from bluer_ai.help.env import help_functions as help_env
 from bluer_ai.help.eval import help_eval
@@ -52,7 +51,6 @@ help_functions.update(
         "blueness": help_blueness,
         "browse": help_browse,
         "cat": help_cat,
-        "clone": help_clone,
         "conda": help_conda,
         "docker": help_docker,
         "env": help_env,

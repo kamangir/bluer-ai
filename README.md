@@ -32,11 +32,6 @@ cd ~/Downloads
 curl -o Miniconda3-latest-MacOSX-x86_64.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
 bash ./Miniconda3-latest-MacOSX-x86_64.sh
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew install awscli
-
-aws configure
-
 git config --global user.name kamangir
 git config --global user.email arash@kamangir.net
 ```
@@ -61,4 +56,4 @@ create a copy of [`sample.env`](./bluer_ai/sample.env) as `.env` and fill in the
 
 [![pylint](https://github.com/kamangir/bluer-ai/actions/workflows/pylint.yml/badge.svg)](https://github.com/kamangir/bluer-ai/actions/workflows/pylint.yml) [![pytest](https://github.com/kamangir/bluer-ai/actions/workflows/pytest.yml/badge.svg)](https://github.com/kamangir/bluer-ai/actions/workflows/pytest.yml) [![bashtest](https://github.com/kamangir/bluer-ai/actions/workflows/bashtest.yml/badge.svg)](https://github.com/kamangir/bluer-ai/actions/workflows/bashtest.yml) [![PyPI version](https://img.shields.io/pypi/v/bluer_ai.svg)](https://pypi.org/project/bluer_ai/) [![PyPI - Downloads](https://img.shields.io/pypi/dd/bluer_ai)](https://pypistats.org/packages/bluer_ai)
 
-built by 🌀 [`bluer_options-5.28.1`](https://github.com/kamangir/awesome-bash-cli), based on 🪄 [`bluer_ai-12.22.1`](https://github.com/kamangir/bluer-ai).
+built by 🌀 [`bluer_options-5.28.1`](https://github.com/kamangir/awesome-bash-cli), based on 🪄 [`bluer_ai-12.23.1`](https://github.com/kamangir/bluer-ai).
