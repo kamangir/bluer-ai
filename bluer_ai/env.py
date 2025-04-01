@@ -22,6 +22,4 @@ abcli_path_abcli = os.getenv("abcli_path_abcli", "")
 
 ABCLI_PATH_IGNORE = os.getenv("ABCLI_PATH_IGNORE", "")
 
-VANWATCH_TEST_OBJECT = os.getenv("VANWATCH_TEST_OBJECT", "vanwatch-test-object-v2")
-
 ABCLI_MLFLOW_STAGES = os.getenv("ABCLI_MLFLOW_STAGES", "")
