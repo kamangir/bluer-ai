@@ -47,7 +47,7 @@ function bluer_ai_session() {
 
             if [ -f "$ABCLI_PATH_IGNORE/session_reply_reboot" ]; then
                 abcli_log "reply_to_bash(reboot)"
-                abcli_host reboot
+                bluer_objects_host reboot
             fi
 
             if [ -f "$ABCLI_PATH_IGNORE/session_reply_seed" ]; then
@@ -63,7 +63,7 @@ function bluer_ai_session() {
             fi
 
             if [ -f "$ABCLI_PATH_IGNORE/session_reply_shutdown" ]; then
-                abcli_host shutdown
+                bluer_objects_host shutdown
             fi
 
             if [ -f "$ABCLI_PATH_IGNORE/session_reply_update" ]; then

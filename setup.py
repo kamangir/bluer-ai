@@ -12,7 +12,6 @@ setup(
         NAME,
         f"{NAME}.help",
         f"{NAME}.help.env",
-        f"{NAME}.help.mlflow",
         f"{NAME}.modules",
         f"{NAME}.modules.terraform",
         f"{NAME}.plugins",

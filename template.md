@@ -32,11 +32,6 @@ cd ~/Downloads
 curl -o Miniconda3-latest-MacOSX-x86_64.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
 bash ./Miniconda3-latest-MacOSX-x86_64.sh
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew install awscli
-
-aws configure
-
 git config --global user.name kamangir
 git config --global user.email arash@kamangir.net
 ```
