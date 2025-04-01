@@ -6,7 +6,6 @@ from bluer_ai.help.browse import help_browse
 from bluer_ai.help.conda import help_functions as help_conda
 from bluer_ai.help.clone import help_clone
 from bluer_ai.help.docker import help_functions as help_docker
-from bluer_ai.help.download import help_download
 from bluer_ai.help.env import help_functions as help_env
 from bluer_ai.help.eval import help_eval
 from bluer_ai.help.gif import help_gif
@@ -41,7 +40,6 @@ from bluer_ai.help.source import (
 )
 from bluer_ai.help.terminal import help_badge
 from bluer_ai.help.terraform import help_functions as help_terraform
-from bluer_ai.help.upload import help_upload
 from bluer_ai.help.watch import help_watch
 
 help_functions = generic_help_functions(plugin_name="bluer_ai")
@@ -57,7 +55,6 @@ help_functions.update(
         "clone": help_clone,
         "conda": help_conda,
         "docker": help_docker,
-        "download": help_download,
         "env": help_env,
         "eval": help_eval,
         "gif": help_gif,
@@ -89,7 +86,6 @@ help_functions.update(
         "source_caller_suffix_path": help_source_caller_suffix_path,
         "source_path": help_source_path,
         "terraform": help_terraform,
-        "upload": help_upload,
         "watch": help_watch,
     }
 )
