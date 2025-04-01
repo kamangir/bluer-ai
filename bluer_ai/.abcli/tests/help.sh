@@ -88,6 +88,8 @@ function test_bluer_ai_help() {
         \
         "@ls" \
         \
+        "@open" \
+        \
         "@pause" \
         \
         "@perform_action" \
