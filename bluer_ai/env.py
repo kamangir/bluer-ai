@@ -16,8 +16,6 @@ bluer_ai_git_ssh_key_name = os.getenv("bluer_ai_git_ssh_key_name", "")
 
 bluer_ai_gpu = os.getenv("bluer_ai_gpu", "")
 
-ABCLI_MESSENGER_RECIPIENTS = os.getenv("ABCLI_MESSENGER_RECIPIENTS", "")
-
 abcli_path_abcli = os.getenv("abcli_path_abcli", "")
 
 ABCLI_PATH_IGNORE = os.getenv("ABCLI_PATH_IGNORE", "")

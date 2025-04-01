@@ -18,7 +18,6 @@ from bluer_ai.help.logging import help_cat
 from bluer_ai.help.logging import help_functions as help_log
 from bluer_ai.help.list import help_functions as help_list
 from bluer_ai.help.ls import help_ls
-from bluer_ai.help.mlflow import help_functions as help_mlflow
 from bluer_ai.help.notebooks import help_functions as help_notebooks
 from bluer_ai.help.object import help_functions as help_object
 from bluer_ai.help.open import help_open
@@ -64,7 +63,6 @@ help_functions.update(
         "log": help_log,
         "list": help_list,
         "ls": help_ls,
-        "mlflow": help_mlflow,
         "notebooks": help_notebooks,
         "object": help_object,
         "open": help_open,
