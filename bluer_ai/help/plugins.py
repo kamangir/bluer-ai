@@ -71,7 +71,7 @@ def help_transform(
             "transform",
             "<repo-name>",
         ],
-        "transform a blue-plugin git clone to <repo-name>.",
+        "transform a bluer-plugin git clone to <repo-name>.",
         mono=mono,
     )
 
