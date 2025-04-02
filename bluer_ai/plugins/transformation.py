@@ -36,9 +36,9 @@ def transform(
         logger.info(f"alias: {alias_name}")
 
     transformation: Dict[str, str] = {
-        "blue_plugin": plugin_name,
-        "blue-plugin": repo_name,
-        "BLUE_PLUGIN": plugin_name.upper(),
+        "bluer_plugin": plugin_name,
+        "bluer-plugin": repo_name,
+        "BLUER_PLUGIN": plugin_name.upper(),
     }
     if alias_name:
         transformation["@plugin"] = alias_name

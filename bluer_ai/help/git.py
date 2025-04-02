@@ -67,7 +67,7 @@ def help_clone(
 ) -> str:
     options = "".join(
         [
-            xtra("cd,~from_template,if_cloned,init,", mono=mono),
+            xtra("cd,~from_template,if_cloned,", mono=mono),
             "install",
             xtra(",object,pull,source=<username/repo_name>", mono=mono),
         ]
