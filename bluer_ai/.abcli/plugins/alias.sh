@@ -49,4 +49,4 @@ alias @storage=bluer_ai_storage
 
 alias @version="bluer_ai version"
 
-alias @wifi=abcli_wifi
+alias @wifi=bluer_ai_wifi

@@ -34,6 +34,7 @@ from bluer_ai.help.source import (
 from bluer_ai.help.terminal import help_badge
 from bluer_ai.help.terraform import help_functions as help_terraform
 from bluer_ai.help.watch import help_watch
+from bluer_ai.help.wifi import help_functions as help_wifi
 
 help_functions = generic_help_functions(plugin_name="bluer_ai")
 
@@ -73,5 +74,6 @@ help_functions.update(
         "source_path": help_source_path,
         "terraform": help_terraform,
         "watch": help_watch,
+        "wifi": help_wifi,
     }
 )
