@@ -4,7 +4,7 @@ function abcli_add_ssh_keys() {
     if [ -z "$abcli_ssh_keys_added" ] || [ "$1" == "force" ]; then
         eval "$(ssh-agent -s)"
 
-        ssh-add -k $HOME/.ssh/$bluer_ai_git_ssh_key_name
+        ssh-add -k $HOME/.ssh/$BLUER_AI_GIT_SSH_KEY_NAME
 
         if [ -f "$HOME/.ssh/abcli" ]; then
             ssh-add -k $HOME/.ssh/abcli
