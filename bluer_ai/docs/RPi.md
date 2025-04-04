@@ -7,7 +7,7 @@
 
 2. Open [Raspberry Pi Imager](https://www.raspberrypi.com/software/) and select `Operating System` -> `Use custom` and select the image. Then press `Shift+Ctrl+X` to open `Advanced options`, select `Set hostname`, and enter a unique host name. Now select `Enable SSH` and `Set password` for the `pi` user to `abcli2025` and press `Save`. Proceed to write the SD Card.
 
-3. After the write is complete, reinsert the SD card, if necessary, and run `abcli wifi copy_to_sd_card`. Then, eject the SD card, insert it into the Raspberry Pi, turn the motherboard on, and wait for the motherboard to boot.
+3. After the write is complete, reinsert the SD card, if necessary, and run `@wifi copy_to_sd_card`. Then, eject the SD card, insert it into the Raspberry Pi, turn the motherboard on, and wait for the motherboard to boot.
 
 4. `Headless:` run `abcli ssh rpi <host-name>`. Then, run `abcli seed headless_rpi clipboard` in another terminal and paste it into the ssh window.
 

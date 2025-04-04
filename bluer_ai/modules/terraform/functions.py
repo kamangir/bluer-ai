@@ -6,7 +6,7 @@ import platform
 from blueness import module
 from bluer_options import host, string
 from bluer_options.logger import crash_report
-from bluer_options.env import abcli_wifi_ssid
+from bluer_options.env import BLUER_AI_WIFI_SSID
 
 from bluer_ai import NAME, fullname
 from bluer_ai.logger import logger
@@ -168,7 +168,7 @@ def signature() -> List[str]:
                     include_zone=True,
                 ),
             ]
-            + ([abcli_wifi_ssid] if abcli_wifi_ssid else [])
+            + ([BLUER_AI_WIFI_SSID] if BLUER_AI_WIFI_SSID else [])
         ),
     ]
 
