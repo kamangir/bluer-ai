@@ -9,7 +9,7 @@
 
 3. After the write is complete, reinsert the SD card, if necessary, and run `@wifi copy_to_sd_card`. Then, eject the SD card, insert it into the Raspberry Pi, turn the motherboard on, and wait for the motherboard to boot.
 
-4. `Headless:` run `abcli ssh rpi <host-name>`. Then, run `abcli seed headless_rpi clipboard` in another terminal and paste it into the ssh window.
+4. `Headless:` run `@ssh rpi <host-name>`. Then, run `@seed headless_rpi clipboard` in another terminal and paste it into the ssh window.
 
 5. `With UI:` Insert a [seed usb key](seed), open a terminal, and run `bash /media/pi/SEED/abcli/rpi.sh`.
 
