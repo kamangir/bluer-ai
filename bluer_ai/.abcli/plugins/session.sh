@@ -25,7 +25,7 @@ function bluer_ai_session() {
                 rm -v $ABCLI_PATH_IGNORE/session_reply_*
             fi
 
-            local plugin_name=$BLUE_SBC_SESSION_PLUGIN
+            local plugin_name=$BLUER_SBC_SESSION_PLUGIN
             local function_name=${plugin_name}_session
             if [[ $(type -t $function_name) == "function" ]]; then
                 $function_name start "${@:3}"
