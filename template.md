@@ -20,10 +20,6 @@ not recommended.
 pip install bluer_ai
 ```
 
-# configuration
-
-create a copy of [`sample.env`](./bluer_ai/sample.env) as `.env` and fill in the secrets.
-
 ---
 
 > 🪄 [`abcli`](https://github.com/kamangir/awesome-bash-cli) for the [Global South](https://github.com/kamangir/bluer-south).
