@@ -14,7 +14,7 @@ function bluer_ai_git_pull() {
         git pull
 
         local repo
-        for repo in $(bluer_ai_plugins list_of_external --delim space --log 0 --repo_names 1); do
+        for repo in bluer-options $(bluer_ai_plugins list_of_external --delim space --log 0 --repo_names 1); do
             if [ -d "$abcli_path_git/$repo" ]; then
                 abcli_log $repo
                 cd ../$repo
