@@ -43,6 +43,8 @@ alias @seed=bluer_ai_seed
 
 alias @session=bluer_ai_session
 
+alias @ssh=bluer_ai_ssh
+
 alias @ssm=bluer_ai_ssm
 
 alias @storage=bluer_ai_storage

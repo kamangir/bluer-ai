@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
-function abcli_add_ssh_keys() {
-    if [ -z "$abcli_ssh_keys_added" ] || [ "$1" == "force" ]; then
+function bluer_ai_add_ssh_keys() {
+    if [ -z "$BLUER_AI_SSH_KEYS_ADDED" ] || [ "$1" == "force" ]; then
         eval "$(ssh-agent -s)"
 
         ssh-add -k $HOME/.ssh/$BLUER_AI_GIT_SSH_KEY_NAME
@@ -10,11 +10,11 @@ function abcli_add_ssh_keys() {
             ssh-add -k $HOME/.ssh/abcli
         fi
 
-        export abcli_ssh_keys_added="true"
+        export BLUER_AI_SSH_KEYS_ADDED="true"
     fi
 }
 
-function abcli_ssh() {
+function bluer_ai_ssh() {
     local task=$1
 
     if [ "$task" == "help" ]; then
@@ -41,7 +41,7 @@ function abcli_ssh() {
     # https://www.raspberrypi.com/tutorials/cluster-raspberry-pi-tutorial/
     if [ "$task" == "copy_id" ]; then
         local filename=$(abcli_clarify_input $2 abcli)
-        local args=$(abcli_ssh_args ${@:3})
+        local args=$(bluer_ai_ssh_args "${@:3}")
 
         ssh-copy-id -i $HOME/.ssh/$filename.pub $args
         return
@@ -54,12 +54,12 @@ function abcli_ssh() {
         return
     fi
 
-    local args=$(abcli_ssh_args $@)
+    local args=$(bluer_ai_ssh_args "$@")
     abcli_log "@ssh: $args"
     ssh $args
 }
 
-function abcli_ssh_args() {
+function bluer_ai_ssh_args() {
     local machine_kind=$(abcli_clarify_input $1 local)
     local machine_name=$2
     local options=$3
@@ -106,5 +106,5 @@ function abcli_ssh_args() {
     fi
 
     echo "unknown"
-    abcli_log_error "abcli_ssh_args: $machine_kind: machine kind not found."
+    abcli_log_error "bluer_ai_ssh_args: $machine_kind: machine kind not found."
 }
