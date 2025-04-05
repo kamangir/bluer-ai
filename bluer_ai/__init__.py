@@ -2,11 +2,11 @@ import os
 
 NAME = "bluer_ai"
 
-ICON = "🪄"
+ICON = "🌀"
 
 DESCRIPTION = f"{ICON} A language to speak AI."
 
-VERSION = "12.48.1"
+VERSION = "12.49.1"
 
 REPO_NAME = "bluer-ai"
 
