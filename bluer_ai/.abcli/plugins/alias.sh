@@ -17,8 +17,6 @@ alias @create_video=abcli_create_video
 
 alias @docker=bluer_ai_docker
 
-alias @ffmpeg=abcli_ffmpeg
-
 alias @git=bluer_ai_git
 alias @git++="bluer_ai_git increment_version"
 
@@ -38,6 +36,8 @@ alias @plugins=bluer_ai_plugins
 alias @pypi=bluer_ai_pypi
 
 alias @random=abcli_string_random
+
+alias @screen=bluer_ai_screen
 
 alias @seed=bluer_ai_seed
 

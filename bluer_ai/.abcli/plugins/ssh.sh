@@ -17,20 +17,6 @@ function bluer_ai_add_ssh_keys() {
 function bluer_ai_ssh() {
     local task=$1
 
-    if [ "$task" == "help" ]; then
-        abcli_show_usage "@ssh add$ABCUL<filename>" \
-            "ssh add <filename>."
-        abcli_show_usage "@ssh copy_id$ABCUL<filename>${ABCUL}jetson_nano|rpi <machine-name>" \
-            "ssh copy-id <filename> to <machine-name>."
-        abcli_show_usage "@ssh${ABCUL}ec2 <ip-address>$ABCUL[region=<region_1>,user=<ec2-user|ubuntu>,vnc]" \
-            "ssh to <ip-address>."
-        abcli_show_usage "@ssh${ABCUL}jetson_nano|rpi <machine-name>" \
-            "ssh to jetson nano|rpi <machine-name>."
-        abcli_show_usage "@ssh keygen$ABCUL[<filename>]" \
-            "keygen <filename>"
-        return
-    fi
-
     if [ "$task" == "add" ]; then
         local filename=$(abcli_clarify_input $2 abcli)
 

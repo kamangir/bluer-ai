@@ -114,6 +114,11 @@ function test_bluer_ai_help() {
         \
         "@repeat" \
         \
+        "@screen" \
+        "@screen detach" \
+        "@screen list" \
+        "@screen resume" \
+        \
         "@seed" \
         "@seed eject" \
         "@seed list" \
@@ -124,6 +129,13 @@ function test_bluer_ai_help() {
         "@session start" \
         \
         "@sleep" \
+        \
+        "@ssh" \
+        "@ssh add" \
+        "@ssh copy_id" \
+        "@ssh ec2" \
+        "@ssh sbc" \
+        "@ssh keygen" \
         \
         "@storage" \
         "@storage clear" \

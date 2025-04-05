@@ -119,7 +119,7 @@ else
     export abcli_hostname=$(hostname)
 fi
 
-function abcli_killall() {
+function bluer_ai_kill_all() {
     # if [[ "$abcli_is_sagemaker" == true ]] || [[ "$abcli_is_cloudshell" == true ]]; then
     if [[ "$abcli_is_docker" == true ]] || [[ "$abcli_is_aws_batch" == true ]]; then
         # https://unstop.com/blog/kill-process-linux
