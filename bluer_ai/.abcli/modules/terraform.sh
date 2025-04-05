@@ -78,7 +78,7 @@ function bluer_ai_terraform() {
                 --wallpaper-mode center
         fi
 
-        sudo python3 -m bluer_ai.modules.terraform \
+        sudo -E python3 -m bluer_ai.modules.terraform \
             terraform \
             --is_headless $abcli_is_headless \
             --target rpi \
