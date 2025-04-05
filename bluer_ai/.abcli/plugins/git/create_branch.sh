@@ -30,6 +30,6 @@ function bluer_ai_git_create_branch() {
     [[ $? -ne 0 ]] && return 1
 
     if [[ "$do_push" == 1 ]]; then
-        bluer_ai_git_push "start of $branch_name 🪄" first
+        bluer_ai_git_push "start of $branch_name 🌀" first
     fi
 }

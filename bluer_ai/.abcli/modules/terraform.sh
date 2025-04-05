@@ -48,7 +48,7 @@ function bluer_ai_terraform() {
     if [[ "$abcli_is_headless" == false ]] &&
         [[ "$abcli_is_mac" == false ]] &&
         [[ "$abcli_is_docker" == false ]]; then
-        rm $ABCLI_PATH_IGNORE/background*
+        sudo rm -v $ABCLI_PATH_IGNORE/background*
         local background_image=$ABCLI_PATH_IGNORE/background-$(abcli_string_timestamp).jpg
 
         python3 -m bluer_ai.modules.terraform poster \
@@ -78,7 +78,7 @@ function bluer_ai_terraform() {
                 --wallpaper-mode center
         fi
 
-        sudo python3 -m bluer_ai.modules.terraform \
+        sudo -E python3 -m bluer_ai.modules.terraform \
             terraform \
             --is_headless $abcli_is_headless \
             --target rpi \

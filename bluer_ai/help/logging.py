@@ -69,8 +69,23 @@ def help_log_verbose(
     )
 
 
+def help_log_warning(
+    tokens: List[str],
+    mono: bool,
+) -> str:
+    return show_usage(
+        [
+            "@warn",
+            "<message>",
+        ],
+        "warn <message>.",
+        mono=mono,
+    )
+
+
 help_functions = {
     "": help_log,
+    "warning": help_log_warning,
     "list": help_log_list,
     "verbose": help_log_verbose,
 }

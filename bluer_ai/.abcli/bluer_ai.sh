@@ -5,7 +5,7 @@ export abcli_status_icons=""
 export abcli_path_bash="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
 function abcli_main() {
-    echo -e "\033]1337;SetBadgeFormat=$(echo -n "🪄" | base64)\a"
+    echo -e "\033]1337;SetBadgeFormat=$(echo -n "🌀" | base64)\a"
 
     local options=$1
 
@@ -43,7 +43,7 @@ function abcli_main() {
     [[ "$abcli_is_in_notebook" == false ]] &&
         bluer_ai_select $abcli_object_name
 
-    abcli_log "🪄 $abcli_fullname"
+    abcli_log "🌀 $abcli_fullname"
 
     local command_line="${@:2}"
     if [[ ! -z "$command_line" ]]; then

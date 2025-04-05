@@ -22,9 +22,11 @@ from bluer_ai.help.plugins import help_functions as help_plugins
 from bluer_ai.help.publish import help_functions as help_publish
 from bluer_ai.help.repeat import help_repeat
 from bluer_ai.help.sagemaker import help_functions as help_sagemaker
+from bluer_ai.help.screen import help_functions as help_screen
 from bluer_ai.help.seed import help_functions as help_seed
 from bluer_ai.help.select import help_select
 from bluer_ai.help.session import help_functions as help_session
+from bluer_ai.help.ssh import help_functions as help_ssh
 from bluer_ai.help.storage import help_functions as help_storage
 from bluer_ai.help.sleep import help_sleep
 from bluer_ai.help.source import (
@@ -65,6 +67,7 @@ help_functions.update(
         "publish": help_publish,
         "repeat": help_repeat,
         "sagemaker": help_sagemaker,
+        "screen": help_screen,
         "seed": help_seed,
         "select": help_select,
         "sleep": help_sleep,
@@ -72,6 +75,7 @@ help_functions.update(
         "storage": help_storage,
         "source_caller_suffix_path": help_source_caller_suffix_path,
         "source_path": help_source_path,
+        "ssh": help_ssh,
         "terraform": help_terraform,
         "watch": help_watch,
         "wifi": help_wifi,

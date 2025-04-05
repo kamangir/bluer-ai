@@ -8,7 +8,7 @@ function bluer_ai_git_review() {
     local list_of_files=$(git diff --name-only HEAD | tr "\n" " ")
     local list_of_files=$(bluer_ai_list_nonempty "$list_of_files" --delim space)
     if [[ -z "$list_of_files" ]]; then
-        abcli_log_warning "@git: review: no changes."
+        bluer_ai_log_warning "@git: review: no changes."
         popd >/dev/null
         return
     fi
@@ -26,7 +26,7 @@ function bluer_ai_git_review() {
         printf "📜 $RED$filename$NC\n"
 
         if [[ "$filename" == *.ipynb ]]; then
-            abcli_log_warning "jupyter notebook, will not review."
+            bluer_ai_log_warning "jupyter notebook, will not review."
         else
             git diff $filename
         fi

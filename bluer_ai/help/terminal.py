@@ -10,7 +10,7 @@ def help_badge(
     return show_usage(
         [
             "@badge",
-            'clear | "🪄"',
+            'clear | "🌀"',
         ],
         "update badge.",
         mono=mono,

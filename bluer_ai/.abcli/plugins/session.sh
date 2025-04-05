@@ -31,7 +31,7 @@ function bluer_ai_session() {
                 $function_name start "${@:3}"
             else
                 if [ -z "$plugin_name" ]; then
-                    abcli_log_warning "@session: plugin not found."
+                    bluer_ai_log_warning "@session: plugin not found."
                 else
                     abcli_log_error "@session: plugin: $plugin_name: plugin not found."
                 fi

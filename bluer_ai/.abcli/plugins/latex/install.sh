@@ -10,7 +10,7 @@ function bluer_ai_latex_install() {
         abcli_eval ,$options \
             brew install --cask mactex
 
-        abcli_log_warning "restart the terminal..."
+        bluer_ai_log_warning "restart the terminal..."
         return
     fi
 
