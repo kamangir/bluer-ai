@@ -6,7 +6,7 @@ function bluer_ai_conda_rm() {
 
     local exists=$(bluer_ai_conda_exists name=$environment_name)
     if [[ "$exists" == 0 ]]; then
-        abcli_log_warning "@conda: $environment_name does not exist."
+        bluer_ai_log_warning "@conda: $environment_name does not exist."
         return 0
     fi
 

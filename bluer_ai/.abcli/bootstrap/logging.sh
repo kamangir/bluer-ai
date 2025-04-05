@@ -37,7 +37,7 @@ function abcli_log_remote() {
     echo "$@" >>$abcli_log_filename
 }
 
-function abcli_log_warning() {
+function bluer_ai_log_warning() {
     local message="$@"
 
     printf "$YELLOW$message$NC\n"

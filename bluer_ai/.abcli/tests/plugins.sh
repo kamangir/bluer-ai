@@ -4,7 +4,7 @@ function test_bluer_ai_plugin_name_from_repo() {
     local options=$1
 
     if [[ "$abcli_is_github_workflow" == true ]]; then
-        abcli_log_warning "plugins are not present in the github workflow."
+        bluer_ai_log_warning "plugins are not present in the github workflow."
         return
     fi
 
@@ -43,7 +43,7 @@ function test_bluer_ai_plugin_name_from_repo() {
 
 function test_bluer_ai_get_module_name_from_plugin() {
     if [[ "$abcli_is_github_workflow" == true ]]; then
-        abcli_log_warning "plugins are not present in the github workflow."
+        bluer_ai_log_warning "plugins are not present in the github workflow."
         return
     fi
 
