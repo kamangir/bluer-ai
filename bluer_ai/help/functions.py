@@ -18,7 +18,6 @@ from bluer_ai.help.notebooks import help_functions as help_notebooks
 from bluer_ai.help.open import help_open
 from bluer_ai.help.pause import help_pause
 from bluer_ai.help.plugins import help_functions as help_plugins
-from bluer_ai.help.publish import help_functions as help_publish
 from bluer_ai.help.repeat import help_repeat
 from bluer_ai.help.sagemaker import help_functions as help_sagemaker
 from bluer_ai.help.screen import help_functions as help_screen
