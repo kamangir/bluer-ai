@@ -86,8 +86,6 @@ function test_bluer_ai_help() {
         "@list resize" \
         "@list sort" \
         \
-        "@ls" \
-        \
         "@open" \
         \
         "@pause" \
@@ -99,9 +97,6 @@ function test_bluer_ai_help() {
         "@plugins list_of_external" \
         "@plugins list_of_installed" \
         "@plugins transform" \
-        \
-        "@publish" \
-        "@publish tar" \
         \
         "@pylint" \
         \
