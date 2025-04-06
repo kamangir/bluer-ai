@@ -14,12 +14,10 @@ from bluer_ai.help.latex import help_functions as help_latex
 from bluer_ai.help.logging import help_cat
 from bluer_ai.help.logging import help_functions as help_log
 from bluer_ai.help.list import help_functions as help_list
-from bluer_ai.help.ls import help_ls
 from bluer_ai.help.notebooks import help_functions as help_notebooks
 from bluer_ai.help.open import help_open
 from bluer_ai.help.pause import help_pause
 from bluer_ai.help.plugins import help_functions as help_plugins
-from bluer_ai.help.publish import help_functions as help_publish
 from bluer_ai.help.repeat import help_repeat
 from bluer_ai.help.sagemaker import help_functions as help_sagemaker
 from bluer_ai.help.screen import help_functions as help_screen
@@ -58,13 +56,11 @@ help_functions.update(
         "latex": help_latex,
         "log": help_log,
         "list": help_list,
-        "ls": help_ls,
         "notebooks": help_notebooks,
         "open": help_open,
         "pause": help_pause,
         "perform_action": help_perform_action,
         "plugins": help_plugins,
-        "publish": help_publish,
         "repeat": help_repeat,
         "sagemaker": help_sagemaker,
         "screen": help_screen,
