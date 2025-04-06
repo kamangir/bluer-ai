@@ -31,8 +31,8 @@ def transform(
     logger.info(f"repo_path: {repo_path}")
 
     alias_name: str = ""
-    if repo_name.startswith("blue-"):
-        alias_name = "@{}".format(repo_name.split("blue-", 1)[1])
+    if repo_name.startswith("bluer-"):
+        alias_name = "@{}".format(repo_name.split("bluer-", 1)[1])
         logger.info(f"alias: {alias_name}")
 
     transformation: Dict[str, str] = {
