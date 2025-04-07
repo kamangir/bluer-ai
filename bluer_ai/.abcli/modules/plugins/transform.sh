@@ -18,8 +18,6 @@ function bluer_ai_plugins_transform() {
         $plugin_name/.abcli/bluer_plugin.sh \
         $plugin_name/.abcli/$plugin_name.sh
 
-    rm -v $plugin_name/.abcli/session.sh
-
     python3 -m bluer_ai.plugins \
         transform \
         --repo_name $repo_name \
