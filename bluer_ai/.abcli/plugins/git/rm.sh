@@ -4,7 +4,7 @@ function bluer_ai_git_rm() {
     local repo_name=${1:-void}
 
     if [[ ! -d "$abcli_path_git/$repo_name" ]]; then
-        abcli_log_error "$repo_name: repo not found."
+        bluer_ai_log_error "$repo_name: repo not found."
         return 1
     fi
 

@@ -3,7 +3,7 @@
 function bluer_ai_git_create_branch() {
     local branch_name=$1
     if [[ -z "$branch_name" ]]; then
-        abcli_log_error "@git: create_brach: branch name not found."
+        bluer_ai_log_error "@git: create_brach: branch name not found."
         return 1
     fi
 

@@ -37,7 +37,7 @@ function bluer_ai_git() {
 
     local repo_name=$(bluer_ai_git_get_repo_name)
     if [[ "$repo_name" == "unknown" ]]; then
-        abcli_log_error "@git: $task: $(pwd): repo not found."
+        bluer_ai_log_error "@git: $task: $(pwd): repo not found."
         return 1
     fi
 

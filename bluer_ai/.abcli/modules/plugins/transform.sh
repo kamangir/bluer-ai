@@ -3,7 +3,7 @@
 function bluer_ai_plugins_transform() {
     local repo_name=$1
     if [[ -z "$repo_name" ]]; then
-        abcli_log_error "@plugins: transform: $repo_name: repo not found."
+        bluer_ai_log_error "@plugins: transform: $repo_name: repo not found."
         return 1
     fi
     local plugin_name=$(abcli_plugin_name_from_repo $repo_name)

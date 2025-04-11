@@ -13,7 +13,7 @@ function abcli_log() {
             rm $abcli_path_git/verbose
             abcli_set_log_verbosity
         else
-            abcli_log_error "@log: verbose: $what: command not found."
+            bluer_ai_log_error "@log: verbose: $what: command not found."
             return 1
         fi
 
@@ -25,7 +25,7 @@ function abcli_log() {
     abcli_log_remote "$@"
 }
 
-function abcli_log_error() {
+function bluer_ai_log_error() {
     local message="$@"
 
     printf "❗️ ${RED}$message$NC\n"

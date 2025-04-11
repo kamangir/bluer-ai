@@ -92,5 +92,5 @@ function bluer_ai_ssh_args() {
     fi
 
     echo "unknown"
-    abcli_log_error "bluer_ai_ssh_args: $machine_kind: machine kind not found."
+    bluer_ai_log_error "bluer_ai_ssh_args: $machine_kind: machine kind not found."
 }

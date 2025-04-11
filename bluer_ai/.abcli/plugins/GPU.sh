@@ -14,7 +14,7 @@ function bluer_ai_gpu() {
         return
     fi
 
-    abcli_log_error "@gpu: $task: command not found."
+    bluer_ai_log_error "@gpu: $task: command not found."
     return 1
 }
 
@@ -53,7 +53,7 @@ function bluer_ai_gpu_status() {
         return
     fi
 
-    abcli_log_error "@gpu: status: $task: command not found."
+    bluer_ai_log_error "@gpu: status: $task: command not found."
     return 1
 }
 

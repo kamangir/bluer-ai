@@ -14,6 +14,6 @@ function bluer_ai_latex_install() {
         return
     fi
 
-    abcli_log_error "@latex: build: not supported here."
+    bluer_ai_log_error "@latex: build: not supported here."
     return 1
 }
