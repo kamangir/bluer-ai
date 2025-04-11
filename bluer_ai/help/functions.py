@@ -8,6 +8,7 @@ from bluer_ai.help.env import help_functions as help_env
 from bluer_ai.help.eval import help_eval
 from bluer_ai.help.git import help_functions as help_git
 from bluer_ai.help.gpu import help_functions as help_gpu
+from bluer_ai.help.hr import help_hr
 from bluer_ai.help.init import help_init
 from bluer_ai.help.instance import help_functions as help_instance
 from bluer_ai.help.latex import help_functions as help_latex
@@ -32,6 +33,7 @@ from bluer_ai.help.source import (
 )
 from bluer_ai.help.terminal import help_badge
 from bluer_ai.help.terraform import help_functions as help_terraform
+from bluer_ai.help.wait import help_wait
 from bluer_ai.help.watch import help_watch
 from bluer_ai.help.wifi import help_functions as help_wifi
 
@@ -50,6 +52,7 @@ help_functions.update(
         "eval": help_eval,
         "git": help_git,
         "gpu": help_gpu,
+        "hr": help_hr,
         "init": help_init,
         "instance": help_instance,
         "latex": help_latex,
@@ -71,6 +74,7 @@ help_functions.update(
         "source_path": help_source_path,
         "ssh": help_ssh,
         "terraform": help_terraform,
+        "wait": help_wait,
         "watch": help_watch,
         "wifi": help_wifi,
     }

@@ -6,26 +6,26 @@ function bluer_ai_terraform() {
     if [ "$task" == "cat" ]; then
 
         if [[ "$abcli_is_mac" == true ]]; then
-            abcli_log_local_and_cat ~/.bash_profile
+            bluer_ai_log_local_and_cat ~/.bash_profile
             return
         fi
 
         if [[ "$abcli_is_rpi" == true ]]; then
-            abcli_log_local_and_cat "/home/pi/.bashrc"
+            bluer_ai_log_local_and_cat "/home/pi/.bashrc"
             if [[ "$abcli_is_headless" == false ]]; then
-                abcli_log_local_and_cat "/etc/xdg/lxsession/LXDE-pi/autostart"
+                bluer_ai_log_local_and_cat "/etc/xdg/lxsession/LXDE-pi/autostart"
             fi
             return
         fi
 
         if [[ "$abcli_is_ubuntu" == true ]]; then
             if [[ "$abcli_is_ec2" == true ]]; then
-                abcli_log_local_and_cat "/home/$USER/.bash_profile"
+                bluer_ai_log_local_and_cat "/home/$USER/.bash_profile"
             else
-                abcli_log_local_and_cat "/home/$USER/.bashrc"
+                bluer_ai_log_local_and_cat "/home/$USER/.bashrc"
 
                 if [[ "$abcli_is_jetson" == true ]]; then
-                    abcli_log_local_and_cat "/home/$USER/.config/autostart/abcli.desktop"
+                    bluer_ai_log_local_and_cat "/home/$USER/.config/autostart/abcli.desktop"
                 fi
             fi
             return
@@ -35,7 +35,7 @@ function bluer_ai_terraform() {
     fi
 
     if [ "$task" == "disable" ]; then
-        abcli_eval - \
+        bluer_ai_eval - \
             touch $ABCLI_PATH_IGNORE/disabled
         return
     fi
@@ -143,7 +143,7 @@ function bluer_ai_terraform() {
 }
 
 # used locally by this function
-function abcli_log_local_and_cat() {
-    abcli_log_local "$1"
+function bluer_ai_log_local_and_cat() {
+    bluer_ai_log_local "$1"
     cat "$1"
 }

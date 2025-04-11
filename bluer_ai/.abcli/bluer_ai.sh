@@ -4,7 +4,7 @@ export abcli_status_icons=""
 
 export abcli_path_bash="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
-function abcli_main() {
+function bluer_ai_main() {
     echo -e "\033]1337;SetBadgeFormat=$(echo -n "🌀" | base64)\a"
 
     local options=$1
@@ -38,7 +38,7 @@ function abcli_main() {
     [[ "$do_terraform" == 1 ]] &&
         bluer_ai_terraform
 
-    abcli_initialize
+    bluer_ai_initialize
 
     [[ "$abcli_is_in_notebook" == false ]] &&
         bluer_ai_select $abcli_object_name
@@ -47,7 +47,7 @@ function abcli_main() {
 
     local command_line="${@:2}"
     if [[ ! -z "$command_line" ]]; then
-        abcli_eval - "$command_line"
+        bluer_ai_eval - "$command_line"
         if [[ $? -ne 0 ]]; then
             bluer_ai_log_error "@main: failed: $command_line"
             return 1
@@ -61,5 +61,5 @@ function abcli_main() {
 if [ -f "$HOME/storage/temp/ignore/disabled" ]; then
     printf "bluer-ai is \033[0;31mdisabled\033[0m, run '@T enable' first.\n"
 else
-    abcli_main "$@"
+    bluer_ai_main "$@"
 fi

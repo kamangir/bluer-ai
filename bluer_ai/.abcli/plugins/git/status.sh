@@ -5,7 +5,7 @@ function bluer_ai_git_status() {
     local do_all=$(abcli_option_int "$options" all 1)
 
     if [[ "$do_all" == 0 ]]; then
-        abcli_eval path=$abcli_path_git/$(bluer_ai_git_get_repo_name),~log \
+        bluer_ai_eval path=$abcli_path_git/$(bluer_ai_git_get_repo_name),~log \
             git status
         return
     fi

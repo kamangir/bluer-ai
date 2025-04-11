@@ -2,7 +2,7 @@
 
 function bluer_ai_git_clone() {
     local repo_address=$1
-    local repo_name=$(abcli_unpack_repo_name $repo_address .)
+    local repo_name=$(bluer_ai_unpack_repo_name $repo_address .)
     [[ "$repo_address" != http* ]] && [[ "$repo_address" != git@* ]] &&
         local repo_address=git@github.com:kamangir/$repo_name.git
 

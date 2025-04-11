@@ -8,7 +8,7 @@ function bluer_ai_git_rm() {
         return 1
     fi
 
-    local plugin_name=$(abcli_plugin_name_from_repo $repo_name)
+    local plugin_name=$(bluer_ai_plugin_name_from_repo $repo_name)
     abcli_log "removing repo: $repo_name == plugin_name: $plugin_name"
 
     pip3 uninstall -y $plugin_name

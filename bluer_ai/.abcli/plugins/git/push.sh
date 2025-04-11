@@ -25,7 +25,7 @@ function bluer_ai_git_push() {
         git status
 
     local repo_name=$(bluer_ai_git_get_repo_name)
-    local plugin_name=$(abcli_plugin_name_from_repo $repo_name)
+    local plugin_name=$(bluer_ai_plugin_name_from_repo $repo_name)
 
     if [[ "$do_action" == 1 ]]; then
         bluer_ai_perform_action \

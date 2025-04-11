@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-function abcli_initialize() {
+function bluer_ai_initialize() {
     if [[ "$abcli_is_docker" == false ]] &&
         [[ "$abcli_is_aws_batch" == false ]]; then
         git config --global user.email "arash@kamangir.net"
@@ -18,5 +18,5 @@ function abcli_initialize() {
 
     [[ "$abcli_is_in_notebook" == true ]] && return
 
-    abcli_update_terminal
+    bluer_ai_update_terminal
 }

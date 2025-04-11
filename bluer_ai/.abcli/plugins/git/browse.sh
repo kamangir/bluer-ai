@@ -9,7 +9,7 @@ function bluer_ai_git_browse() {
     if [[ ",,.,-," == *",$repo_name,"* ]]; then
         repo_name=$(bluer_ai_git_get_repo_name)
     else
-        repo_name=$(abcli_unpack_repo_name $repo_name)
+        repo_name=$(bluer_ai_unpack_repo_name $repo_name)
     fi
 
     local url=https://github.com/kamangir/$repo_name

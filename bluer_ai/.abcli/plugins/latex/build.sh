@@ -30,28 +30,28 @@ function bluer_ai_latex_build() {
     for round in 1 2 3; do
         abcli_log "round $round..."
 
-        abcli_eval dryrun=$do_dryrun \
+        bluer_ai_eval dryrun=$do_dryrun \
             latex \
             -interaction=nonstopmode \
             $filename.tex
         [[ $? -ne 0 ]] && return 1
 
         [[ ! -z "$bib_file" ]] &&
-            abcli_eval dryrun=$do_dryrun \
+            bluer_ai_eval dryrun=$do_dryrun \
                 bibtex $bib_file
     done
 
-    #abcli_eval dryrun=$do_dryrun \
+    #bluer_ai_eval dryrun=$do_dryrun \
     #    makeindex $filename.idx
 
     [[ "$do_ps" == 1 ]] &&
-        abcli_eval dryrun=$do_dryrun \
+        bluer_ai_eval dryrun=$do_dryrun \
             dvips \
             -o $filename.ps \
             $filename.dvi
 
     [[ "$do_pdf" == 1 ]] &&
-        abcli_eval dryrun=$do_dryrun \
+        bluer_ai_eval dryrun=$do_dryrun \
             ps2pdf $filename.ps
 
     popd >/dev/null

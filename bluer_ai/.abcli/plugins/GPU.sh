@@ -42,7 +42,7 @@ function bluer_ai_gpu_status() {
     fi
 
     if [ $task == "show" ]; then
-        abcli_eval - nvidia-smi
+        bluer_ai_eval - nvidia-smi
 
         abcli_log "CUDA_VISIBLE_DEVICES=$CUDA_VISIBLE_DEVICES"
 

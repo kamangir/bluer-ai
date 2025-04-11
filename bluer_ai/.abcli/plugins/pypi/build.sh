@@ -12,7 +12,7 @@ function bluer_ai_pypi_build() {
     [[ "$do_install" == 1 ]] &&
         bluer_ai_pypi_install
 
-    local repo_name=$(abcli_unpack_repo_name $plugin_name)
+    local repo_name=$(bluer_ai_unpack_repo_name $plugin_name)
     if [[ ! -d "$abcli_path_git/$repo_name" ]]; then
         abcli_log "-@pypi: build: $repo_name: repo not found."
         return 1
