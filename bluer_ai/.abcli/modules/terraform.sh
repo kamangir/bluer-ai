@@ -123,7 +123,7 @@ function bluer_ai_terraform() {
                     --set-wallpaper $background_image \
                     --wallpaper-mode center
             else
-                abcli_log_error "unknown desktop environment: '$desktop_environment'."
+                bluer_ai_log_error "unknown desktop environment: '$desktop_environment'."
             fi
         fi
 

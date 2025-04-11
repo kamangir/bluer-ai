@@ -41,6 +41,8 @@ function test_bluer_ai_help() {
         "@env dot load" \
         "@env dot set" \
         \
+        "@error" \
+        \
         "@git" \
         "@git browse" \
         "@git checkout" \

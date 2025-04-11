@@ -49,7 +49,7 @@ function abcli_main() {
     if [[ ! -z "$command_line" ]]; then
         abcli_eval - "$command_line"
         if [[ $? -ne 0 ]]; then
-            abcli_log_error "@main: failed: $command_line"
+            bluer_ai_log_error "@main: failed: $command_line"
             return 1
         else
             abcli_log "✅ $command_line"

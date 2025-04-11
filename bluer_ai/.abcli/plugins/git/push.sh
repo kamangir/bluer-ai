@@ -3,7 +3,7 @@
 function bluer_ai_git_push() {
     local message=$1
     if [[ -z "$message" ]]; then
-        abcli_log_error "@git: push: message not found."
+        bluer_ai_log_error "@git: push: message not found."
         return 1
     fi
 
@@ -31,7 +31,7 @@ function bluer_ai_git_push() {
         bluer_ai_perform_action \
             action=git_before_push,plugin=$plugin_name
         if [[ $? -ne 0 ]]; then
-            abcli_log_error "@git: push: action failed."
+            bluer_ai_log_error "@git: push: action failed."
             return 1
         fi
     fi

@@ -33,7 +33,7 @@ function bluer_ai_session() {
                 if [ -z "$plugin_name" ]; then
                     bluer_ai_log_warning "@session: plugin not found."
                 else
-                    abcli_log_error "@session: plugin: $plugin_name: plugin not found."
+                    bluer_ai_log_error "@session: plugin: $plugin_name: plugin not found."
                 fi
                 bluer_ai_sleep seconds=60
             fi
@@ -81,6 +81,6 @@ function bluer_ai_session() {
         return
     fi
 
-    abcli_log_error "@session: $task: command not found."
+    bluer_ai_log_error "@session: $task: command not found."
     return 1
 }

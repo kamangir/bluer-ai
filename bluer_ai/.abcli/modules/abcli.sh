@@ -7,7 +7,7 @@ function bluer_ai() {
     if [[ $(type -t $function_name) == "function" ]]; then
         $function_name "${@:2}"
     else
-        abcli_log_error "bluer_ai: $task: command not found."
+        bluer_ai_log_error "bluer_ai: $task: command not found."
         return 1
     fi
 }

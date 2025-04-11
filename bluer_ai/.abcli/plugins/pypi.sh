@@ -12,7 +12,7 @@ function bluer_ai_pypi() {
         return
     fi
 
-    abcli_log_error "$plugin_name: pypi: $task: command not found."
+    bluer_ai_log_error "$plugin_name: pypi: $task: command not found."
     return 1
 }
 

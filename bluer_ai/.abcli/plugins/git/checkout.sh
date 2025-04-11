@@ -4,7 +4,7 @@ function bluer_ai_git_checkout() {
     local thing=$1
 
     if [[ -z "$thing" ]]; then
-        abcli_log_error "@git: checkout: args not found."
+        bluer_ai_log_error "@git: checkout: args not found."
         return 1
     fi
 

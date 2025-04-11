@@ -23,7 +23,7 @@ function bluer_ai_plugins_install() {
 
     local repo_name=$(abcli_get_repo_name_from_plugin $plugin_name)
     if [[ -z "$repo_name" ]]; then
-        abcli_log_error "@plugins: install: $plugin_name: plugin not found."
+        bluer_ai_log_error "@plugins: install: $plugin_name: plugin not found."
         return 1
     fi
 

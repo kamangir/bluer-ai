@@ -31,6 +31,20 @@ def help_log(
     )
 
 
+def help_log_error(
+    tokens: List[str],
+    mono: bool,
+) -> str:
+    return show_usage(
+        [
+            "@error",
+            "<message>",
+        ],
+        "error <message>.",
+        mono=mono,
+    )
+
+
 def help_log_list(
     tokens: List[str],
     mono: bool,
@@ -85,6 +99,7 @@ def help_log_warning(
 
 help_functions = {
     "": help_log,
+    "error": help_log_error,
     "warning": help_log_warning,
     "list": help_log_list,
     "verbose": help_log_verbose,

@@ -13,7 +13,7 @@ function bluer_ai_latex_build() {
 
     local full_path=$2
     if [[ ! -f "$full_path" ]]; then
-        abcli_log_error "@latex: build: $full_path: file not found."
+        bluer_ai_log_error "@latex: build: $full_path: file not found."
         return 1
     fi
     local path=$(dirname "$full_path")
