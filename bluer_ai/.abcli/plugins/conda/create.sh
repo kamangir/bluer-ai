@@ -5,14 +5,14 @@ function bluer_ai_conda_create() {
     local clone_from=$(abcli_option "$options" clone auto)
     local do_recreate=$(abcli_option_int "$options" recreate 1)
     local environment_name=$(abcli_option "$options" name bluer_ai)
-    local repo_name=$(abcli_unpack_repo_name $environment_name)
+    local repo_name=$(bluer_ai_unpack_repo_name $environment_name)
     repo_name=$(abcli_option "$options" repo $repo_name)
     local do_install_plugin=$(abcli_option_int "$options" install_plugin 1)
 
     conda init bash
 
     if [[ "$do_recreate" == 0 ]] && [[ $(bluer_ai_conda exists $environment_name) == 1 ]]; then
-        abcli_eval - conda activate $environment_name
+        bluer_ai_eval - conda activate $environment_name
         return
     fi
 

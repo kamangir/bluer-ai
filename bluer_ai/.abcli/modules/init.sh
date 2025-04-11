@@ -16,7 +16,7 @@ function bluer_ai_init() {
         bluer_ai_init - clear
     else
         local plugin_name=$1
-        local module_name=$(abcli_get_module_name_from_plugin $plugin_name)
+        local module_name=$(bluer_ai_get_module_name_from_plugin $plugin_name)
 
         for filename in $(python3 -m $module_name locate)/.abcli/*.sh; do
             source $filename

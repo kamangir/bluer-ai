@@ -4,10 +4,10 @@ function bluer_ai_latex_install() {
     local options=$1
 
     if [[ "$abcli_is_mac" == true ]]; then
-        abcli_eval ,$options \
+        bluer_ai_eval ,$options \
             brew install bibclean
 
-        abcli_eval ,$options \
+        bluer_ai_eval ,$options \
             brew install --cask mactex
 
         bluer_ai_log_warning "restart the terminal..."

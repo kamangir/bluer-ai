@@ -11,7 +11,7 @@ function bluer_ai_latex_bibclean() {
 
     local temp_filename=$abcli_path_temp/bibclean-$(abcli_string_timestamp_short).bib
 
-    abcli_eval ,$options \
+    bluer_ai_eval ,$options \
         bibclean $filename >$temp_filename
 
     mv -v $temp_filename $filename

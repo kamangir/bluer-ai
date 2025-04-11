@@ -1,28 +1,33 @@
 #! /usr/bin/env bash
 
-function abcli_string_after() {
+function test_bluer_ai_string_after() {
     abcli_assert \
         $(abcli_string_after \
             "this-is-a-test" \
             "") \
         ""
+    [[ $? -ne 0 ]] && return 1
+
     abcli_assert \
         $(abcli_string_after \
             "this-is-a-test" \
             "was") \
         ""
+    [[ $? -ne 0 ]] && return 1
 
     abcli_assert \
         $(abcli_string_after \
             "this-is-a-test" \
             "is") \
         "-is-a-test"
+    [[ $? -ne 0 ]] && return 1
 
     abcli_assert \
         $(abcli_string_after \
             "this-is-a-test-that-is-very-important" \
             "is") \
         "-is-a-test-that-is-very-important"
+    [[ $? -ne 0 ]] && return 1
 
     abcli_assert \
         $(abcli_string_after \
@@ -31,29 +36,34 @@ function abcli_string_after() {
         "-is-a-test-that-is-very-important-and-now-is-running"
 }
 
-function abcli_string_before() {
+function test_bluer_ai_string_before() {
     abcli_assert \
         $(abcli_string_before \
             "this-is-a-test" \
             "") \
         ""
+    [[ $? -ne 0 ]] && return 1
+
     abcli_assert \
         $(abcli_string_before \
             "this-is-a-test" \
             "was") \
         ""
+    [[ $? -ne 0 ]] && return 1
 
     abcli_assert \
         $(abcli_string_before \
             "this-is-a-test" \
             "is") \
         "th"
+    [[ $? -ne 0 ]] && return 1
 
     abcli_assert \
         $(abcli_string_before \
             "this-is-a-test-that-is-very-important" \
             "is") \
         "th"
+    [[ $? -ne 0 ]] && return 1
 
     abcli_assert \
         $(abcli_string_before \

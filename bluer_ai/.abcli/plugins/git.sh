@@ -14,7 +14,7 @@ function bluer_ai_git() {
         return
     fi
 
-    local repo_name=$(abcli_unpack_repo_name $1)
+    local repo_name=$(bluer_ai_unpack_repo_name $1)
     if [ -d "$abcli_path_git/$repo_name" ]; then
         if [[ -z "${@:2}" ]]; then
             cd $abcli_path_git/$repo_name
@@ -64,7 +64,7 @@ function bluer_ai_git() {
     fi
 
     if [ "$task" == "reset" ]; then
-        abcli_eval - "git reset --hard @{u}"
+        bluer_ai_eval - "git reset --hard @{u}"
         return
     fi
 
@@ -84,4 +84,4 @@ function bluer_ai_git() {
 
 bluer_ai_source_caller_suffix_path /git
 
-abcli_refresh_branch_and_version
+bluer_ai_refresh_branch_and_version

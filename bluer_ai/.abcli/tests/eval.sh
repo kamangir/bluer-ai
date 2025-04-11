@@ -1,9 +1,9 @@
 #! /usr/bin/env bash
 
 function test_bluer_ai_eval() {
-    abcli_eval - ls
+    bluer_ai_eval - ls
     abcli_assert "$?" 0
 
-    abcli_eval - lsz
+    bluer_ai_eval - lsz
     abcli_assert "$?" 0 not
 }

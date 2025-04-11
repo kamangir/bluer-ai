@@ -5,7 +5,7 @@ function bluer_ai_pypi_browse() {
     local plugin_name=$(abcli_option "$options" plugin bluer_ai)
     local do_token=$(abcli_option_int "$options" token 0)
 
-    local module_name=$(abcli_get_module_name_from_plugin $plugin_name)
+    local module_name=$(bluer_ai_get_module_name_from_plugin $plugin_name)
 
     local url="https://pypi.org/project/$module_name/"
     [[ "$do_token" == 1 ]] &&

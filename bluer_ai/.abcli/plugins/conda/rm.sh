@@ -13,7 +13,7 @@ function bluer_ai_conda_rm() {
     conda activate base
     [[ $? -ne 0 ]] && return 1
 
-    abcli_eval ,$options \
+    bluer_ai_eval ,$options \
         conda remove -y \
         --name $environment_name \
         --all

@@ -8,10 +8,10 @@ function abcli_log() {
 
         if [ "$what" == "on" ]; then
             touch $abcli_path_git/verbose
-            abcli_set_log_verbosity
+            bluer_ai_set_log_verbosity
         elif [ "$what" == "off" ]; then
             rm $abcli_path_git/verbose
-            abcli_set_log_verbosity
+            bluer_ai_set_log_verbosity
         else
             bluer_ai_log_error "@log: verbose: $what: command not found."
             return 1
@@ -20,7 +20,7 @@ function abcli_log() {
         return
     fi
 
-    abcli_log_local "$@"
+    bluer_ai_log_local "$@"
 
     abcli_log_remote "$@"
 }
@@ -45,7 +45,7 @@ function bluer_ai_log_warning() {
     echo "warning: $message" >>$abcli_log_filename
 }
 
-function abcli_set_log_verbosity() {
+function bluer_ai_set_log_verbosity() {
     if [[ -f $abcli_path_git/verbose ]]; then
         set -x
     else
@@ -53,7 +53,7 @@ function abcli_set_log_verbosity() {
     fi
 }
 
-abcli_set_log_verbosity
+bluer_ai_set_log_verbosity
 
 if [ -z "$abcli_log_filename" ]; then
     export abcli_log_filename=$abcli_path_git/bluer_ai.log

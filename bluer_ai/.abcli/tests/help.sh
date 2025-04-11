@@ -68,6 +68,8 @@ function test_bluer_ai_help() {
         "@gpu status show" \
         "@gpu validate" \
         \
+        "@hr" \
+        \
         "@init" \
         \
         "@latex" \
@@ -163,11 +165,11 @@ function test_bluer_ai_help() {
         "bluer_ai_source_path" \
         \
         "bluer_ai"; do
-        abcli_eval ,$options \
+        bluer_ai_eval ,$options \
             bluer_ai_help $module
         [[ $? -ne 0 ]] && return 1
 
-        abcli_hr
+        bluer_ai_hr
     done
 
     return 0

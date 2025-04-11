@@ -27,7 +27,7 @@ function bluer_ai_git_pull() {
 
     [[ "$do_init" == 0 ]] && return 0
 
-    abcli_refresh_branch_and_version
+    bluer_ai_refresh_branch_and_version
 
     if [ "$abcli_fullname" == "$abcli_fullname_before" ]; then
         abcli_log "no version change: $abcli_fullname"
