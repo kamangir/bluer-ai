@@ -1,12 +1,11 @@
 #! /usr/bin/env bash
 
-function abcli_clarify_input() {
+function bluer_ai_clarify_input() {
     local default=$2
-    local arg_name=${1:-$default}
+    local value=${1:-$default}
 
-    if [ "$arg_name" == "-" ] ; then
-        local arg_name=$default
-    fi
+    [[ "$value" == "-" ]] &&
+        value=$default
 
-    echo $arg_name
+    echo $value
 }

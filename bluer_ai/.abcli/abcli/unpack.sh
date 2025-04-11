@@ -1,9 +1,5 @@
 #! /usr/bin/env bash
 
-function abcli_unpack_keyword() {
-    echo "$@"
-}
-
 function bluer_ai_unpack_repo_name() {
     local repo_name=${1:-bluer-ai}
 

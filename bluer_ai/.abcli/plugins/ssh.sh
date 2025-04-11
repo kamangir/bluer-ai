@@ -18,7 +18,7 @@ function bluer_ai_ssh() {
     local task=$1
 
     if [ "$task" == "add" ]; then
-        local filename=$(abcli_clarify_input $2 abcli)
+        local filename=$(bluer_ai_clarify_input $2 abcli)
 
         ssh-add -k $HOME/.ssh/$filename
         return
@@ -26,7 +26,7 @@ function bluer_ai_ssh() {
 
     # https://www.raspberrypi.com/tutorials/cluster-raspberry-pi-tutorial/
     if [ "$task" == "copy_id" ]; then
-        local filename=$(abcli_clarify_input $2 abcli)
+        local filename=$(bluer_ai_clarify_input $2 abcli)
         local args=$(bluer_ai_ssh_args "${@:3}")
 
         ssh-copy-id -i $HOME/.ssh/$filename.pub $args
@@ -35,7 +35,7 @@ function bluer_ai_ssh() {
 
     # https://www.raspberrypi.com/tutorials/cluster-raspberry-pi-tutorial/
     if [ "$task" == "keygen" ]; then
-        local filename=$(abcli_clarify_input $2 abcli)
+        local filename=$(bluer_ai_clarify_input $2 abcli)
         ssh-keygen -t rsa -b 4096 -f $HOME/.ssh/$filename
         return
     fi
@@ -46,7 +46,7 @@ function bluer_ai_ssh() {
 }
 
 function bluer_ai_ssh_args() {
-    local machine_kind=$(abcli_clarify_input $1 local)
+    local machine_kind=$(bluer_ai_clarify_input $1 local)
     local machine_name=$2
     local options=$3
     local copy_seed=$(abcli_option_int "$options" seed 1)

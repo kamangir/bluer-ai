@@ -2,8 +2,9 @@
 
 function test_bluer_ai_eval() {
     bluer_ai_eval - ls
-    abcli_assert "$?" 0
+    bluer_ai_assert "$?" 0
+    [[ $? -ne 0 ]] && return 1
 
     bluer_ai_eval - lsz
-    abcli_assert "$?" 0 not
+    bluer_ai_assert "$?" 0 not
 }

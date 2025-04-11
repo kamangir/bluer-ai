@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-function abcli_source_dependencies() {
+function bluer_ai_source_dependencies() {
     source $abcli_path_bash/bootstrap/paths.sh
     source $abcli_path_bash/bootstrap/system.sh
     source $abcli_path_bash/bootstrap/logging.sh
