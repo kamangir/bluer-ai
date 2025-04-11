@@ -5,48 +5,79 @@ function test_bluer_ai_options() {
 
     options="a,~b,c=1,d=0,var_e,-f,g=2,h=that"
 
-    abcli_assert $(abcli_option "$options" a) True
-    abcli_assert $(abcli_option "$options" a default) True
+    bluer_ai_assert $(abcli_option "$options" a) True
+    [[ $? -ne 0 ]] && return 1
 
-    abcli_assert $(abcli_option "$options" b) False
-    abcli_assert $(abcli_option "$options" b default) False
+    bluer_ai_assert $(abcli_option "$options" a default) True
+    [[ $? -ne 0 ]] && return 1
 
-    abcli_assert $(abcli_option "$options" c) 1
-    abcli_assert $(abcli_option "$options" c default) 1
+    bluer_ai_assert $(abcli_option "$options" b) False
+    [[ $? -ne 0 ]] && return 1
 
-    abcli_assert $(abcli_option "$options" d) 0
-    abcli_assert $(abcli_option "$options" d default) 0
+    bluer_ai_assert $(abcli_option "$options" b default) False
+    [[ $? -ne 0 ]] && return 1
 
-    abcli_assert $(abcli_option "$options" var_e) True
-    abcli_assert $(abcli_option "$options" var_e default) True
+    bluer_ai_assert $(abcli_option "$options" c) 1
+    [[ $? -ne 0 ]] && return 1
 
-    abcli_assert $(abcli_option "$options" f) False
-    abcli_assert $(abcli_option "$options" f default) False
+    bluer_ai_assert $(abcli_option "$options" c default) 1
+    [[ $? -ne 0 ]] && return 1
 
-    abcli_assert $(abcli_option "$options" g) 2
-    abcli_assert $(abcli_option "$options" g default) 2
+    bluer_ai_assert $(abcli_option "$options" d) 0
+    [[ $? -ne 0 ]] && return 1
 
-    abcli_assert $(abcli_option "$options" h) that
-    abcli_assert $(abcli_option "$options" h default) that
+    bluer_ai_assert $(abcli_option "$options" d default) 0
+    [[ $? -ne 0 ]] && return 1
 
-    abcli_assert $(abcli_option "$options" other) ""
-    abcli_assert $(abcli_option "$options" other default) default
+    bluer_ai_assert $(abcli_option "$options" var_e) True
+    [[ $? -ne 0 ]] && return 1
+
+    bluer_ai_assert $(abcli_option "$options" var_e default) True
+    [[ $? -ne 0 ]] && return 1
+
+    bluer_ai_assert $(abcli_option "$options" f) False
+    [[ $? -ne 0 ]] && return 1
+
+    bluer_ai_assert $(abcli_option "$options" f default) False
+    [[ $? -ne 0 ]] && return 1
+
+    bluer_ai_assert $(abcli_option "$options" g) 2
+    [[ $? -ne 0 ]] && return 1
+
+    bluer_ai_assert $(abcli_option "$options" g default) 2
+    [[ $? -ne 0 ]] && return 1
+
+    bluer_ai_assert $(abcli_option "$options" h) that
+    [[ $? -ne 0 ]] && return 1
+
+    bluer_ai_assert $(abcli_option "$options" h default) that
+    [[ $? -ne 0 ]] && return 1
+
+    bluer_ai_assert $(abcli_option "$options" other) ""
+    [[ $? -ne 0 ]] && return 1
+
+    bluer_ai_assert $(abcli_option "$options" other default) default
 }
 
 function test_bluer_ai_options_choice() {
     local options=$1
 
-    abcli_assert \
+    bluer_ai_assert \
         $(abcli_option_choice \
             "x=1,~y,separated,z=12" comma,separated,list default) separated
-    abcli_assert \
+    [[ $? -ne 0 ]] && return 1
+
+    bluer_ai_assert \
         $(abcli_option_choice \
             "x=1,~y,separated,z=12" comma,separated,list) separated
+    [[ $? -ne 0 ]] && return 1
 
-    abcli_assert \
+    bluer_ai_assert \
         $(abcli_option_choice \
             "x=1,~y,attached,z=12" comma,separated,list default) default
-    abcli_assert \
+    [[ $? -ne 0 ]] && return 1
+
+    bluer_ai_assert \
         $(abcli_option_choice \
             "x=1,~y,attached,z=12" comma,separated,list) ""
 }
@@ -56,37 +87,71 @@ function test_bluer_ai_options_int() {
 
     options="a,~b,c=1,d=0,var_e,-f"
 
-    abcli_assert $(abcli_option_int "$options" a) 1
-    abcli_assert $(abcli_option_int "$options" a 0) 1
-    abcli_assert $(abcli_option_int "$options" a 1) 1
+    bluer_ai_assert $(abcli_option_int "$options" a) 1
+    [[ $? -ne 0 ]] && return 1
 
-    abcli_assert $(abcli_option_int "$options" b) 0
-    abcli_assert $(abcli_option_int "$options" b 0) 0
-    abcli_assert $(abcli_option_int "$options" b 1) 0
+    bluer_ai_assert $(abcli_option_int "$options" a 0) 1
+    [[ $? -ne 0 ]] && return 1
 
-    abcli_assert $(abcli_option_int "$options" c) 1
-    abcli_assert $(abcli_option_int "$options" c 0) 1
-    abcli_assert $(abcli_option_int "$options" c 1) 1
+    bluer_ai_assert $(abcli_option_int "$options" a 1) 1
+    [[ $? -ne 0 ]] && return 1
 
-    abcli_assert $(abcli_option_int "$options" d) 0
-    abcli_assert $(abcli_option_int "$options" d 0) 0
-    abcli_assert $(abcli_option_int "$options" d 1) 0
+    bluer_ai_assert $(abcli_option_int "$options" b) 0
+    [[ $? -ne 0 ]] && return 1
 
-    abcli_assert $(abcli_option_int "$options" var_e) 1
-    abcli_assert $(abcli_option_int "$options" var_e 0) 1
-    abcli_assert $(abcli_option_int "$options" var_e 1) 1
+    bluer_ai_assert $(abcli_option_int "$options" b 0) 0
+    [[ $? -ne 0 ]] && return 1
 
-    abcli_assert $(abcli_option_int "$options" f) 0
-    abcli_assert $(abcli_option_int "$options" f 0) 0
-    abcli_assert $(abcli_option_int "$options" f 1) 0
+    bluer_ai_assert $(abcli_option_int "$options" b 1) 0
+    [[ $? -ne 0 ]] && return 1
 
-    abcli_assert $(abcli_option_int "$options" g) 0
-    abcli_assert $(abcli_option_int "$options" g 0) 0
-    abcli_assert $(abcli_option_int "$options" g 1) 1
+    bluer_ai_assert $(abcli_option_int "$options" c) 1
+    [[ $? -ne 0 ]] && return 1
+
+    bluer_ai_assert $(abcli_option_int "$options" c 0) 1
+    [[ $? -ne 0 ]] && return 1
+
+    bluer_ai_assert $(abcli_option_int "$options" c 1) 1
+    [[ $? -ne 0 ]] && return 1
+
+    bluer_ai_assert $(abcli_option_int "$options" d) 0
+    [[ $? -ne 0 ]] && return 1
+
+    bluer_ai_assert $(abcli_option_int "$options" d 0) 0
+    [[ $? -ne 0 ]] && return 1
+
+    bluer_ai_assert $(abcli_option_int "$options" d 1) 0
+    [[ $? -ne 0 ]] && return 1
+
+    bluer_ai_assert $(abcli_option_int "$options" var_e) 1
+    [[ $? -ne 0 ]] && return 1
+
+    bluer_ai_assert $(abcli_option_int "$options" var_e 0) 1
+    [[ $? -ne 0 ]] && return 1
+
+    bluer_ai_assert $(abcli_option_int "$options" var_e 1) 1
+    [[ $? -ne 0 ]] && return 1
+
+    bluer_ai_assert $(abcli_option_int "$options" f) 0
+    [[ $? -ne 0 ]] && return 1
+
+    bluer_ai_assert $(abcli_option_int "$options" f 0) 0
+    [[ $? -ne 0 ]] && return 1
+
+    bluer_ai_assert $(abcli_option_int "$options" f 1) 0
+    [[ $? -ne 0 ]] && return 1
+
+    bluer_ai_assert $(abcli_option_int "$options" g) 0
+    [[ $? -ne 0 ]] && return 1
+
+    bluer_ai_assert $(abcli_option_int "$options" g 0) 0
+    [[ $? -ne 0 ]] && return 1
+
+    bluer_ai_assert $(abcli_option_int "$options" g 1) 1
 }
 
 function test_bluer_ai_options_subset() {
-    abcli_assert \
+    bluer_ai_assert \
         $(abcli_option_subset \
             "x=3,z=4" \
             "x=1,y=2") \

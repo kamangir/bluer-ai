@@ -22,7 +22,7 @@ function abcli_log() {
 
     bluer_ai_log_local "$@"
 
-    abcli_log_remote "$@"
+    bluer_ai_log_remote "$@"
 }
 
 function bluer_ai_log_error() {
@@ -33,7 +33,7 @@ function bluer_ai_log_error() {
     echo "error: $message" >>$abcli_log_filename
 }
 
-function abcli_log_remote() {
+function bluer_ai_log_remote() {
     echo "$@" >>$abcli_log_filename
 }
 

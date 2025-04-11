@@ -29,7 +29,7 @@ function bluer_ai_main() {
         export abcli_is_colorful=false
 
     source $abcli_path_bash/bootstrap/dependencies.sh
-    abcli_source_dependencies
+    bluer_ai_source_dependencies
 
     local do_terraform=1
     [[ "$abcli_is_mac" == true ]] && do_terraform=0

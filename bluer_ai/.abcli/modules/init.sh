@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 function bluer_ai_init() {
-    local plugin_name=$(abcli_clarify_input "$1" all)
+    local plugin_name=$(bluer_ai_clarify_input "$1" all)
 
     local options=$2
 

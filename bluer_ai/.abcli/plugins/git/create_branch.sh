@@ -9,7 +9,7 @@ function bluer_ai_git_create_branch() {
 
     local options=$2
     local do_push=$(abcli_option_int "$options" push 1)
-    local do_increment_version=$(abcli_option_int "$options" increment_version $(abcli_not $do_push))
+    local do_increment_version=$(abcli_option_int "$options" increment_version $(bluer_ai_not $do_push))
     local do_timestamp=$(abcli_option_int "$options" timestamp 1)
 
     if [[ "$do_increment_version" == 1 ]]; then
