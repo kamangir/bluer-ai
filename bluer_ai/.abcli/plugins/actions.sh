@@ -2,8 +2,8 @@
 
 function bluer_ai_perform_action() {
     local options=$1
-    local action_name=$(abcli_option "$options" action void)
-    local plugin_name=$(abcli_option "$options" plugin bluer_ai)
+    local action_name=$(bluer_ai_option "$options" action void)
+    local plugin_name=$(bluer_ai_option "$options" plugin bluer_ai)
 
     local function_name=${plugin_name}_action_${action_name}
 

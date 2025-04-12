@@ -2,8 +2,8 @@
 
 function bluer_ai_build_README() {
     local options=$1
-    local plugin_name=$(abcli_option "$options" plugin bluer_ai)
-    local do_push=$(abcli_option_int "$options" push 0)
+    local plugin_name=$(bluer_ai_option "$options" plugin bluer_ai)
+    local do_push=$(bluer_ai_option_int "$options" push 0)
 
     local repo_name=$(bluer_ai_unpack_repo_name $plugin_name)
     local module_name=$(bluer_ai_plugins get_module_name $repo_name)

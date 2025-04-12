@@ -7,13 +7,13 @@ function bluer_ai_git_clone() {
         local repo_address=git@github.com:kamangir/$repo_name.git
 
     local options=$2
-    local do_pull=$(abcli_option_int "$options" pull 0)
-    local in_object=$(abcli_option_int "$options" object 0)
-    local do_if_cloned=$(abcli_option_int "$options" if_cloned 0)
-    local do_install=$(abcli_option_int "$options" install 0)
-    local from_template=$(abcli_option_int "$options" from_template 1)
-    local source=$(abcli_option "$options" source "")
-    local then_cd=$(abcli_option_int "$options" cd 0)
+    local do_pull=$(bluer_ai_option_int "$options" pull 0)
+    local in_object=$(bluer_ai_option_int "$options" object 0)
+    local do_if_cloned=$(bluer_ai_option_int "$options" if_cloned 0)
+    local do_install=$(bluer_ai_option_int "$options" install 0)
+    local from_template=$(bluer_ai_option_int "$options" from_template 1)
+    local source=$(bluer_ai_option "$options" source "")
+    local then_cd=$(bluer_ai_option_int "$options" cd 0)
 
     [[ "$in_object" == 0 ]] &&
         pushd $abcli_path_git >/dev/null

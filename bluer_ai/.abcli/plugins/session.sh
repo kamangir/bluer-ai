@@ -8,7 +8,7 @@ function bluer_ai_session() {
 
         local do_pull=1
         [[ "$abcli_is_mac" == true ]] && do_pull=0
-        do_pull=$(abcli_option_int "$options" pull $do_pull)
+        do_pull=$(bluer_ai_option_int "$options" pull $do_pull)
 
         bluer_ai_log "session started: $options ${@:3}"
 

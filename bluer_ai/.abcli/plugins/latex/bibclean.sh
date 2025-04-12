@@ -2,7 +2,7 @@
 
 function bluer_ai_latex_bibclean() {
     local options=$1
-    local do_install=$(abcli_option_int "$options" install 0)
+    local do_install=$(bluer_ai_option_int "$options" install 0)
 
     [[ "$do_install" == 1 ]] &&
         bluer_ai_latex_install $options

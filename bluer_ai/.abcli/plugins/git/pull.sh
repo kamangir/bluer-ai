@@ -2,8 +2,8 @@
 
 function bluer_ai_git_pull() {
     local options=$1
-    local do_all=$(abcli_option_int "$options" all 1)
-    local do_init=$(abcli_option_int "$options" init 0)
+    local do_all=$(bluer_ai_option_int "$options" all 1)
+    local do_init=$(bluer_ai_option_int "$options" init 0)
 
     local abcli_fullname_before=$abcli_fullname
 

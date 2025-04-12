@@ -8,13 +8,13 @@ function bluer_ai_git_push() {
     fi
 
     local options=$2
-    local do_browse=$(abcli_option_int "$options" browse 0)
-    local do_increment_version=$(abcli_option_int "$options" increment_version 1)
-    local show_status=$(abcli_option_int "$options" status 1)
-    local first_push=$(abcli_option_int "$options" first 0)
-    local create_pull_request=$(abcli_option_int "$options" create_pull_request $first_push)
-    local do_action=$(abcli_option_int "$options" action 1)
-    local run_workflows=$(abcli_option_int "$options" workflow 1)
+    local do_browse=$(bluer_ai_option_int "$options" browse 0)
+    local do_increment_version=$(bluer_ai_option_int "$options" increment_version 1)
+    local show_status=$(bluer_ai_option_int "$options" status 1)
+    local first_push=$(bluer_ai_option_int "$options" first 0)
+    local create_pull_request=$(bluer_ai_option_int "$options" create_pull_request $first_push)
+    local do_action=$(bluer_ai_option_int "$options" action 1)
+    local run_workflows=$(bluer_ai_option_int "$options" workflow 1)
 
     if [[ "$do_increment_version" == 1 ]]; then
         bluer_ai_git_increment_version
@@ -62,7 +62,7 @@ function bluer_ai_git_push() {
         bluer_ai_git_browse . actions
 
     local build_options=$3
-    if [[ $(abcli_option_int "$build_options" build 0) == 1 ]]; then
+    if [[ $(bluer_ai_option_int "$build_options" build 0) == 1 ]]; then
         bluer_ai_pypi_build $build_options,plugin=$plugin_name
     fi
 }
