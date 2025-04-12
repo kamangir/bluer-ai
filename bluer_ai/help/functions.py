@@ -1,6 +1,7 @@
 from bluer_ai.help.generic import help_functions as generic_help_functions
 from bluer_ai.help.actions import help_perform_action
 from bluer_ai.help.blueness import help_blueness
+from bluer_ai.help.browse import help_browse
 from bluer_ai.help.conda import help_functions as help_conda
 from bluer_ai.help.docker import help_functions as help_docker
 from bluer_ai.help.env import help_functions as help_env
@@ -45,6 +46,7 @@ help_functions.update(
     {
         "badge": help_badge,
         "blueness": help_blueness,
+        "browse": help_browse,
         "cat": help_cat,
         "conda": help_conda,
         "docker": help_docker,
