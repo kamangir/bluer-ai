@@ -4,7 +4,7 @@ function bluer_ai_git_browse() {
     local repo_name=$1
 
     local options=$2
-    local browse_actions=$(abcli_option_int "$options" actions 0)
+    local browse_actions=$(bluer_ai_option_int "$options" actions 0)
 
     if [[ ",,.,-," == *",$repo_name,"* ]]; then
         repo_name=$(bluer_ai_git_get_repo_name)

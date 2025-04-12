@@ -2,11 +2,11 @@
 
 function bluer_ai_latex_build() {
     local options=$1
-    local do_dryrun=$(abcli_option_int "$options" dryrun 0)
-    local do_install=$(abcli_option_int "$options" install 0)
-    local do_ps=$(abcli_option_int "$options" ps 1)
-    local do_pdf=$(abcli_option_int "$options" pdf 1)
-    local bib_file=$(abcli_option "$options" bib)
+    local do_dryrun=$(bluer_ai_option_int "$options" dryrun 0)
+    local do_install=$(bluer_ai_option_int "$options" install 0)
+    local do_ps=$(bluer_ai_option_int "$options" ps 1)
+    local do_pdf=$(bluer_ai_option_int "$options" pdf 1)
+    local bib_file=$(bluer_ai_option "$options" bib)
 
     [[ "$do_install" == 1 ]] &&
         bluer_ai_latex_install $options

@@ -4,7 +4,7 @@ function bluer_ai_pypi() {
     local task=$1
 
     local options=$2
-    local plugin_name=$(abcli_option "$options" plugin bluer_ai)
+    local plugin_name=$(bluer_ai_option "$options" plugin bluer_ai)
 
     local function_name=bluer_ai_pypi_$task
     if [[ $(type -t $function_name) == "function" ]]; then

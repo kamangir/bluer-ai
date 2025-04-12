@@ -2,8 +2,8 @@
 
 function bluer_ai_pypi_browse() {
     local options=$1
-    local plugin_name=$(abcli_option "$options" plugin bluer_ai)
-    local do_token=$(abcli_option_int "$options" token 0)
+    local plugin_name=$(bluer_ai_option "$options" plugin bluer_ai)
+    local do_token=$(bluer_ai_option_int "$options" token 0)
 
     local module_name=$(bluer_ai_get_module_name_from_plugin $plugin_name)
 

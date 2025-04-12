@@ -16,6 +16,7 @@ from bluer_ai.help.logging import help_cat
 from bluer_ai.help.logging import help_functions as help_log
 from bluer_ai.help.list import help_functions as help_list
 from bluer_ai.help.open import help_open
+from bluer_ai.help.options import help_functions as help_option
 from bluer_ai.help.pause import help_pause
 from bluer_ai.help.plugins import help_functions as help_plugins
 from bluer_ai.help.repeat import help_repeat
@@ -60,6 +61,7 @@ help_functions.update(
         "log": help_log,
         "list": help_list,
         "open": help_open,
+        "option": help_option,
         "pause": help_pause,
         "perform_action": help_perform_action,
         "plugins": help_plugins,

@@ -26,7 +26,7 @@ function bluer_ai_init() {
     [[ "$current_path" == "$abcli_path_git"* ]] &&
         cd $current_path
 
-    local do_clear=$(abcli_option_int "$options" clear 0)
+    local do_clear=$(bluer_ai_option_int "$options" clear 0)
     [[ "$do_clear" == 1 ]] &&
         clear
 

@@ -2,7 +2,7 @@
 
 function bluer_ai_git_increment_version() {
     local options=$1
-    local do_diff=$(abcli_option_int "$options" diff 0)
+    local do_diff=$(bluer_ai_option_int "$options" diff 0)
 
     python3 -m bluer_ai.plugins.git \
         increment_version \

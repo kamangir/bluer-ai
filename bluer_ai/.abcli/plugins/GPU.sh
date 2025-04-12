@@ -23,7 +23,7 @@ function bluer_ai_gpu_status() {
 
     if [ $task == "get" ]; then
         local options=$2
-        local from_cache=$(abcli_option_int "$options" from_cache 1)
+        local from_cache=$(bluer_ai_option_int "$options" from_cache 1)
 
         local status=""
         [[ "$from_cache" == 1 ]] &&

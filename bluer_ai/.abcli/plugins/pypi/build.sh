@@ -3,11 +3,11 @@
 function bluer_ai_pypi_build() {
     local options=$1
 
-    local plugin_name=$(abcli_option "$options" plugin bluer_ai)
-    local do_install=$(abcli_option_int "$options" install 0)
-    local do_upload=$(abcli_option_int "$options" upload 1)
-    local do_browse=$(abcli_option_int "$options" browse 0)
-    local rm_dist=$(abcli_option_int "$options" rm_dist 1)
+    local plugin_name=$(bluer_ai_option "$options" plugin bluer_ai)
+    local do_install=$(bluer_ai_option_int "$options" install 0)
+    local do_upload=$(bluer_ai_option_int "$options" upload 1)
+    local do_browse=$(bluer_ai_option_int "$options" browse 0)
+    local rm_dist=$(bluer_ai_option_int "$options" rm_dist 1)
 
     [[ "$do_install" == 1 ]] &&
         bluer_ai_pypi_install

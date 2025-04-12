@@ -33,7 +33,7 @@ function bluer_ai_main() {
 
     local do_terraform=1
     [[ "$abcli_is_mac" == true ]] && do_terraform=0
-    do_terraform=$(abcli_option_int "$options" terraform $do_terraform)
+    do_terraform=$(bluer_ai_option_int "$options" terraform $do_terraform)
 
     [[ "$do_terraform" == 1 ]] &&
         bluer_ai_terraform
