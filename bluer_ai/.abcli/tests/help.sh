@@ -90,6 +90,10 @@ function test_bluer_ai_help() {
         "@list resize" \
         "@list sort" \
         \
+        "@log" \
+        "@log verbose" \
+        "@log::list" \
+        \
         "@open" \
         \
         "@pause" \
