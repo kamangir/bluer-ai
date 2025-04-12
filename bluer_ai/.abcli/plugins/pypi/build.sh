@@ -14,11 +14,11 @@ function bluer_ai_pypi_build() {
 
     local repo_name=$(bluer_ai_unpack_repo_name $plugin_name)
     if [[ ! -d "$abcli_path_git/$repo_name" ]]; then
-        abcli_log "-@pypi: build: $repo_name: repo not found."
+        bluer_ai_log "@pypi: build: $repo_name: repo not found."
         return 1
     fi
 
-    abcli_log "pypi: building $plugin_name ($repo_name)..."
+    bluer_ai_log "pypi: building $plugin_name ($repo_name)..."
 
     pushd $abcli_path_git/$repo_name >/dev/null
 

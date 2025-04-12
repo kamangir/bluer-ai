@@ -13,7 +13,7 @@ function bluer_ai_git_status() {
     pushd $abcli_path_git >/dev/null
     local repo_name
     for repo_name in $(ls -d */); do
-        abcli_log $repo_name
+        bluer_ai_log $repo_name
 
         cd $repo_name
         git status

@@ -90,6 +90,10 @@ function test_bluer_ai_help() {
         "@list resize" \
         "@list sort" \
         \
+        "@log" \
+        "@log verbose" \
+        "@log::list" \
+        \
         "@open" \
         \
         "@pause" \
@@ -151,6 +155,9 @@ function test_bluer_ai_help() {
         "@terraform cat" \
         "@terraform disable" \
         "@terraform enable" \
+        \
+        "@timestamp" \
+        "@@timestamp" \
         \
         "@warn" \
         \

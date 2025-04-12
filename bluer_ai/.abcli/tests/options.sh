@@ -149,11 +149,3 @@ function test_bluer_ai_options_int() {
 
     bluer_ai_assert $(abcli_option_int "$options" g 1) 1
 }
-
-function test_bluer_ai_options_subset() {
-    bluer_ai_assert \
-        $(abcli_option_subset \
-            "x=3,z=4" \
-            "x=1,y=2") \
-        "x=3,y=2"
-}

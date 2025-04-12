@@ -9,7 +9,7 @@ function bluer_ai_latex_bibclean() {
 
     local filename=${2:-void}
 
-    local temp_filename=$abcli_path_temp/bibclean-$(abcli_string_timestamp_short).bib
+    local temp_filename=$abcli_path_temp/bibclean-$(bluer_ai_string_timestamp_short).bib
 
     bluer_ai_eval ,$options \
         bibclean $filename >$temp_filename

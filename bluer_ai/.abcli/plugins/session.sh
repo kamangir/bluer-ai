@@ -10,13 +10,13 @@ function bluer_ai_session() {
         [[ "$abcli_is_mac" == true ]] && do_pull=0
         do_pull=$(abcli_option_int "$options" pull $do_pull)
 
-        abcli_log "session started: $options ${@:3}"
+        bluer_ai_log "session started: $options ${@:3}"
 
         while true; do
             [[ "$do_pull" == 1 ]] &&
                 bluer_ai_git_pull init
 
-            abcli_log "session initialized: username=$USER, hostname=$(hostname), EUID=$EUID, python3=$(which python3)"
+            bluer_ai_log "session initialized: username=$USER, hostname=$(hostname), EUID=$EUID, python3=$(which python3)"
 
             if [[ "$abcli_is_mac" == false ]]; then
                 sudo rm -v $ABCLI_PATH_IGNORE/session_reply_*
@@ -38,26 +38,26 @@ function bluer_ai_session() {
                 bluer_ai_sleep seconds=60
             fi
 
-            abcli_log "session closed."
+            bluer_ai_log "session closed."
 
             if [ -f "$ABCLI_PATH_IGNORE/session_reply_exit" ]; then
-                abcli_log "reply_to_bash(exit)"
+                bluer_ai_log "reply_to_bash(exit)"
                 return
             fi
 
             if [ -f "$ABCLI_PATH_IGNORE/session_reply_reboot" ]; then
-                abcli_log "reply_to_bash(reboot)"
+                bluer_ai_log "reply_to_bash(reboot)"
                 bluer_objects_host reboot
             fi
 
             if [ -f "$ABCLI_PATH_IGNORE/session_reply_seed" ]; then
-                abcli_log "reply_to_bash(seed)"
+                bluer_ai_log "reply_to_bash(seed)"
 
                 bluer_ai_git_pull
                 bluer_ai_init
 
                 cat "$ABCLI_PATH_IGNORE/session_reply_seed" | while read line; do
-                    abcli_log "executing: $line"
+                    bluer_ai_log "executing: $line"
                     eval $line
                 done
             fi
@@ -67,11 +67,11 @@ function bluer_ai_session() {
             fi
 
             if [ -f "$ABCLI_PATH_IGNORE/session_reply_update" ]; then
-                abcli_log "reply_to_bash(update)"
+                bluer_ai_log "reply_to_bash(update)"
             fi
 
             if [ -f "$ABCLI_PATH_IGNORE/disabled" ]; then
-                abcli_log "bluer_ai is disabled."
+                bluer_ai_log "bluer_ai is disabled."
                 return
             fi
 

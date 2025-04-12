@@ -10,7 +10,7 @@ function bluer_ai_gpu() {
     fi
 
     if [ $task == "validate" ]; then
-        abcli_log $(python3 -m bluer_ai.plugins.gpu validate)
+        bluer_ai_log $(python3 -m bluer_ai.plugins.gpu validate)
         return
     fi
 
@@ -37,14 +37,14 @@ function bluer_ai_gpu_status() {
         export bluer_ai_gpu_status_cache=$status
 
         $bluer_ai_gpu_status_cache && local message="found. ✅" || local message='not found.'
-        abcli_log "🔋 gpu: $message"
+        bluer_ai_log "🔋 gpu: $message"
         return
     fi
 
     if [ $task == "show" ]; then
         bluer_ai_eval - nvidia-smi
 
-        abcli_log "CUDA_VISIBLE_DEVICES=$CUDA_VISIBLE_DEVICES"
+        bluer_ai_log "CUDA_VISIBLE_DEVICES=$CUDA_VISIBLE_DEVICES"
 
         bluer_ai_gpu_status get
 

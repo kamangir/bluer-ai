@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-function abcli_log() {
+function bluer_ai_log() {
     local task=$1
 
     if [ "$task" == "verbose" ]; then
@@ -30,11 +30,11 @@ function bluer_ai_log_error() {
 
     printf "❗️ ${RED}$message$NC\n"
 
-    echo "error: $message" >>$abcli_log_filename
+    echo "error: $message" >>$bluer_ai_log_filename
 }
 
 function bluer_ai_log_remote() {
-    echo "$@" >>$abcli_log_filename
+    echo "$@" >>$bluer_ai_log_filename
 }
 
 function bluer_ai_log_warning() {
@@ -42,7 +42,7 @@ function bluer_ai_log_warning() {
 
     printf "$YELLOW$message$NC\n"
 
-    echo "warning: $message" >>$abcli_log_filename
+    echo "warning: $message" >>$bluer_ai_log_filename
 }
 
 function bluer_ai_set_log_verbosity() {
@@ -55,6 +55,6 @@ function bluer_ai_set_log_verbosity() {
 
 bluer_ai_set_log_verbosity
 
-if [ -z "$abcli_log_filename" ]; then
-    export abcli_log_filename=$abcli_path_git/bluer_ai.log
+if [ -z "$bluer_ai_log_filename" ]; then
+    export bluer_ai_log_filename=$abcli_path_git/bluer_ai.log
 fi

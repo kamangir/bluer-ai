@@ -43,7 +43,7 @@ function bluer_ai_main() {
     [[ "$abcli_is_in_notebook" == false ]] &&
         bluer_ai_select $abcli_object_name
 
-    abcli_log "🌀 $abcli_fullname"
+    bluer_ai_log "🌀 $abcli_fullname"
 
     local command_line="${@:2}"
     if [[ ! -z "$command_line" ]]; then
@@ -52,7 +52,7 @@ function bluer_ai_main() {
             bluer_ai_log_error "@main: failed: $command_line"
             return 1
         else
-            abcli_log "✅ $command_line"
+            bluer_ai_log "✅ $command_line"
             return 0
         fi
     fi

@@ -41,7 +41,7 @@ function bluer_ai_ssh() {
     fi
 
     local args=$(bluer_ai_ssh_args "$@")
-    abcli_log "@ssh: $args"
+    bluer_ai_log "@ssh: $args"
     ssh $args
 }
 

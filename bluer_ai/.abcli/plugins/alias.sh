@@ -35,7 +35,7 @@ alias @plugins=bluer_ai_plugins
 
 alias @pypi=bluer_ai_pypi
 
-alias @random=abcli_string_random
+alias @random=bluer_ai_string_random
 
 alias @screen=bluer_ai_screen
 

@@ -57,7 +57,7 @@ def help_log_list(
 
     return show_usage(
         [
-            "bluer_ai_log_list",
+            "@log::list",
             "<this,that>",
         ]
         + args,

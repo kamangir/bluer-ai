@@ -55,7 +55,7 @@ function bluer_ai_source_dependencies() {
         --log 0 \
         --delim space)
     if [[ -z "$list_of_installed_plugins" ]]; then
-        abcli_log "🌀 no pip-installed plugins."
+        bluer_ai_log "🌀 no pip-installed plugins."
         return 0
     else
         bluer_ai_log_list "$list_of_installed_plugins" \
@@ -68,7 +68,7 @@ function bluer_ai_source_dependencies() {
             --delim space \
             --return_path 1)
         for module_path in $paths_of_installed_plugins; do
-            #abcli_log "🔵 $module_path"
+            #bluer_ai_log "🔵 $module_path"
             pushd $module_path >/dev/null
 
             local filename
