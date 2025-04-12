@@ -18,7 +18,7 @@ function bluer_ai_git_create_branch() {
     fi
 
     [[ "$do_timestamp" == 1 ]] &&
-        branch_name=$branch_name-$(abcli_string_timestamp_short)
+        branch_name=$branch_name-$(bluer_ai_string_timestamp_short)
 
     git pull
     [[ $? -ne 0 ]] && return 1

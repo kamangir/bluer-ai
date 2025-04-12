@@ -18,13 +18,13 @@ function bluer_ai_git_clone() {
     [[ "$in_object" == 0 ]] &&
         pushd $abcli_path_git >/dev/null
 
-    abcli_log "cloning $repo_address -> $(pwd)"
+    bluer_ai_log "cloning $repo_address -> $(pwd)"
 
     # https://docs.github.com/en/repositories/creating-and-managing-repositories/duplicating-a-repository
     # https://gist.github.com/0xjac/85097472043b697ab57ba1b1c7530274
     if [ ! -z "$source" ]; then
         git clone --bare git@github.com:$source.git
-        local source_repo_name=$(abcli_string_after $source /)
+        local source_repo_name=$(bluer_ai_string_after $source /)
         mv $source_repo_name.git $repo_name
 
         cd $repo_name

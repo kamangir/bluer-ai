@@ -8,7 +8,7 @@ function bluer_ai_plugins_transform() {
     fi
     local plugin_name=$(bluer_ai_plugin_name_from_repo $repo_name)
 
-    abcli_log "bluer-plugin -> $repo_name ($plugin_name)"
+    bluer_ai_log "bluer-plugin -> $repo_name ($plugin_name)"
 
     pushd $abcli_path_git/$repo_name >/dev/null
 

@@ -152,6 +152,9 @@ function test_bluer_ai_help() {
         "@terraform disable" \
         "@terraform enable" \
         \
+        "@timestamp" \
+        "@@timestamp" \
+        \
         "@warn" \
         \
         "@watch" \

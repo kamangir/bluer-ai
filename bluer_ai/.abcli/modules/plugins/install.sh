@@ -10,7 +10,7 @@ function bluer_ai_plugins_install() {
                 continue
             fi
 
-            abcli_log "$dir ..."
+            bluer_ai_log "$dir ..."
 
             cd $dir
             pip3 install -e .
@@ -27,7 +27,7 @@ function bluer_ai_plugins_install() {
         return 1
     fi
 
-    abcli_log "installing $plugin_name from $repo_name"
+    bluer_ai_log "installing $plugin_name from $repo_name"
 
     pushd $abcli_path_git/$repo_name >/dev/null
     pip3 install -e .

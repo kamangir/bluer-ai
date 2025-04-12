@@ -32,7 +32,7 @@ function bluer_ai_git_review() {
         fi
 
         bluer_ai_hr
-        abcli_log "# Enter|space: next - p: previous - q: quit."
+        bluer_ai_log "# Enter|space: next - p: previous - q: quit."
         read -n 1 char
         [[ "$char" == "q" ]] && break
         [[ -z "$char" ]] && ((index++))

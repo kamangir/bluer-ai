@@ -10,7 +10,7 @@ function bluer_ai_perform_action() {
     [[ $(type -t $function_name) != "function" ]] &&
         return 0
 
-    abcli_log "✴️  action: $plugin_name: $action_name."
+    bluer_ai_log "✴️  action: $plugin_name: $action_name."
     $function_name "${@:2}"
 }
 

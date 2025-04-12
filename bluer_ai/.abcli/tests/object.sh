@@ -1,9 +1,9 @@
 #! /usr/bin/env bash
 
 function test_bluer_ai_clarify_object_no_default() {
-    local object_1=$(abcli_string_timestamp)
-    local object_2=$(abcli_string_timestamp)
-    local object_3=$(abcli_string_timestamp)
+    local object_1=$(bluer_ai_string_timestamp)
+    local object_2=$(bluer_ai_string_timestamp)
+    local object_3=$(bluer_ai_string_timestamp)
 
     local var
 
@@ -43,9 +43,9 @@ function test_bluer_ai_clarify_object_no_default() {
 }
 
 function test_bluer_ai_clarify_object_some_default() {
-    local object_1=$(abcli_string_timestamp)
-    local object_2=$(abcli_string_timestamp)
-    local object_3=$(abcli_string_timestamp)
+    local object_1=$(bluer_ai_string_timestamp)
+    local object_2=$(bluer_ai_string_timestamp)
+    local object_3=$(bluer_ai_string_timestamp)
 
     local var
 
@@ -85,9 +85,9 @@ function test_bluer_ai_clarify_object_some_default() {
 }
 
 function test_bluer_ai_clarify_object_dot_default() {
-    local object_1=$(abcli_string_timestamp)
-    local object_2=$(abcli_string_timestamp)
-    local object_3=$(abcli_string_timestamp)
+    local object_1=$(bluer_ai_string_timestamp)
+    local object_2=$(bluer_ai_string_timestamp)
+    local object_3=$(bluer_ai_string_timestamp)
 
     local var
 
@@ -127,9 +127,9 @@ function test_bluer_ai_clarify_object_dot_default() {
 }
 
 function test_bluer_ai_clarify_object_dot_dot_default() {
-    local object_1=$(abcli_string_timestamp)
-    local object_2=$(abcli_string_timestamp)
-    local object_3=$(abcli_string_timestamp)
+    local object_1=$(bluer_ai_string_timestamp)
+    local object_2=$(bluer_ai_string_timestamp)
+    local object_3=$(bluer_ai_string_timestamp)
 
     local var
 
@@ -169,9 +169,9 @@ function test_bluer_ai_clarify_object_dot_dot_default() {
 }
 
 function test_bluer_ai_clarify_object_dot_dot_dot_default() {
-    local object_1=$(abcli_string_timestamp)
-    local object_2=$(abcli_string_timestamp)
-    local object_3=$(abcli_string_timestamp)
+    local object_1=$(bluer_ai_string_timestamp)
+    local object_2=$(bluer_ai_string_timestamp)
+    local object_3=$(bluer_ai_string_timestamp)
 
     local var
 

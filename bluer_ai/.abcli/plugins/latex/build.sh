@@ -19,7 +19,7 @@ function bluer_ai_latex_build() {
     local path=$(dirname "$full_path")
     local filename=$(basename "$full_path")
     filename=${filename%.*}
-    abcli_log "building $path / $filename.tex..."
+    bluer_ai_log "building $path / $filename.tex..."
 
     pushd $path >/dev/null
 
@@ -28,7 +28,7 @@ function bluer_ai_latex_build() {
 
     local round
     for round in 1 2 3; do
-        abcli_log "round $round..."
+        bluer_ai_log "round $round..."
 
         bluer_ai_eval dryrun=$do_dryrun \
             latex \
