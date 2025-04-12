@@ -1,9 +1,5 @@
 #! /usr/bin/env bash
 
-function abcli_git() {
-    bluer_ai_git "$@"
-}
-
 function bluer_ai_git() {
     local task=$1
     [[ "$task" == "increment" ]] && task="increment_version"
