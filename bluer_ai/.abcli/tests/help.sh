@@ -25,15 +25,6 @@ function test_bluer_ai_help() {
         "@conda list" \
         "@conda rm" \
         \
-        "@docker browse " \
-        "@docker build " \
-        "@docker clear " \
-        "@docker eval " \
-        "@docker push " \
-        "@docker run " \
-        "@docker seed " \
-        "@docker source " \
-        \
         "@env" \
         "@env backup" \
         "@env backup list" \
