@@ -1,6 +1,6 @@
 # 🌀 bluer-ai
 
-🌀 `bluer-ai` is an implementation of 🔻 [giza](https://github.com/kamangir/giza) and a language [to speak AI](https://github.com/kamangir/kamangir).
+🌀 `bluer-ai` is an implementation of 🔻 [giza](https://github.com/kamangir/giza) and a language [to speak AI](https://github.com/kamangir/bluer-south).
 
 ![image](https://github.com/kamangir/assets/blob/main/awesome-bash-cli/marquee-2024-10-26.jpg?raw=true)
 
