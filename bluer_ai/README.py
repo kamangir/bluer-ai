@@ -1,8 +1,10 @@
 import os
 
+from bluer_options.help.functions import get_help
 from bluer_objects import file, README
 
 from bluer_ai import NAME, VERSION, ICON, REPO_NAME
+from bluer_ai.help.functions import help_functions
 
 
 def build():
@@ -13,4 +15,9 @@ def build():
         VERSION=VERSION,
         REPO_NAME=REPO_NAME,
         MODULE_NAME=NAME,
+        help_function=lambda tokens: get_help(
+            tokens,
+            help_functions,
+            mono=True,
+        ),
     )

@@ -4,6 +4,12 @@
 
 ![image](https://github.com/kamangir/assets/blob/main/awesome-bash-cli/marquee-2024-10-26.jpg?raw=true)
 
+# aliases
+
+logging.
+
+help::: bluer_ai log
+
 # dev install
 
 - [Amazon EC2 instances](./bluer_ai/docs/install/ec2.md)
