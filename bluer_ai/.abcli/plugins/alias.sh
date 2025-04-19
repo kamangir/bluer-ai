@@ -24,6 +24,8 @@ alias @warn=bluer_ai_log_warning
 alias @mac='if [ "$abcli_is_mac" == true ]; then'
 alias @.='fi'
 
+alias @perform_action=bluer_ai_perform_action
+
 alias @plugins=bluer_ai_plugins
 
 alias @pypi=bluer_ai_pypi
