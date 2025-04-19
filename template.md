@@ -4,7 +4,7 @@
 
 ![image](https://github.com/kamangir/assets/blob/main/awesome-bash-cli/marquee-2024-10-26.jpg?raw=true)
 
-# install
+# installation
 
 ```bash
 pip install bluer_ai
