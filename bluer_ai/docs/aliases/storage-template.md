@@ -1,3 +1,3 @@
 # storage
 
-help::: bluer_objects storage
+help::: bluer_ai storage
