@@ -7,6 +7,7 @@
 # aliases
 
 - [logging](./bluer_ai/docs/aliases/logging.md)
+- [terraform](./bluer_ai/docs/aliases/terraform.md)
 
 # dev install
 
