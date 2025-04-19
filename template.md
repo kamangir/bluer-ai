@@ -9,6 +9,7 @@
 - [@conda](./bluer_ai/docs/aliases/conda.md)
 - [@git](./bluer_ai/docs/aliases/git.md)
 - [@gpu](./bluer_ai/docs/aliases/gpu.md)
+- [@init](./bluer_ai/docs/aliases/init.md)
 - [@latex](./bluer_ai/docs/aliases/latex.md)
 - [@logging](./bluer_ai/docs/aliases/logging.md)
 - [@pypi](./bluer_ai/docs/aliases/pypi.md)
