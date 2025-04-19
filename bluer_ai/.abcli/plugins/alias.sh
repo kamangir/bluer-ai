@@ -6,6 +6,8 @@ alias @build_README=bluer_ai_build_README
 
 alias @conda=bluer_ai_conda
 
+alias @docker=bluer_ai_docker
+
 alias @git=bluer_ai_git
 alias @git++="bluer_ai_git increment_version"
 
