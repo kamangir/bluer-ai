@@ -29,10 +29,14 @@
 
 # release install
 
-not recommended.
-
 ```bash
 pip install bluer_ai
+```
+
+Add to `bashrc`, `.bash_profile`, or the relevant startup file.
+
+```bash
+source $(python3 -m bluer_ai locate)/.abcli/bluer_ai.sh
 ```
 
 ---
