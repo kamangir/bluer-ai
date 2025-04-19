@@ -7,6 +7,7 @@
 # aliases
 
 - [conda](./bluer_ai/docs/aliases/conda.md)
+- [git](./bluer_ai/docs/aliases/git.md)
 - [logging](./bluer_ai/docs/aliases/logging.md)
 - [terraform](./bluer_ai/docs/aliases/terraform.md)
 

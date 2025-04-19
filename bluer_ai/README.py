@@ -25,6 +25,7 @@ def build():
         for path in [
             "..",
             "docs/aliases/conda.md",
+            "docs/aliases/git.md",
             "docs/aliases/logging.md",
             "docs/aliases/terraform.md",
         ]
