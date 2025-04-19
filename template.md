@@ -6,10 +6,17 @@
 
 # aliases
 
-- [conda](./bluer_ai/docs/aliases/conda.md)
-- [git](./bluer_ai/docs/aliases/git.md)
-- [logging](./bluer_ai/docs/aliases/logging.md)
-- [terraform](./bluer_ai/docs/aliases/terraform.md)
+- [@conda](./bluer_ai/docs/aliases/conda.md)
+- [@git](./bluer_ai/docs/aliases/git.md)
+- [@gpu](./bluer_ai/docs/aliases/gpu.md)
+- [@latex](./bluer_ai/docs/aliases/latex.md)
+- [@logging](./bluer_ai/docs/aliases/logging.md)
+- [@pypi](./bluer_ai/docs/aliases/pypi.md)
+- [@screen](./bluer_ai/docs/aliases/screen.md)
+- [@seed](./bluer_ai/docs/aliases/seed.md) 🌱
+- [@ssh](./bluer_ai/docs/aliases/ssh.md)
+- [@terraform](./bluer_ai/docs/aliases/terraform.md)
+- [@wifi](./bluer_ai/docs/aliases/wifi.md)
 
 # dev install
 

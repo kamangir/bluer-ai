@@ -6,10 +6,17 @@
 
 # aliases
 
-- [conda](./bluer_ai/docs/aliases/conda.md)
-- [git](./bluer_ai/docs/aliases/git.md)
-- [logging](./bluer_ai/docs/aliases/logging.md)
-- [terraform](./bluer_ai/docs/aliases/terraform.md)
+- [@conda](./bluer_ai/docs/aliases/conda.md)
+- [@git](./bluer_ai/docs/aliases/git.md)
+- [@gpu](./bluer_ai/docs/aliases/gpu.md)
+- [@latex](./bluer_ai/docs/aliases/latex.md)
+- [@logging](./bluer_ai/docs/aliases/logging.md)
+- [@pypi](./bluer_ai/docs/aliases/pypi.md)
+- [@screen](./bluer_ai/docs/aliases/screen.md)
+- [@seed](./bluer_ai/docs/aliases/seed.md) 🌱
+- [@ssh](./bluer_ai/docs/aliases/ssh.md)
+- [@terraform](./bluer_ai/docs/aliases/terraform.md)
+- [@wifi](./bluer_ai/docs/aliases/wifi.md)
 
 # dev install
 
@@ -36,4 +43,4 @@ pip install bluer_ai
 
 [![pylint](https://github.com/kamangir/bluer-ai/actions/workflows/pylint.yml/badge.svg)](https://github.com/kamangir/bluer-ai/actions/workflows/pylint.yml) [![pytest](https://github.com/kamangir/bluer-ai/actions/workflows/pytest.yml/badge.svg)](https://github.com/kamangir/bluer-ai/actions/workflows/pytest.yml) [![bashtest](https://github.com/kamangir/bluer-ai/actions/workflows/bashtest.yml/badge.svg)](https://github.com/kamangir/bluer-ai/actions/workflows/bashtest.yml) [![PyPI version](https://img.shields.io/pypi/v/bluer_ai.svg)](https://pypi.org/project/bluer_ai/) [![PyPI - Downloads](https://img.shields.io/pypi/dd/bluer_ai)](https://pypistats.org/packages/bluer_ai)
 
-built by 🌀 [`bluer README`](https://github.com/kamangir/bluer-objects/tree/main/bluer_objects/README), based on 🌀 [`bluer_ai-12.97.1`](https://github.com/kamangir/bluer-ai).
+built by 🌀 [`bluer README`](https://github.com/kamangir/bluer-objects/tree/main/bluer_objects/README), based on 🌀 [`bluer_ai-12.98.1`](https://github.com/kamangir/bluer-ai).
