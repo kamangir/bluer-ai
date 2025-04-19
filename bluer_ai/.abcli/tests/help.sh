@@ -5,6 +5,10 @@ function test_bluer_ai_help() {
 
     local module
     for module in \
+        \
+        "@assert" \
+        "@assert list" \
+        \
         "@badge" \
         \
         "@browse" \
@@ -12,6 +16,8 @@ function test_bluer_ai_help() {
         "@build_README" \
         \
         "@cat" \
+        \
+        "@code" \
         \
         "@conda" \
         "@conda create" \
@@ -68,6 +74,8 @@ function test_bluer_ai_help() {
         "@gpu status show" \
         "@gpu validate" \
         \
+        "@help" \
+        \
         "@hr" \
         \
         "@init" \
@@ -93,6 +101,8 @@ function test_bluer_ai_help() {
         "@log" \
         "@log verbose" \
         "@log::list" \
+        \
+        "@not" \
         \
         "@open" \
         \

@@ -1,13 +1,16 @@
 from bluer_ai.help.generic import help_functions as generic_help_functions
 from bluer_ai.help.actions import help_perform_action
+from bluer_ai.help.assert_ import help_functions as help_assert
 from bluer_ai.help.blueness import help_blueness
 from bluer_ai.help.browse import help_browse
+from bluer_ai.help.code import help_code
 from bluer_ai.help.conda import help_functions as help_conda
 from bluer_ai.help.docker import help_functions as help_docker
 from bluer_ai.help.env import help_functions as help_env
 from bluer_ai.help.eval import help_eval
 from bluer_ai.help.git import help_functions as help_git
 from bluer_ai.help.gpu import help_functions as help_gpu
+from bluer_ai.help.help import help_help
 from bluer_ai.help.hr import help_hr
 from bluer_ai.help.init import help_init
 from bluer_ai.help.instance import help_functions as help_instance
@@ -15,6 +18,7 @@ from bluer_ai.help.latex import help_functions as help_latex
 from bluer_ai.help.logging import help_cat
 from bluer_ai.help.logging import help_functions as help_log
 from bluer_ai.help.list import help_functions as help_list
+from bluer_ai.help.not_ import help_not
 from bluer_ai.help.open import help_open
 from bluer_ai.help.options import help_functions as help_option
 from bluer_ai.help.pause import help_pause
@@ -44,22 +48,26 @@ help_functions = generic_help_functions(plugin_name="bluer_ai")
 
 help_functions.update(
     {
+        "assert": help_assert,
         "badge": help_badge,
         "blueness": help_blueness,
         "browse": help_browse,
         "cat": help_cat,
+        "code": help_code,
         "conda": help_conda,
         "docker": help_docker,
         "env": help_env,
         "eval": help_eval,
         "git": help_git,
         "gpu": help_gpu,
+        "help": help_help,
         "hr": help_hr,
         "init": help_init,
         "instance": help_instance,
         "latex": help_latex,
         "log": help_log,
         "list": help_list,
+        "not": help_not,
         "open": help_open,
         "option": help_option,
         "pause": help_pause,
