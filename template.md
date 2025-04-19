@@ -6,9 +6,7 @@
 
 # aliases
 
-logging.
-
-help::: bluer_ai log
+- [logging](./bluer_ai/docs/aliases/logging.md)
 
 # dev install
 
