@@ -65,7 +65,8 @@ source $(python3 -m bluer_ai locate)/.abcli/bluer_ai.sh
 [@watch](./bluer_ai/docs/aliases/watch.md).
 
 [@objects](https://github.com/kamangir/bluer-objects): 
-[@select](./bluer_ai/docs/aliases/select.md).
+[@select](./bluer_ai/docs/aliases/select.md), 
+[@storage](./bluer_ai/docs/aliases/storage.md).
 
 ---
 
