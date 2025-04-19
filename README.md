@@ -6,11 +6,11 @@
 
 # dev install
 
-- [Amazon EC2 instances](./bluer_ai/docs/ec2.md)
-- [Amazon SageMaker](./bluer_ai/docs/SageMaker.md)
-- [Jetson Nano](./bluer_ai/docs/Jetson-Nano.md)
-- [macOS](./bluer_ai/docs/macOS.md)
-- [Raspberry Pi](./bluer_ai/docs/RPi.md)
+- [Amazon EC2 instances](./bluer_ai/docs/install/ec2.md)
+- [Amazon SageMaker](./bluer_ai/docs/install/SageMaker.md)
+- [Jetson Nano](./bluer_ai/docs/install/Jetson-Nano.md)
+- [macOS](./bluer_ai/docs/install/macOS.md)
+- [Raspberry Pi](./bluer_ai/docs/install/RPi.md)
 
 # release install
 
@@ -29,4 +29,4 @@ pip install bluer_ai
 
 [![pylint](https://github.com/kamangir/bluer-ai/actions/workflows/pylint.yml/badge.svg)](https://github.com/kamangir/bluer-ai/actions/workflows/pylint.yml) [![pytest](https://github.com/kamangir/bluer-ai/actions/workflows/pytest.yml/badge.svg)](https://github.com/kamangir/bluer-ai/actions/workflows/pytest.yml) [![bashtest](https://github.com/kamangir/bluer-ai/actions/workflows/bashtest.yml/badge.svg)](https://github.com/kamangir/bluer-ai/actions/workflows/bashtest.yml) [![PyPI version](https://img.shields.io/pypi/v/bluer_ai.svg)](https://pypi.org/project/bluer_ai/) [![PyPI - Downloads](https://img.shields.io/pypi/dd/bluer_ai)](https://pypistats.org/packages/bluer_ai)
 
-built by 🌀 [`bluer README`](https://github.com/kamangir/bluer-objects/tree/main/bluer_objects/README), based on 🌀 [`bluer_ai-12.89.1`](https://github.com/kamangir/bluer-ai).
+built by 🌀 [`bluer README`](https://github.com/kamangir/bluer-objects/tree/main/bluer_objects/README), based on 🌀 [`bluer_ai-12.90.1`](https://github.com/kamangir/bluer-ai).

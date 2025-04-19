@@ -6,11 +6,11 @@
 
 # dev install
 
-- [Amazon EC2 instances](./bluer_ai/docs/ec2.md)
-- [Amazon SageMaker](./bluer_ai/docs/SageMaker.md)
-- [Jetson Nano](./bluer_ai/docs/Jetson-Nano.md)
-- [macOS](./bluer_ai/docs/macOS.md)
-- [Raspberry Pi](./bluer_ai/docs/RPi.md)
+- [Amazon EC2 instances](./bluer_ai/docs/install/ec2.md)
+- [Amazon SageMaker](./bluer_ai/docs/install/SageMaker.md)
+- [Jetson Nano](./bluer_ai/docs/install/Jetson-Nano.md)
+- [macOS](./bluer_ai/docs/install/macOS.md)
+- [Raspberry Pi](./bluer_ai/docs/install/RPi.md)
 
 # release install
 
