@@ -64,6 +64,9 @@ source $(python3 -m bluer_ai locate)/.abcli/bluer_ai.sh
 [@wait](./bluer_ai/docs/aliases/wait.md), 
 [@watch](./bluer_ai/docs/aliases/watch.md).
 
+[@objects](https://github.com/kamangir/bluer-objects): 
+[@select](./bluer_ai/docs/aliases/select.md).
+
 ---
 
 > 🪄 [`abcli`](https://github.com/kamangir/awesome-bash-cli) for the [Global South](https://github.com/kamangir/bluer-south).
