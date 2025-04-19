@@ -144,14 +144,6 @@ function test_bluer_ai_help() {
         "@ssh sbc" \
         "@ssh keygen" \
         \
-        "@storage" \
-        "@storage clear" \
-        "@storage download_file" \
-        "@storage exists" \
-        "@storage list" \
-        "@storage rm" \
-        "@storage status" \
-        \
         "@test" \
         "@test list" \
         \

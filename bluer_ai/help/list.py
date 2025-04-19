@@ -231,7 +231,7 @@ def help_list_sort(
             f"{example_list}",
         ]
         + args,
-        "sortlist.",
+        "sort list.",
         mono=mono,
     )
 

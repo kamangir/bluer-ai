@@ -7,14 +7,16 @@ def help_init(
     tokens: List[str],
     mono: bool,
 ) -> str:
-    options = "clear,~terraform"
+    what = xtra("<plugin-name> | all | clear", mono=mono)
+
+    options = xtra("clear,~terraform", mono=mono)
 
     return show_usage(
         [
             "@init",
-            "[<plugin-name> | all | clear] ",
+            f"[{what}]",
             f"[{options}]",
         ],
-        "init [<plugin-name>].",
+        "init.",
         mono=mono,
     )
