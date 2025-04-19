@@ -40,8 +40,7 @@ source $(python3 -m bluer_ai locate)/.abcli/bluer_ai.sh
 [@terraform](./bluer_ai/docs/aliases/terraform.md), 
 [@wifi](./bluer_ai/docs/aliases/wifi.md).
 
-[@options](https://github.com/kamangir/bluer-options):
-
+[@options](https://github.com/kamangir/bluer-options): 
 [@assert](./bluer_ai/docs/aliases/assert.md), 
 [@badge](./bluer_ai/docs/aliases/badge.md), 
 [@browse](./bluer_ai/docs/aliases/browse.md), 
