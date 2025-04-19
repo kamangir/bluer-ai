@@ -60,5 +60,7 @@ def build():
             "docs/aliases/timestamp.md",
             "docs/aliases/wait.md",
             "docs/aliases/watch.md",
+            # @objects
+            "docs/aliases/select.md",
         ]
     )
