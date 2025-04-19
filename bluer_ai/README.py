@@ -27,6 +27,7 @@ def build():
             "docs/aliases/conda.md",
             "docs/aliases/git.md",
             "docs/aliases/gpu.md",
+            "docs/aliases/init.md",
             "docs/aliases/latex.md",
             "docs/aliases/logging.md",
             "docs/aliases/pypi.md",
