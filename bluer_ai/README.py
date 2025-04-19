@@ -24,6 +24,7 @@ def build():
         )
         for path in [
             "..",
+            # @ai
             "docs/aliases/conda.md",
             "docs/aliases/git.md",
             "docs/aliases/gpu.md",
@@ -36,5 +37,28 @@ def build():
             "docs/aliases/ssh.md",
             "docs/aliases/terraform.md",
             "docs/aliases/wifi.md",
+            # @options
+            "docs/aliases/assert.md",
+            "docs/aliases/badge.md",
+            "docs/aliases/browse.md",
+            "docs/aliases/cat.md",
+            "docs/aliases/code.md",
+            "docs/aliases/env.md",
+            "docs/aliases/eval.md",
+            "docs/aliases/help.md",
+            "docs/aliases/hr.md",
+            "docs/aliases/list.md",
+            "docs/aliases/not.md",
+            "docs/aliases/open.md",
+            "docs/aliases/option.md",
+            "docs/aliases/pause.md",
+            "docs/aliases/pylint.md",
+            "docs/aliases/pytest.md",
+            "docs/aliases/repeat.md",
+            "docs/aliases/sleep.md",
+            "docs/aliases/test.md",
+            "docs/aliases/timestamp.md",
+            "docs/aliases/wait.md",
+            "docs/aliases/watch.md",
         ]
     )
