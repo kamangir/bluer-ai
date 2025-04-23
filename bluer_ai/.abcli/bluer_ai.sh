@@ -59,7 +59,7 @@ function bluer_ai_main() {
 }
 
 if [ -f "$HOME/storage/temp/ignore/disabled" ]; then
-    printf "bluer-ai is \033[0;31mdisabled\033[0m, run '@T enable' first.\n"
+    printf "bluer-ai is \033[0;31mdisabled\033[0m, run '@terraform enable' first.\n"
 else
     bluer_ai_main "$@"
 fi
