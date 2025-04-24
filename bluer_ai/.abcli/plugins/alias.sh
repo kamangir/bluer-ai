@@ -2,6 +2,8 @@
 
 alias @=bluer_ai
 
+alias @ai=bluer_ai
+
 alias @build_README=bluer_ai_build_README
 
 alias @conda=bluer_ai_conda

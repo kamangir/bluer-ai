@@ -15,6 +15,7 @@ setup(
         f"{NAME}.modules",
         f"{NAME}.modules.terraform",
         f"{NAME}.plugins",
+        f"{NAME}.plugins.autocomplete",
         f"{NAME}.plugins.git",
         f"{NAME}.plugins.gpu",
         f"{NAME}.tests",
