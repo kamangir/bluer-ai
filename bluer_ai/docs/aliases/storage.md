@@ -3,7 +3,7 @@
 ```bash
 @storage \
 	clear \
-	[~dryrun]
+	[cloud,~dryrun]
  . clear storage.
 @storage \
 	download_file \
