@@ -6,11 +6,11 @@ function _autocomplete_bluer_ai() {
     local words="${COMP_WORDS[*]}"
     local command_name="${COMP_WORDS[0]}"
 
-    COMPREPLY=($(python3 -m bluer_ai.plugins.autocomplete \
+    COMPREPLY=($(python3 -m bluer_ai.autocomplete \
         --command "$command_name" \
         --cword "$cword" \
         --words "$words" \
-        --alias_filename ../../.abcli/plugins/alias.sh))
+        --alias_filename ./.abcli/plugins/alias.sh))
 }
 
 function _set_bluer_ai_autocomplete() {

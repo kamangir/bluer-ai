@@ -1,9 +1,10 @@
+import os
 import argparse
 
 from blueness import module
 
 from bluer_ai import NAME
-from bluer_ai.plugins.autocomplete.functions import autocomplete
+from bluer_options.autocomplete import autocomplete
 
 NAME = module.name(__file__, NAME)
 
@@ -32,7 +33,10 @@ print(
             command=args.command,
             cword=args.cword,
             words=args.words.strip().split(),
-            alias_filename=args.alias_filename,
+            alias_filename=os.path.join(
+                os.path.dirname(__file__),
+                args.alias_filename,
+            ),
         )
     )
 )
