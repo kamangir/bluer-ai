@@ -104,7 +104,7 @@ def load_text_file(
         return False, []
 
 
-def save_text__file_if_different(
+def save_text_file_if_different(
     filename: str,
     text: List[str],
 ) -> bool:
@@ -140,7 +140,7 @@ def terraform(
             string for string in content if ("bluer-ai" not in string) and string
         ] + commands
 
-        if not save_text__file_if_different(
+        if not save_text_file_if_different(
             filename,
             content_updated,
         ):
