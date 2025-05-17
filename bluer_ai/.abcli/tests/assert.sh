@@ -34,6 +34,17 @@ function test_bluer_ai_assert() {
     bluer_ai_assert "" - empty
 }
 
+function test_bluer_ai_assert_file_exists() {
+    local path=$(python3 -m bluer_options locate)
+
+    bluer_ai_assert_file_exists \
+        $path/void.py
+    [[ $? -eq 0 ]] && return 1
+
+    bluer_ai_assert_file_exists \
+        $path/__init__.py
+}
+
 function test_bluer_ai_assert_list() {
     bluer_ai_assert_list \
         this,that,who,what \
