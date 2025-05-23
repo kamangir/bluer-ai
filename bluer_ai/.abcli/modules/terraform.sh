@@ -133,7 +133,7 @@ function bluer_ai_terraform() {
                 $abcli_path_assets/aws/ec2_bash_profile \
                 /home/$USER/.bash_profile
         else
-            sudo -E python3 -m bluer_ai.modules.terraform \
+            sudo -E $(which python3) -m bluer_ai.modules.terraform \
                 terraform \
                 --target ubuntu \
                 --user "$USER"
