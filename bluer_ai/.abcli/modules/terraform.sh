@@ -61,7 +61,7 @@ function bluer_ai_terraform() {
         # https://davidwalsh.name/desktop-wallpaper-command-line
         # osascript -e "tell application \"Finder\" to set desktop picture to POSIX file \"$background_image\""
 
-        sudo python3 -m bluer_ai.modules.terraform \
+        sudo -E python3 -m bluer_ai.modules.terraform \
             terraform \
             --target mac \
             --user $USER
