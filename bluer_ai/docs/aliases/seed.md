@@ -3,7 +3,7 @@
 ```bash
 @seed \
 	<target> \
-	[clipboard|filename=<filename>|key|screen,env=<env-name>,eval,plugin=<plugin-name>,~log] \
+	[aws,clipboard|filename=<filename>|key|screen,env=<env-name>,eval,plugin=<plugin-name>,~log] \
 	[cat,dryrun] \
 	<command-line>
  . generate and output a seed 🌱 .
