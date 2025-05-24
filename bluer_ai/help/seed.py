@@ -7,7 +7,7 @@ def help_(
     tokens: List[str],
     mono: bool,
 ) -> str:
-    options = "clipboard|filename=<filename>|key|screen,env=<env-name>,eval,plugin=<plugin-name>,~log"
+    options = "aws,clipboard|filename=<filename>|key|screen,env=<env-name>,eval,plugin=<plugin-name>,~log"
 
     return show_usage(
         [

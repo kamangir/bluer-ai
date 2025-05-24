@@ -61,7 +61,7 @@ function bluer_ai_terraform() {
         # https://davidwalsh.name/desktop-wallpaper-command-line
         # osascript -e "tell application \"Finder\" to set desktop picture to POSIX file \"$background_image\""
 
-        sudo python3 -m bluer_ai.modules.terraform \
+        sudo -E $(which python3) -m bluer_ai.modules.terraform \
             terraform \
             --target mac \
             --user $USER
@@ -78,7 +78,7 @@ function bluer_ai_terraform() {
                 --wallpaper-mode center
         fi
 
-        sudo -E python3 -m bluer_ai.modules.terraform \
+        sudo -E $(which python3) -m bluer_ai.modules.terraform \
             terraform \
             --is_headless $abcli_is_headless \
             --target rpi \
@@ -133,7 +133,7 @@ function bluer_ai_terraform() {
                 $abcli_path_assets/aws/ec2_bash_profile \
                 /home/$USER/.bash_profile
         else
-            sudo python3 -m bluer_ai.modules.terraform \
+            sudo -E $(which python3) -m bluer_ai.modules.terraform \
                 terraform \
                 --target ubuntu \
                 --user "$USER"

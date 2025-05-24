@@ -5,6 +5,12 @@ function bluer_ai_source_dependencies() {
     source $abcli_path_bash/bootstrap/system.sh
     source $abcli_path_bash/bootstrap/logging.sh
 
+    local venv_path="$HOME/venv/bluer_ai/bin/activate"
+    if [[ -f "$venv_path" ]]; then
+        echo "sourcing $venv_path ..."
+        source "$venv_path"
+    fi
+
     echo "🐍 $(python3 --version)"
     echo "GNU bash $BASH_VERSION"
 
