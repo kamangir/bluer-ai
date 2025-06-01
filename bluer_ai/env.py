@@ -10,7 +10,7 @@ abcli_display_fullscreen = get_env("abcli_display_fullscreen")
 
 BLUER_AI_GIT_SSH_KEY_NAME = get_env("BLUER_AI_GIT_SSH_KEY_NAME")
 
-bluer_ai_gpu = get_env("bluer_ai_gpu")
+bluer_ai_gpu_status_cache = get_env("bluer_ai_gpu_status_cache")
 
 abcli_path_abcli = get_env("abcli_path_abcli")
 
