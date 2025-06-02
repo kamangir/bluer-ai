@@ -19,6 +19,8 @@ function bluer_ai_screen() {
         return
     fi
 
+    cp -v $abcli_path_abcli/bluer_ai/assets/screenrc $HOME/.screenrc
+
     local screen_name=${2:-bluer_ai-$(bluer_ai_string_timestamp_short)}
     screen -q -S $screen_name -t $screen_name
 }

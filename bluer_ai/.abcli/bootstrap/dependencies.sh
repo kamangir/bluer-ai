@@ -11,7 +11,7 @@ function bluer_ai_source_dependencies() {
         source "$venv_path"
     fi
 
-    echo "🐍 $(python3 --version)"
+    echo "🐍 $(python3 --version): $(which python)"
     echo "GNU bash $BASH_VERSION"
 
     python3 -m blueness version \
