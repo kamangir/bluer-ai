@@ -1,7 +1,13 @@
 from typing import List
-import pkg_resources
 import glob
 import os
+
+# https://chatgpt.com/c/683d39ac-34a8-8005-b780-71a6d2253ea9
+try:
+    from importlib.metadata import distributions
+except ImportError:
+    # for Python < 3.8
+    from importlib_metadata import distributions  # type: ignore
 
 from bluer_objects import file, path
 from bluer_objects.env import abcli_path_git
@@ -54,25 +60,29 @@ def list_of_external(repo_names=False) -> List[str]:
 
 def list_of_installed(return_path: bool = False) -> List[str]:
     output = []
-    for module in pkg_resources.working_set:
-        if module.key in ["abcli", "bluer-ai"]:
+
+    for dist in distributions():
+        try:
+            name = dist.metadata.get("Name")
+            if not name:
+                continue
+
+            key = name.lower().replace("-", "_")
+            if key in ["abcli", "bluer_ai"]:
+                continue
+
+            # Estimate install path
+            root_path = str(dist.locate_file(""))
+            if "git" in root_path.split(os.sep):
+                continue
+
+            module_bash_folder = os.path.join(root_path, key, ".abcli")
+            if not os.path.exists(module_bash_folder):
+                continue
+
+            output.append(module_bash_folder if return_path else key)
+
+        except Exception:
             continue
-
-        if module.module_path is None:
-            continue
-
-        if "git" in module.module_path.split(os.sep):
-            continue
-
-        module_bash_folder = os.path.join(
-            module.module_path,
-            module.key.replace("-", "_"),
-            ".abcli",
-        )
-
-        if not os.path.exists(module_bash_folder):
-            continue
-
-        output += [module_bash_folder if return_path else module.key]
 
     return output
