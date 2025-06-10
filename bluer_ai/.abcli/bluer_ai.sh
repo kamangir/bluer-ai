@@ -47,7 +47,7 @@ function bluer_ai_main() {
 
     local return_if_not_ssh=$(bluer_ai_option_int "$options" if_not_ssh 0)
     if [[ "$return_if_not_ssh" == 1 ]] && [[ "$abcli_is_ssh_session" == true ]]; then
-        abcli_log "ssh session detected."
+        bluer_ai_log "ssh session detected."
         return 0
     fi
 
