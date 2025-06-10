@@ -6,6 +6,6 @@
 
 3. It is likely that the boot does not complete automatically. Consult AI.
 
-4. `@ssh rpi <host-name>`. 🔥 Then, run `@seed headless_ubuntu_rpi clipboard` in another terminal and paste it into the ssh window.
+4. `@ssh rpi <host-name>`. Then, run `@seed headless_ubuntu_rpi clipboard` in another terminal and paste it into the ssh window.
 
 🔥
