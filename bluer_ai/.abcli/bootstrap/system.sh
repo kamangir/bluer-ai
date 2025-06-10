@@ -12,8 +12,13 @@ export abcli_is_mac=false
 export abcli_is_rpi=false
 export abcli_is_sagemaker=false
 export abcli_is_sagemaker_system=false
+export abcli_is_ssh_session=false
 export abcli_is_ubuntu=false
 export abcli_is_vnc=false
+
+if [[ -n "$SSH_CONNECTION" ]]; then
+    export abcli_is_ssh_session=true
+fi
 
 # https://github.com/ultralytics/yolov5/blob/master/utils/general.py#L90
 # https://stackoverflow.com/a/25518538/17619982

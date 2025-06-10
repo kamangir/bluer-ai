@@ -71,7 +71,9 @@ def rpi(
         [
             [
                 "source /home/pi/git/bluer-ai/bluer_ai/.abcli/bluer_ai.sh{}".format(
-                    "  ~terraform bluer_ai session start" if is_headless else ""
+                    "  if_not_ssh,~terraform bluer_ai session start"
+                    if is_headless
+                    else ""
                 )
             ]
         ],
