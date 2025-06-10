@@ -71,7 +71,7 @@ def rpi(
         [
             [
                 "source /home/pi/git/bluer-ai/bluer_ai/.abcli/bluer_ai.sh{}".format(
-                    "  - bluer_ai session start" if is_headless else ""
+                    "  ~terraform bluer_ai session start" if is_headless else ""
                 )
             ]
         ],
@@ -82,7 +82,7 @@ def rpi(
             ["/etc/xdg/lxsession/LXDE-pi/autostart"],
             [
                 [
-                    "@sudo -E bash /home/pi/git/bluer-ai/bluer_ai/.abcli/bluer_ai.sh - bluer_ai session start",
+                    "@sudo -E bash /home/pi/git/bluer-ai/bluer_ai/.abcli/bluer_ai.sh ~terraform bluer_ai session start",
                 ]
             ],
         ):
