@@ -64,7 +64,9 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     export abcli_is_ubuntu=true
 
     if [[ "$abcli_is_docker" == false ]] && [[ "$abcli_is_aws_batch" == false ]]; then
-        if [[ "$abcli_is_64bit" == false ]]; then
+        if [[ $(cat /proc/device-tree/model 2>/dev/null) == *"Raspberry Pi"* ]]; then
+            export abcli_is_rpi=true
+        elif [[ "$abcli_is_64bit" == false ]]; then
             export abcli_is_jetson=true
             # https://forums.developer.nvidia.com/t/read-serial-number-of-jetson-nano/72955
             export abcli_jetson_nano_serial_number=$(sudo cat /proc/device-tree/serial-number)
