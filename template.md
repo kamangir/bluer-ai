@@ -23,6 +23,7 @@ source $(python3 -m bluer_ai locate)/.abcli/bluer_ai.sh
 - [Jetson Nano](./bluer_ai/docs/install/Jetson-Nano.md)
 - [macOS](./bluer_ai/docs/install/macOS.md)
 - [Raspberry Pi](./bluer_ai/docs/install/RPi.md)
+- [Raspberry Pi + ROS](./bluer_ai/docs/install/RPi-ROS.md)
 
 
 # aliases

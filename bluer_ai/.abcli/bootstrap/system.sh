@@ -12,8 +12,13 @@ export abcli_is_mac=false
 export abcli_is_rpi=false
 export abcli_is_sagemaker=false
 export abcli_is_sagemaker_system=false
+export abcli_is_ssh_session=false
 export abcli_is_ubuntu=false
 export abcli_is_vnc=false
+
+if [[ -n "$SSH_CONNECTION" ]]; then
+    export abcli_is_ssh_session=true
+fi
 
 # https://github.com/ultralytics/yolov5/blob/master/utils/general.py#L90
 # https://stackoverflow.com/a/25518538/17619982
@@ -64,7 +69,10 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     export abcli_is_ubuntu=true
 
     if [[ "$abcli_is_docker" == false ]] && [[ "$abcli_is_aws_batch" == false ]]; then
-        if [[ "$abcli_is_64bit" == false ]]; then
+        local hardware_model=$(tr -d '\0' </proc/device-tree/model 2>/dev/null)
+        if [[ "$hardware_model" == *"Raspberry Pi"* ]]; then
+            export abcli_is_rpi=true
+        elif [[ "$abcli_is_64bit" == false ]]; then
             export abcli_is_jetson=true
             # https://forums.developer.nvidia.com/t/read-serial-number-of-jetson-nano/72955
             export abcli_jetson_nano_serial_number=$(sudo cat /proc/device-tree/serial-number)
