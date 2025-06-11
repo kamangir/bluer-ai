@@ -18,7 +18,12 @@ function bluer_ai_session() {
 
             bluer_ai_log "session initialized: username=$USER, hostname=$(hostname), EUID=$EUID, python3=$(which python3)"
 
-            rm -v $ABCLI_PATH_IGNORE/session_reply_*
+            local sudo_prefix=""
+            [[ "$BLUER_AI_SESSION_IS_SUDO" == 1 ]] &&
+                sudo_prefix="sudo"
+
+            $sudo_prefix \
+                rm -v $ABCLI_PATH_IGNORE/session_reply_*
 
             [[ "$abcli_is_mac" == false ]] &&
                 bluer_ai_storage clear
@@ -31,7 +36,7 @@ function bluer_ai_session() {
                 if [ -z "$plugin_name" ]; then
                     bluer_ai_log_warning "@session: plugin not found."
                 else
-                    bluer_ai_log_error "@session: plugin: $plugin_name: plugin not found."
+                    bluer_ai_log_error "@session: plugin: $plugin_name: $function_name: session function not found."
                 fi
                 bluer_ai_sleep seconds=60
             fi
