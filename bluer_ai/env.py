@@ -17,5 +17,3 @@ abcli_path_abcli = get_env("abcli_path_abcli")
 ABCLI_PATH_IGNORE = get_env("ABCLI_PATH_IGNORE")
 
 ABCLI_MLFLOW_STAGES = get_env("ABCLI_MLFLOW_STAGES")
-
-BLUER_AI_SESSION_IS_SUDO = get_env("BLUER_AI_SESSION_SUDO_PREFIX", 0)
