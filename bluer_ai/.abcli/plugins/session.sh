@@ -18,7 +18,8 @@ function bluer_ai_session() {
 
             bluer_ai_log "session initialized: username=$USER, hostname=$(hostname), EUID=$EUID, python3=$(which python3)"
 
-            rm -v $ABCLI_PATH_IGNORE/session_reply_*
+            $BLUER_AI_SESSION_SUDO_PREFIX \
+                rm -v $ABCLI_PATH_IGNORE/session_reply_*
 
             [[ "$abcli_is_mac" == false ]] &&
                 bluer_ai_storage clear
