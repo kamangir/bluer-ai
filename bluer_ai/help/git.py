@@ -89,7 +89,7 @@ def help_create_branch(
     tokens: List[str],
     mono: bool,
 ) -> str:
-    options = xtra("~increment_version,~push,~timestamp", mono=mono)
+    options = xtra("~increment_version,offline,~push,~timestamp", mono=mono)
 
     return show_usage(
         [
@@ -199,7 +199,7 @@ def help_push(
             "browse",
             xtra(",~create_pull_request,", mono=mono),
             "first",
-            xtra(",~increment_version,~status,", mono=mono),
+            xtra(",~increment_version,offline,~status,", mono=mono),
             "~workflow",
         ]
     )

@@ -23,7 +23,7 @@
 @git \
 	create_branch \
 	<branch-name> \
-	[~increment_version,~push,~timestamp]
+	[~increment_version,offline,~push,~timestamp]
  . create <branch-name> in the repo.
 @git \
 	create_pull_request
@@ -46,7 +46,7 @@
 @git \
 	push \
 	<message> \
-	[~action,browse,~create_pull_request,first,~increment_version,~status,~workflow] \
+	[~action,browse,~create_pull_request,first,~increment_version,offline,~status,~workflow] \
 	[build,browse,install,~rm_dist,~upload]
  . push to the repo.
 @git \

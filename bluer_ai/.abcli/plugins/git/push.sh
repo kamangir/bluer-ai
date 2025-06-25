@@ -10,6 +10,7 @@ function bluer_ai_git_push() {
     local options=$2
     local do_browse=$(bluer_ai_option_int "$options" browse 0)
     local do_increment_version=$(bluer_ai_option_int "$options" increment_version 1)
+    local do_offline=$(bluer_ai_option_int "$options" offline 0)
     local show_status=$(bluer_ai_option_int "$options" status 1)
     local first_push=$(bluer_ai_option_int "$options" first 0)
     local create_pull_request=$(bluer_ai_option_int "$options" create_pull_request $first_push)
@@ -50,8 +51,10 @@ function bluer_ai_git_push() {
     [[ "$first_push" == 1 ]] &&
         extra_args="--set-upstream origin $(bluer_ai_git get_branch)"
 
-    git push $extra_args
-    [[ $? -ne 0 ]] && return 1
+    if [[ "$do_offline" == 0 ]]; then
+        git push $extra_args
+        [[ $? -ne 0 ]] && return 1
+    fi
 
     if [[ "$create_pull_request" == 1 ]]; then
         bluer_ai_git create_pull_request
