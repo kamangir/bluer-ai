@@ -7,7 +7,7 @@ def help_start(
     tokens: List[str],
     mono: bool,
 ) -> str:
-    options = xtra("~pull", mono=mono)
+    options = xtra("plugin=<plugin-name>,~pull", mono=mono)
 
     return show_usage(
         [

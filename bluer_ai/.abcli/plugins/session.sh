@@ -28,7 +28,7 @@ function bluer_ai_session() {
             [[ "$abcli_is_mac" == false ]] &&
                 bluer_ai_storage clear
 
-            local plugin_name=$BLUER_SBC_SESSION_PLUGIN
+            local plugin_name=$(bluer_ai_option "$options" plugin $BLUER_SBC_SESSION_PLUGIN)
             local function_name=${plugin_name}_session
             if [[ $(type -t $function_name) == "function" ]]; then
                 $function_name start "${@:3}"
