@@ -17,21 +17,6 @@ def help_get_ssid(
     )
 
 
-def help_copy_to_sd_card(
-    tokens: List[str],
-    mono: bool,
-) -> str:
-    return show_usage(
-        [
-            "@wifi",
-            "copy_to_sd_card",
-        ],
-        "copy wifi info to sd_card.",
-        mono=mono,
-    )
-
-
 help_functions = {
     "get_ssid": help_get_ssid,
-    "copy_to_sd_card": help_copy_to_sd_card,
 }

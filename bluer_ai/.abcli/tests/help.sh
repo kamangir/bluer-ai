@@ -162,7 +162,6 @@ function test_bluer_ai_help() {
         \
         "@wifi" \
         "@wifi get_ssid" \
-        "@wifi copy_to_sd_card" \
         \
         "bluer_ai_log_list" \
         "bluer_ai_source_caller_suffix_path" \
