@@ -4,11 +4,11 @@
 
 2. After the write is complete, eject the SD card, insert it into the Raspberry Pi, turn the motherboard on, and wait for the motherboard to boot.
 
-## Headless 🔥
+## Headless
 
 3. run `@ssh rpi <host-name>`. Then, run `@seed headless_rpi clipboard` in another terminal and paste it into the ssh window.
 
-4. Run `sudo raspi-config` -> `Interfacing Options` -> enable `Camera` and other interfaces as needed, then go to `System Options` -> `Boot / Auto Login` and select `Console Autologin`. 
+4. (only needed on older versions) Run `sudo raspi-config` -> `Interfacing Options` -> enable `Camera` and other interfaces as needed, then go to `System Options` -> `Boot / Auto Login` and select `Console Autologin`. 
 
 ## With UI
 
