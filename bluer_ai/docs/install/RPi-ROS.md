@@ -7,3 +7,15 @@
 3. It is likely that the boot does not complete automatically. Consult AI.
 
 4. `@ssh rpi <host-name>`. Then, run `@seed headless_ubuntu_rpi clipboard` in another terminal and paste it into the ssh window.
+
+5. ⚠️ needs more work - `sudo nano /boot/firmware/config.txt` and add these lines to the first `[all]` section,
+
+```init
+start_x=1
+gpu_mem=128
+dtoverlay=ov5647
+```
+
+this `dtoverlay` is for camera v1.3, use proper value for other cameras.
+
+then `sudo reboot` and after reboot `ls /dev/video*`, you should see something like `/dev/video0`.
