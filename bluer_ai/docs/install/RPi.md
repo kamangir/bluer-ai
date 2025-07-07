@@ -8,7 +8,7 @@
 
 ## Headless
 
-4. run `@ssh rpi <host-name>`. Then, run `@seed headless_rpi clipboard` (or `headless_rpi_64bit`) in another terminal and paste it into the ssh window.
+4. run `@ssh rpi <host-name>`. Then, run `@seed headless_rpi clipboard` (or `headless_rpi_64_bit`) in another terminal and paste it into the ssh window.
 
 5. (only needed on older versions) Run `sudo raspi-config` -> `Interfacing Options` -> enable `Camera` and other interfaces as needed, then go to `System Options` -> `Boot / Auto Login` and select `Console Autologin`. 
 
