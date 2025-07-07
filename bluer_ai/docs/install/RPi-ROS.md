@@ -8,7 +8,7 @@
 
 4. `@ssh rpi <host-name>`. Then, run `@seed headless_ubuntu_rpi clipboard` in another terminal and paste it into the ssh window.
 
-5. ⚠️ needs more work - `sudo nano /boot/firmware/config.txt` and add these lines to the first `[all]` section,
+5. ⚠️ needs more work - `sudo nano /boot/firmware/usercfg.txt` and add these lines,
 
 ```init
 start_x=1
