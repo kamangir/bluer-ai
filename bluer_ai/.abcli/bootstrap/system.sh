@@ -32,7 +32,7 @@ if [ -f "/.dockerenv" ]; then
     alias dmidecode=true
 fi
 
-if [ "$(uname -m)" == "x86_64" ]; then
+if [[ "|x86_64|aarch64|" == *"|$(uname -m)|"* ]]; then
     export abcli_is_64bit=true
 fi
 
@@ -69,7 +69,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     export abcli_is_ubuntu=true
 
     if [[ "$abcli_is_docker" == false ]] && [[ "$abcli_is_aws_batch" == false ]]; then
-        local hardware_model=$(tr -d '\0' </proc/device-tree/model 2>/dev/null)
+        export abcli_hardware_model=$(tr -d '\0' </proc/device-tree/model 2>/dev/null)
         if [[ "$hardware_model" == *"Raspberry Pi"* ]]; then
             export abcli_is_rpi=true
         elif [[ "$abcli_is_64bit" == false ]]; then
