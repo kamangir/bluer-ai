@@ -1,6 +1,8 @@
 # Raspberry Pi
 
-1. Open [Raspberry Pi Imager](https://www.raspberrypi.com/software/) and select `Operating System` -> `Raspberry Pi OS (other)` and select the a 32-bit image, either lite (headless) or full (with GUI). Burn a 32-bit legacy image, such as `Bullseye`, for better compatibility with the camera. 
+1. Open [Raspberry Pi Imager](https://www.raspberrypi.com/software/) and select `Operating System` -> `Raspberry Pi OS (other)` and select an image, either lite (headless) or full (with GUI). 
+
+> ℹ️ A 32-bit legacy image, such as `Bullseye`, has better compatibility with the camera, but will be more challenging when trying to install the latest OpenCV and torch. **64-bit images, are, therefore, recommended**.
 
 2. Then press `Shift+Ctrl+X` to open `Advanced options`, select `Set hostname`, and enter a unique host name, the select `Set username and password` and set the user to `pi` and the password to `abcli2025`. Then select `Configure wireless LAN` and set the SSID and password. In `Services` select `Enable SSH` and `Use password authentication` and press `Save`. Proceed to write the SD Card.
 
