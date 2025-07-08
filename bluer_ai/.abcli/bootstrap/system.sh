@@ -70,7 +70,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 
     if [[ "$abcli_is_docker" == false ]] && [[ "$abcli_is_aws_batch" == false ]]; then
         export abcli_hardware_model=$(tr -d '\0' </proc/device-tree/model 2>/dev/null)
-        if [[ "$hardware_model" == *"Raspberry Pi"* ]]; then
+        if [[ "$abcli_hardware_model" == *"Raspberry Pi"* ]]; then
             export abcli_is_rpi=true
         elif [[ "$abcli_is_64bit" == false ]]; then
             export abcli_is_jetson=true
