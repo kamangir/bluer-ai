@@ -72,6 +72,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
         export abcli_hardware_model=$(tr -d '\0' </proc/device-tree/model 2>/dev/null)
         if [[ "$abcli_hardware_model" == *"Raspberry Pi"* ]]; then
             export abcli_is_rpi=true
+            export abcli_is_ubuntu=false
         elif [[ "$abcli_is_64bit" == false ]]; then
             export abcli_is_jetson=true
             # https://forums.developer.nvidia.com/t/read-serial-number-of-jetson-nano/72955
@@ -97,36 +98,43 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     fi
 fi
 
-[[ "$abcli_is_64bit" == true ]] &&
-    echo "🌀  64-bit"
-[[ "$abcli_is_amazon_linux" == true ]] &&
-    echo "🌀 amazon linux"
-[[ "$abcli_is_cloudshell" == true ]] &&
-    echo "🌀 cloudshell"
-[[ "$abcli_is_docker" == true ]] &&
-    echo "🌀 docker"
-[[ "$abcli_is_ec2" == true ]] &&
-    echo "🌀 ec2"
-[[ "$abcli_is_github_workflow" == true ]] &&
-    echo "🌀 github workflow"
-[[ "$abcli_is_jetson" == true ]] &&
-    echo "🌀 jetson"
-[[ "$abcli_is_headless" == true ]] &&
-    echo "🌀 headless"
-[[ "$abcli_is_mac" == true ]] &&
-    echo "🌀 mac"
-[[ "$abcli_is_rpi" == true ]] &&
-    echo "🌀 rpi"
-[[ "$abcli_is_sagemaker" == true ]] &&
-    echo "🌀 sagemaker"
-[[ "$abcli_is_sagemaker_system" == true ]] &&
-    echo "🌀 sagemaker system"
-[[ "$abcli_is_ssh_session" == true ]] &&
-    echo "🌀 ssh session"
-[[ "$abcli_is_ubuntu" == true ]] &&
-    echo "🌀 ubuntu"
-[[ "$abcli_is_vnc" == true ]] &&
-    echo "🌀 vnc"
+function bluer_ai_announce() {
+    local status=""
+
+    [[ "$abcli_is_64bit" == true ]] &&
+        status="$status 64-bit"
+    [[ "$abcli_is_amazon_linux" == true ]] &&
+        status="$status amazon linux"
+    [[ "$abcli_is_cloudshell" == true ]] &&
+        status="$status cloudshell"
+    [[ "$abcli_is_docker" == true ]] &&
+        status="$status docker"
+    [[ "$abcli_is_ec2" == true ]] &&
+        status="$status ec2"
+    [[ "$abcli_is_github_workflow" == true ]] &&
+        status="$status github workflow"
+    [[ "$abcli_is_jetson" == true ]] &&
+        status="$status jetson"
+    [[ "$abcli_is_headless" == true ]] &&
+        status="$status headless"
+    [[ "$abcli_is_mac" == true ]] &&
+        status="$status mac"
+    [[ "$abcli_is_rpi" == true ]] &&
+        status="$status rpi"
+    [[ "$abcli_is_sagemaker" == true ]] &&
+        status="$status sagemaker"
+    [[ "$abcli_is_sagemaker_system" == true ]] &&
+        status="$status sagemaker system"
+    [[ "$abcli_is_ssh_session" == true ]] &&
+        status="$status ssh session"
+    [[ "$abcli_is_ubuntu" == true ]] &&
+        status="$status ubuntu"
+    [[ "$abcli_is_vnc" == true ]] &&
+        status="$status vnc"
+
+    echo "🌀$status"
+}
+bluer_ai_announce
 
 export abcli_base64="base64"
 # https://superuser.com/a/1225139
