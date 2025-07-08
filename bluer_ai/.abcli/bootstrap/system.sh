@@ -97,6 +97,37 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     fi
 fi
 
+[[ "$abcli_is_64bit" == true ]] &&
+    echo "🌀  64-bit"
+[[ "$abcli_is_amazon_linux" == true ]] &&
+    echo "🌀 amazon linux"
+[[ "$abcli_is_cloudshell" == true ]] &&
+    echo "🌀 cloudshell"
+[[ "$abcli_is_docker" == true ]] &&
+    echo "🌀 docker"
+[[ "$abcli_is_ec2" == true ]] &&
+    echo "🌀 ec2"
+[[ "$abcli_is_github_workflow" == true ]] &&
+    echo "🌀 github workflow"
+[[ "$abcli_is_jetson" == true ]] &&
+    echo "🌀 jetson"
+[[ "$abcli_is_headless" == true ]] &&
+    echo "🌀 headless"
+[[ "$abcli_is_mac" == true ]] &&
+    echo "🌀 mac"
+[[ "$abcli_is_rpi" == true ]] &&
+    echo "🌀 rpi"
+[[ "$abcli_is_sagemaker" == true ]] &&
+    echo "🌀 sagemaker"
+[[ "$abcli_is_sagemaker_system" == true ]] &&
+    echo "🌀 sagemaker system"
+[[ "$abcli_is_ssh_session" == true ]] &&
+    echo "🌀 ssh session"
+[[ "$abcli_is_ubuntu" == true ]] &&
+    echo "🌀 ubuntu"
+[[ "$abcli_is_vnc" == true ]] &&
+    echo "🌀 vnc"
+
 export abcli_base64="base64"
 # https://superuser.com/a/1225139
 [[ "$abcli_is_ubuntu" == true ]] && export abcli_base64="base64 -w 0"
