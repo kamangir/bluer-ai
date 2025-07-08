@@ -169,6 +169,7 @@ elif [[ "$abcli_is_cloudshell" == true ]]; then
 else
     export abcli_hostname=$(hostname)
 fi
+echo "🌀 host: $abcli_hostname"
 
 function bluer_ai_kill_all() {
     # if [[ "$abcli_is_sagemaker" == true ]] || [[ "$abcli_is_cloudshell" == true ]]; then
