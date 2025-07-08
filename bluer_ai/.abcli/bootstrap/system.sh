@@ -32,7 +32,7 @@ if [ -f "/.dockerenv" ]; then
     alias dmidecode=true
 fi
 
-if [ "$(uname -m)" == "x86_64" ]; then
+if [[ "|x86_64|aarch64|" == *"|$(uname -m)|"* ]]; then
     export abcli_is_64bit=true
 fi
 
@@ -69,9 +69,10 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     export abcli_is_ubuntu=true
 
     if [[ "$abcli_is_docker" == false ]] && [[ "$abcli_is_aws_batch" == false ]]; then
-        local hardware_model=$(tr -d '\0' </proc/device-tree/model 2>/dev/null)
-        if [[ "$hardware_model" == *"Raspberry Pi"* ]]; then
+        export abcli_hardware_model=$(tr -d '\0' </proc/device-tree/model 2>/dev/null)
+        if [[ "$abcli_hardware_model" == *"Raspberry Pi"* ]]; then
             export abcli_is_rpi=true
+            export abcli_is_ubuntu=false
         elif [[ "$abcli_is_64bit" == false ]]; then
             export abcli_is_jetson=true
             # https://forums.developer.nvidia.com/t/read-serial-number-of-jetson-nano/72955
@@ -96,6 +97,48 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
         fi
     fi
 fi
+
+function bluer_ai_announce() {
+    local status=""
+
+    [[ "$abcli_is_64bit" == true ]] &&
+        status="$status 64-bit"
+    [[ "$abcli_is_amazon_linux" == true ]] &&
+        status="$status amazon-linux"
+    [[ "$abcli_is_cloudshell" == true ]] &&
+        status="$status cloudshell"
+    [[ "$abcli_is_docker" == true ]] &&
+        status="$status docker"
+    [[ "$abcli_is_ec2" == true ]] &&
+        status="$status ec2"
+    [[ "$abcli_is_github_workflow" == true ]] &&
+        status="$status github-workflow"
+    [[ "$abcli_is_jetson" == true ]] &&
+        status="$status jetson"
+    [[ "$abcli_is_headless" == true ]] &&
+        status="$status headless"
+    [[ "$abcli_is_mac" == true ]] &&
+        status="$status mac"
+    [[ "$abcli_is_rpi" == true ]] &&
+        status="$status rpi"
+    [[ "$abcli_is_sagemaker" == true ]] &&
+        status="$status sagemaker"
+    [[ "$abcli_is_sagemaker_system" == true ]] &&
+        status="$status sagemaker-system"
+    [[ "$abcli_is_ssh_session" == true ]] &&
+        status="$status ssh-session"
+    [[ "$abcli_is_ubuntu" == true ]] &&
+        status="$status ubuntu"
+    [[ "$abcli_is_vnc" == true ]] &&
+        status="$status vnc"
+
+    status="$status: $OSTYPE"
+    [[ ! -z "$abcli_hardware_model" ]] &&
+        status="$status on $abcli_hardware_model"
+
+    echo "🌀$status"
+}
+bluer_ai_announce
 
 export abcli_base64="base64"
 # https://superuser.com/a/1225139
@@ -126,6 +169,7 @@ elif [[ "$abcli_is_cloudshell" == true ]]; then
 else
     export abcli_hostname=$(hostname)
 fi
+echo "🌀 host: $abcli_hostname"
 
 function bluer_ai_kill_all() {
     # if [[ "$abcli_is_sagemaker" == true ]] || [[ "$abcli_is_cloudshell" == true ]]; then
