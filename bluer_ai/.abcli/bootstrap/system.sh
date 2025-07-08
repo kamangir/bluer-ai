@@ -104,7 +104,7 @@ function bluer_ai_announce() {
     [[ "$abcli_is_64bit" == true ]] &&
         status="$status 64-bit"
     [[ "$abcli_is_amazon_linux" == true ]] &&
-        status="$status amazon linux"
+        status="$status amazon-linux"
     [[ "$abcli_is_cloudshell" == true ]] &&
         status="$status cloudshell"
     [[ "$abcli_is_docker" == true ]] &&
@@ -112,7 +112,7 @@ function bluer_ai_announce() {
     [[ "$abcli_is_ec2" == true ]] &&
         status="$status ec2"
     [[ "$abcli_is_github_workflow" == true ]] &&
-        status="$status github workflow"
+        status="$status github-workflow"
     [[ "$abcli_is_jetson" == true ]] &&
         status="$status jetson"
     [[ "$abcli_is_headless" == true ]] &&
@@ -124,9 +124,9 @@ function bluer_ai_announce() {
     [[ "$abcli_is_sagemaker" == true ]] &&
         status="$status sagemaker"
     [[ "$abcli_is_sagemaker_system" == true ]] &&
-        status="$status sagemaker system"
+        status="$status sagemaker-system"
     [[ "$abcli_is_ssh_session" == true ]] &&
-        status="$status ssh session"
+        status="$status ssh-session"
     [[ "$abcli_is_ubuntu" == true ]] &&
         status="$status ubuntu"
     [[ "$abcli_is_vnc" == true ]] &&
