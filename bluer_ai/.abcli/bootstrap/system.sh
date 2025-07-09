@@ -132,7 +132,7 @@ function bluer_ai_announce() {
     [[ "$abcli_is_vnc" == true ]] &&
         status="$status vnc"
 
-    status="$status: $OSTYPE"
+    status="$status @ $OSTYPE"
     [[ ! -z "$abcli_hardware_model" ]] &&
         status="$status on $abcli_hardware_model"
 
