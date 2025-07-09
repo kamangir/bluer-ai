@@ -16,3 +16,4 @@ function bluer_ai_wifi_get_ssid() {
 }
 
 export BLUER_AI_WIFI_SSID=$(bluer_ai_wifi_get_ssid)
+echo "🌀 wifi: $BLUER_AI_WIFI_SSID"
