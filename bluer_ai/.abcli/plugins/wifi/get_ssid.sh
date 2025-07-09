@@ -5,7 +5,7 @@ function bluer_ai_wifi_get_ssid() {
         # https://code.luasoftware.com/tutorials/jetson-nano/jetson-nano-connect-to-wifi-via-command-line/
         # https://howchoo.com/pi/find-raspberry-pi-network-name-ssid
         local temp=$(iwgetid)
-        python3 -c "print('$temp'.split('\"')[1])"
+        python3 -c "print('$temp'.split('\"')[1] if '\"' in '$temp' else 'offline')"
     elif [ "$abcli_is_mac" == true ]; then
         # https://stackoverflow.com/a/8542420/17619982
         local temp=$(networksetup -getairportnetwork en0)
