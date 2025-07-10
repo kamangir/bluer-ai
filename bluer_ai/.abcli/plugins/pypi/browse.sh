@@ -21,5 +21,5 @@ function bluer_ai_pypi_browse() {
             $abcli_path_assets/pypi/.pypirc \
             $pyrc_filename
 
-    nano $pyrc_filename
+    bluer_ai_code $pyrc_filename
 }
