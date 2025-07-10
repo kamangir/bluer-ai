@@ -7,7 +7,7 @@ function bluer_ai_source_dependencies() {
 
     local venv_path="$HOME/venv/bluer_ai/bin/activate"
     if [[ -f "$venv_path" ]]; then
-        echo "sourcing $venv_path ..."
+        echo "🌀 sourcing $venv_path ..."
         source "$venv_path"
     fi
 
