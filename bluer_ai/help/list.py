@@ -215,6 +215,26 @@ def help_list_resize(
     )
 
 
+def help_list_reverse(
+    tokens: List[str],
+    mono: bool,
+) -> str:
+    args = [
+        "[--delim space | <delim>]",
+    ]
+
+    return show_usage(
+        [
+            "@list",
+            "reverse",
+            f"{example_list}",
+        ]
+        + args,
+        "reverse list.",
+        mono=mono,
+    )
+
+
 def help_list_sort(
     tokens: List[str],
     mono: bool,
@@ -247,5 +267,6 @@ help_functions = {
     "nonempty": help_list_nonempty,
     "prev": help_list_prev,
     "resize": help_list_resize,
+    "reverse": help_list_reverse,
     "sort": help_list_sort,
 }

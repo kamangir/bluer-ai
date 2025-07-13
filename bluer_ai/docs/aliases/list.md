@@ -62,6 +62,11 @@
 	[--delim space | <delim>]
  . resize list.
 @list \
+	reverse \
+	<item-1>,<item-2>,... \
+	[--delim space | <delim>]
+ . reverse list.
+@list \
 	sort \
 	<item-1>,<item-2>,... \
 	[--delim space | <delim>] \

@@ -87,6 +87,7 @@ function test_bluer_ai_help() {
         "@list nonempty" \
         "@list prev" \
         "@list resize" \
+        "@list reverse" \
         "@list sort" \
         \
         "@log" \
