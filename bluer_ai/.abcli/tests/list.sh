@@ -106,6 +106,22 @@ function test_bluer_ai_list_resize() {
         - empty
 }
 
+function test_bluer_ai_list_reverse() {
+    bluer_ai_assert \
+        $(bluer_ai_list_reverse this,that,which) \
+        which,that,this
+    [[ $? -ne 0 ]] && return 1
+
+    bluer_ai_assert \
+        $(bluer_ai_list_reverse this) \
+        this
+    [[ $? -ne 0 ]] && return 1
+
+    bluer_ai_assert \
+        "$(bluer_ai_list_reverse)" \
+        - empty
+}
+
 function test_bluer_ai_list_sort() {
     bluer_ai_assert \
         $(bluer_ai_list_sort this,that) \
