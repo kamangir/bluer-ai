@@ -67,6 +67,10 @@
 	[screen]
  . seed 🌱  git.
 @git \
+	set_remote \
+	[dryrun,https|ssh]
+ . set repo remote.
+@git \
 	status \
 	[~all]
  . show git status.

@@ -56,6 +56,7 @@ function test_bluer_ai_help() {
         "@git review" \
         "@git rm" \
         "@git seed" \
+        "@git set_remote" \
         "@git status" \
         "@git sync_fork" \
         \

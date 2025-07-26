@@ -17,4 +17,7 @@ function bluer_ai_version() {
 }
 
 bluer_ai_env_dot_load \
+    caller,plugin=bluer_ai,suffix=/../../..
+
+bluer_ai_env_dot_load \
     caller,filename=config.env,suffix=/../..
