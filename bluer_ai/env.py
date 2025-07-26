@@ -17,3 +17,5 @@ abcli_path_abcli = get_env("abcli_path_abcli")
 ABCLI_PATH_IGNORE = get_env("ABCLI_PATH_IGNORE")
 
 ABCLI_MLFLOW_STAGES = get_env("ABCLI_MLFLOW_STAGES")
+
+BLUER_AI_GITHUB_TOKEN = get_env("BLUER_AI_GITHUB_TOKEN")

@@ -293,6 +293,28 @@ def help_seed(
     )
 
 
+def help_set_remote(
+    tokens: List[str],
+    mono: bool,
+) -> str:
+    options = "".join(
+        [
+            xtra("dryrun,", mono=mono),
+            "https|ssh",
+        ]
+    )
+
+    return show_usage(
+        [
+            "@git",
+            "set_remote",
+            f"[{options}]",
+        ],
+        "set repo remote.",
+        mono=mono,
+    )
+
+
 def help_status(
     tokens: List[str],
     mono: bool,
@@ -342,6 +364,7 @@ help_functions = {
     "review": help_review,
     "rm": help_rm,
     "seed": help_seed,
+    "set_remote": help_set_remote,
     "status": help_status,
     "sync_fork": help_sync_fork,
 }
