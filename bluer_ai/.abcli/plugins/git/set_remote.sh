@@ -11,6 +11,11 @@ function bluer_ai_git_set_remote() {
 
     local remote_url
     if [[ "$remote" == "https" ]]; then
+        if [[ -z "$BLUER_AI_GITHUB_TOKEN" ]]; then
+            bluer_ai_warning "generate a token: https://github.com/settings/tokens -> .env/BLUER_AI_GITHUB_TOKEN..."
+            return 1
+        fi
+
         echo $BLUER_AI_GITHUB_TOKEN | pbcopy
         bluer_ai_log "Ctrl+V to paste the github token when asked for password."
 
