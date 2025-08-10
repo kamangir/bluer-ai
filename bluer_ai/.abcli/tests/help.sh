@@ -163,6 +163,7 @@ function test_bluer_ai_help() {
         "@watch" \
         \
         "@wifi" \
+        "@wifi diagnose" \
         "@wifi get_ssid" \
         \
         "bluer_ai_log_list" \
