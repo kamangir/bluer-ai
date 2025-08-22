@@ -29,6 +29,10 @@
 	create_pull_request
  . create a pull request in the repo.
 @git \
+	encrypt \
+	[dryrun]
+ . encrypt repo.
+@git \
 	get_branch
  . get git branch name.
 @git \
