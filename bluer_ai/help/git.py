@@ -117,6 +117,23 @@ def help_create_pull_request(
     )
 
 
+def help_encrypt(
+    tokens: List[str],
+    mono: bool,
+) -> str:
+    options = xtra("create_key,dryrun,install", mono=mono)
+
+    return show_usage(
+        [
+            "@git",
+            "encrypt",
+            f"[{options}]",
+        ],
+        "encrypt repo.",
+        mono=mono,
+    )
+
+
 def help_get_branch(
     tokens: List[str],
     mono: bool,
@@ -354,6 +371,7 @@ help_functions = {
     "clone": help_clone,
     "create_branch": help_create_branch,
     "create_pull_request": help_create_pull_request,
+    "encrypt": help_encrypt,
     "get_branch": help_get_branch,
     "get_repo_name": help_get_repo_name,
     "increment_version": help_increment_version,

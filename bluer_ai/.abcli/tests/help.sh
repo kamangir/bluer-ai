@@ -46,6 +46,7 @@ function test_bluer_ai_help() {
         "@git clone" \
         "@git create_branch" \
         "@git create_pull_request" \
+        "@git encrypt" \
         "@git get_branch" \
         "@git get_repo_name" \
         "@git increment_version" \
