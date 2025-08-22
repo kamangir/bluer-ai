@@ -30,7 +30,7 @@
  . create a pull request in the repo.
 @git \
 	encrypt \
-	[dryrun]
+	[dryrun,install]
  . encrypt repo.
 @git \
 	get_branch
