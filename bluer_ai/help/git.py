@@ -121,7 +121,7 @@ def help_encrypt(
     tokens: List[str],
     mono: bool,
 ) -> str:
-    options = xtra("dryrun,install", mono=mono)
+    options = xtra("create_key,dryrun,install", mono=mono)
 
     return show_usage(
         [
