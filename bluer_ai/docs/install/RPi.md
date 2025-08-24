@@ -32,3 +32,16 @@ display_rotate=3
 ## known issues
 
 1. on `rpi4b` headless install raises `ERROR: Wheel 'tensorflow' located at /home/pi/tensorflow-2.2.0-cp37-cp37m-linux_armv7l.whl is invalid.`
+
+2. `pyarrow` may cause an "illegal instruction" error. this will stop plugins from loading. to recognize if this is the case, run,
+```bash
+@plugins list_of_external
+```
+the output should look like,
+```text
+🌀  4 external plugin(s): bluer_algo, bluer_objects, bluer_sbc, bluer_ugv
+```
+if "illegal instruction" was printed, run,
+```bash
+pip uninstall -y pyarrow
+```
