@@ -46,7 +46,7 @@ def transform(
     for index, (this, that) in enumerate(transformation.items()):
         logger.info(f"#{index: 2d} - {this} -> {that}")
 
-    list_of_extensions = "env,py,sh,yml".split(",")
+    list_of_extensions = "env,md,py,sh,yml".split(",")
 
     for root, _, list_of_filenames in tqdm(os.walk(repo_path)):
         for filename in list_of_filenames:

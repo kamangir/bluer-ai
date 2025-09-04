@@ -25,6 +25,16 @@ function bluer_ai_plugins_transform() {
         $plugin_name/.abcli/$plugin_name.sh
     [[ $? -ne 0 ]] && return 1
 
+    git mv \
+        $plugin_name/docs/aliases/plugin-template.md \
+        $plugin_name/docs/aliases/$plugin_name-template.md
+    [[ $? -ne 0 ]] && return 1
+
+    git mv \
+        $plugin_name/docs/aliases/plugin.md \
+        $plugin_name/docs/aliases/$plugin_name.md
+    [[ $? -ne 0 ]] && return 1
+
     python3 -m bluer_ai.plugins \
         transform \
         --repo_name $repo_name \
