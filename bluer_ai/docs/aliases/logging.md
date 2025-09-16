@@ -17,7 +17,14 @@
 	[--delim space | <delim>]
  . log list.
 @log \
+	rm
+ . rm the log.
+@log \
 	verbose \
 	[on | off]
  . verbose logging on/off.
+@log \
+	watch \
+	[seconds=<seconds>]
+ . watch the log.
 ```

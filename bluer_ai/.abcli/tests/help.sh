@@ -92,7 +92,9 @@ function test_bluer_ai_help() {
         "@list sort" \
         \
         "@log" \
+        "@log rm" \
         "@log verbose" \
+        "@log watch" \
         "@log::list" \
         \
         "@not" \

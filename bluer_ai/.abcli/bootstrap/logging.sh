@@ -3,7 +3,12 @@
 function bluer_ai_log() {
     local task=$1
 
-    if [ "$task" == "verbose" ]; then
+    if [[ "$task" == "rm" ]]; then
+        rm -v $bluer_ai_log_filename
+        return
+    fi
+
+    if [[ "$task" == "verbose" ]]; then
         local what=${2:-on}
 
         if [ "$what" == "on" ]; then
@@ -16,6 +21,15 @@ function bluer_ai_log() {
             bluer_ai_log_error "@log: verbose: $what: command not found."
             return 1
         fi
+
+        return
+    fi
+
+    if [[ "$task" == "watch" ]]; then
+        bluer_ai_watch \
+            seconds=5,$2 \
+            cat \
+            $bluer_ai_log_filename
 
         return
     fi
