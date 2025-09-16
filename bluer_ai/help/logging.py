@@ -66,6 +66,20 @@ def help_log_list(
     )
 
 
+def help_log_rm(
+    tokens: List[str],
+    mono: bool,
+) -> str:
+    return show_usage(
+        [
+            "@log",
+            "rm",
+        ],
+        "rm the log.",
+        mono=mono,
+    )
+
+
 def help_log_verbose(
     tokens: List[str],
     mono: bool,
@@ -79,6 +93,23 @@ def help_log_verbose(
             f"[{options}]",
         ],
         "verbose logging on/off.",
+        mono=mono,
+    )
+
+
+def help_log_watch(
+    tokens: List[str],
+    mono: bool,
+) -> str:
+    options = xtra("seconds=<seconds>", mono=mono)
+
+    return show_usage(
+        [
+            "@log",
+            "watch",
+            f"[{options}]",
+        ],
+        "watch the log.",
         mono=mono,
     )
 
@@ -102,5 +133,7 @@ help_functions = {
     "error": help_log_error,
     "warning": help_log_warning,
     "list": help_log_list,
+    "rm": help_log_rm,
     "verbose": help_log_verbose,
+    "watch": help_log_watch,
 }
