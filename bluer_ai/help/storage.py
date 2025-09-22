@@ -56,18 +56,18 @@ def help_exists(
     )
 
 
-def help_list(
+def help_ls(
     tokens: List[str],
     mono: bool,
 ) -> str:
     return show_usage(
         [
             "@storage",
-            "list",
+            "ls",
             "<prefix>",
             "[<args>]",
         ],
-        "list prefix in storage.",
+        "ls storage/<prefix>.",
         mono=mono,
     )
 
@@ -111,7 +111,7 @@ help_functions = {
     "clear": help_clear,
     "download_file": help_download_file,
     "exists": help_exists,
-    "list": help_list,
+    "ls": help_ls,
     "rm": help_rm,
     "status": help_status,
 }

@@ -15,10 +15,10 @@
 	<object-name>
  . True/False.
 @storage \
-	list \
+	ls \
 	<prefix> \
 	[<args>]
- . list prefix in storage.
+ . ls storage/<prefix>.
 @storage \
 	rm \
 	[~dryrun] \
