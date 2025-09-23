@@ -6,7 +6,7 @@
 
 3. It is likely that the boot does not complete automatically. Consult AI.
 
-4. `@ssh rpi <host-name>`. Then, run `@seed headless_ubuntu_rpi clipboard` in another terminal and paste it into the ssh window.
+4. run `@seed headless_ubuntu_rpi clipboard`. now, run `@ssh rpi <host-name>` and paste the seed 🌱 into the ssh window.
 
 5. ⚠️ needs more work - `sudo nano /boot/firmware/usercfg.txt` and add these lines,
 
