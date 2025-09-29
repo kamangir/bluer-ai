@@ -45,3 +45,13 @@ if "illegal instruction" was printed, run,
 ```bash
 pip uninstall -y pyarrow
 ```
+
+3. rpi may reboot at the first pytorch inference, because of under-voltage. to validate, run,
+```bash
+dmesg
+```
+look for,
+```text
+[   12.064503] hwmon hwmon1: Undervoltage detected!
+[   16.093659] hwmon hwmon1: Voltage normalised
+```
