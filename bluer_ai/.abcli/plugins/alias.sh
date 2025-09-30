@@ -22,6 +22,7 @@ alias @error=bluer_ai_log_error
 alias @warn=bluer_ai_log_warning
 
 alias @mac='if [ "$abcli_is_mac" == true ]; then'
+alias @rpi='if [ "$abcli_is_rpi" == true ]; then'
 alias @.='fi'
 
 alias @perform_action=bluer_ai_perform_action
