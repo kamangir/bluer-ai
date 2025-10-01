@@ -26,10 +26,13 @@ function bluer_ai_log() {
     fi
 
     if [[ "$task" == "watch" ]]; then
-        bluer_ai_watch \
-            seconds=5,$2 \
-            cat \
-            $bluer_ai_log_filename
+        local options=$1
+        local seconds=$(bluer_ai_option_int "$options" seconds 1)
+
+        python3 -m bluer_options.logger \
+            watch \
+            --seconds $seconds \
+            "${@:2}"
 
         return
     fi
