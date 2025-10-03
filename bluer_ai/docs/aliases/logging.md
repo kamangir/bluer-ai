@@ -24,7 +24,6 @@
 	[on | off]
  . verbose logging on/off.
 @log \
-	watch \
-	[seconds=<seconds>]
+	watch
  . watch the log.
 ```
