@@ -25,6 +25,7 @@
  . verbose logging on/off.
 @log \
 	watch \
-	[seconds=<seconds>]
+	[rpi] \
+	[<machine-name>]
  . watch the log.
 ```
