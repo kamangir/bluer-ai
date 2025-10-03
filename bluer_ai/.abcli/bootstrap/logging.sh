@@ -26,7 +26,23 @@ function bluer_ai_log() {
     fi
 
     if [[ "$task" == "watch" ]]; then
-        tail -f $bluer_ai_log_filename
+        local options=$2
+        local rpi=$(bluer_ai_option_int "$options" rpi 0)
+
+        if [[ "$rpi" == 1 ]]; then
+            local machine_name=$3
+            if [[ -z "$machine_name" ]]; then
+                bluer_ai_log_error "machine_name not found."
+                return 1
+            fi
+
+            ssh \
+                pi@$machine_name.local \
+                "tail -f /home/pi/git/bluer_ai.log"
+            return
+        fi
+
+        tail -f $bluer_ai_log_filename "${@:2}"
         return
     fi
 

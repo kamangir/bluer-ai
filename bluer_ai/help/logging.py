@@ -101,10 +101,14 @@ def help_log_watch(
     tokens: List[str],
     mono: bool,
 ) -> str:
+    options = xtra("rpi", mono=mono)
+
     return show_usage(
         [
             "@log",
             "watch",
+            f"[{options}]",
+            "[<machine-name>]",
         ],
         "watch the log.",
         mono=mono,
