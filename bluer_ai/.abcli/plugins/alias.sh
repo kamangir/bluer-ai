@@ -4,6 +4,8 @@ alias @=bluer_ai
 
 alias @build_README=bluer_ai_build_README
 
+alias @clear="cd; clear"
+
 alias @conda=bluer_ai_conda
 
 alias @docker=bluer_ai_docker
