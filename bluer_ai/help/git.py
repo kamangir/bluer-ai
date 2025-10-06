@@ -189,20 +189,49 @@ def help_pull(
     )
 
 
+def push_options(
+    mono: bool,
+    uses_actions: bool = True,
+    uses_pull_request: bool = True,
+    uses_workflows: bool = True,
+) -> str:
+    return "".join(
+        (
+            [
+                xtra("~action,", mono=mono),
+            ]
+            if uses_actions
+            else []
+        )
+        + [
+            "browse",
+        ]
+        + (
+            [
+                xtra(",~create_pull_request,", mono=mono),
+                "first",
+            ]
+            if uses_pull_request
+            else []
+        )
+        + [
+            xtra(",~increment_version,offline,~status", mono=mono),
+        ]
+        + (
+            [
+                ",~workflow",
+            ]
+            if uses_workflows
+            else []
+        )
+    )
+
+
 def help_push(
     tokens: List[str],
     mono: bool,
 ) -> str:
-    options = "".join(
-        [
-            xtra("~action,", mono=mono),
-            "browse",
-            xtra(",~create_pull_request,", mono=mono),
-            "first",
-            xtra(",~increment_version,offline,~status,", mono=mono),
-            "~workflow",
-        ]
-    )
+    options = push_options(mono=mono)
 
     build_options = f"build,{pypi_build_options}"
 
