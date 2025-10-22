@@ -37,11 +37,18 @@ def help_list_of_external(
     tokens: List[str],
     mono: bool,
 ) -> str:
+    args = [
+        "[--delim space | <delim>]",
+        "[--log 1]",
+        "[--repo_names 1]",
+    ]
+
     return show_usage(
         [
             "@plugins",
             "list_of_external",
-        ],
+        ]
+        + args,
         "show list of external plugins.",
         mono=mono,
     )
@@ -51,11 +58,18 @@ def help_list_of_installed(
     tokens: List[str],
     mono: bool,
 ) -> str:
+    args = [
+        "[--delim space | <delim>]",
+        "[--log 1]",
+        "[--repo_names 1]",
+    ]
+
     return show_usage(
         [
             "@plugins",
             "list_of_installed",
-        ],
+        ]
+        + args,
         "show list of installed plugins.",
         mono=mono,
     )
