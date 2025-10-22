@@ -31,6 +31,7 @@ def build():
             "docs/aliases/init.md",
             "docs/aliases/latex.md",
             "docs/aliases/logging.md",
+            "docs/aliases/plugins.md",
             "docs/aliases/pypi.md",
             "docs/aliases/screen.md",
             "docs/aliases/seed.md",

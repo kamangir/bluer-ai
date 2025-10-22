@@ -34,6 +34,7 @@ source $(python3 -m bluer_ai locate)/.abcli/bluer_ai.sh
 [@init](./bluer_ai/docs/aliases/init.md), 
 [@latex](./bluer_ai/docs/aliases/latex.md), 
 [@logging](./bluer_ai/docs/aliases/logging.md), 
+[@plugins](./bluer_ai/docs/aliases/plugins.md), 
 [@pypi](./bluer_ai/docs/aliases/pypi.md), 
 [@screen](./bluer_ai/docs/aliases/screen.md), 
 [@seed](./bluer_ai/docs/aliases/seed.md) 🌱, 
