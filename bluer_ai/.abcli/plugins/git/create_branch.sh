@@ -19,7 +19,7 @@ function bluer_ai_git_create_branch() {
     fi
 
     [[ "$do_timestamp" == 1 ]] &&
-        branch_name=$branch_name-$(bluer_ai_string_timestamp_short)
+        branch_name=$branch_name-$(bluer_ai_string_timestamp)
 
     if [[ "$do_offline" == 0 ]]; then
         git pull
