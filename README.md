@@ -36,10 +36,12 @@ source $(python3 -m bluer_ai locate)/.abcli/bluer_ai.sh
 [@logging](./bluer_ai/docs/aliases/logging.md), 
 [@plugins](./bluer_ai/docs/aliases/plugins.md), 
 [@pypi](./bluer_ai/docs/aliases/pypi.md), 
+[@random](./bluer_ai/docs/aliases/random.md), 
 [@screen](./bluer_ai/docs/aliases/screen.md), 
 [@seed](./bluer_ai/docs/aliases/seed.md) 🌱, 
 [@ssh](./bluer_ai/docs/aliases/ssh.md), 
 [@terraform](./bluer_ai/docs/aliases/terraform.md), 
+[@today](./bluer_ai/docs/aliases/today.md), 
 [@wifi](./bluer_ai/docs/aliases/wifi.md).
 
 [@options](https://github.com/kamangir/bluer-options): 
@@ -79,4 +81,4 @@ source $(python3 -m bluer_ai locate)/.abcli/bluer_ai.sh
 
 [![pylint](https://github.com/kamangir/bluer-ai/actions/workflows/pylint.yml/badge.svg)](https://github.com/kamangir/bluer-ai/actions/workflows/pylint.yml) [![pytest](https://github.com/kamangir/bluer-ai/actions/workflows/pytest.yml/badge.svg)](https://github.com/kamangir/bluer-ai/actions/workflows/pytest.yml) [![bashtest](https://github.com/kamangir/bluer-ai/actions/workflows/bashtest.yml/badge.svg)](https://github.com/kamangir/bluer-ai/actions/workflows/bashtest.yml) [![PyPI version](https://img.shields.io/pypi/v/bluer_ai.svg)](https://pypi.org/project/bluer_ai/) [![PyPI - Downloads](https://img.shields.io/pypi/dd/bluer_ai)](https://pypistats.org/packages/bluer_ai)
 
-built by 🌀 [`bluer README`](https://github.com/kamangir/bluer-objects/tree/main/bluer_objects/README), based on 🌀 [`bluer_ai-12.293.1`](https://github.com/kamangir/bluer-ai).
+built by 🌀 [`bluer README`](https://github.com/kamangir/bluer-objects/tree/main/bluer_objects/README), based on 🌀 [`bluer_ai-12.294.1`](https://github.com/kamangir/bluer-ai).

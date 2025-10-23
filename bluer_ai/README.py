@@ -33,10 +33,12 @@ def build():
             "docs/aliases/logging.md",
             "docs/aliases/plugins.md",
             "docs/aliases/pypi.md",
+            "docs/aliases/random.md",
             "docs/aliases/screen.md",
             "docs/aliases/seed.md",
             "docs/aliases/ssh.md",
             "docs/aliases/terraform.md",
+            "docs/aliases/today.md",
             "docs/aliases/wifi.md",
             # @options
             "docs/aliases/assert.md",
