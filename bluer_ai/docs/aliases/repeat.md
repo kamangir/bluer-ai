@@ -1,4 +1,4 @@
-# repeat
+# aliases: repeat
 
 ```bash
 @repeat \

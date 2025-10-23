@@ -1,4 +1,4 @@
-# badge
+# aliases: badge
 
 ```bash
 @badge \

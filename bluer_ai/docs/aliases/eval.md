@@ -1,4 +1,4 @@
-# eval
+# aliases: eval
 
 ```bash
 @eval \

@@ -1,4 +1,4 @@
-# latex
+# aliases: latex
 
 ```bash
 @latex \

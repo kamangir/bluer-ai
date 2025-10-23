@@ -1,4 +1,4 @@
-# storage
+# aliases: storage
 
 ```bash
 @storage \

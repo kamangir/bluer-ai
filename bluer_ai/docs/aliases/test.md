@@ -1,4 +1,4 @@
-# test
+# aliases: test
 
 ```bash
 @test \

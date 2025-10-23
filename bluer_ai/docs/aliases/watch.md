@@ -1,4 +1,4 @@
-# watch
+# aliases: watch
 
 ```bash
 @watch \

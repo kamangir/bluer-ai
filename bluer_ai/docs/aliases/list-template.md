@@ -1,3 +1,3 @@
-# list
+title:::
 
 help::: bluer_ai list

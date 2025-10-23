@@ -1,4 +1,4 @@
-# wifi
+# aliases: wifi
 
 ```bash
 @wifi \

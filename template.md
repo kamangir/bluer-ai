@@ -36,10 +36,12 @@ source $(python3 -m bluer_ai locate)/.abcli/bluer_ai.sh
 [@logging](./bluer_ai/docs/aliases/logging.md), 
 [@plugins](./bluer_ai/docs/aliases/plugins.md), 
 [@pypi](./bluer_ai/docs/aliases/pypi.md), 
+[@random](./bluer_ai/docs/aliases/random.md), 
 [@screen](./bluer_ai/docs/aliases/screen.md), 
 [@seed](./bluer_ai/docs/aliases/seed.md) 🌱, 
 [@ssh](./bluer_ai/docs/aliases/ssh.md), 
 [@terraform](./bluer_ai/docs/aliases/terraform.md), 
+[@today](./bluer_ai/docs/aliases/today.md), 
 [@wifi](./bluer_ai/docs/aliases/wifi.md).
 
 [@options](https://github.com/kamangir/bluer-options): 

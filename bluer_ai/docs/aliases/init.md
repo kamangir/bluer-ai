@@ -1,4 +1,4 @@
-# init
+# aliases: init
 
 ```bash
 @init \

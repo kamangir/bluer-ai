@@ -124,6 +124,8 @@ function test_bluer_ai_help() {
         \
         "@pytest" \
         \
+        "@random" \
+        \
         "@repeat" \
         \
         "@screen" \
@@ -160,6 +162,8 @@ function test_bluer_ai_help() {
         "@timestamp" \
         "@@timestamp" \
         \
+        "@today" \
+        \
         "@warn" \
         \
         "@watch" \
@@ -171,6 +175,9 @@ function test_bluer_ai_help() {
         "bluer_ai_log_list" \
         "bluer_ai_source_caller_suffix_path" \
         "bluer_ai_source_path" \
+        \
+        "bluer_ai_string_after" \
+        "bluer_ai_string_before" \
         \
         "bluer_ai"; do
         bluer_ai_eval ,$options \

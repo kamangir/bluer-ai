@@ -1,4 +1,4 @@
-# timestamp
+# aliases: timestamp
 
 ```bash
 @timestamp
