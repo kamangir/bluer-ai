@@ -1,4 +1,4 @@
-# conda
+# aliases: conda
 
 ```bash
 @conda \

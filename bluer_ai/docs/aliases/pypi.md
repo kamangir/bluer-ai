@@ -1,4 +1,4 @@
-# pypi
+# aliases: pypi
 
 ```bash
 @pypi \

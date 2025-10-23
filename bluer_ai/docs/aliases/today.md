@@ -1,4 +1,4 @@
-# timestamp
+# aliases: today
 
 ```bash
 @today \

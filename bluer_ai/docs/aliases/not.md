@@ -1,4 +1,4 @@
-# not
+# aliases: not
 
 ```bash
 @not \

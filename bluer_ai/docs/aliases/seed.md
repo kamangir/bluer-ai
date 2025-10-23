@@ -1,4 +1,4 @@
-# seed
+# aliases: seed
 
 ```bash
 @seed \

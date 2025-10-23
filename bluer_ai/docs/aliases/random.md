@@ -1,4 +1,4 @@
-# timestamp
+# aliases: random
 
 ```bash
 @random \

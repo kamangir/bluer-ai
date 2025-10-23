@@ -1,4 +1,4 @@
-# pypi
+# aliases: plugins
 
 ```bash
 @plugins \

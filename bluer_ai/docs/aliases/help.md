@@ -1,4 +1,4 @@
-# help
+# aliases: help
 
 ```bash
 @help \

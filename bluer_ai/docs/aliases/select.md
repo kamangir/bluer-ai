@@ -1,4 +1,4 @@
-# select
+# aliases: select
 
 ```bash
 @select \

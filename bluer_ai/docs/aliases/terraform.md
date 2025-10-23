@@ -1,4 +1,4 @@
-# terraform
+# aliases: terraform
 
 ```bash
 @terraform

@@ -1,4 +1,4 @@
-# option
+# aliases: option
 
 ```bash
 @option \

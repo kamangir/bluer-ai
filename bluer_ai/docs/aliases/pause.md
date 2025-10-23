@@ -1,4 +1,4 @@
-# pause
+# aliases: pause
 
 ```bash
 @pause \

@@ -1,4 +1,4 @@
-# git
+# aliases: git
 
 ```bash
 @git \

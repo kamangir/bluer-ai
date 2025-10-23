@@ -1,4 +1,4 @@
-# open
+# aliases: open
 
 ```bash
 @open \

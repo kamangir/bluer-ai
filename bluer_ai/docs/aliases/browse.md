@@ -1,4 +1,4 @@
-# browse
+# aliases: browse
 
 ```bash
 @browse \

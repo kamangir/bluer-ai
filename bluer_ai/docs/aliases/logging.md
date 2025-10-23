@@ -1,4 +1,4 @@
-# logging
+# aliases: logging
 
 ```bash
 @log \

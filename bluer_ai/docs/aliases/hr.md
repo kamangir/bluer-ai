@@ -1,4 +1,4 @@
-# hr
+# aliases: hr
 
 ```bash
 @hr

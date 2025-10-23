@@ -1,4 +1,4 @@
-# code
+# aliases: code
 
 ```bash
 @code \

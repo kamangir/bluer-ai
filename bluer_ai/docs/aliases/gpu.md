@@ -1,4 +1,4 @@
-# gpu
+# aliases: gpu
 
 ```bash
 @gpu \

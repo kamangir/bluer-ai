@@ -1,4 +1,4 @@
-# pytest
+# aliases: pytest
 
 ```bash
 @pytest \

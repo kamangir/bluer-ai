@@ -1,4 +1,4 @@
-# sleep
+# aliases: sleep
 
 ```bash
 @sleep \

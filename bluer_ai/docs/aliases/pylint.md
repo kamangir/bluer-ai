@@ -1,4 +1,4 @@
-# pylint
+# aliases: pylint
 
 ```bash
 @pylint \

@@ -1,4 +1,4 @@
-# wait
+# aliases: wait
 
 ```bash
 @wait \

@@ -1,4 +1,4 @@
-# screen
+# aliases: screen
 
 ```bash
 @screen \
