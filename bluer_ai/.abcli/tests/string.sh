@@ -76,6 +76,20 @@ function test_bluer_ai_string_random() {
     bluer_ai_assert \
         $(bluer_ai_string_random) \
         - non-empty
+    [[ $? -ne 0 ]] && return 1
+
+    bluer_ai_assert \
+        $(bluer_ai_string_random \
+            --length 256) \
+        - non-empty
+    [[ $? -ne 0 ]] && return 1
+
+    bluer_ai_assert \
+        $(bluer_ai_string_random \
+            --float 1 \
+            --min -100.0 \
+            --max 100.0) \
+        - non-empty
 }
 
 function test_bluer_ai_string_timestamp() {

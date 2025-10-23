@@ -2,6 +2,9 @@
 
 ```bash
 @random \
-	[--length <8>]
- . random string.
+	[--float 1] \
+	[--length <8>] \
+	[--min <1.0>] \
+	[--max <100.0>]
+ . random string/float.
 ```

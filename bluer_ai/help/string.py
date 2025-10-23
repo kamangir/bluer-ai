@@ -38,7 +38,10 @@ def help_random(
     mono: bool,
 ) -> str:
     args = [
+        "[--float 1]",
         "[--length <8>]",
+        "[--min <1.0>]",
+        "[--max <100.0>]",
     ]
 
     return show_usage(
@@ -46,7 +49,7 @@ def help_random(
             "@random",
         ]
         + args,
-        "random string.",
+        "random string/float.",
         mono=mono,
     )
 
