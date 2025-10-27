@@ -90,6 +90,14 @@ function test_bluer_ai_string_random() {
             --min -100.0 \
             --max 100.0) \
         - non-empty
+    [[ $? -ne 0 ]] && return 1
+
+    bluer_ai_assert \
+        $(bluer_ai_string_random \
+            --int 1 \
+            --min -100 \
+            --max 100) \
+        - non-empty
 }
 
 function test_bluer_ai_string_timestamp() {
