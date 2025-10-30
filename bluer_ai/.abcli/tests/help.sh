@@ -158,6 +158,7 @@ function test_bluer_ai_help() {
         "@terraform cat" \
         "@terraform disable" \
         "@terraform enable" \
+        "@terraform get" \
         \
         "@timestamp" \
         "@@timestamp" \
