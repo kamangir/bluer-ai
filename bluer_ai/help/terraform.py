@@ -58,9 +58,24 @@ def help_enable(
     )
 
 
+def help_get(
+    tokens: List[str],
+    mono: bool,
+) -> str:
+    return show_usage(
+        [
+            "@terraform",
+            "get",
+        ],
+        "get main terraform file.",
+        mono=mono,
+    )
+
+
 help_functions = {
     "": help_,
     "cat": help_cat,
     "disable": help_disable,
     "enable": help_enable,
+    "get": help_get,
 }

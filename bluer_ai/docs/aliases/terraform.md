@@ -12,4 +12,7 @@
 @terraform \
 	enable
  . enable terraform.
+@terraform \
+	get
+ . get main terraform file.
 ```

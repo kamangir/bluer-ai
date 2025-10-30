@@ -2,7 +2,7 @@
 
 ```bash
 @repeat \
-	[count=<count>,dryrun,~log,path=<path>] \
+	[count=<count>,background,dryrun,~log,path=<path>] \
 	<command-line>
  . repeat <command-line>.
 ```
