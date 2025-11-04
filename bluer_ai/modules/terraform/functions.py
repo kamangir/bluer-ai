@@ -1,5 +1,5 @@
 from typing import List, Tuple
-
+import os
 import numpy as np
 import platform
 
@@ -80,8 +80,13 @@ def rpi(
     )
 
     if not is_headless:
+        filename = "/etc/xdg/lxsession/LXDE-pi/autostart"
+        if not os.path.isfile(filename):
+            filename = "/etc/xdg/lxsession/rpd-x/autostart"
+        logger.info(f"terraforming {filename}")
+
         if not terraform(
-            ["/etc/xdg/lxsession/LXDE-pi/autostart"],
+            [filename],
             [
                 [
                     "@sudo -E bash /home/pi/git/bluer-ai/bluer_ai/.abcli/bluer_ai.sh ~terraform bluer_ai session start",
