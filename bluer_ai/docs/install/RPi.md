@@ -16,9 +16,9 @@
 
 ## With UI
 
-4. Insert a [seed usb key](seed), open a terminal, and run `bash /media/pi/SEED/abcli/rpi.sh`.
+4. run `@seed rpi_64_bit clipboard`. now, run `@ssh rpi <host-name>` and paste the seed 🌱 into the ssh window.
 
-5. Run `sudo nano /boot/config.txt` and uncomment the line that reads `#hdmi_force_hotplug=1`, if it exists. If you wish to rotate the screen, add one of the following to the end of this file and then reboot:
+5. Run `sudo nano /boot/config.txt` (or `/boot/firmware/config.txt` in later versions) and uncomment the line that reads `#hdmi_force_hotplug=1`, if it exists. If you wish to rotate the screen, add one of the following to the end of this file and then reboot:
 
 ```
 display_rotate=0
