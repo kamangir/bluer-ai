@@ -102,7 +102,8 @@ def load_text_file(
         text = text.split("\n")
 
         return True, text
-    except:
+    except Exception as e:
+        crash_report(e)
         return False, []
 
 
