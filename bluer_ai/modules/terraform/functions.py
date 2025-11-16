@@ -1,7 +1,9 @@
 from typing import List, Tuple
-import os
 import numpy as np
 import platform
+import shutil
+import os
+import pathlib
 
 from blueness import module
 from bluer_options import host, string
@@ -85,7 +87,30 @@ def rpi(
     if abcli_is_rpi4 == "true":
         logger.info("terraforming rpi4")
 
-        logger.info("🪄")
+        source_path = os.path.join(
+            str(
+                pathlib.Path(
+                    os.path.join(
+                        os.path.split(__file__)[0],
+                        "../assets/rpi4",
+                    )
+                ).resolve()
+            ),
+            "bluer_ai.service",
+        )
+
+        destination_path = "/etc/systemd/system/bluer_ai.service"
+
+        try:
+            shutil.copyfile(
+                source_path,
+                destination_path,
+            )
+        except Exception as e:
+            crash_report(e)
+            return False
+
+        logger.info(f"{source_path} -> {destination_path}")
 
         return True
 

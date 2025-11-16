@@ -15,7 +15,7 @@ function bluer_ai_terraform() {
 
             if [[ "$abcli_is_headless" == false ]]; then
                 if [[ "$abcli_is_rpi4" == true ]]; then
-                    bluer_ai_log "🪄"
+                    bluer_ai_log_local_and_cat "/etc/systemd/system/bluer_ai.service"
                 else
                     bluer_ai_log_local_and_cat /etc/xdg/lxsession/LXDE-pi/autostart
                 fi
@@ -114,6 +114,14 @@ function bluer_ai_terraform() {
             --is_headless $abcli_is_headless \
             --target rpi \
             --user pi
+
+        if [[ "$abcli_is_rpi4" == true ]]; then
+            sudo systemctl daemon-reload
+            sudo systemctl enable bluer_ai.service
+            sudo systemctl start bluer_ai.service
+            sudo systemctl status bluer_ai.service
+        fi
+
         return
     fi
 
