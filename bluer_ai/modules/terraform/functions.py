@@ -71,8 +71,8 @@ def rpi(
         ["/home/pi/.bashrc"],
         [
             [
-                "source /home/pi/git/bluer-ai/bluer_ai/.abcli/bluer_ai.sh{}".format(
-                    "  if_not_ssh,~terraform bluer_ai session start"
+                "source /home/pi/git/bluer-ai/bluer_ai/.abcli/bluer_ai.sh where=bashrc,{}".format(
+                    "if_not_ssh,~terraform bluer_ai session start"
                     if is_headless
                     else ""
                 )
@@ -90,7 +90,7 @@ def rpi(
             [filename],
             [
                 [
-                    "@sudo -E bash /home/pi/git/bluer-ai/bluer_ai/.abcli/bluer_ai.sh ~terraform bluer_ai session start",
+                    "@sudo -E bash /home/pi/git/bluer-ai/bluer_ai/.abcli/bluer_ai.sh ~terraform,where=autostart bluer_ai session start",
                 ]
             ],
         ):
