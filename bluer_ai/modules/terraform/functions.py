@@ -5,9 +5,8 @@ import platform
 
 from blueness import module
 from bluer_options import host, string
-from bluer_options.env import abcli_hostname
+from bluer_options.env import abcli_hostname, abcli_is_rpi4, BLUER_AI_WIFI_SSID
 from bluer_options.logger import crash_report
-from bluer_options.env import BLUER_AI_WIFI_SSID
 
 from bluer_ai import NAME, fullname
 from bluer_ai.logger import logger
@@ -80,23 +79,26 @@ def rpi(
         ],
     )
 
-    if not is_headless:
+    if is_headless:
+        return success
+
+    if abcli_is_rpi4 == "true":
+        logger.info("terraforming rpi4")
+        ...
+    else:
         filename = "/etc/xdg/lxsession/LXDE-pi/autostart"
         if not os.path.isfile(filename):
             filename = "/etc/xdg/lxsession/rpd-x/autostart"
         logger.info(f"terraforming {filename}")
 
-        if not terraform(
+        return terraform(
             [filename],
             [
                 [
                     "@sudo -E bash /home/pi/git/bluer-ai/bluer_ai/.abcli/bluer_ai.sh ~terraform,where=autostart bluer_ai session start",
                 ]
             ],
-        ):
-            success = False
-
-    return success
+        )
 
 
 def load_text_file(

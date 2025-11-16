@@ -12,14 +12,19 @@ function bluer_ai_terraform() {
 
         if [[ "$abcli_is_rpi" == true ]]; then
             bluer_ai_log_local_and_cat "/home/pi/.bashrc"
+
             if [[ "$abcli_is_headless" == false ]]; then
-                local filename
-                for filename in \
-                    /etc/xdg/lxsession/LXDE-pi/autostart \
-                    /etc/xdg/lxsession/rpd-x/autostart; do
-                    [[ -f "$filename" ]] &&
-                        bluer_ai_log_local_and_cat $filename
-                done
+                if [[ "$abcli_is_rpi4" == true ]]; then
+                    ...
+                else
+                    local filename
+                    for filename in \
+                        /etc/xdg/lxsession/LXDE-pi/autostart \
+                        /etc/xdg/lxsession/rpd-x/autostart; do
+                        [[ -f "$filename" ]] &&
+                            bluer_ai_log_local_and_cat $filename
+                    done
+                fi
             fi
             return
         fi
