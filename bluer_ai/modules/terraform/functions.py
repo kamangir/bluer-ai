@@ -86,13 +86,8 @@ def rpi(
         logger.info("terraforming rpi4")
         ...
     else:
-        filename = "/etc/xdg/lxsession/LXDE-pi/autostart"
-        if not os.path.isfile(filename):
-            filename = "/etc/xdg/lxsession/rpd-x/autostart"
-        logger.info(f"terraforming {filename}")
-
         return terraform(
-            [filename],
+            ["/etc/xdg/lxsession/LXDE-pi/autostart"],
             [
                 [
                     "@sudo -E bash /home/pi/git/bluer-ai/bluer_ai/.abcli/bluer_ai.sh ~terraform,where=autostart bluer_ai session start",
