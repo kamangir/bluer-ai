@@ -88,15 +88,15 @@ def rpi(
         logger.info("🪄")
 
         return True
-    else:
-        return terraform(
-            ["/etc/xdg/lxsession/LXDE-pi/autostart"],
+
+    return terraform(
+        ["/etc/xdg/lxsession/LXDE-pi/autostart"],
+        [
             [
-                [
-                    "@sudo -E bash /home/pi/git/bluer-ai/bluer_ai/.abcli/bluer_ai.sh ~terraform,where=autostart bluer_ai session start",
-                ]
-            ],
-        )
+                "@sudo -E bash /home/pi/git/bluer-ai/bluer_ai/.abcli/bluer_ai.sh ~terraform,where=autostart bluer_ai session start",
+            ]
+        ],
+    )
 
 
 def load_text_file(
