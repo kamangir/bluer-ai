@@ -1,28 +1,29 @@
 [Unit]
-Description=Bluer AI Autostart (run as root)
-After=network-online.target
-Wants=network-online.target
+Description=Bluer AI Autostart (sudo -E equivalent)
+After=graphical.target
+Wants=graphical.target
 
 [Service]
 Type=simple
 
-# Run entire script as root (equivalent to sudo)
+# Equivalent to sudo (run as root)
 User=root
 
-# Full command
-ExecStart=/home/pi/git/bluer-ai/bluer_ai/.abcli/bluer_ai.sh "~terraform,where=autostart" bluer_ai session start
-
-# X11 environment (only if your script needs GUI access)
-Environment=DISPLAY=:0
+# Equivalent to sudo -E (preserve environment)
+Environment=HOME=/home/pi
 Environment=XAUTHORITY=/home/pi/.Xauthority
+Environment=DISPLAY=:0
+
+# Optional — preserve PATH like sudo -E does
+Environment=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 WorkingDirectory=/home/pi
 
-# Do NOT restart if it fails
-Restart=no
+# Your command
+ExecStart=/home/pi/git/bluer-ai/bluer_ai/.abcli/bluer_ai.sh "~terraform,where=autostart" bluer_ai session start
 
-# Optional startup timeout (explained below)
-TimeoutStartSec=30
+# Do NOT restart on failure
+Restart=no
 
 [Install]
 WantedBy=graphical.target
