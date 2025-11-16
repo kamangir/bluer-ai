@@ -92,7 +92,7 @@ def rpi(
                 pathlib.Path(
                     os.path.join(
                         os.path.split(__file__)[0],
-                        "../assets/rpi4",
+                        "../../assets/rpi4",
                     )
                 ).resolve()
             ),
