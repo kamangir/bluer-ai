@@ -71,8 +71,8 @@ def rpi(
         ["/home/pi/.bashrc"],
         [
             [
-                "source /home/pi/git/bluer-ai/bluer_ai/.abcli/bluer_ai.sh where=bashrc,{}".format(
-                    "if_not_ssh,~terraform bluer_ai session start"
+                "source /home/pi/git/bluer-ai/bluer_ai/.abcli/bluer_ai.sh where=bashrc{}".format(
+                    ",if_not_ssh,~terraform bluer_ai session start"
                     if is_headless
                     else ""
                 )
