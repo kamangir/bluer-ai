@@ -84,7 +84,10 @@ def rpi(
 
     if abcli_is_rpi4 == "true":
         logger.info("terraforming rpi4")
-        ...
+
+        logger.info("🪄")
+
+        return True
     else:
         return terraform(
             ["/etc/xdg/lxsession/LXDE-pi/autostart"],

@@ -15,7 +15,7 @@ function bluer_ai_terraform() {
 
             if [[ "$abcli_is_headless" == false ]]; then
                 if [[ "$abcli_is_rpi4" == true ]]; then
-                    ...
+                    bluer_ai_log "🪄"
                 else
                     bluer_ai_log_local_and_cat /etc/xdg/lxsession/LXDE-pi/autostart
                 fi
