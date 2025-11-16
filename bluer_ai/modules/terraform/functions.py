@@ -5,6 +5,7 @@ import platform
 
 from blueness import module
 from bluer_options import host, string
+from bluer_options.env import abcli_hostname
 from bluer_options.logger import crash_report
 from bluer_options.env import BLUER_AI_WIFI_SSID
 
@@ -161,6 +162,7 @@ def signature() -> List[str]:
     return [
         fullname(),
         host.get_name(),
+        abcli_hostname,
         " | ".join(
             host.tensor_processing_signature()
             + [
