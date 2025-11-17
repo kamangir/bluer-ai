@@ -43,7 +43,8 @@ function bluer_ai_main() {
     [[ "$abcli_is_in_notebook" == false ]] &&
         bluer_ai_select $abcli_object_name
 
-    bluer_ai_log "🌀 $abcli_fullname"
+    local where=$(bluer_ai_option "$options" where)
+    bluer_ai_log "🌀 $abcli_fullname $where"
 
     local return_if_not_ssh=$(bluer_ai_option_int "$options" if_not_ssh 0)
     if [[ "$return_if_not_ssh" == 1 ]] && [[ "$abcli_is_ssh_session" == true ]]; then

@@ -1,13 +1,14 @@
 from typing import List, Tuple
-import os
 import numpy as np
 import platform
+import shutil
+import os
+import pathlib
 
 from blueness import module
 from bluer_options import host, string
-from bluer_options.env import abcli_hostname
+from bluer_options.env import abcli_hostname, abcli_is_rpi4, BLUER_AI_WIFI_SSID
 from bluer_options.logger import crash_report
-from bluer_options.env import BLUER_AI_WIFI_SSID
 
 from bluer_ai import NAME, fullname
 from bluer_ai.logger import logger
@@ -71,8 +72,8 @@ def rpi(
         ["/home/pi/.bashrc"],
         [
             [
-                "source /home/pi/git/bluer-ai/bluer_ai/.abcli/bluer_ai.sh{}".format(
-                    "  if_not_ssh,~terraform bluer_ai session start"
+                "source /home/pi/git/bluer-ai/bluer_ai/.abcli/bluer_ai.sh where=bashrc{}".format(
+                    ",if_not_ssh,~terraform bluer_ai session start"
                     if is_headless
                     else ""
                 )
@@ -80,23 +81,47 @@ def rpi(
         ],
     )
 
-    if not is_headless:
-        filename = "/etc/xdg/lxsession/LXDE-pi/autostart"
-        if not os.path.isfile(filename):
-            filename = "/etc/xdg/lxsession/rpd-x/autostart"
-        logger.info(f"terraforming {filename}")
+    if is_headless:
+        return success
 
-        if not terraform(
-            [filename],
+    if abcli_is_rpi4 == "true":
+        logger.info("terraforming rpi4")
+
+        source_path = os.path.join(
+            str(
+                pathlib.Path(
+                    os.path.join(
+                        os.path.split(__file__)[0],
+                        "../../assets/rpi4",
+                    )
+                ).resolve()
+            ),
+            "bluer_ai.service",
+        )
+
+        destination_path = "/etc/systemd/system/bluer_ai.service"
+
+        try:
+            shutil.copyfile(
+                source_path,
+                destination_path,
+            )
+        except Exception as e:
+            crash_report(e)
+            return False
+
+        logger.info(f"{source_path} -> {destination_path}")
+
+        return True
+
+    return terraform(
+        ["/etc/xdg/lxsession/LXDE-pi/autostart"],
+        [
             [
-                [
-                    "@sudo -E bash /home/pi/git/bluer-ai/bluer_ai/.abcli/bluer_ai.sh ~terraform bluer_ai session start",
-                ]
-            ],
-        ):
-            success = False
-
-    return success
+                "@sudo -E bash /home/pi/git/bluer-ai/bluer_ai/.abcli/bluer_ai.sh ~terraform,where=autostart bluer_ai session start",
+            ]
+        ],
+    )
 
 
 def load_text_file(
