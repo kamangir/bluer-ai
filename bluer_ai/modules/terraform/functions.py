@@ -41,6 +41,7 @@ def poster(filename: str) -> bool:
                 text=line,
                 centered=True,
                 image_width=screen.get_size()[1],
+                font_color=[6, 13, 31],
                 thickness=4,
             )
             for line in signature()
@@ -52,7 +53,7 @@ def poster(filename: str) -> bool:
         image=image,
         text="booting @ai ...",
         centered=True,
-        font_color=3 * (200,),
+        font_color=[39, 80, 194],
         thickness=12,
         font_size=4,
     )
