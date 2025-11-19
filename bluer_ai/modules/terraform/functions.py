@@ -51,7 +51,7 @@ def poster(filename: str) -> bool:
 
     image = render_text(
         image=image,
-        text="booting @ai ...",
+        text="booting @i ...",
         centered=True,
         font_color=[39, 80, 194],
         thickness=12,
