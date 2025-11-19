@@ -31,6 +31,4 @@ function bluer_ai_terraform_cat() {
         fi
         return
     fi
-
-    return
 }
