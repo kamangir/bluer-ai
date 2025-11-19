@@ -3,75 +3,19 @@
 function bluer_ai_terraform() {
     local task=$1
 
-    if [ "$task" == "cat" ]; then
-
-        if [[ "$abcli_is_mac" == true ]]; then
-            bluer_ai_log_local_and_cat ~/.bash_profile
-            return
-        fi
-
-        if [[ "$abcli_is_rpi" == true ]]; then
-            bluer_ai_log_local_and_cat "/home/pi/.bashrc"
-
-            if [[ "$abcli_is_headless" == false ]]; then
-                if [[ "$abcli_is_rpi4" == true ]]; then
-                    bluer_ai_log_local_and_cat /etc/systemd/system/bluer_ai.service
-                else
-                    bluer_ai_log_local_and_cat /etc/xdg/lxsession/LXDE-pi/autostart
-                fi
-            fi
-            return
-        fi
-
-        if [[ "$abcli_is_ubuntu" == true ]]; then
-            if [[ "$abcli_is_ec2" == true ]]; then
-                bluer_ai_log_local_and_cat "/home/$USER/.bash_profile"
-            else
-                bluer_ai_log_local_and_cat "/home/$USER/.bashrc"
-
-                if [[ "$abcli_is_jetson" == true ]]; then
-                    bluer_ai_log_local_and_cat "/home/$USER/.config/autostart/abcli.desktop"
-                fi
-            fi
-            return
-        fi
-
+    local function_name="bluer_ai_terraform_$1"
+    if [[ $(type -t $function_name) == "function" ]]; then
+        $function_name "${@:2}"
         return
     fi
 
-    if [ "$task" == "get" ]; then
-
-        if [[ "$abcli_is_mac" == true ]]; then
-            echo ~/.bash_profile
-            return
-        fi
-
-        if [[ "$abcli_is_rpi" == true ]]; then
-            echo "/home/pi/.bashrc"
-            return
-        fi
-
-        if [[ "$abcli_is_ubuntu" == true ]]; then
-            if [[ "$abcli_is_ec2" == true ]]; then
-                echo "/home/$USER/.bash_profile"
-            else
-                echo "/home/$USER/.bashrc"
-            fi
-            return
-        fi
-
-        echo "unknown"
-
-        return
-    fi
-
-    if [ "$task" == "disable" ]; then
+    if [[ "$task" == "disable" ]]; then
         bluer_ai_eval - \
             touch $ABCLI_PATH_IGNORE/disabled
         return
     fi
 
-    if [ "$task" == "enable" ]; then
+    if [[ "$task" == "enable" ]]; then
         rm -v $ABCLI_PATH_IGNORE/disabled
         return
     fi
@@ -184,3 +128,5 @@ function bluer_ai_log_local_and_cat() {
     bluer_ai_log_local "$1"
     cat "$1"
 }
+
+bluer_ai_source_caller_suffix_path /terraform
