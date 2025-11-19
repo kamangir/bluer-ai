@@ -33,7 +33,7 @@ def poster(filename: str) -> bool:
     from bluer_objects.graphics import screen
     from bluer_objects import file
 
-    logger.debug("{}.poster({})".format(NAME, filename))
+    logger.info("{}.poster({})".format(NAME, filename))
 
     image = add_frame(
         np.concatenate(
