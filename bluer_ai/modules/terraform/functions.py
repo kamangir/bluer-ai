@@ -33,23 +33,32 @@ def poster(filename: str) -> bool:
     from bluer_objects.graphics import screen
     from bluer_objects import file
 
-    logger.debug("{}.poster({})".format(NAME, filename))
+    logger.info("{}.poster({})".format(NAME, filename))
 
-    image = add_frame(
-        np.concatenate(
-            [
-                render_text(
-                    centered=True,
-                    image_width=screen.get_size()[1],
-                    text=line,
-                    thickness=4,
-                )
-                for line in signature()
-            ],
-            axis=0,
-        ),
-        32,
+    image = np.concatenate(
+        [
+            render_text(
+                text=line,
+                centered=True,
+                image_width=screen.get_size()[1],
+                font_color=[6, 13, 31],
+                thickness=4,
+            )
+            for line in signature()
+        ],
+        axis=0,
     )
+
+    image = render_text(
+        image=image,
+        text="booting @ai ...",
+        centered=True,
+        font_color=[39, 80, 194],
+        thickness=12,
+        font_size=4,
+    )
+
+    image = add_frame(image, 32)
 
     return image if filename is None else file.save_image(filename, image)
 
