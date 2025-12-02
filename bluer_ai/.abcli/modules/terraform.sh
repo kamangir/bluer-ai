@@ -59,9 +59,11 @@ function bluer_ai_terraform() {
             --target rpi \
             --user pi
 
-        if [[ "$abcli_is_rpi4" == true ]]; then
+        if [[ "$abcli_is_rpi4" == true ]] &&
+            [[ "$abcli_is_headless" == false ]]; then
             sudo systemctl daemon-reload
             sudo systemctl enable bluer_ai.service
+
         fi
 
         return
