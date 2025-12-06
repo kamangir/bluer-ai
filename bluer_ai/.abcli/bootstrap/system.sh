@@ -11,6 +11,7 @@ export abcli_is_headless=false
 export abcli_is_mac=false
 export abcli_is_rpi=false
 export abcli_is_rpi4=false
+export abcli_is_rpi5=false
 export abcli_is_sagemaker=false
 export abcli_is_sagemaker_system=false
 export abcli_is_ssh_session=false
@@ -77,6 +78,10 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 
             [[ "$abcli_hardware_model" == *"Raspberry Pi 4"* ]] &&
                 export abcli_is_rpi4=true
+
+            [[ "$abcli_hardware_model" == *"Raspberry Pi 5"* ]] &&
+                export abcli_is_rpi5=true
+
         elif [[ "$abcli_is_64bit" == false ]]; then
             export abcli_is_jetson=true
             # https://forums.developer.nvidia.com/t/read-serial-number-of-jetson-nano/72955
