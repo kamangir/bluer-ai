@@ -7,7 +7,12 @@ import pathlib
 
 from blueness import module
 from bluer_options import host, string
-from bluer_options.env import abcli_hostname, abcli_is_rpi4, BLUER_AI_WIFI_SSID
+from bluer_options.env import (
+    abcli_hostname,
+    abcli_is_rpi4,
+    abcli_is_rpi5,
+    BLUER_AI_WIFI_SSID,
+)
 from bluer_options.logger import crash_report
 
 from bluer_ai import NAME, fullname
@@ -93,15 +98,15 @@ def rpi(
     if is_headless:
         return success
 
-    if abcli_is_rpi4 == "true":
-        logger.info("terraforming rpi4")
+    if abcli_is_rpi4 == "true" or abcli_is_rpi5 == "true":
+        logger.info("terraforming rpi4/rpi5")
 
         source_path = os.path.join(
             str(
                 pathlib.Path(
                     os.path.join(
                         os.path.split(__file__)[0],
-                        "../../assets/rpi4",
+                        "../../assets/rpi45",
                     )
                 ).resolve()
             ),
