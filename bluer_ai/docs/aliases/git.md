@@ -68,7 +68,7 @@
  . seed 🌱  git.
 @git \
 	set_remote \
-	[dryrun,https|ssh]
+	[dryrun,https|ssh,private]
  . set repo remote.
 @git \
 	status \

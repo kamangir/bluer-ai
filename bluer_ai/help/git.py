@@ -329,7 +329,7 @@ def help_set_remote(
     options = "".join(
         [
             xtra("dryrun,", mono=mono),
-            "https|ssh",
+            "https|ssh,private",
         ]
     )
 
