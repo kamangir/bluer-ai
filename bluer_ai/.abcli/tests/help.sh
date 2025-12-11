@@ -47,6 +47,7 @@ function test_bluer_ai_help() {
         "@git create_branch" \
         "@git create_pull_request" \
         "@git get_branch" \
+        "@git get_remote" \
         "@git get_repo_name" \
         "@git increment_version" \
         "@git pull" \

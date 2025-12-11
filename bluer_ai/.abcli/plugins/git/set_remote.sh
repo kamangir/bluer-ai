@@ -4,6 +4,7 @@ function bluer_ai_git_set_remote() {
     local options=$1
     local do_dryrun=$(bluer_ai_option_int "$options" dryrun 0)
     local is_private=$(bluer_ai_option_int "$options" private 0)
+    local do_pull=$(bluer_ai_option_int "$options" pull 1)
     local remote=$(bluer_ai_option_choice "$options" https,ssh)
 
     local repo_name=$(bluer_ai_git_get_repo_name)
@@ -35,4 +36,8 @@ function bluer_ai_git_set_remote() {
     [[ $? -ne 0 ]] && return 1
 
     git remote -v
+
+    if [[ "$do_pull" == 1 ]]; then
+        git pull
+    fi
 }

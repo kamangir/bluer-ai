@@ -32,6 +32,9 @@
 	get_branch
  . get git branch name.
 @git \
+	get_remote
+ . get repo remote.
+@git \
 	get_repo_name
  . get repo name.
 @git \
@@ -68,7 +71,7 @@
  . seed 🌱  git.
 @git \
 	set_remote \
-	[dryrun,https|ssh,private]
+	[dryrun,https|ssh,private,~pull]
  . set repo remote.
 @git \
 	status \
