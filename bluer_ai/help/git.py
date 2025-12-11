@@ -344,6 +344,7 @@ def help_set_remote(
         [
             xtra("dryrun,", mono=mono),
             "https|ssh,private",
+            xtra(",~pull", mono=mono),
         ]
     )
 
