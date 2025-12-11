@@ -131,6 +131,20 @@ def help_get_branch(
     )
 
 
+def help_get_remote(
+    tokens: List[str],
+    mono: bool,
+) -> str:
+    return show_usage(
+        [
+            "@git",
+            "get_remote",
+        ],
+        "get repo remote.",
+        mono=mono,
+    )
+
+
 def help_get_repo_name(
     tokens: List[str],
     mono: bool,
@@ -384,6 +398,7 @@ help_functions = {
     "create_branch": help_create_branch,
     "create_pull_request": help_create_pull_request,
     "get_branch": help_get_branch,
+    "get_remote": help_get_remote,
     "get_repo_name": help_get_repo_name,
     "increment_version": help_increment_version,
     "pull": help_pull,

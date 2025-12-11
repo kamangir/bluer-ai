@@ -32,6 +32,9 @@
 	get_branch
  . get git branch name.
 @git \
+	get_remote
+ . get repo remote.
+@git \
 	get_repo_name
  . get repo name.
 @git \
