@@ -3,7 +3,7 @@
 ```bash
 @storage \
 	clear \
-	[cloud,~dryrun]
+	[cloud,~dryrun,public]
  . clear storage.
 @storage \
 	status \

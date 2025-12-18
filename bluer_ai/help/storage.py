@@ -10,7 +10,8 @@ def help_clear(
     options = "".join(
         [
             "cloud",
-            xtra(",~dryrun", mono=mono),
+            xtra(",~dryrun,", mono=mono),
+            "public",
         ]
     )
 

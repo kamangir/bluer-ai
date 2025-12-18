@@ -40,7 +40,6 @@ function bluer_ai_git_push() {
     git add .
     [[ $? -ne 0 ]] && return 1
 
-    message="$message - kamangir/bolt#746"
     [[ "$run_workflows" == 0 ]] &&
         message="$message - no-workflow 🪄"
 
