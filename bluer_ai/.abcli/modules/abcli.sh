@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 function bluer_ai() {
-    local task=$1
+    local task=${1:-version}
 
     local function_name=bluer_ai_$task
     if [[ $(type -t $function_name) == "function" ]]; then
