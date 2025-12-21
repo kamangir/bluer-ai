@@ -1,4 +1,4 @@
-1232#! /usr/bin/env bash
+#! /usr/bin/env bash
 
 function bluer_ai_source_dependencies() {
     source $abcli_path_bash/bootstrap/paths.sh
