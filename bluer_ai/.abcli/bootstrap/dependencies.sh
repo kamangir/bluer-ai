@@ -1,4 +1,4 @@
-#! /usr/bin/env bash
+1232#! /usr/bin/env bash
 
 function bluer_ai_source_dependencies() {
     source $abcli_path_bash/bootstrap/paths.sh
@@ -10,6 +10,9 @@ function bluer_ai_source_dependencies() {
         echo "🌀 sourcing $venv_path ..."
         source "$venv_path"
     fi
+
+    [[ "$abcli_is_rpi" == true ]] &&
+        export PATH="$HOME/.local/bin:$PATH"
 
     echo "🐍 $(python3 --version): $(which python)"
     echo "GNU bash $BASH_VERSION"
