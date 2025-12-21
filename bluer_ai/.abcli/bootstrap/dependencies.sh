@@ -11,6 +11,9 @@ function bluer_ai_source_dependencies() {
         source "$venv_path"
     fi
 
+    [[ "$abcli_is_rpi" == true ]] &&
+        export PATH="$HOME/.local/bin:$PATH"
+
     echo "🐍 $(python3 --version): $(which python)"
     echo "GNU bash $BASH_VERSION"
 
