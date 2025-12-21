@@ -61,8 +61,6 @@ fi
 
 if [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
     export abcli_is_rpi=true
-
-    export PATH="$HOME/.local/bin:$PATH"
 fi
 
 if [[ "$GITHUB_ACTIONS" == true ]]; then
@@ -108,6 +106,9 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
         fi
     fi
 fi
+
+[[ "$abcli_is_rpi" == true ]] &&
+    export PATH="$HOME/.local/bin:$PATH"
 
 function bluer_ai_announce() {
     local status=""
