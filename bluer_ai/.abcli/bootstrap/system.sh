@@ -110,6 +110,9 @@ fi
 [[ "$abcli_is_rpi" == true ]] &&
     export PATH="$HOME/.local/bin:$PATH"
 
+echo "START PATH=$PATH"
+trap 'echo "LINE $LINENO: PATH=$PATH"' DEBUG
+
 function bluer_ai_announce() {
     local status=""
 
