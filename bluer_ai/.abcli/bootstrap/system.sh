@@ -107,9 +107,6 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     fi
 fi
 
-echo "START PATH=$PATH"
-trap 'echo "LINE $LINENO: PATH=$PATH"' DEBUG
-
 function bluer_ai_announce() {
     local status=""
 
