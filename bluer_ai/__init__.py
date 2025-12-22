@@ -6,7 +6,7 @@ ICON = "🌀"
 
 DESCRIPTION = f"{ICON} A language to speak AI."
 
-VERSION = "12.362.1"
+VERSION = "12.363.1"
 
 REPO_NAME = "bluer-ai"
 
