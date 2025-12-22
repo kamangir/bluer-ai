@@ -18,7 +18,7 @@
 
 4. run `@seed rpi_64_bit clipboard`. now, run `@ssh rpi <host-name>` and paste the seed 🌱 into the ssh window.
 
-5. Run `sudo nano /boot/config.txt` (or `/boot/firmware/config.txt` in later versions) and uncomment the line that reads `#hdmi_force_hotplug=1`, if it exists. If you wish to rotate the screen, add one of the following to the end of this file and then reboot:
+5. run `wlr-randr --output HDMI-A-1 --transform 90`. in older versions run `sudo nano /boot/firmware/config.txt` (or `/boot/config.txt` in older versions) and uncomment the line that reads `#hdmi_force_hotplug=1`, if it exists. If you wish to rotate the screen, add one of the following to the end of this file and then reboot:
 
 ```
 display_rotate=0
