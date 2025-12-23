@@ -8,12 +8,15 @@ Type=simple
 User=pi
 Group=pi
 
+WorkingDirectory=/home/pi
+
+StandardOutput=journal
+StandardError=journal
+
 Environment=HOME=/home/pi
 Environment=XAUTHORITY=/home/pi/.Xauthority
 Environment=DISPLAY=:0
-Environment=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-
-WorkingDirectory=/home/pi
+Environment=PATH=/home/pi/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 ExecStart=/bin/bash -lc '/home/pi/git/bluer-ai/bluer_ai/.abcli/bluer_ai.sh ~terraform,where=autostart bluer_ai session start'
 
