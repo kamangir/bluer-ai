@@ -1,23 +1,20 @@
 [Unit]
 Description=Bluer AI Autostart (sudo -E equivalent)
-After=network.target sound.target graphical.target
-Wants=network.target sound.target graphical.target
+After=network-online.target
+Wants=network-online.target
 
 [Service]
 Type=simple
 User=root
 
-WorkingDirectory=/home/pi
-
-StandardOutput=journal
-StandardError=journal
-
 Environment=HOME=/home/pi
 Environment=XAUTHORITY=/home/pi/.Xauthority
 Environment=DISPLAY=:0
-Environment=PATH=/home/pi/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+Environment=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
-ExecStart=/bin/bash -lc /home/pi/git/bluer-ai/bluer_ai/.abcli/bluer_ai.sh ~terraform,where=autostart bluer_ai session start
+WorkingDirectory=/home/pi
+
+ExecStart=/bin/bash -lc '/home/pi/git/bluer-ai/bluer_ai/.abcli/bluer_ai.sh ~terraform,where=autostart bluer_ai session start'
 
 Restart=no
 
