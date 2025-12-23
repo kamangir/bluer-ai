@@ -13,13 +13,11 @@ StandardOutput=journal
 StandardError=journal
 
 Environment=HOME=/home/pi
-Environment=USER=pi
-Environment=LOGNAME=pi
 Environment=XAUTHORITY=/home/pi/.Xauthority
 Environment=DISPLAY=:0
 Environment=PATH=/home/pi/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
-ExecStart=/usr/sbin/runuser -u pi -- /bin/bash /home/pi/git/bluer-ai/bluer_ai/.abcli/bluer_ai.sh ~terraform,where=autostart bluer_ai session start
+ExecStart=/bin/bash -lc /home/pi/git/bluer-ai/bluer_ai/.abcli/bluer_ai.sh ~terraform,where=autostart bluer_ai session start
 
 Restart=no
 
