@@ -1,7 +1,7 @@
 [Unit]
 Description=Bluer AI Autostart (sudo -E equivalent)
-After=network-online.target sound.target graphical.target
-Wants=network-online.target sound.target graphical.target
+After=network.target sound.target graphical.target
+Wants=network.target sound.target graphical.target
 
 [Service]
 Type=simple
