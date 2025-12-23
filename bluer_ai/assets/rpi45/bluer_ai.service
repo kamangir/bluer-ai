@@ -1,11 +1,12 @@
 [Unit]
 Description=Bluer AI Autostart (sudo -E equivalent)
-After=network-online.target
-Wants=network-online.target
+After=network-online.target sound.target graphical.target
+Wants=network-online.target sound.target graphical.target
 
 [Service]
 Type=simple
-User=root
+User=pi
+Group=pi
 
 Environment=HOME=/home/pi
 Environment=XAUTHORITY=/home/pi/.Xauthority
