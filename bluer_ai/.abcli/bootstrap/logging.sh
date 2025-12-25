@@ -36,9 +36,13 @@ function bluer_ai_log() {
                 return 1
             fi
 
+            bluer_ai_badge "$machine_name"
+
             ssh \
                 pi@$machine_name.local \
                 "tail -f /home/pi/git/bluer_ai.log"
+
+            bluer_ai_badge "🌀"
             return
         fi
 
