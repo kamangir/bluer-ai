@@ -14,6 +14,7 @@ from bluer_options.env import (
     BLUER_AI_WIFI_SSID,
 )
 from bluer_options.logger import crash_report
+from bluer_options.host import signature as bluer_options_signature
 
 from bluer_ai import NAME, fullname
 from bluer_ai.logger import logger
@@ -46,21 +47,12 @@ def poster(filename: str) -> bool:
                 text=line,
                 centered=True,
                 image_width=screen.get_size()[1],
-                font_color=[6, 13, 31],
+                font_color=[39, 80, 194],
                 thickness=4,
             )
             for line in signature()
         ],
         axis=0,
-    )
-
-    image = render_text(
-        image=image,
-        text=abcli_hostname,
-        centered=True,
-        font_color=[39, 80, 194],
-        thickness=12,
-        font_size=4,
     )
 
     image = add_frame(image, 32)
