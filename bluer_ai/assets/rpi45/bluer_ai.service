@@ -14,7 +14,7 @@ Environment=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 WorkingDirectory=/home/pi
 
-ExecStart=/bin/bash -lc '/home/pi/git/bluer-ai/bluer_ai/.abcli/bluer_ai.sh ~terraform,where=autostart bluer_ai session start'
+ExecStart=/bin/bash -lc '/home/pi/git/bluer-ai/bluer_ai/.abcli/bluer_ai.sh ~terraform,where=autostart bluer_ai session ~start'
 
 Restart=no
 
