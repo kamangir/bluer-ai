@@ -56,7 +56,7 @@ def poster(filename: str) -> bool:
 
     image = render_text(
         image=image,
-        text="booting @i ...",
+        text=abcli_hostname,
         centered=True,
         font_color=[39, 80, 194],
         thickness=12,
