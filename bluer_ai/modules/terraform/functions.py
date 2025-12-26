@@ -50,7 +50,7 @@ def poster(filename: str) -> bool:
                 font_color=[39, 80, 194],
                 thickness=4,
             )
-            for line in signature() + bluer_options_signature()
+            for line in (signature() + bluer_options_signature())
         ],
         axis=0,
     )
