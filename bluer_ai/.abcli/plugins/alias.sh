@@ -33,6 +33,8 @@ alias @plugins=bluer_ai_plugins
 
 alias @pypi=bluer_ai_pypi
 
+alias @random=bluer_ai_string_random
+
 alias @screen=bluer_ai_screen
 
 alias @seed=bluer_ai_seed
