@@ -6,7 +6,8 @@ function bluer_ai_wifi_is_online() {
     local filename=~/$abcli_path_temp/is_online-$(bluer_ai_string_timestamp)
 
     curl -L https://github.com/kamangir \
-        --output $filename
+        --output $filename \
+        --connect-timeout 3
     [[ $? -ne 0 ]] &&
         output=0
 
