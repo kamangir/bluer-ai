@@ -12,6 +12,7 @@ from bluer_options.env import (
     abcli_is_rpi4,
     abcli_is_rpi5,
     BLUER_AI_WIFI_SSID,
+    BLUER_AI_IS_ONLINE,
 )
 from bluer_options.logger import crash_report
 from bluer_options.host import signature as bluer_options_signature
@@ -210,6 +211,7 @@ def signature() -> List[str]:
                 ),
             ]
             + ([BLUER_AI_WIFI_SSID] if BLUER_AI_WIFI_SSID else [])
+            + (["online"] if BLUER_AI_IS_ONLINE else ["offline"])
         ),
     ]
 

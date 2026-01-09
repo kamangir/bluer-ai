@@ -31,7 +31,22 @@ def help_get_ssid(
     )
 
 
+def help_is_online(
+    tokens: List[str],
+    mono: bool,
+) -> str:
+    return show_usage(
+        [
+            "@wifi",
+            "is_online",
+        ],
+        "true | false",
+        mono=mono,
+    )
+
+
 help_functions = {
     "diagnose": help_diagnose,
     "get_ssid": help_get_ssid,
+    "is_online": help_is_online,
 }

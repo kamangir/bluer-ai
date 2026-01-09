@@ -172,6 +172,7 @@ function test_bluer_ai_help() {
         \
         "@wifi" \
         "@wifi diagnose" \
+        "@wifi is_online" \
         "@wifi get_ssid" \
         \
         "bluer_ai_log_list" \

@@ -10,7 +10,7 @@ function bluer_ai_git_push() {
     local options=$2
     local do_browse=$(bluer_ai_option_int "$options" browse 0)
     local do_increment_version=$(bluer_ai_option_int "$options" increment_version 1)
-    local do_offline=$(bluer_ai_option_int "$options" offline 0)
+    local do_offline=$(bluer_ai_option_int "$options" offline $(bluer_ai_not $BLUER_AI_IS_ONLINE))
     local show_status=$(bluer_ai_option_int "$options" status 1)
     local first_push=$(bluer_ai_option_int "$options" first 0)
     local create_pull_request=$(bluer_ai_option_int "$options" create_pull_request $first_push)

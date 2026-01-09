@@ -8,7 +8,7 @@ function bluer_ai_git_create_branch() {
     fi
 
     local options=$2
-    local do_offline=$(bluer_ai_option_int "$options" offline 0)
+    local do_offline=$(bluer_ai_option_int "$options" offline $(bluer_ai_not $BLUER_AI_IS_ONLINE))
     local do_push=$(bluer_ai_option_int "$options" push 1)
     local do_increment_version=$(bluer_ai_option_int "$options" increment_version $(bluer_ai_not $do_push))
     local do_timestamp=$(bluer_ai_option_int "$options" timestamp 1)
