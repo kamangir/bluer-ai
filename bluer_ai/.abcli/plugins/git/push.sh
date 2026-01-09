@@ -53,15 +53,15 @@ function bluer_ai_git_push() {
     if [[ "$do_offline" == 0 ]]; then
         git push $extra_args
         [[ $? -ne 0 ]] && return 1
-    fi
 
-    if [[ "$create_pull_request" == 1 ]]; then
-        bluer_ai_git create_pull_request
-        [[ $? -ne 0 ]] && return 1
-    fi
+        if [[ "$create_pull_request" == 1 ]]; then
+            bluer_ai_git create_pull_request
+            [[ $? -ne 0 ]] && return 1
+        fi
 
-    [[ "$do_browse" == 1 ]] &&
-        bluer_ai_git_browse . actions
+        [[ "$do_browse" == 1 ]] &&
+            bluer_ai_git_browse . actions
+    fi
 
     local build_options=$3
     if [[ $(bluer_ai_option_int "$build_options" build 0) == 1 ]]; then
