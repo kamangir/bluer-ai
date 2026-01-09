@@ -7,7 +7,4 @@
 @wifi \
 	get_ssid
  . get wifi ssid.
-@wifi \
-	is_online
- . true | false
 ```
