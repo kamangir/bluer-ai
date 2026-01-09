@@ -7,13 +7,7 @@ import pathlib
 
 from blueness import module
 from bluer_options import host, string
-from bluer_options.env import (
-    abcli_hostname,
-    abcli_is_rpi4,
-    abcli_is_rpi5,
-    BLUER_AI_WIFI_SSID,
-    BLUER_AI_IS_ONLINE,
-)
+from bluer_options import env
 from bluer_options.logger import crash_report
 from bluer_options.host import signature as bluer_options_signature
 
@@ -91,7 +85,7 @@ def rpi(
     if is_headless:
         return success
 
-    if abcli_is_rpi4 == "true" or abcli_is_rpi5 == "true":
+    if env.abcli_is_rpi4 == "true" or env.abcli_is_rpi5 == "true":
         logger.info("terraforming rpi4/rpi5")
 
         source_path = os.path.join(
@@ -194,7 +188,7 @@ def signature() -> List[str]:
     return [
         fullname(),
         host.get_name(),
-        abcli_hostname,
+        env.abcli_hostname,
         " | ".join(
             host.tensor_processing_signature()
             + [
@@ -210,8 +204,9 @@ def signature() -> List[str]:
                     include_zone=True,
                 ),
             ]
-            + ([BLUER_AI_WIFI_SSID] if BLUER_AI_WIFI_SSID else [])
-            + (["online"] if BLUER_AI_IS_ONLINE else ["offline"])
+            + ([env.BLUER_AI_WIFI_SSID] if env.BLUER_AI_WIFI_SSID else [])
+            + (["online"] if env.BLUER_AI_IS_ONLINE else ["offline"])
+            + (["national"] if env.INTERNET_IS_NATIONAL else [])
         ),
     ]
 
