@@ -13,6 +13,9 @@ function bluer_ai_git_create_branch() {
     local do_increment_version=$(bluer_ai_option_int "$options" increment_version $(bluer_ai_not $do_push))
     local do_timestamp=$(bluer_ai_option_int "$options" timestamp 1)
 
+    [[ "$do_offline" == 1 ]] &&
+        bluer_ai_log "⛓️‍💥 offline mode."
+
     if [[ "$do_increment_version" == 1 ]]; then
         bluer_ai_git_increment_version
         [[ $? -ne 0 ]] && return 1

@@ -17,6 +17,9 @@ function bluer_ai_git_push() {
     local do_action=$(bluer_ai_option_int "$options" action 1)
     local run_workflows=$(bluer_ai_option_int "$options" workflow 1)
 
+    [[ "$do_offline" == 1 ]] &&
+        bluer_ai_log "⛓️‍💥 offline mode."
+
     if [[ "$do_increment_version" == 1 ]]; then
         bluer_ai_git_increment_version
         [[ $? -ne 0 ]] && return 1
