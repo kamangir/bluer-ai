@@ -49,4 +49,6 @@ alias @terraform=bluer_ai_terraform
 
 alias @version="bluer_ai version"
 
+alias @web=bluer_ai_web
+
 alias @wifi=bluer_ai_wifi
