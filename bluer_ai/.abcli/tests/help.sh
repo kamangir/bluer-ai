@@ -171,6 +171,7 @@ function test_bluer_ai_help() {
         "@watch" \
         \
         "@web" \
+        "@web get_ip" \
         "@web identify" \
         "@web is_accessible" \
         "@web where_am_i" \

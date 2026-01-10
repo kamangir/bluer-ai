@@ -3,6 +3,20 @@ from typing import List
 from bluer_options.terminal import show_usage
 
 
+def help_get_ip(
+    tokens: List[str],
+    mono: bool,
+) -> str:
+    return show_usage(
+        [
+            "@web",
+            "get_ip",
+        ],
+        "get IP.",
+        mono=mono,
+    )
+
+
 def help_identify(
     tokens: List[str],
     mono: bool,
@@ -52,6 +66,7 @@ def help_where_am_i(
 
 
 help_functions = {
+    "get_ip": help_get_ip,
     "identify": help_identify,
     "is_accessible": help_is_accessible,
     "where_am_i": help_where_am_i,
