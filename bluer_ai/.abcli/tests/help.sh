@@ -170,6 +170,11 @@ function test_bluer_ai_help() {
         \
         "@watch" \
         \
+        "@web" \
+        "@web identify" \
+        "@web is_accessible" \
+        "@web where_am_i" \
+        \
         "@wifi" \
         "@wifi diagnose" \
         "@wifi get_ssid" \
