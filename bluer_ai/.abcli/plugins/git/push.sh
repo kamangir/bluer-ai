@@ -78,19 +78,19 @@ function bluer_ai_git_push() {
     fi
 
     if [[ "$do_scp" == 1 ]]; then
-        bluer_ai_log "-scp-> $machine_name ..."
-
         if [[ ! -d ".git" ]]; then
             bluer_ai_log_error "not a git repo."
             return 1
         fi
 
+        local repo_name=$(basename $(pwd))
+        bluer_ai_log "scp $repo_name -> $machine_name ..."
+
         bluer_ai_eval - \
             scp -r \
             ./ \
-            pi@$machine_name.local:/path/to/destination
-
-        :
+            pi@$machine_name.local:/home/pi/git/$repo_name
+        [[ $? -ne 0 ]] && return 1
     fi
 
     local build_options=$3
