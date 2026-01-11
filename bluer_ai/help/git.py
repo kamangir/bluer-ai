@@ -265,7 +265,7 @@ def help_push(
             f"[{options}]",
             f"[{build_options}]",
         ],
-        "push to the repo.",
+        "push repo.",
         mono=mono,
     )
 

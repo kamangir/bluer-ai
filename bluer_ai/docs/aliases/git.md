@@ -51,7 +51,7 @@
 	<message> \
 	[~action,browse,~create_pull_request,first,~increment_version,~offline,scp,rpi=<machine-name>,~status,~workflow] \
 	[build,browse,install,~rm_dist,~upload]
- . push to the repo.
+ . push repo.
 @git \
 	recreate_ssh
  . recreate github ssh key.
