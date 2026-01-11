@@ -12,5 +12,6 @@ function test_bluer_ai_web_identify() {
     bluer_ai_web_identify \
         loop,~upload \
         $object_name \
-        --count 3
+        --count 3 \
+        --sleep 2
 }

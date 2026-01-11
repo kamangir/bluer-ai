@@ -35,7 +35,7 @@ def help_identify(
 
     args = sorted(
         [
-            "[--period <30>]",
+            "[--sleep <30>]",
         ]
         + is_args
     )

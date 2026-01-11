@@ -18,6 +18,8 @@ setup(
         f"{NAME}.plugins.git",
         f"{NAME}.plugins.gpu",
         f"{NAME}.tests",
+        f"{NAME}.web",
+        f"{NAME}.web.status",
     ],
     package_data={
         NAME: [

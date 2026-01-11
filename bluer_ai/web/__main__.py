@@ -1,14 +1,12 @@
 import argparse
-from typing import Dict
-import time
+
 
 from blueness import module
 from blueness.argparse.generic import sys_exit
-from bluer_options import string
-from bluer_objects.metadata import post_to_object
 
 from bluer_ai import NAME
-from bluer_ai.web.status import get_status
+from bluer_ai.web.status.get import get_status
+from bluer_ai.web.status.loop import get_status_on_a_loop
 from bluer_ai.web.accessible import is_accessible
 from bluer_ai.logger import logger
 
@@ -44,7 +42,7 @@ parser.add_argument(
     default="",
 )
 parser.add_argument(
-    "--period",
+    "--sleep",
     type=int,
     default=30,
     help="in seconds",
@@ -63,6 +61,7 @@ args = parser.parse_args()
 
 success = False
 if args.task == "is_accessible":
+    success = True
     print(
         int(
             is_accessible(
@@ -72,43 +71,22 @@ if args.task == "is_accessible":
         )
     )
 elif args.task == "identify":
-    success = True
-
-    list_of_status: Dict[float, str] = {}
-    counter = 0
     if args.loop:
-        try:
-            while True:
-                count += 1
-                list_of_status[string.pretty_date()] = get_status(
-                    timeout=args.timeout,
-                    log=args.log == 1,
-                )
-
-                if args.count != -1 and count > args.count:
-                    logger.info(f"{args.count} samples collected.")
-                    break
-
-                time.sleep(args.period)
-        except KeyboardInterrupt:
-            logger.warning(f"Ctrl+C, stopping.")
-        except Exception as e:
-            logger.error(e)
-            success = False
-
-        if success:
-            success = post_to_object(
-                args.object_name,
-                "status",
-                list_of_status,
-            )
-
-    else:
-        status = get_status(
+        success = get_status_on_a_loop(
             timeout=args.timeout,
             log=args.log == 1,
+            count=args.count,
+            sleep=args.sleep,
+            object_name=args.object_name,
         )
-        print(status)
+    else:
+        success = True
+        print(
+            get_status(
+                timeout=args.timeout,
+                log=args.log == 1,
+            )
+        )
 else:
     success = None
 

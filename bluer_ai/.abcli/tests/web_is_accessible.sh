@@ -14,4 +14,6 @@ function test_bluer_ai_web_is_accessible() {
     output=$(bluer_ai_web_is_accessible $url)
     [[ "$output" -ne 1 ]] &&
         return 1
+
+    return 0
 }
