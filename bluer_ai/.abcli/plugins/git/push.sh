@@ -18,6 +18,14 @@ function bluer_ai_git_push() {
     local do_scp=$(bluer_ai_option_int "$options" scp 0)
     local run_workflows=$(bluer_ai_option_int "$options" workflow 1)
 
+    if [[ "$do_scp" == 1 ]]; then
+        local machine_name=$(bluer_ai_option "$options" rpi)
+        if [[ -z "$machine_name" ]]; then
+            bluer_ai_log_error "machine name not found."
+            return 1
+        fi
+    fi
+
     [[ "$do_offline" == 1 ]] &&
         bluer_ai_log "⛓️‍💥 offline mode."
 
@@ -68,12 +76,7 @@ function bluer_ai_git_push() {
     fi
 
     if [[ "$do_scp" == 1 ]]; then
-        local machine_name=$(bluer_ai_option "$options" rpi)
-        if [[ -z "$machine_name" ]]; then
-            bluer_ai_log_error "machine name not found."
-            return 1
-        fi
-
+        bluer_ai_log "-scp-> $machine_name ..."
         :
     fi
 
