@@ -1,6 +1,6 @@
 from typing import List
 
-from bluer_options.terminal import show_usage
+from bluer_options.terminal import show_usage, xtra
 
 
 def help_get_ip(
@@ -17,15 +17,37 @@ def help_get_ip(
     )
 
 
+is_args = [
+    "[--timeout 3]",
+]
+
+
 def help_identify(
     tokens: List[str],
     mono: bool,
 ) -> str:
+    options = "".join(
+        [
+            xtra("~upload,", mono=mono),
+            "loop",
+        ]
+    )
+
+    args = sorted(
+        [
+            "[--period <30>]",
+        ]
+        + is_args
+    )
+
     return show_usage(
         [
             "@web",
             "identify",
-        ],
+            f"[{options}]",
+            "[-|<object-name>]",
+        ]
+        + args,
         "identify web connection.",
         mono=mono,
     )
@@ -35,9 +57,6 @@ def help_is_accessible(
     tokens: List[str],
     mono: bool,
 ) -> str:
-    args = [
-        "[--timeout 3]",
-    ]
 
     return show_usage(
         [
@@ -45,7 +64,7 @@ def help_is_accessible(
             "is_accessible",
             "<url>",
         ]
-        + args,
+        + is_args,
         "is <url> accessible?",
         mono=mono,
     )

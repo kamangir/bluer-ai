@@ -233,7 +233,7 @@ def push_options(
             xtra(
                 ",~increment_version,{},~status,".format(
                     "~offline,scp,rpi=<machine-name>"
-                    if env.INTERNET_IS_NATIONAL
+                    if env.BLUER_AI_WEB_STATUS != "online"
                     else "offline"
                 ),
                 mono=mono,
