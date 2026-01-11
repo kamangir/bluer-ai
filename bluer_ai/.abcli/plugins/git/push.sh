@@ -15,6 +15,7 @@ function bluer_ai_git_push() {
     local first_push=$(bluer_ai_option_int "$options" first 0)
     local create_pull_request=$(bluer_ai_option_int "$options" create_pull_request $first_push)
     local do_action=$(bluer_ai_option_int "$options" action 1)
+    local do_scp=$(bluer_ai_option_int "$options" scp 0)
     local run_workflows=$(bluer_ai_option_int "$options" workflow 1)
 
     [[ "$do_offline" == 1 ]] &&
@@ -64,6 +65,16 @@ function bluer_ai_git_push() {
 
         [[ "$do_browse" == 1 ]] &&
             bluer_ai_git_browse . actions
+    fi
+
+    if [[ "$do_scp" == 1 ]]; then
+        local machine_name=$(bluer_ai_option "$options" rpi)
+        if [[ -z "$machine_name" ]]; then
+            bluer_ai_log_error "machine name not found."
+            return 1
+        fi
+
+        :
     fi
 
     local build_options=$3

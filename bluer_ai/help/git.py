@@ -1,6 +1,7 @@
 from typing import List
 
 from bluer_options.terminal import show_usage, xtra
+from bluer_options import env
 
 from bluer_ai.help.pypi import build_options as pypi_build_options
 
@@ -229,11 +230,18 @@ def push_options(
             else []
         )
         + [
-            xtra(",~increment_version,offline,~status", mono=mono),
+            xtra(
+                ",~increment_version,{},~status,".format(
+                    "~offline,scp,rpi=<machine-name>"
+                    if env.INTERNET_IS_NATIONAL
+                    else "offline"
+                ),
+                mono=mono,
+            ),
         ]
         + (
             [
-                ",~workflow",
+                "~workflow",
             ]
             if uses_workflows
             else []
