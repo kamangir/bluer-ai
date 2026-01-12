@@ -30,16 +30,14 @@ def get_status_on_a_loop(
     )
 
     list_of_status: Dict[float, str] = {}
-    counter = 0
     try:
         while True:
-            counter += 1
             list_of_status[string.pretty_date()] = get_status(
                 timeout=timeout,
                 log=log,
             )
 
-            if count != -1 and counter > count:
+            if count != -1 and len(list_of_status) > count:
                 logger.info(f"{count} samples collected.")
                 break
 
@@ -49,6 +47,8 @@ def get_status_on_a_loop(
     except Exception as e:
         logger.error(e)
         return False
+
+    logger.info("collected {} sample(s).".format(len(list_of_status)))
 
     return post_to_object(
         object_name,

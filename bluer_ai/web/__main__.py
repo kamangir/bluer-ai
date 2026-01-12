@@ -27,7 +27,7 @@ parser.add_argument(
 parser.add_argument(
     "--log",
     type=int,
-    default=0,
+    default=-1,
     help="0 | 1",
 )
 parser.add_argument(
@@ -74,7 +74,7 @@ elif args.task == "identify":
     if args.loop:
         success = get_status_on_a_loop(
             timeout=args.timeout,
-            log=args.log == 1,
+            log=args.log != 0,
             count=args.count,
             sleep=args.sleep,
             object_name=args.object_name,
