@@ -25,6 +25,8 @@ items_send:::
 
 set:::object_name web-2026-01-13-12-22-09-pu21uk
 
-assets:::get:::object_name/17682943725004506077697604217535.jpg
+| | |
+|-|-|
+| assets:::get:::object_name/17682943725004506077697604217535.jpg | assets:::get:::object_name/20260112_212937.jpg |
 
 items_receive:::
