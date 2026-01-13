@@ -20,6 +20,7 @@ setup(
         f"{NAME}.README",
         f"{NAME}.tests",
         f"{NAME}.web",
+        f"{NAME}.web.receive",
         f"{NAME}.web.status",
     ],
     package_data={

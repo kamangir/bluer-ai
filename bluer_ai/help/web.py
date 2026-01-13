@@ -74,10 +74,19 @@ def help_receive(
     tokens: List[str],
     mono: bool,
 ) -> str:
+    options = "".join(
+        [
+            "upload",
+            xtra(",port=<8000>", mono=mono),
+        ],
+    )
+
     return show_usage(
         [
             "@web",
             "receive",
+            f"[{options}]",
+            "[-|<object-name>]",
         ],
         "receive files.",
         mono=mono,
@@ -91,7 +100,7 @@ def help_send(
     options = "".join(
         [
             "download",
-            xtra(",port=<port>", mono=mono),
+            xtra(",port=<8000>", mono=mono),
         ],
     )
 

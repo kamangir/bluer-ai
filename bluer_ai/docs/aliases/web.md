@@ -17,11 +17,13 @@
 	[--timeout 3]
  . is <url> accessible?
 @web \
-	receive
+	receive \
+	[upload,port=<8000>] \
+	[-|<object-name>]
  . receive files.
 @web \
 	send \
-	[download,port=<port>] \
+	[download,port=<8000>] \
 	[.|<object-name>]
  . send files.
 @web \
