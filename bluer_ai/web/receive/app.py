@@ -3,7 +3,6 @@ import os
 import argparse
 
 from blueness import module
-from bluer_options.env import get_env
 
 from bluer_ai import NAME
 
@@ -25,7 +24,12 @@ def upload_form():
 @app.route("/upload", methods=["POST"])
 def upload_file():
     file = request.files["file"]
-    file.save(os.path.join(app.config["UPLOAD_FOLDER"], file.filename))
+    file.save(
+        os.path.join(
+            app.config["UPLOAD_FOLDER"],
+            file.filename,
+        ),
+    )
     return "uploaded. ✅"
 
 
