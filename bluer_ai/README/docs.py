@@ -13,4 +13,7 @@ docs = [
     {
         "path": "../docs",
     },
+    {
+        "path": "../docs/web.md",
+    },
 ] + aliases.docs
