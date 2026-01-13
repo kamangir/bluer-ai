@@ -1,3 +1,3 @@
 title:::
 
-help::: bluer_objects web
+help::: bluer_ai web

@@ -17,6 +17,7 @@ setup(
         f"{NAME}.plugins",
         f"{NAME}.plugins.git",
         f"{NAME}.plugins.gpu",
+        f"{NAME}.README",
         f"{NAME}.tests",
         f"{NAME}.web",
         f"{NAME}.web.status",
