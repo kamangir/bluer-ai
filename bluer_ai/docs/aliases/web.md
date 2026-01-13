@@ -20,7 +20,9 @@
 	receive
  . receive files.
 @web \
-	send
+	send \
+	[download,port=<port>] \
+	[.|<object-name>]
  . send files.
 @web \
 	where_am_i

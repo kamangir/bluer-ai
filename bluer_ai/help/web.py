@@ -88,10 +88,19 @@ def help_send(
     tokens: List[str],
     mono: bool,
 ) -> str:
+    options = "".join(
+        [
+            "download",
+            xtra(",port=<port>", mono=mono),
+        ],
+    )
+
     return show_usage(
         [
             "@web",
             "send",
+            f"[{options}]",
+            "[.|<object-name>]",
         ],
         "send files.",
         mono=mono,
