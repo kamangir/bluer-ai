@@ -1,12 +1,15 @@
 from flask import Flask, request
 import os
+import argparse
 
+from blueness import module
 from bluer_options.env import get_env
 
+from bluer_ai import NAME
+
+NAME = module.name(__file__, NAME)
 
 app = Flask(__name__)
-UPLOAD_FOLDER = get_env("BLUER_AI_WEB_RECEIVE_PATH")
-app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
 
 @app.route("/")
@@ -26,5 +29,21 @@ def upload_file():
     return "فایل با موفقیت آپلود شد!"
 
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8000)
+parser = argparse.ArgumentParser(NAME)
+parser.add_argument(
+    "--path",
+    type=str,
+)
+parser.add_argument(
+    "--port",
+    type=int,
+    default=8001,
+)
+args = parser.parse_args()
+
+app.config["UPLOAD_FOLDER"] = args.path
+
+app.run(
+    host="0.0.0.0",
+    port=args.port,
+)
