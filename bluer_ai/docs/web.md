@@ -8,13 +8,9 @@
 @web send
 ```
 
-http://192.168.43.61:8000/test.json
-
-http://192.168.43.61:8000/test-00.png
-
 |   |   |   |
 | --- | --- | --- |
-| [![image](../../../assets2/bluer-ai-web/web-send-01.jpg?raw=true)](../../../assets2/bluer-ai-web/web-send-01.jpg?raw=true) | [![image](../../../assets2/bluer-ai-web/web-send-02.jpg?raw=true)](../../../assets2/bluer-ai-web/web-send-02.jpg?raw=true) | [![image](../../../assets2/bluer-ai-web/web-send-03.jpg?raw=true)](../../../assets2/bluer-ai-web/web-send-03.jpg?raw=true) |
+| [`http://192.168.43.61:8000/`](#) [![image](../../../assets2/bluer-ai-web/web-send-01.jpg)](#)  | [`http://192.168.43.61:8000/test-00.png`](#) [![image](../../../assets2/bluer-ai-web/web-send-02.jpg)](#)  | [`http://192.168.43.61:8000/test.json`](#) [![image](../../../assets2/bluer-ai-web/web-send-03.jpg)](#)  |
 
 # receive
 
