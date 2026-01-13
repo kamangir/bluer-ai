@@ -18,7 +18,7 @@
  . is <url> accessible?
 @web \
 	receive \
-	[upload,port=<8000>] \
+	[open,upload,port=<8000>] \
 	[-|<object-name>]
  . receive files.
 @web \

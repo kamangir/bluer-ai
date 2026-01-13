@@ -76,7 +76,7 @@ def help_receive(
 ) -> str:
     options = "".join(
         [
-            "upload",
+            "open,upload",
             xtra(",port=<8000>", mono=mono),
         ],
     )

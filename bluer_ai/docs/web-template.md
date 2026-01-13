@@ -12,11 +12,13 @@ http://192.168.43.61:8000/test.json
 
 http://192.168.43.61:8000/test-00.png
 
+items_send:::
+
 # receive
 
 ```bash
 @select web-$(@timestamp)
-@web receive
+@web receive open
 @assets publish \
 	extensions=jpg,push
 ```
@@ -24,3 +26,5 @@ http://192.168.43.61:8000/test-00.png
 set:::object_name web-2026-01-13-12-22-09-pu21uk
 
 assets:::get:::object_name/17682943725004506077697604217535.jpg
+
+items_receive:::

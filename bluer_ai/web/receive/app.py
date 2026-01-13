@@ -24,13 +24,16 @@ def upload_form():
 @app.route("/upload", methods=["POST"])
 def upload_file():
     file = request.files["file"]
-    file.save(
-        os.path.join(
-            app.config["UPLOAD_FOLDER"],
-            file.filename,
-        ),
-    )
-    return "uploaded. ✅"
+    if file.filename:
+        file.save(
+            os.path.join(
+                app.config["UPLOAD_FOLDER"],
+                file.filename,
+            ),
+        )
+        return 'uploaded. ✅ | <a href="../">upload another file ...</a>.'
+
+    return '⚠️ file not found | <a href="../">go back ...</a>.'
 
 
 parser = argparse.ArgumentParser(NAME)
