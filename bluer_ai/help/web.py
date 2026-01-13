@@ -70,6 +70,34 @@ def help_is_accessible(
     )
 
 
+def help_receive(
+    tokens: List[str],
+    mono: bool,
+) -> str:
+    return show_usage(
+        [
+            "@web",
+            "receive",
+        ],
+        "receive files.",
+        mono=mono,
+    )
+
+
+def help_send(
+    tokens: List[str],
+    mono: bool,
+) -> str:
+    return show_usage(
+        [
+            "@web",
+            "send",
+        ],
+        "send files.",
+        mono=mono,
+    )
+
+
 def help_where_am_i(
     tokens: List[str],
     mono: bool,
@@ -88,5 +116,7 @@ help_functions = {
     "get_ip": help_get_ip,
     "identify": help_identify,
     "is_accessible": help_is_accessible,
+    "receive": help_receive,
+    "send": help_send,
     "where_am_i": help_where_am_i,
 }

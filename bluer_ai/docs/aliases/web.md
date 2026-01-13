@@ -17,6 +17,12 @@
 	[--timeout 3]
  . is <url> accessible?
 @web \
+	receive
+ . receive files.
+@web \
+	send
+ . send files.
+@web \
 	where_am_i
  . where am I?
 ```
