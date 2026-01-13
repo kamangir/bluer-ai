@@ -306,6 +306,7 @@ def help_review(
         [
             "@git",
             "review",
+            "[<branch-name>]",
         ],
         "review the repo.",
         mono=mono,

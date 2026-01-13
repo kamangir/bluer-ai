@@ -59,7 +59,8 @@
 	reset
  . reset to the latest commit of the current branch.
 @git \
-	review
+	review \
+	[<branch-name>]
  . review the repo.
 @git \
 	rm \

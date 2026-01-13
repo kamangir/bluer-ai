@@ -1,13 +1,13 @@
 #! /usr/bin/env bash
 
 function bluer_ai_git_review() {
-    local branch_name=$1
+    local branch_name=${1:-HEAD}
 
     local repo_name=$(bluer_ai_git_get_repo_name)
 
     pushd $abcli_path_git/$repo_name >/dev/null
 
-    local list_of_files=$(git diff --name-only HEAD | tr "\n" " ")
+    local list_of_files=$(git diff --name-only $branch_name | tr "\n" " ")
     local list_of_files=$(bluer_ai_list_nonempty "$list_of_files" --delim space)
     if [[ -z "$list_of_files" ]]; then
         bluer_ai_log_warning "@git: review: no changes."
@@ -25,20 +25,12 @@ function bluer_ai_git_review() {
         clear
         git status
         bluer_ai_hr
-        if [[ -z "$branch_name" ]]; then
-            printf "📜 $RED$filename$NC\n"
-        else
-            printf "📜 $RED$branch_name: $filename$NC\n"
-        fi
+        printf "📜 $RED$branch_name: $filename$NC\n"
 
         if [[ "$filename" == *.ipynb ]]; then
             bluer_ai_log_warning "jupyter notebook, will not review."
         else
-            if [[ -z "$branch_name" ]]; then
-                git diff $filename
-            else
-                git diff $branch_name $filename
-            fi
+            git diff $branch_name $filename
         fi
 
         bluer_ai_hr
