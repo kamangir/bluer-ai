@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 function bluer_ai_web() {
-    local task=$1
+    local task=${1:-identify}
 
     local function_name=bluer_ai_web_$task
     if [[ $(type -t $function_name) == "function" ]]; then
