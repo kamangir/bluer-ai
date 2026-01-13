@@ -1,19 +1,21 @@
 from bluer_objects.README.alias import list_of_aliases
 
 from bluer_ai import NAME
-from bluer_ai.README import aliases
+from bluer_ai.README import aliases, web
 
-docs = [
-    {
-        "path": "../..",
-        "macros": {
-            "aliases:::": list_of_aliases(NAME),
+
+docs = (
+    [
+        {
+            "path": "../..",
+            "macros": {
+                "aliases:::": list_of_aliases(NAME),
+            },
         },
-    },
-    {
-        "path": "../docs",
-    },
-    {
-        "path": "../docs/web.md",
-    },
-] + aliases.docs
+        {
+            "path": "../docs",
+        },
+    ]
+    + aliases.docs
+    + web.docs
+)

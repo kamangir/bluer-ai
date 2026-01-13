@@ -12,7 +12,9 @@ http://192.168.43.61:8000/test.json
 
 http://192.168.43.61:8000/test-00.png
 
-items_send:::
+|   |   |   |
+| --- | --- | --- |
+| [![image](../../../assets2/bluer-ai-web/web-send-01.jpg?raw=true)](../../../assets2/bluer-ai-web/web-send-01.jpg?raw=true) | [![image](../../../assets2/bluer-ai-web/web-send-02.jpg?raw=true)](../../../assets2/bluer-ai-web/web-send-02.jpg?raw=true) | [![image](../../../assets2/bluer-ai-web/web-send-03.jpg?raw=true)](../../../assets2/bluer-ai-web/web-send-03.jpg?raw=true) |
 
 # receive
 
@@ -23,9 +25,9 @@ items_send:::
 	extensions=jpg,push
 ```
 
+|   |   |   |   |   |   |   |   |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| [![image](../../../assets2/bluer-ai-web/web-receive-01.jpg?raw=true)](../../../assets2/bluer-ai-web/web-receive-01.jpg?raw=true) | [![image](../../../assets2/bluer-ai-web/web-receive-02.jpg?raw=true)](../../../assets2/bluer-ai-web/web-receive-02.jpg?raw=true) | [![image](../../../assets2/bluer-ai-web/web-receive-03.jpg?raw=true)](../../../assets2/bluer-ai-web/web-receive-03.jpg?raw=true) | [![image](../../../assets2/bluer-ai-web/web-receive-04.jpg?raw=true)](../../../assets2/bluer-ai-web/web-receive-04.jpg?raw=true) | [![image](../../../assets2/bluer-ai-web/web-receive-05.jpg?raw=true)](../../../assets2/bluer-ai-web/web-receive-05.jpg?raw=true) | [![image](../../../assets2/bluer-ai-web/web-receive-06.jpg?raw=true)](../../../assets2/bluer-ai-web/web-receive-06.jpg?raw=true) | [![image](../../../assets2/bluer-ai-web/web-receive-07.jpg?raw=true)](../../../assets2/bluer-ai-web/web-receive-07.jpg?raw=true) | [![image](../../../assets2/bluer-ai-web/web-receive-08.jpg?raw=true)](../../../assets2/bluer-ai-web/web-receive-08.jpg?raw=true) |
 
-| | |
-|-|-|
-| ![image](../../../assets/web-2026-01-13-12-22-09-pu21uk/17682943725004506077697604217535.jpg?raw=true) | ![image](../../../assets/web-2026-01-13-12-22-09-pu21uk/20260112_212937.jpg?raw=true) |
 
-items_receive:::
+![image](../../../assets/web-2026-01-13-12-22-09-pu21uk/20260112_212937.jpg?raw=true)
