@@ -17,7 +17,7 @@ def upload_form():
     return """
     <form action="/upload" method="post" enctype="multipart/form-data">
         <input type="file" name="file">
-        <input type="submit" value="آپلود">
+        <input type="submit" value="upload">
     </form>
     """
 
@@ -26,7 +26,7 @@ def upload_form():
 def upload_file():
     file = request.files["file"]
     file.save(os.path.join(app.config["UPLOAD_FOLDER"], file.filename))
-    return "فایل با موفقیت آپلود شد!"
+    return "uploaded. ✅"
 
 
 parser = argparse.ArgumentParser(NAME)
