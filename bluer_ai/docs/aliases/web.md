@@ -27,6 +27,11 @@
 	[.|<object-name>]
  . send files.
 @web \
+	send \
+	[path,port=<8000>] \
+	<path>
+ . send files.
+@web \
 	where_am_i
  . where am I?
 ```

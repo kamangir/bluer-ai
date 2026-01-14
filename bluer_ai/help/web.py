@@ -104,7 +104,7 @@ def help_send(
         ],
     )
 
-    return show_usage(
+    usage_1 = show_usage(
         [
             "@web",
             "send",
@@ -113,6 +113,33 @@ def help_send(
         ],
         "send files.",
         mono=mono,
+    )
+
+    # ----
+
+    options = "".join(
+        [
+            "path",
+            xtra(",port=<8000>", mono=mono),
+        ],
+    )
+
+    usage_2 = show_usage(
+        [
+            "@web",
+            "send",
+            f"[{options}]",
+            "<path>",
+        ],
+        "send files.",
+        mono=mono,
+    )
+
+    return "\n".join(
+        [
+            usage_1,
+            usage_2,
+        ]
     )
 
 
