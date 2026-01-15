@@ -31,6 +31,7 @@ app.config["UPLOAD_FOLDER"] = args.path
 def upload_form():
     return """
     🔗 <a href="http://{}:{}/">http://{}:{}/</a><hr/>
+    <img src="https://kamangir-public.s3.ir-thr-at1.arvanstorage.ir/2026-01-15-20-36-14-veuhs0/test-00.png">
     <form action="/upload" method="post" enctype="multipart/form-data">
         <input type="file" name="file">
         <input type="submit" value="upload">
