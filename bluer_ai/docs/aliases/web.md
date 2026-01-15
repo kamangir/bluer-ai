@@ -18,7 +18,7 @@
  . is <url> accessible?
 @web \
 	receive \
-	[open,upload,port=<8000>] \
+	[open,upload,port=<8001>] \
 	[-|<object-name>]
  . receive files.
 @web \
@@ -31,6 +31,16 @@
 	[path,port=<8000>] \
 	<path>
  . send files.
+@web \
+	share \
+	[download,port.receive.=<8001>,port.send=<8000>,upload] \
+	[-|<object-name>]
+ . share files.
+@web \
+	share \
+	[path,port.receive.=<8001>,port.send=<8000>] \
+	<path>
+ . share files.
 @web \
 	where_am_i
  . where am I?

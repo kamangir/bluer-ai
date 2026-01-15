@@ -176,6 +176,7 @@ function test_bluer_ai_help() {
         "@web is_accessible" \
         "@web receive" \
         "@web send" \
+        "@web share" \
         "@web where_am_i" \
         \
         "@wifi" \

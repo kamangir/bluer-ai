@@ -2,6 +2,8 @@ from typing import List
 
 from bluer_options.terminal import show_usage, xtra
 
+from bluer_ai import env
+
 
 def help_get_ip(
     tokens: List[str],
@@ -77,7 +79,12 @@ def help_receive(
     options = "".join(
         [
             "open,upload",
-            xtra(",port=<8000>", mono=mono),
+            xtra(
+                ",port=<{}>".format(
+                    env.BLUER_AI_WEB_RECEIVE_PORT,
+                ),
+                mono=mono,
+            ),
         ],
     )
 
@@ -97,10 +104,17 @@ def help_send(
     tokens: List[str],
     mono: bool,
 ) -> str:
+    port_options = xtra(
+        ",port=<{}>".format(
+            env.BLUER_AI_WEB_SEND_PORT,
+        ),
+        mono=mono,
+    )
+
     options = "".join(
         [
             "download",
-            xtra(",port=<8000>", mono=mono),
+            port_options,
         ],
     )
 
@@ -120,8 +134,8 @@ def help_send(
     options = "".join(
         [
             "path",
-            xtra(",port=<8000>", mono=mono),
-        ],
+            port_options,
+        ]
     )
 
     usage_2 = show_usage(
@@ -132,6 +146,65 @@ def help_send(
             "<path>",
         ],
         "send files.",
+        mono=mono,
+    )
+
+    return "\n".join(
+        [
+            usage_1,
+            usage_2,
+        ]
+    )
+
+
+def help_share(
+    tokens: List[str],
+    mono: bool,
+) -> str:
+    port_options = xtra(
+        ",port.receive.=<{}>,port.send=<{}>".format(
+            env.BLUER_AI_WEB_RECEIVE_PORT,
+            env.BLUER_AI_WEB_SEND_PORT,
+        ),
+        mono=mono,
+    )
+
+    options = "".join(
+        [
+            "download",
+            port_options,
+            ",upload",
+        ],
+    )
+
+    usage_1 = show_usage(
+        [
+            "@web",
+            "share",
+            f"[{options}]",
+            "[-|<object-name>]",
+        ],
+        "share files.",
+        mono=mono,
+    )
+
+    # ----
+
+    options = "".join(
+        [
+            "path",
+            port_options,
+        ],
+    )
+
+    usage_2 = show_usage(
+        [
+            "@web",
+            "share",
+            f"[{options}]",
+            "<path>",
+        ],
+        "share files.",
         mono=mono,
     )
 
@@ -163,5 +236,6 @@ help_functions = {
     "is_accessible": help_is_accessible,
     "receive": help_receive,
     "send": help_send,
+    "share": help_share,
     "where_am_i": help_where_am_i,
 }

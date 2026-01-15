@@ -3,7 +3,7 @@
 function bluer_ai_web_send() {
     local options=$1
     local do_download=$(bluer_ai_option_int "$options" download 0)
-    local port=$(bluer_ai_option "$options" port 8000)
+    local port=$(bluer_ai_option "$options" port $BLUER_AI_WEB_SEND_PORT)
     local use_path=$(bluer_ai_option_int "$options" path 0)
 
     local path
