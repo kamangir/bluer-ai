@@ -28,7 +28,9 @@ def get_status(
             logger.info("🛜 online.")
 
         if status == "national":
-            logger.info("🇮🇷 internet is national.")
+            logger.info(
+                "🇮🇷 internet is national - use https://www.zoomit.ir/websites/342552-websites-directory-internet-shutdown/"
+            )
 
         if status == "offline":
             logger.info("⛓️‍💥 offline.")
