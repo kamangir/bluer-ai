@@ -3,10 +3,11 @@ import os
 import argparse
 
 from blueness import module
-from bluer_ai.env import BLUER_AI_IP
+from bluer_objects import file
 
 from bluer_ai import env
 from bluer_ai import NAME
+from bluer_ai.host import signature
 
 NAME = module.name(__file__, NAME)
 
@@ -18,9 +19,14 @@ parser.add_argument(
     type=str,
 )
 parser.add_argument(
-    "--port",
-    type=int,
+    "--port_receive",
+    type=str,
     default=env.BLUER_AI_WEB_RECEIVE_PORT,
+)
+parser.add_argument(
+    "--port_send",
+    type=str,
+    default=env.BLUER_AI_WEB_SEND_PORT,
 )
 args = parser.parse_args()
 
@@ -29,19 +35,27 @@ app.config["UPLOAD_FOLDER"] = args.path
 
 @app.route("/")
 def upload_form():
-    return """
-    🔗 <a href="http://{}:{}/">http://{}:{}/</a><hr/>
-    <img src="https://kamangir-public.s3.ir-thr-at1.arvanstorage.ir/2026-01-15-20-36-14-veuhs0/test-00.png">
-    <form action="/upload" method="post" enctype="multipart/form-data">
-        <input type="file" name="file">
-        <input type="submit" value="upload">
-    </form>
-    """.format(
-        BLUER_AI_IP,
-        args.port,
-        BLUER_AI_IP,
-        args.port,
+    success, html = file.load_text(
+        file.absolute(
+            "./app.html",
+            file.path(__file__),
+        )
     )
+    if not success:
+        return "❗️ app.html not found."
+
+    form = "\n".join(html)
+
+    for this, that in {
+        "{IP}": env.BLUER_AI_IP,
+        "{logo}": env.BLUER_AI_WEB_LOGO,
+        "{port_receive}": args.port_receive,
+        "{port_send}": args.port_send,
+        "{signature}": " | ".join(signature()),
+    }.items():
+        form = form.replace(this, that)
+
+    return form
 
 
 @app.route("/upload", methods=["POST"])
@@ -61,5 +75,5 @@ def upload_file():
 
 app.run(
     host="0.0.0.0",
-    port=args.port,
+    port=int(args.port_receive),
 )

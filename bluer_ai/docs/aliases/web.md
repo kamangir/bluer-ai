@@ -17,30 +17,17 @@
 	[--timeout 3]
  . is <url> accessible?
 @web \
-	receive \
-	[open,upload,port=<8001>] \
-	[-|<object-name>]
- . receive files.
-@web \
-	send \
-	[download,port=<8000>] \
-	[.|<object-name>]
- . send files.
-@web \
-	send \
-	[path,port=<8000>] \
-	<path>
- . send files.
+	share \
+	[download,open,~receive,~send,upload] \
+	[-|<object-name>] \
+	[port.receive.=<8001>,port.send=<8000>]
+ . share <object-name>.
 @web \
 	share \
-	[download,port.receive.=<8001>,port.send=<8000>,upload] \
-	[-|<object-name>]
- . share files.
-@web \
-	share \
-	[path,port.receive.=<8001>,port.send=<8000>] \
-	<path>
- . share files.
+	[open,path,~receive,~send] \
+	<path> \
+	[port.receive.=<8001>,port.send=<8000>]
+ . share <path>.
 @web \
 	where_am_i
  . where am I?

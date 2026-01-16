@@ -1,23 +1,12 @@
 title:::
 
-# send
-
 ```bash
 @select
 @create_test_asset
-@web send
+@web share - .
 ```
 
 items_send:::
-
-# receive
-
-```bash
-@select web-$(@timestamp)
-@web receive open
-@assets publish \
-	extensions=jpg,push
-```
 
 items_receive:::
 

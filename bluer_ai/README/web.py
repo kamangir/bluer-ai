@@ -4,7 +4,10 @@ from bluer_objects import markdown
 
 docs = [
     {
-        "path": "../docs/web.md",
+        "path": "../docs/web",
+    },
+    {
+        "path": "../docs/web/one.md",
         "macros": {
             "items_receive:::": markdown.generate_table(
                 ImageItems(
@@ -42,5 +45,5 @@ docs = [
                 log=False,
             ),
         },
-    }
+    },
 ]

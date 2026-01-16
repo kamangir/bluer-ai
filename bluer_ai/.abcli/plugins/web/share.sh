@@ -2,10 +2,11 @@
 
 function bluer_ai_web_share() {
     local options=$1
+    local do_open=$(bluer_ai_option_int "$options" open 0)
     local do_download=$(bluer_ai_option_int "$options" download 0)
+    local do_receive=$(bluer_ai_option_int "$options" receive 1)
+    local do_send=$(bluer_ai_option_int "$options" send 1)
     local do_upload=$(bluer_ai_option_int "$options" upload 0)
-    local port_send=$(bluer_ai_option "$options" port.send $BLUER_AI_WEB_SEND_PORT)
-    local port_receive=$(bluer_ai_option "$options" port.receive $BLUER_AI_WEB_RECEIVE_PORT)
     local use_path=$(bluer_ai_option_int "$options" path 0)
 
     local path
@@ -21,22 +22,36 @@ function bluer_ai_web_share() {
         path=$ABCLI_OBJECT_ROOT/$object_name
     fi
 
-    bluer_ai_log "sharing $path ..."
+    local port_options=$3
+    local port_send=$(bluer_ai_option "$port_options" port.send $BLUER_AI_WEB_SEND_PORT)
+    local port_receive=$(bluer_ai_option "$port_options" port.receive $BLUER_AI_WEB_RECEIVE_PORT)
+
+    [[ "$do_open" == 1 ]] &&
+        open $path
+
+    bluer_ai_log "@web: sharing $path ..."
 
     bluer_ai_badge "⬆️⬇️"
 
-    bluer_ai_log "⬆️ -> http://$BLUER_AI_IP:$port_send/"
-    pushd $path >/dev/null
-    python3 -m http.server $port_send &
-    local pid=$!
-    popd >/dev/null
+    if [[ "$do_send" == 1 ]]; then
+        bluer_ai_log "⬆️: http://$BLUER_AI_IP:$port_send/"
 
-    bluer_ai_log "⬇️ <- http://$BLUER_AI_IP:$port_receive/"
-    bluer_ai_eval - \
-        python3 -m bluer_ai.web.receive.app \
-        --path $path \
-        --port $port_receive \
-        "${@:3}"
+        pushd $path >/dev/null
+
+        python3 -m http.server $port_send &
+        local pid=$!
+
+        popd >/dev/null
+    fi
+
+    if [[ "$do_receive" == 1 ]]; then
+        bluer_ai_log "⬇️: http://$BLUER_AI_IP:$port_receive/"
+        bluer_ai_eval - \
+            python3 -m bluer_ai.web.receive.app ÷\
+            --path $path \
+            --port_receive $port_receive \
+            "${@:4}"
+    fi
 
     kill $pid
 
