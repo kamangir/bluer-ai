@@ -13,7 +13,7 @@ function bluer_ai_web_share() {
     if [[ "$use_path" == 1 ]]; then
         path=$2
     else
-        local object_name=$(bluer_ai_clarify_object $2 web-$(bluer_ai_string_timestamp))
+        local object_name=$(bluer_ai_clarify_object $2 $BLUER_AI_WEB_OBJECT)
 
         [[ "$do_download" == 1 ]] &&
             bluer_objects_download - \
@@ -47,7 +47,7 @@ function bluer_ai_web_share() {
     if [[ "$do_receive" == 1 ]]; then
         bluer_ai_log "⬇️: http://$BLUER_AI_IP:$port_receive/"
         bluer_ai_eval - \
-            python3 -m bluer_ai.web.receive.app ÷\
+            python3 -m bluer_ai.web.receive.app \
             --path $path \
             --port_receive $port_receive \
             "${@:4}"

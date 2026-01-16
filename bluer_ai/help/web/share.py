@@ -24,7 +24,7 @@ def help_share(
             "@web",
             "share",
             f"[{options}]",
-            "[-|<object-name>]",
+            f"[{env.BLUER_AI_WEB_OBJECT}|<object-name>]",
             f"[{port_options}]",
         ],
         "share <object-name>.",
