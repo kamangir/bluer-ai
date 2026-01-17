@@ -57,12 +57,12 @@ def upload_form():
         "{logo}": env.BLUER_AI_WEB_LOGO,
         "{port_receive}": args.port_receive,
         "{port_send}": args.port_send,
-        "{signature}": " | ".join(
-            signature()
-            + (
-                []
-                if args.object_name == "void"
-                else objects.signature(
+        "{footer}": " | ".join(signature()),
+        "{header}": (
+            ""
+            if args.object_name == "void"
+            else " | ".join(
+                objects.signature(
                     object_name=args.object_name,
                 )
             )
