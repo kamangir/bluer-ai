@@ -4,9 +4,10 @@ import argparse
 
 from blueness import module
 from bluer_objects import file
+from bluer_objects import objects
 
 from bluer_ai import env
-from bluer_ai import NAME
+from bluer_ai import NAME, ICON
 from bluer_ai.host import signature
 
 NAME = module.name(__file__, NAME)
@@ -16,6 +17,10 @@ app = Flask(__name__)
 parser = argparse.ArgumentParser(NAME)
 parser.add_argument(
     "--path",
+    type=str,
+)
+parser.add_argument(
+    "--object_name",
     type=str,
 )
 parser.add_argument(
@@ -47,11 +52,21 @@ def upload_form():
     form = "\n".join(html)
 
     for this, that in {
+        "{icon}": ICON,
         "{IP}": env.BLUER_AI_IP,
         "{logo}": env.BLUER_AI_WEB_LOGO,
         "{port_receive}": args.port_receive,
         "{port_send}": args.port_send,
-        "{signature}": " | ".join(signature()),
+        "{signature}": " | ".join(
+            signature()
+            + (
+                []
+                if args.object_name == "void"
+                else objects.signature(
+                    object_name=args.object_name,
+                )
+            )
+        ),
     }.items():
         form = form.replace(this, that)
 

@@ -9,17 +9,22 @@ function bluer_ai_web_share() {
     local do_upload=$(bluer_ai_option_int "$options" upload 0)
     local use_path=$(bluer_ai_option_int "$options" path 0)
 
+    local object_name="void"
     local path
     if [[ "$use_path" == 1 ]]; then
         path=$2
+
+        bluer_ai_log "@web: sharing path $path ..."
     else
-        local object_name=$(bluer_ai_clarify_object $2 $BLUER_AI_WEB_OBJECT)
+        object_name=$(bluer_ai_clarify_object $2 $BLUER_AI_WEB_OBJECT)
 
         [[ "$do_download" == 1 ]] &&
             bluer_objects_download - \
                 $object_name
 
         path=$ABCLI_OBJECT_ROOT/$object_name
+
+        bluer_ai_log "@web: sharing object $object_name ..."
     fi
 
     local port_options=$3
@@ -28,8 +33,6 @@ function bluer_ai_web_share() {
 
     [[ "$do_open" == 1 ]] &&
         open $path
-
-    bluer_ai_log "@web: sharing $path ..."
 
     bluer_ai_badge "⬆️⬇️"
 
@@ -48,6 +51,7 @@ function bluer_ai_web_share() {
         bluer_ai_log "⬇️: http://$BLUER_AI_IP:$port_receive/"
         bluer_ai_eval - \
             python3 -m bluer_ai.web.receive.app \
+            --object_name $object_name \
             --path $path \
             --port_receive $port_receive \
             "${@:4}"
