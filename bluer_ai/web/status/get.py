@@ -29,7 +29,9 @@ def get_status(
 
         if status == "national":
             logger.info(
-                "🇮🇷 internet is national - use https://www.zoomit.ir/websites/342552-websites-directory-internet-shutdown/"
+                "🇮🇷 internet is national - use {}".format(
+                    env.BLUER_AI_NATIONAL_INTERNAT_INDEX
+                )
             )
 
         if status == "offline":

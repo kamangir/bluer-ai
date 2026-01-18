@@ -19,7 +19,7 @@
 @web \
 	share \
 	[download,open,~receive,~send,upload] \
-	[web-v1|<object-name>] \
+	[kulej|<object-name>] \
 	[port.receive.=<8001>,port.send=<8000>]
  . share <object-name>.
 @web \

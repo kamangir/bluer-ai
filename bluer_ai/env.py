@@ -32,3 +32,5 @@ BLUER_AI_IP = get_env("BLUER_AI_IP")
 BLUER_AI_WEB_LOGO = "https://kamangir-public.s3.ir-thr-at1.arvanstorage.ir/2026-01-15-20-36-14-veuhs0/test-00.png"
 
 BLUER_AI_WEB_OBJECT = get_env("BLUER_AI_WEB_OBJECT")
+
+BLUER_AI_NATIONAL_INTERNAT_INDEX = get_env("BLUER_AI_NATIONAL_INTERNAT_INDEX")

@@ -8,6 +8,7 @@ def test_bluer_ai_env():
         [
             env.BLUER_AI_INTERNET_NATIONAL_CHECK_URL,
             env.BLUER_AI_INTERNET_ONLINE_CHECK_URL,
+            env.BLUER_AI_NATIONAL_INTERNAT_INDEX,
             env.BLUER_AI_WEB_RECEIVE_PORT,
             env.BLUER_AI_WEB_SEND_PORT,
             env.BLUER_AI_WEB_OBJECT,
