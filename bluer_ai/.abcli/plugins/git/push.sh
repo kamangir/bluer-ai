@@ -52,6 +52,10 @@ function bluer_ai_git_push() {
         bluer_ai_pylint \
             plugin=$plugin_name
         [[ $? -ne 0 ]] && return 1
+
+        bluer_ai_pytest \
+            plugin=$plugin_name
+        [[ $? -ne 0 ]] && return 1
     fi
 
     if [[ "$do_action" == 1 ]]; then
