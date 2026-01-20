@@ -174,6 +174,7 @@ function test_bluer_ai_help() {
         "@web get_ip" \
         "@web identify" \
         "@web is_accessible" \
+        "@web open" \
         "@web share" \
         "@web where_am_i" \
         \

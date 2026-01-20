@@ -2,7 +2,7 @@
 
 function bluer_ai_web_share() {
     local options=$1
-    local do_open=$(bluer_ai_option_int "$options" open 0)
+    local do_open=$(bluer_ai_option_int "$options" open 1)
     local do_download=$(bluer_ai_option_int "$options" download 0)
     local do_receive=$(bluer_ai_option_int "$options" receive 1)
     local do_send=$(bluer_ai_option_int "$options" send 1)
@@ -48,7 +48,13 @@ function bluer_ai_web_share() {
     fi
 
     if [[ "$do_receive" == 1 ]]; then
-        bluer_ai_log "⬇️: http://$BLUER_AI_IP:$port_receive/"
+        local url="http://$BLUER_AI_IP:$port_receive/"
+
+        bluer_ai_log "⬇️: $url"
+
+        [[ "$do_open" == 1 ]] &&
+            bluer_ai_browse $url
+
         bluer_ai_eval - \
             python3 -m bluer_ai.web.receive.app \
             --object_name $object_name \

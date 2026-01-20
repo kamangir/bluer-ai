@@ -9,7 +9,7 @@ def help_share(
     tokens: List[str],
     mono: bool,
 ) -> str:
-    options = "download,open,~receive,~send,upload"
+    options = "download,~open,~receive,~send,upload"
 
     port_options = xtra(
         "port.receive.=<{}>,port.send=<{}>".format(

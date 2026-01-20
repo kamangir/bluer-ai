@@ -1,6 +1,8 @@
 #! /usr/bin/env bash
 
 function test_bluer_ai_clarify_object_no_default() {
+    local current_path=$(pwd)
+
     local object_1=$(bluer_ai_string_timestamp)
     local object_2=$(bluer_ai_string_timestamp)
     local object_3=$(bluer_ai_string_timestamp)
@@ -40,9 +42,14 @@ function test_bluer_ai_clarify_object_no_default() {
     bluer_ai_assert \
         $(bluer_ai_clarify_object ...) \
         $object_3
+    [[ $? -ne 0 ]] && return 1
+
+    cd $current_path
 }
 
 function test_bluer_ai_clarify_object_some_default() {
+    local current_path=$(pwd)
+
     local object_1=$(bluer_ai_string_timestamp)
     local object_2=$(bluer_ai_string_timestamp)
     local object_3=$(bluer_ai_string_timestamp)
@@ -82,9 +89,14 @@ function test_bluer_ai_clarify_object_some_default() {
     bluer_ai_assert \
         $(bluer_ai_clarify_object ... some-default) \
         $object_3
+    [[ $? -ne 0 ]] && return 1
+
+    cd $current_path
 }
 
 function test_bluer_ai_clarify_object_dot_default() {
+    local current_path=$(pwd)
+
     local object_1=$(bluer_ai_string_timestamp)
     local object_2=$(bluer_ai_string_timestamp)
     local object_3=$(bluer_ai_string_timestamp)
@@ -124,9 +136,14 @@ function test_bluer_ai_clarify_object_dot_default() {
     bluer_ai_assert \
         $(bluer_ai_clarify_object ... .) \
         $object_3
+    [[ $? -ne 0 ]] && return 1
+
+    cd $current_path
 }
 
 function test_bluer_ai_clarify_object_dot_dot_default() {
+    local current_path=$(pwd)
+
     local object_1=$(bluer_ai_string_timestamp)
     local object_2=$(bluer_ai_string_timestamp)
     local object_3=$(bluer_ai_string_timestamp)
@@ -166,9 +183,14 @@ function test_bluer_ai_clarify_object_dot_dot_default() {
     bluer_ai_assert \
         $(bluer_ai_clarify_object ... ..) \
         $object_3
+    [[ $? -ne 0 ]] && return 1
+
+    cd $current_path
 }
 
 function test_bluer_ai_clarify_object_dot_dot_dot_default() {
+    local current_path=$(pwd)
+
     local object_1=$(bluer_ai_string_timestamp)
     local object_2=$(bluer_ai_string_timestamp)
     local object_3=$(bluer_ai_string_timestamp)
@@ -208,4 +230,7 @@ function test_bluer_ai_clarify_object_dot_dot_dot_default() {
     bluer_ai_assert \
         $(bluer_ai_clarify_object ... ...) \
         $object_3
+    [[ $? -ne 0 ]] && return 1
+
+    cd $current_path
 }

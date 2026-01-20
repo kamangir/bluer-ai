@@ -17,8 +17,11 @@
 	[--timeout 3]
  . is <url> accessible?
 @web \
+	open
+ . open the web object (kulej).
+@web \
 	share \
-	[download,open,~receive,~send,upload] \
+	[download,~open,~receive,~send,upload] \
 	[kulej|<object-name>] \
 	[port.receive.=<8001>,port.send=<8000>]
  . share <object-name>.
