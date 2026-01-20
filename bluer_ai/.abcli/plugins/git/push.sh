@@ -7,17 +7,23 @@ function bluer_ai_git_push() {
         return 1
     fi
 
+    local do_offline=0
+    local do_test=0
+    if [[ "$BLUER_AI_WEB_STATUS" != "online" ]]; then
+        do_offline=1
+        do_test=1
+    fi
+
     local options=$2
     local do_browse=$(bluer_ai_option_int "$options" browse 0)
     local do_increment_version=$(bluer_ai_option_int "$options" increment_version 1)
-    local do_offline=0
-    [[ "$BLUER_AI_WEB_STATUS" != "online" ]] && do_offline=1
     do_offline=$(bluer_ai_option_int "$options" offline $do_offline)
     local show_status=$(bluer_ai_option_int "$options" status 1)
     local first_push=$(bluer_ai_option_int "$options" first 0)
     local create_pull_request=$(bluer_ai_option_int "$options" create_pull_request $first_push)
     local do_action=$(bluer_ai_option_int "$options" action 1)
     local do_scp=$(bluer_ai_option_int "$options" scp 0)
+    do_test=$(bluer_ai_option_int "$options" test $do_test)
     local run_workflows=$(bluer_ai_option_int "$options" workflow 1)
 
     if [[ "$do_scp" == 1 ]]; then
@@ -41,6 +47,12 @@ function bluer_ai_git_push() {
 
     local repo_name=$(bluer_ai_git_get_repo_name)
     local plugin_name=$(bluer_ai_plugin_name_from_repo $repo_name)
+
+    if [[ "$do_test" == 1 ]]; then
+        bluer_ai_pylint \
+            plugin=$plugin_name
+        [[ $? -ne 0 ]] && return 1
+    fi
 
     if [[ "$do_action" == 1 ]]; then
         bluer_ai_perform_action \

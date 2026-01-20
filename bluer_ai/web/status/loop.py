@@ -43,7 +43,7 @@ def get_status_on_a_loop(
 
             time.sleep(sleep)
     except KeyboardInterrupt:
-        logger.warning(f"Ctrl+C, stopping.")
+        logger.warning("Ctrl+C, stopping.")
     except Exception as e:
         logger.error(e)
         return False
