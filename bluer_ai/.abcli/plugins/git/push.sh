@@ -14,6 +14,11 @@ function bluer_ai_git_push() {
         do_test=1
     fi
 
+    if [[ -f "./.git-no-test" ]]; then
+        bluer_ai_log "git tests are disabled by default."
+        do_test=0
+    fi
+
     local options=$2
     local do_browse=$(bluer_ai_option_int "$options" browse 0)
     local do_increment_version=$(bluer_ai_option_int "$options" increment_version 1)
