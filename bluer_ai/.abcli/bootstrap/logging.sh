@@ -70,7 +70,7 @@ function bluer_ai_log_remote() {
 function bluer_ai_log_warning() {
     local message="$@"
 
-    printf "$YELLOW$message$NC\n"
+    printf "⚠️ $YELLOW$message$NC\n"
 
     echo "warning: $message" >>$bluer_ai_log_filename
 }
