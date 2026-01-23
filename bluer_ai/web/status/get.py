@@ -30,7 +30,7 @@ def get_status(
         if status == "national":
             logger.info(
                 "🇮🇷 internet is national - use {}".format(
-                    env.BLUER_AI_NATIONAL_INTERNAT_INDEX
+                    env.BLUER_AI_NATIONAL_INTERNET_INDEX
                 )
             )
 
