@@ -40,6 +40,12 @@ function bluer_ai_ssh() {
         return
     fi
 
+    local function_name=bluer_ai_ssh_$task
+    if [[ $(type -t $function_name) == "function" ]]; then
+        $function_name "${@:2}"
+        return
+    fi
+
     local args=$(bluer_ai_ssh_args "$@")
     bluer_ai_log "@ssh: $args"
     ssh $args

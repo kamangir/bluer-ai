@@ -24,4 +24,12 @@
 	keygen \
 	[<filename>]
  . keygen <filename>.
+@ssh \
+	port_forwarding \
+	[ip=<1.2.3.4>,port=<11>,user=<root>]
+ . port forward ssh.
+@ssh \
+	tunnel \
+	[ip=<1.2.3.4>,port=<11>,user=<root>]
+ . tunnel ssh.
 ```

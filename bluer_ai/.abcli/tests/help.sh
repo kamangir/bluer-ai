@@ -149,8 +149,10 @@ function test_bluer_ai_help() {
         "@ssh add" \
         "@ssh copy_id" \
         "@ssh ec2" \
-        "@ssh sbc" \
         "@ssh keygen" \
+        "@ssh port_forwarding" \
+        "@ssh sbc" \
+        "@ssh tunnel" \
         \
         "@test" \
         "@test list" \
