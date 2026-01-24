@@ -1,6 +1,7 @@
 from typing import List
 
 from bluer_options.terminal import show_usage, xtra
+from bluer_options import env
 
 from bluer_ai.help.pypi import build_options as pypi_build_options
 
@@ -229,11 +230,18 @@ def push_options(
             else []
         )
         + [
-            xtra(",~increment_version,offline,~status", mono=mono),
+            xtra(
+                ",~increment_version,{},~status,".format(
+                    "~offline,rpi=<machine-name>,scp,~test"
+                    if env.BLUER_AI_WEB_STATUS != "online"
+                    else "offline,test"
+                ),
+                mono=mono,
+            ),
         ]
         + (
             [
-                ",~workflow",
+                "~workflow",
             ]
             if uses_workflows
             else []
@@ -257,7 +265,7 @@ def help_push(
             f"[{options}]",
             f"[{build_options}]",
         ],
-        "push to the repo.",
+        "push repo.",
         mono=mono,
     )
 
@@ -298,6 +306,7 @@ def help_review(
         [
             "@git",
             "review",
+            "[<branch-name>]",
         ],
         "review the repo.",
         mono=mono,

@@ -4,14 +4,9 @@ alias @=bluer_ai
 
 alias @build_README=bluer_ai_build_README
 
-alias @clear="cd; clear"
-
 alias @conda=bluer_ai_conda
 
-alias @docker=bluer_ai_docker
-
 alias @git=bluer_ai_git
-alias @git++="bluer_ai_git increment_version"
 
 alias @gpu=bluer_ai_gpu
 
@@ -22,12 +17,6 @@ alias @latex=bluer_ai_latex
 alias @log=bluer_ai_log
 alias @error=bluer_ai_log_error
 alias @warn=bluer_ai_log_warning
-
-alias @mac='if [ "$abcli_is_mac" == true ]; then'
-alias @rpi='if [ "$abcli_is_rpi" == true ]; then'
-alias @.='fi'
-
-alias @perform_action=bluer_ai_perform_action
 
 alias @plugins=bluer_ai_plugins
 
@@ -43,10 +32,24 @@ alias @session=bluer_ai_session
 
 alias @ssh=bluer_ai_ssh
 
-alias @ssm=bluer_ai_ssm
-
 alias @terraform=bluer_ai_terraform
 
-alias @version="bluer_ai version"
+alias @web=bluer_ai_web
 
 alias @wifi=bluer_ai_wifi
+
+# ignore
+
+alias @clear="cd; clear"
+
+alias @git++=bluer_ai_git_increment_version
+
+alias @mac='if [ "$abcli_is_mac" == true ]; then'
+alias @rpi='if [ "$abcli_is_rpi" == true ]; then'
+alias @.='fi'
+
+alias @perform_action=bluer_ai_perform_action
+
+alias @ssm=bluer_ai_ssm
+
+alias @version="bluer_ai version"

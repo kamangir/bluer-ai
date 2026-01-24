@@ -1,6 +1,11 @@
 #! /usr/bin/env bash
 
 function bluer_ai_pypi_build() {
+    if [[ "$BLUER_AI_PYPI_IS_ACCESSIBLE" == 0 ]]; then
+        bluer_ai_log_warning "pypi is not accessible."
+        return
+    fi
+
     local options=$1
 
     local plugin_name=$(bluer_ai_option "$options" plugin bluer_ai)

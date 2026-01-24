@@ -25,52 +25,9 @@ source $(python3 -m bluer_ai locate)/.abcli/bluer_ai.sh
 - [Raspberry Pi](./bluer_ai/docs/install/RPi.md)
 - [Raspberry Pi + ROS](./bluer_ai/docs/install/RPi-ROS.md)
 
-
 # aliases
 
-[@conda](./bluer_ai/docs/aliases/conda.md), 
-[@git](./bluer_ai/docs/aliases/git.md), 
-[@gpu](./bluer_ai/docs/aliases/gpu.md), 
-[@init](./bluer_ai/docs/aliases/init.md), 
-[@latex](./bluer_ai/docs/aliases/latex.md), 
-[@logging](./bluer_ai/docs/aliases/logging.md), 
-[@plugins](./bluer_ai/docs/aliases/plugins.md), 
-[@pypi](./bluer_ai/docs/aliases/pypi.md), 
-[@random](./bluer_ai/docs/aliases/random.md), 
-[@screen](./bluer_ai/docs/aliases/screen.md), 
-[@seed](./bluer_ai/docs/aliases/seed.md) 🌱, 
-[@ssh](./bluer_ai/docs/aliases/ssh.md), 
-[@terraform](./bluer_ai/docs/aliases/terraform.md), 
-[@today](./bluer_ai/docs/aliases/today.md), 
-[@wifi](./bluer_ai/docs/aliases/wifi.md).
-
-[@options](https://github.com/kamangir/bluer-options): 
-[@assert](./bluer_ai/docs/aliases/assert.md), 
-[@badge](./bluer_ai/docs/aliases/badge.md), 
-[@browse](./bluer_ai/docs/aliases/browse.md), 
-[@cat](./bluer_ai/docs/aliases/cat.md), 
-[@code](./bluer_ai/docs/aliases/code.md), 
-[@env](./bluer_ai/docs/aliases/env.md), 
-[@eval](./bluer_ai/docs/aliases/eval.md), 
-[@help](./bluer_ai/docs/aliases/help.md), 
-[@hr](./bluer_ai/docs/aliases/hr.md), 
-[@list](./bluer_ai/docs/aliases/list.md), 
-[@not](./bluer_ai/docs/aliases/not.md), 
-[@open](./bluer_ai/docs/aliases/open.md), 
-[@option](./bluer_ai/docs/aliases/option.md), 
-[@pause](./bluer_ai/docs/aliases/pause.md), 
-[@pylint](./bluer_ai/docs/aliases/pylint.md), 
-[@pytest](./bluer_ai/docs/aliases/pytest.md), 
-[@repeat](./bluer_ai/docs/aliases/repeat.md), 
-[@sleep](./bluer_ai/docs/aliases/sleep.md), 
-[@test](./bluer_ai/docs/aliases/test.md), 
-[@timestamp](./bluer_ai/docs/aliases/timestamp.md), 
-[@wait](./bluer_ai/docs/aliases/wait.md), 
-[@watch](./bluer_ai/docs/aliases/watch.md).
-
-[@objects](https://github.com/kamangir/bluer-objects): 
-[@select](./bluer_ai/docs/aliases/select.md), 
-[@storage](./bluer_ai/docs/aliases/storage.md).
+aliases:::
 
 ---
 

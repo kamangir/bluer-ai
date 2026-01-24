@@ -1,5 +1,5 @@
-from bluer_ai import README
+from bluer_ai.README import build
 
 
 def test_build_README():
-    assert README.build()
+    assert build.build()

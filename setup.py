@@ -12,12 +12,17 @@ setup(
         NAME,
         f"{NAME}.help",
         f"{NAME}.help.env",
+        f"{NAME}.help.web",
         f"{NAME}.modules",
         f"{NAME}.modules.terraform",
         f"{NAME}.plugins",
         f"{NAME}.plugins.git",
         f"{NAME}.plugins.gpu",
+        f"{NAME}.README",
         f"{NAME}.tests",
+        f"{NAME}.web",
+        f"{NAME}.web.receive",
+        f"{NAME}.web.status",
     ],
     package_data={
         NAME: [

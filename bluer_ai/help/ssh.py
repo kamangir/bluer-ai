@@ -83,10 +83,46 @@ def help_keygen(
     )
 
 
+def help_port_forwarding(
+    tokens: List[str],
+    mono: bool,
+) -> str:
+    options = "ip=<1.2.3.4>,port=<11>,user=<root>"
+
+    return show_usage(
+        [
+            "@ssh",
+            "port_forwarding",
+            f"[{options}]",
+        ],
+        "port forward ssh.",
+        mono=mono,
+    )
+
+
+def help_tunnel(
+    tokens: List[str],
+    mono: bool,
+) -> str:
+    options = "ip=<1.2.3.4>,port=<11>,user=<root>"
+
+    return show_usage(
+        [
+            "@ssh",
+            "tunnel",
+            f"[{options}]",
+        ],
+        "tunnel ssh.",
+        mono=mono,
+    )
+
+
 help_functions = {
     "add": help_add,
     "copy_id": help_copy_id,
     "ec2": help_ec2,
     "sbc": help_sbc,
     "keygen": help_keygen,
+    "port_forwarding": help_port_forwarding,
+    "tunnel": help_tunnel,
 }

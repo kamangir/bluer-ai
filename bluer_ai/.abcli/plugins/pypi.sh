@@ -17,3 +17,12 @@ function bluer_ai_pypi() {
 }
 
 bluer_ai_source_caller_suffix_path /pypi
+
+export BLUER_AI_PYPI_IS_ACCESSIBLE=$(python3 -m bluer_ai.web \
+    is_accessible \
+    --url https://pypi.org/)
+if [[ "$BLUER_AI_PYPI_IS_ACCESSIBLE" == 1 ]]; then
+    bluer_ai_log "✅ pypi is accessible."
+else
+    bluer_ai_log_warning "pypi is not accessible."
+fi

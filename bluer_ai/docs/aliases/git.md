@@ -49,9 +49,9 @@
 @git \
 	push \
 	<message> \
-	[~action,browse,~create_pull_request,first,~increment_version,offline,~status,~workflow] \
+	[~action,browse,~create_pull_request,first,~increment_version,offline,test,~status,~workflow] \
 	[build,browse,install,~rm_dist,~upload]
- . push to the repo.
+ . push repo.
 @git \
 	recreate_ssh
  . recreate github ssh key.
@@ -59,7 +59,8 @@
 	reset
  . reset to the latest commit of the current branch.
 @git \
-	review
+	review \
+	[<branch-name>]
  . review the repo.
 @git \
 	rm \
