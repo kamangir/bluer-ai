@@ -3,6 +3,7 @@ import os
 import argparse
 
 from blueness import module
+from bluer_options import string
 from bluer_objects import file
 from bluer_objects import objects
 
@@ -47,21 +48,24 @@ def save():
         abort(400, "note title is required")
 
     # basic safety: prevent path traversal like ../../etc/passwd
-    if "/" in filename or "\\" in filename or ".." in filename:
-        abort(400, "invalid filename")
+    if "/" in note_title or "\\" in note_title or ".." in note_title:
+        abort(400, "invalid note title")
 
     if not file.save_text(
         os.path.join(
             args.path,
             "notes",
-            filename,
+            f"{note_title}.txt",
         ),
-        content,
+        [content],
         log=True,
     ):
         abort(400, "saving content failed.")
 
-    return f'✅ saved to {filename} | <a href="../">go back ...</a>\n', 200
+    return (
+        f'✅ saved to <a href="http://{env.BLUER_AI_IP}:{args.port_send}/notes/{note_title}.txt">{note_title}</a> | <a href="../">go back ...</a>\n',
+        200,
+    )
 
 
 @app.route("/")
@@ -81,6 +85,7 @@ def upload_form():
         "{icon}": ICON,
         "{IP}": env.BLUER_AI_IP,
         "{logo}": env.BLUER_AI_WEB_LOGO,
+        "{note_title}": string.timestamp(),
         "{port_receive}": args.port_receive,
         "{port_send}": args.port_send,
         "{footer}": " | ".join(signature()),
