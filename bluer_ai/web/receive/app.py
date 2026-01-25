@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, abort
 import os
 import argparse
 
@@ -36,6 +36,32 @@ parser.add_argument(
 args = parser.parse_args()
 
 app.config["UPLOAD_FOLDER"] = args.path
+
+
+@app.post("/save")
+def save():
+    note_title = (request.form.get("note_title") or "").strip()
+    content = request.form.get("content") or ""
+
+    if not note_title:
+        abort(400, "note title is required")
+
+    # basic safety: prevent path traversal like ../../etc/passwd
+    if "/" in filename or "\\" in filename or ".." in filename:
+        abort(400, "invalid filename")
+
+    if not file.save_text(
+        os.path.join(
+            args.path,
+            "notes",
+            filename,
+        ),
+        content,
+        log=True,
+    ):
+        abort(400, "saving content failed.")
+
+    return f'✅ saved to {filename} | <a href="../">go back ...</a>\n', 200
 
 
 @app.route("/")
