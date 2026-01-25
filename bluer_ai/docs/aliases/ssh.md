@@ -25,7 +25,7 @@
 	[<filename>]
  . keygen <filename>.
 @ssh \
-	port_forwarding \
+	port_fwd \
 	[ip=<1.2.3.4>,port=<11>,user=<root>]
  . port forward ssh.
 @ssh \

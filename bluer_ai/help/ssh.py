@@ -83,7 +83,7 @@ def help_keygen(
     )
 
 
-def help_port_forwarding(
+def help_port_fwd(
     tokens: List[str],
     mono: bool,
 ) -> str:
@@ -92,7 +92,7 @@ def help_port_forwarding(
     return show_usage(
         [
             "@ssh",
-            "port_forwarding",
+            "port_fwd",
             f"[{options}]",
         ],
         "port forward ssh.",
@@ -123,6 +123,6 @@ help_functions = {
     "ec2": help_ec2,
     "sbc": help_sbc,
     "keygen": help_keygen,
-    "port_forwarding": help_port_forwarding,
+    "port_fwd": help_port_fwd,
     "tunnel": help_tunnel,
 }

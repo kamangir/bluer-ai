@@ -150,7 +150,7 @@ function test_bluer_ai_help() {
         "@ssh copy_id" \
         "@ssh ec2" \
         "@ssh keygen" \
-        "@ssh port_forwarding" \
+        "@ssh port_fwd" \
         "@ssh sbc" \
         "@ssh tunnel" \
         \
