@@ -19,7 +19,7 @@ def help_share(
         mono=mono,
     )
 
-    usage_1 = show_usage(
+    return show_usage(
         [
             "@web",
             "share",
@@ -29,29 +29,4 @@ def help_share(
         ],
         "share <object-name>.",
         mono=mono,
-    )
-
-    # ----
-
-    options = "open,path,~receive,~send"
-
-    usage_2 = show_usage(
-        [
-            "@web",
-            "share",
-            f"[{options}]",
-            "<path>",
-            f"[{port_options}]",
-        ],
-        "share <path>.",
-        mono=mono,
-    )
-
-    # ---
-
-    return "\n".join(
-        [
-            usage_1,
-            usage_2,
-        ]
     )

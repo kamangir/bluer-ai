@@ -17,10 +17,6 @@ app = Flask(__name__)
 
 parser = argparse.ArgumentParser(NAME)
 parser.add_argument(
-    "--path",
-    type=str,
-)
-parser.add_argument(
     "--object_name",
     type=str,
 )
@@ -36,7 +32,9 @@ parser.add_argument(
 )
 args = parser.parse_args()
 
-app.config["UPLOAD_FOLDER"] = args.path
+object_path = objects.object_path(args.object_name)
+
+app.config["UPLOAD_FOLDER"] = object_path
 
 
 @app.post("/save")
@@ -52,10 +50,9 @@ def save():
         abort(400, "invalid note title")
 
     if not file.save_text(
-        os.path.join(
-            args.path,
-            "notes",
-            f"{note_title}.txt",
+        objects.path_of(
+            object_name=object_path,
+            filename=f"notes/{note_title}.txt",
         ),
         [content],
         log=True,
@@ -98,6 +95,7 @@ def upload_form():
                 )
             )
         ),
+        "{qrcode}": "https://kamangir-public.s3.ir-thr-at1.arvanstorage.ir/kulej/qrcode.png",
     }.items():
         form = form.replace(this, that)
 
@@ -109,9 +107,9 @@ def upload_file():
     file = request.files["file"]
     if file.filename:
         file.save(
-            os.path.join(
-                app.config["UPLOAD_FOLDER"],
-                file.filename,
+            objects.path_of(
+                object_name=args.object_name,
+                filename=file.filename,
             ),
         )
         return 'uploaded. ✅ | <a href="../">upload another file ...</a>.'
