@@ -7,12 +7,13 @@ function bluer_ai_web_identify() {
     if [[ "$do_loop" == 1 ]]; then
         local do_upload=$(bluer_ai_option_int "$options" upload 0)
 
-        local object_name=$(bluer_ai_clarify_object $2 web-$(bluer_ai_string_timestamp))
+        local object_name=$(bluer_ai_clarify_object $2 web-status-$(bluer_ai_string_timestamp))
 
-        python3 -m bluer_ai.web \
+        python3 -m bluer_ai.plugins.web \
             identify \
             --object_name $object_name \
             --loop 1 \
+            --timestamp 1 \
             "${@:3}"
         [[ $? -ne 0 ]] && return 1
 
@@ -25,9 +26,10 @@ function bluer_ai_web_identify() {
         return
     fi
 
-    export BLUER_AI_WEB_STATUS=$(python3 -m bluer_ai.web \
+    export BLUER_AI_WEB_STATUS=$(python3 -m bluer_ai.plugins.web \
         identify \
-        --log 1)
+        --log 1 \
+        "${@:2}")
 }
 
 bluer_ai_web_identify

@@ -18,11 +18,11 @@ setup(
         f"{NAME}.plugins",
         f"{NAME}.plugins.git",
         f"{NAME}.plugins.gpu",
+        f"{NAME}.plugins.web",
+        f"{NAME}.plugins.web.receive",
+        f"{NAME}.plugins.web.status",
         f"{NAME}.README",
         f"{NAME}.tests",
-        f"{NAME}.web",
-        f"{NAME}.web.receive",
-        f"{NAME}.web.status",
     ],
     package_data={
         NAME: [

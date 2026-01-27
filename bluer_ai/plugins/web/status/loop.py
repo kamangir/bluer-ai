@@ -6,7 +6,7 @@ from bluer_options import string
 from bluer_objects.metadata import post_to_object
 
 from bluer_ai import NAME
-from bluer_ai.web.status.get import get_status
+from bluer_ai.plugins.web.status.get import get_status
 from bluer_ai.logger import logger
 
 NAME = module.name(__file__, NAME)
@@ -18,13 +18,15 @@ def get_status_on_a_loop(
     log: bool = False,
     count: int = -1,
     sleep: int = 30,
+    timestamp: bool = False,
 ) -> bool:
     logger.info(
-        "{}.get_status_on_a_loop: timeout={}{}, sleep:{} -> {}".format(
+        "{}.get_status_on_a_loop: timeout={}{}, sleep:{} -{}> {}".format(
             NAME,
             string.pretty_duration(timeout),
             "" if count == -1 else f", {count} sample(s)",
             string.pretty_duration(sleep),
+            "timestamp-" if timestamp else "",
             object_name,
         )
     )
@@ -35,6 +37,7 @@ def get_status_on_a_loop(
             list_of_status[string.pretty_date()] = get_status(
                 timeout=timeout,
                 log=log,
+                timestamp=timestamp,
             )
 
             if count != -1 and len(list_of_status) > count:

@@ -58,4 +58,4 @@ function bluer_ai_gpu_status() {
 }
 
 bluer_ai_gpu_status get
-$bluer_ai_gpu_status_cache && export abcli_status_icons="🔋 $abcli_status_icons"
+$bluer_ai_gpu_status_cache && export BLUER_AI_STATUS_ICONS="🔋 $BLUER_AI_STATUS_ICONS"

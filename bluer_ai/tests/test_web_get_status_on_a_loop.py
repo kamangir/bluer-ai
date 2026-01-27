@@ -1,6 +1,6 @@
 from bluer_objects import objects
 
-from bluer_ai.web.status.loop import get_status_on_a_loop
+from bluer_ai.plugins.web.status.loop import get_status_on_a_loop
 
 
 def test_web_get_status_on_a_loop():
