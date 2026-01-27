@@ -54,6 +54,12 @@ parser.add_argument(
     help="in seconds",
 )
 parser.add_argument(
+    "--timestamp",
+    type=int,
+    default=0,
+    help="0 | 1",
+)
+parser.add_argument(
     "--url",
     type=str,
 )
@@ -78,6 +84,7 @@ elif args.task == "identify":
             count=args.count,
             sleep=args.sleep,
             object_name=args.object_name,
+            timestamp=args.timestamp == 1,
         )
     else:
         success = True
@@ -85,6 +92,7 @@ elif args.task == "identify":
             get_status(
                 timeout=args.timeout,
                 log=args.log == 1,
+                timestamp=args.timestamp == 1,
             )
         )
 else:

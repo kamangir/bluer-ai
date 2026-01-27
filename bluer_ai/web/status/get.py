@@ -1,3 +1,5 @@
+from bluer_options import string
+
 from bluer_ai import env
 from bluer_ai.web.accessible import is_accessible
 from bluer_ai.logger import logger
@@ -6,6 +8,7 @@ from bluer_ai.logger import logger
 def get_status(
     timeout: int = 3,
     log: bool = False,
+    timestamp: bool = False,
 ) -> str:
     status = (
         "offline"
@@ -24,17 +27,24 @@ def get_status(
     )
 
     if log:
-        if status == "online":
-            logger.info("🛜 online.")
-
-        if status == "national":
-            logger.info(
-                "🇮🇷 internet is national - use {}".format(
-                    env.BLUER_AI_NATIONAL_INTERNET_INDEX
-                )
+        logger.info(
+            "{}{} {}".format(
+                (
+                    "{} ".format(
+                        string.timestamp(
+                            unique_length=0,
+                        )
+                    )
+                    if timestamp
+                    else ""
+                ),
+                {
+                    "national": "🇮🇷",
+                    "offline": "⛓️‍💥",
+                    "online": "🛜",
+                }.get(status, "❓"),
+                status,
             )
-
-        if status == "offline":
-            logger.info("⛓️‍💥 offline.")
+        )
 
     return status
