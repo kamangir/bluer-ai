@@ -1,7 +1,7 @@
 from typing import List
 
 from bluer_options.terminal import show_usage, xtra
-from bluer_options import env
+from bluer_options.env import BLUER_AI_INTERNET_OUTSIDE_IS_ACCESSIBLE
 
 from bluer_ai.help.pypi import build_options as pypi_build_options
 
@@ -233,7 +233,7 @@ def push_options(
             xtra(
                 ",~increment_version,{},~status,".format(
                     "~offline,rpi=<machine-name>,scp,~test"
-                    if env.BLUER_AI_INTERNET_OUTSIDE_IS_ACCESSIBLE == 0
+                    if BLUER_AI_INTERNET_OUTSIDE_IS_ACCESSIBLE == 0
                     else "offline,test"
                 ),
                 mono=mono,
