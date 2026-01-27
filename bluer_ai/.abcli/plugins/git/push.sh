@@ -7,12 +7,8 @@ function bluer_ai_git_push() {
         return 1
     fi
 
-    local do_offline=0
-    local do_test=0
-    if [[ "$BLUER_AI_WEB_STATUS" != "online" ]]; then
-        do_offline=1
-        do_test=1
-    fi
+    local do_offline=$(bluer_ai_not $BLUER_AI_INTERNET_OUTSIDE_IS_ACCESSIBLE)
+    local do_test=$do_test
 
     if [[ -f "./.git-no-test" ]]; then
         bluer_ai_log "git tests are disabled by default."

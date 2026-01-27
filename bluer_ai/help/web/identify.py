@@ -10,25 +10,21 @@ def help_identify(
 ) -> str:
     options = "".join(
         [
+            "count=3",
+            xtra(",~log,", mono=mono),
             "loop",
-            xtra(",~upload", mono=mono),
+            xtra(",sleep=5,", mono=mono),
+            "timestamp",
         ]
     )
 
-    args = sorted(
-        [
-            "[--sleep <5>]",
-            "[--timestamp 0]",
-        ]
-        + is_accessible.args
-    )
+    args = is_accessible.args
 
     return show_usage(
         [
             "@web",
             "identify",
             f"[{options}]",
-            "[-|<object-name>]",
         ]
         + args,
         "identify web connection.",

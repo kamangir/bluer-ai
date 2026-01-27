@@ -2,34 +2,65 @@
 
 function bluer_ai_web_identify() {
     local options=$1
+    local do_log=$(bluer_ai_option_int "$options" log 1)
     local do_loop=$(bluer_ai_option_int "$options" loop 0)
+    local add_timestamp=$(bluer_ai_option_int "$options" timestamp 0)
+    local max_count=$(bluer_ai_option "$options" count -1)
 
     if [[ "$do_loop" == 1 ]]; then
-        local do_upload=$(bluer_ai_option_int "$options" upload 0)
+        local sleep_period=$(bluer_ai_option "$options" sleep 5)
 
-        local object_name=$(bluer_ai_clarify_object $2 web-status-$(bluer_ai_string_timestamp))
+        local loop_count=0
+        while true; do
+            eval bluer_ai_web_identify \
+                timestamp,$options,~loop \
+                "${@:2}"
 
-        python3 -m bluer_ai.plugins.web \
-            identify \
-            --object_name $object_name \
-            --loop 1 \
-            --timestamp 1 \
-            "${@:3}"
-        [[ $? -ne 0 ]] && return 1
+            loop_count=$((loop_count + 1))
+            if [[ "$max_count" != -1 ]] &&
+                [[ "$loop_count" -ge "$max_count" ]]; then
+                break
+            fi
 
-        if [[ "$do_upload" == 1 ]]; then
-            bluer_objects_upload \
-                - \
-                $object_name
-        fi
+            sleep $sleep_period
+        done
 
         return
     fi
 
-    export BLUER_AI_WEB_STATUS=$(python3 -m bluer_ai.plugins.web \
-        identify \
-        --log 1 \
-        "${@:2}")
-}
+    export BLUER_AI_INTERNET_INSIDE_IS_ACCESSIBLE=$(
+        bluer_ai_web_is_accessible \
+            $BLUER_AI_INTERNET_INSIDE_CHECK_URL \
+            "${@:2}"
+    )
+    export BLUER_AI_INTERNET_OUTSIDE_IS_ACCESSIBLE=$(
+        bluer_ai_web_is_accessible \
+            $BLUER_AI_INTERNET_OUTSIDE_CHECK_URL \
+            "${@:2}"
+    )
 
-bluer_ai_web_identify
+    if [[ "$do_log" == 1 ]]; then
+        local message="internet:"
+
+        if [[ "$add_timestamp" == 1 ]]; then
+            message="$message $(bluer_ai_string_timestamp)"
+        fi
+
+        message="$message 🇮🇷"
+        if [[ "$BLUER_AI_INTERNET_INSIDE_IS_ACCESSIBLE" == 1 ]]; then
+            message="$message ✅"
+        else
+            message="$message 🛑"
+        fi
+
+        message="$message | 🌍"
+        if [[ "$BLUER_AI_INTERNET_OUTSIDE_IS_ACCESSIBLE" == 1 ]]; then
+            message="$message ✅"
+        else
+            message="$message 🛑"
+        fi
+
+        bluer_ai_log "$message"
+    fi
+
+}
