@@ -26,12 +26,6 @@
 	[port.receive.=<8001>,port.send=<8000>]
  . share <object-name>.
 @web \
-	share \
-	[open,path,~receive,~send] \
-	<path> \
-	[port.receive.=<8001>,port.send=<8000>]
- . share <path>.
-@web \
 	where_am_i
  . where am I?
 ```

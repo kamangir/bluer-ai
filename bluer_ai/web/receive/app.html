@@ -1,17 +1,36 @@
-🔗 <a href="http://{IP}:{port_receive}/">http://{IP}:{port_receive}/</a> | <a href="http://{IP}:{port_send}/">list</a> |
+⬆️⬇️ <a href="http://{IP}:{port_receive}/">http://{IP}:{port_receive}/</a> |
+<a href="http://{IP}:{port_send}/">list</a> |
 {header}
 
 <hr />
 
-<img src="{logo}">
+<form action="/save" method="post" style="display:flex; flex-direction:column; gap:10px; max-width:900px;">
+    <input type="text" name="note_title" value="{note_title}" required style="width:100%; padding:8px;">
+
+    <textarea name="content" rows="3" placeholder="content..." required
+        style="width:100%; padding:10px; font-family: monospace; white-space: pre; resize: vertical;"></textarea>
+
+    <button type="submit" style="padding:10px 14px; width:160px; cursor:pointer;">
+        Save
+    </button>
+</form>
 
 <hr />
 
-<form action="/upload" method="post" enctype="multipart/form-data">
-    <input type="file" name="file">
-    <input type="submit" value="upload">
+<form action="/upload" method="post" enctype="multipart/form-data"
+    style="display:flex; flex-direction:column; gap:10px; max-width:900px;">
+
+    <input type="file" name="file" style="width:100%; padding:10px; font-size:1rem;">
+
+    <button type="submit" style="padding:10px 14px; width:160px; cursor:pointer;">
+        Upload
+    </button>
 </form>
 
 <hr />
 
 {icon} {footer}
+
+<hr />
+
+<img src="{qrcode}" style="max-width: 100%; height: auto;">
