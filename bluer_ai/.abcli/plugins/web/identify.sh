@@ -12,7 +12,7 @@ function bluer_ai_web_identify() {
 
         local loop_count=0
         while true; do
-            eval bluer_ai_web_identify \
+            bluer_ai_web_identify \
                 timestamp,$options,~loop \
                 "${@:2}"
 
@@ -28,39 +28,27 @@ function bluer_ai_web_identify() {
         return
     fi
 
-    export BLUER_AI_INTERNET_INSIDE_IS_ACCESSIBLE=$(
+    export BLUER_AI_PYPI_IS_ACCESSIBLE=$(
         bluer_ai_web_is_accessible \
-            $BLUER_AI_INTERNET_INSIDE_CHECK_URL \
+            https://pypi.org/ \
             "${@:2}"
     )
-    export BLUER_AI_INTERNET_OUTSIDE_IS_ACCESSIBLE=$(
+    export BLUER_AI_STORAGE_IS_ACCESSIBLE=$(
         bluer_ai_web_is_accessible \
-            $BLUER_AI_INTERNET_OUTSIDE_CHECK_URL \
+            $BLUER_AI_STORAGE_CHECK_URL \
+            "${@:2}"
+    )
+    export BLUER_AI_WEB_IS_ACCESSIBLE=$(
+        bluer_ai_web_is_accessible \
+            $BLUER_AI_WEB_CHECK_URL \
             "${@:2}"
     )
 
     if [[ "$do_log" == 1 ]]; then
-        local message="internet:"
-
-        if [[ "$add_timestamp" == 1 ]]; then
-            message="$message $(bluer_ai_string_timestamp)"
-        fi
-
-        message="$message 🇮🇷"
-        if [[ "$BLUER_AI_INTERNET_INSIDE_IS_ACCESSIBLE" == 1 ]]; then
-            message="$message ✅"
-        else
-            message="$message 🛑"
-        fi
-
-        message="$message | 🌍"
-        if [[ "$BLUER_AI_INTERNET_OUTSIDE_IS_ACCESSIBLE" == 1 ]]; then
-            message="$message ✅"
-        else
-            message="$message 🛑"
-        fi
-
-        bluer_ai_log "$message"
+        bluer_ai_log $(
+            python3 -m bluer_options.web \
+                access_as_str \
+                --timestamp $add_timestamp
+        )
     fi
-
 }

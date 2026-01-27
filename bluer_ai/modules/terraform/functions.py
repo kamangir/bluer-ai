@@ -8,6 +8,7 @@ import pathlib
 from blueness import module
 from bluer_options import env, host, string
 from bluer_options.logger import crash_report
+from bluer_options.web.access import as_str as access_as_str
 
 from bluer_ai import NAME, fullname
 from bluer_ai.logger import logger
@@ -203,7 +204,7 @@ def signature() -> List[str]:
                 ),
             ]
             + ([env.BLUER_AI_WIFI_SSID] if env.BLUER_AI_WIFI_SSID else [])
-            + [env.BLUER_AI_INTERNET_STATUS]
+            + [access_as_str(emoji=False)]
         ),
     ]
 
