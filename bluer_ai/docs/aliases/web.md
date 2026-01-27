@@ -6,7 +6,7 @@
  . get IP.
 @web \
 	identify \
-	[~log,loop,sleep=5,timestamp] \
+	[count=3,~log,loop,sleep=5,timestamp] \
 	[--timeout 3]
  . identify web connection.
 @web \

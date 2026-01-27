@@ -10,7 +10,8 @@ def help_identify(
 ) -> str:
     options = "".join(
         [
-            xtra("~log,", mono=mono),
+            "count=3",
+            xtra(",~log,", mono=mono),
             "loop",
             xtra(",sleep=5,", mono=mono),
             "timestamp",

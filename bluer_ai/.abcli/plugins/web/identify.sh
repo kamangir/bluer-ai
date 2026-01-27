@@ -5,14 +5,22 @@ function bluer_ai_web_identify() {
     local do_log=$(bluer_ai_option_int "$options" log 1)
     local do_loop=$(bluer_ai_option_int "$options" loop 0)
     local add_timestamp=$(bluer_ai_option_int "$options" timestamp 0)
+    local max_count=$(bluer_ai_option "$options" count -1)
 
     if [[ "$do_loop" == 1 ]]; then
         local sleep_period=$(bluer_ai_option "$options" sleep 5)
 
+        local loop_count=0
         while true; do
             eval bluer_ai_web_identify \
                 timestamp,$options,~loop \
                 "${@:2}"
+
+            loop_count=$((loop_count + 1))
+            if [[ "$max_count" != -1 ]] &&
+                [[ "$loop_count" -ge "$max_count" ]]; then
+                break
+            fi
 
             sleep $sleep_period
         done
