@@ -20,7 +20,6 @@ setup(
         f"{NAME}.plugins.gpu",
         f"{NAME}.plugins.web",
         f"{NAME}.plugins.web.receive",
-        f"{NAME}.plugins.web.status",
         f"{NAME}.README",
         f"{NAME}.tests",
     ],

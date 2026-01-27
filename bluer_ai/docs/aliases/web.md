@@ -6,11 +6,8 @@
  . get IP.
 @web \
 	identify \
-	[loop,~upload] \
-	[-|<object-name>] \
-	[--sleep <5>] \
-	[--timeout 3] \
-	[--timestamp 0]
+	[~log,loop,sleep=5,timestamp] \
+	[--timeout 3]
  . identify web connection.
 @web \
 	is_accessible \

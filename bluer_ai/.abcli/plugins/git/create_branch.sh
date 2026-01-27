@@ -8,8 +8,7 @@ function bluer_ai_git_create_branch() {
     fi
 
     local options=$2
-    local do_offline=0
-    [[ "$BLUER_AI_WEB_STATUS" != "online" ]] && do_offline=1
+    local do_offline=$(bluer_ai_not $BLUER_AI_INTERNET_OUTSIDE_IS_ACCESSIBLE)
     do_offline=$(bluer_ai_option_int "$options" offline $do_offline)
     local do_push=$(bluer_ai_option_int "$options" push 1)
     local do_increment_version=$(bluer_ai_option_int "$options" increment_version $(bluer_ai_not $do_push))

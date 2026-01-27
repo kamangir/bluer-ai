@@ -5,8 +5,6 @@ from blueness import module
 from blueness.argparse.generic import sys_exit
 
 from bluer_ai import NAME
-from bluer_ai.plugins.web.status.get import get_status
-from bluer_ai.plugins.web.status.loop import get_status_on_a_loop
 from bluer_ai.plugins.web.accessible import is_accessible
 from bluer_ai.logger import logger
 
@@ -16,7 +14,7 @@ parser = argparse.ArgumentParser(NAME)
 parser.add_argument(
     "task",
     type=str,
-    help="identify | is_accessible",
+    help="is_accessible",
 )
 parser.add_argument(
     "--count",
@@ -76,25 +74,6 @@ if args.task == "is_accessible":
             )
         )
     )
-elif args.task == "identify":
-    if args.loop:
-        success = get_status_on_a_loop(
-            timeout=args.timeout,
-            log=args.log != 0,
-            count=args.count,
-            sleep=args.sleep,
-            object_name=args.object_name,
-            timestamp=args.timestamp == 1,
-        )
-    else:
-        success = True
-        print(
-            get_status(
-                timeout=args.timeout,
-                log=args.log == 1,
-                timestamp=args.timestamp == 1,
-            )
-        )
 else:
     success = None
 

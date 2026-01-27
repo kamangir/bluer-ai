@@ -12,3 +12,5 @@ function bluer_ai_web_is_accessible() {
         --url $url \
         "${@:2}"
 }
+
+bluer_ai_web_identify
