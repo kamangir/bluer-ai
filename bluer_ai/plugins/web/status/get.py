@@ -1,8 +1,14 @@
 from bluer_options import string
 
 from bluer_ai import env
-from bluer_ai.web.accessible import is_accessible
+from bluer_ai.plugins.web.accessible import is_accessible
 from bluer_ai.logger import logger
+
+dict_of_status = {
+    "national": "🇮🇷",
+    "offline": "⛓️‍💥",
+    "online": "🛜",
+}
 
 
 def get_status(
@@ -38,11 +44,7 @@ def get_status(
                     if timestamp
                     else ""
                 ),
-                {
-                    "national": "🇮🇷",
-                    "offline": "⛓️‍💥",
-                    "online": "🛜",
-                }.get(status, "❓"),
+                dict_of_status.get(status, "❓"),
                 status,
             )
         )

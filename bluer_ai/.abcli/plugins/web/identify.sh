@@ -9,7 +9,7 @@ function bluer_ai_web_identify() {
 
         local object_name=$(bluer_ai_clarify_object $2 web-status-$(bluer_ai_string_timestamp))
 
-        python3 -m bluer_ai.web \
+        python3 -m bluer_ai.plugins.web \
             identify \
             --object_name $object_name \
             --loop 1 \
@@ -26,9 +26,10 @@ function bluer_ai_web_identify() {
         return
     fi
 
-    export BLUER_AI_WEB_STATUS=$(python3 -m bluer_ai.web \
+    export BLUER_AI_WEB_STATUS=$(python3 -m bluer_ai.plugins.web \
         identify \
-        --log 1)
+        --log 1 \
+        "${@:2}")
 }
 
 bluer_ai_web_identify

@@ -10,14 +10,15 @@ def help_identify(
 ) -> str:
     options = "".join(
         [
-            xtra("~upload,", mono=mono),
             "loop",
+            xtra(",~upload", mono=mono),
         ]
     )
 
     args = sorted(
         [
-            "[--sleep <30>]",
+            "[--sleep <5>]",
+            "[--timestamp 0]",
         ]
         + is_accessible.args
     )

@@ -18,7 +18,7 @@ function bluer_ai_pypi() {
 
 bluer_ai_source_caller_suffix_path /pypi
 
-export BLUER_AI_PYPI_IS_ACCESSIBLE=$(python3 -m bluer_ai.web \
+export BLUER_AI_PYPI_IS_ACCESSIBLE=$(python3 -m bluer_ai.plugins.web \
     is_accessible \
     --url https://pypi.org/)
 if [[ "$BLUER_AI_PYPI_IS_ACCESSIBLE" == 1 ]]; then

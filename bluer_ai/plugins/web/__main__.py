@@ -5,9 +5,9 @@ from blueness import module
 from blueness.argparse.generic import sys_exit
 
 from bluer_ai import NAME
-from bluer_ai.web.status.get import get_status
-from bluer_ai.web.status.loop import get_status_on_a_loop
-from bluer_ai.web.accessible import is_accessible
+from bluer_ai.plugins.web.status.get import get_status
+from bluer_ai.plugins.web.status.loop import get_status_on_a_loop
+from bluer_ai.plugins.web.accessible import is_accessible
 from bluer_ai.logger import logger
 
 NAME = module.name(__file__, NAME)
@@ -44,7 +44,7 @@ parser.add_argument(
 parser.add_argument(
     "--sleep",
     type=int,
-    default=30,
+    default=5,
     help="in seconds",
 )
 parser.add_argument(

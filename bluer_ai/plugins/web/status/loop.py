@@ -6,7 +6,7 @@ from bluer_options import string
 from bluer_objects.metadata import post_to_object
 
 from bluer_ai import NAME
-from bluer_ai.web.status.get import get_status
+from bluer_ai.plugins.web.status.get import get_status
 from bluer_ai.logger import logger
 
 NAME = module.name(__file__, NAME)

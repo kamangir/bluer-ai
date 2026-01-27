@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-export abcli_status_icons=""
+export BLUER_AI_STATUS_ICONS=""
 
 export abcli_path_bash="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
