@@ -7,7 +7,7 @@ function bluer_ai_git_push() {
         return 1
     fi
 
-    local do_offline=$(bluer_ai_not $BLUER_AI_INTERNET_OUTSIDE_IS_ACCESSIBLE)
+    local do_offline=$(bluer_ai_not $BLUER_AI_WEB_IS_ACCESSIBLE)
     local do_test=$do_test
 
     if [[ -f "./.git-no-test" ]]; then
