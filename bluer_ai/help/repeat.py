@@ -13,6 +13,7 @@ def help_repeat(
         [
             "count=<count>,",
             eval_options(mono=mono),
+            "seconds=<seconds>",
         ]
     )
 

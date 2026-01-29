@@ -10,13 +10,13 @@ def help_identify(
 ) -> str:
     options = "".join(
         [
-            "count=3",
-            xtra(",~log,", mono=mono),
+            xtra("count=<count>,~log,", mono=mono),
             "loop",
-            xtra(",sleep=5,", mono=mono),
-            "timestamp",
+            xtra(",seconds=<seconds>", mono=mono),
         ]
     )
+
+    identification_options = xtra("timestamp", mono=mono)
 
     args = is_accessible.args
 
@@ -25,6 +25,7 @@ def help_identify(
             "@web",
             "identify",
             f"[{options}]",
+            f"[{identification_options}]",
         ]
         + args,
         "identify web connection.",
