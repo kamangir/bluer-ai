@@ -173,6 +173,7 @@ function test_bluer_ai_help() {
         "@watch" \
         \
         "@web" \
+        "@web diagnose" \
         "@web get_ip" \
         "@web identify" \
         "@web is_accessible" \
@@ -181,7 +182,6 @@ function test_bluer_ai_help() {
         "@web where_am_i" \
         \
         "@wifi" \
-        "@wifi diagnose" \
         "@wifi get_ssid" \
         \
         "bluer_ai_log_list" \
