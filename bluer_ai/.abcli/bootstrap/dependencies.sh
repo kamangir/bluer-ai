@@ -14,8 +14,8 @@ function bluer_ai_source_dependencies() {
     [[ "$abcli_is_rpi" == true ]] &&
         export PATH="$HOME/.local/bin:$PATH"
 
+    echo "🌀 GNU bash $BASH_VERSION"
     echo "🐍 $(python3 --version): $(which python)"
-    echo "GNU bash $BASH_VERSION"
 
     python3 -m blueness version \
         --show_icon 1
