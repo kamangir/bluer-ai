@@ -9,7 +9,7 @@ def help_watch(
 ) -> str:
     options = "".join(
         [
-            xtra("~clear,dryrun,", mono=mono),
+            xtra("~clear,count=<count>,dryrun,~log,", mono=mono),
             "seconds=<seconds>",
         ]
     )

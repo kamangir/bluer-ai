@@ -7,7 +7,7 @@ def help_sleep(
     tokens: List[str],
     mono: bool,
 ) -> str:
-    options = "seconds=<seconds>"
+    options = "~log,seconds=<seconds>"
 
     return show_usage(
         [
