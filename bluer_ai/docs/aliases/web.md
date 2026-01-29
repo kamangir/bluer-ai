@@ -2,6 +2,10 @@
 
 ```bash
 @web \
+	diagnose \
+	[Sion,Zagros]
+ . diagnose web connection.
+@web \
 	get_ip
  . get IP.
 @web \
