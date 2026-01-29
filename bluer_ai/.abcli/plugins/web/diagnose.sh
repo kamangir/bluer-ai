@@ -11,6 +11,6 @@ function bluer_ai_web_diagnose() {
     elif [[ "$connection" == "Zagros" ]]; then
         bluer_ai_browse http://router.miwifi.com/cgi-bin/luci/diagnosis
     else
-        bluer_ai_log_error "cannot diagnose connection: $connection"
+        bluer_ai_log_warning "cannot diagnose connection: $connection."
     fi
 }
