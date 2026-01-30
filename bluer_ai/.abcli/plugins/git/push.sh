@@ -8,7 +8,7 @@ function bluer_ai_git_push() {
     fi
 
     local do_offline=$(bluer_ai_not $BLUER_AI_WEB_IS_ACCESSIBLE)
-    local do_test=0
+    local do_test=$do_test
 
     if [[ -f "./.git-no-test" ]]; then
         bluer_ai_log "git tests are disabled by default."
@@ -25,7 +25,7 @@ function bluer_ai_git_push() {
     local do_action=$(bluer_ai_option_int "$options" action 1)
     local do_scp=$(bluer_ai_option_int "$options" scp 0)
     do_test=$(bluer_ai_option_int "$options" test $do_test)
-    local run_workflows=$(bluer_ai_option_int "$options" workflow $BLUER_AI_STORAGE_IS_ACCESSIBLE_ON_GITHUB)
+    local run_workflows=$(bluer_ai_option_int "$options" workflow 1)
 
     if [[ "$do_scp" == 1 ]]; then
         local machine_name=$(bluer_ai_option "$options" rpi)
