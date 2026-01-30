@@ -29,6 +29,7 @@ function bluer_ai_web_identify() {
             $BLUER_AI_STORAGE_CHECK_URL \
             "${@:2}"
     )
+    export BLUER_AI_STORAGE_IS_ACCESSIBLE_ON_GITHUB=0
     export BLUER_AI_WEB_IS_ACCESSIBLE=$(
         bluer_ai_web_is_accessible \
             $BLUER_AI_WEB_CHECK_URL \
