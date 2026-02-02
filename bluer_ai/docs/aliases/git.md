@@ -48,7 +48,7 @@
  . pull.
 @git \
 	push \
-	<message> \
+	[<message>] \
 	[~action,browse,~create_pull_request,first,~increment_version,offline,test,~status,~workflow] \
 	[build,browse,install,~rm_dist,~upload]
  . push repo.

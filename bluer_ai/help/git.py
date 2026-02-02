@@ -261,7 +261,7 @@ def help_push(
         [
             "@git",
             "push",
-            "<message>",
+            "[<message>]",
             f"[{options}]",
             f"[{build_options}]",
         ],
