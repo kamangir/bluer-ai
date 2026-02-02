@@ -1,21 +1,18 @@
 #! /usr/bin/env bash
 
 function bluer_ai_git_push() {
-    local message=$1
-    if [[ -z "$message" ]]; then
-        bluer_ai_log_error "@git: push: message not found."
-        return 1
-    fi
+    local message=${1:-wip}
+
+    local options=$2
 
     local do_offline=$(bluer_ai_not $BLUER_AI_WEB_IS_ACCESSIBLE)
-    local do_test=0
 
+    local do_test=0
     if [[ -f "./.git-no-test" ]]; then
         bluer_ai_log "git tests are disabled by default."
         do_test=0
     fi
 
-    local options=$2
     local do_browse=$(bluer_ai_option_int "$options" browse 0)
     local do_increment_version=$(bluer_ai_option_int "$options" increment_version 1)
     do_offline=$(bluer_ai_option_int "$options" offline $do_offline)
