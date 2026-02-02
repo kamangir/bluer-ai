@@ -1,11 +1,7 @@
 #! /usr/bin/env bash
 
 function bluer_ai_git_create_branch() {
-    local branch_name=$1
-    if [[ -z "$branch_name" ]]; then
-        bluer_ai_log_error "@git: create_brach: branch name not found."
-        return 1
-    fi
+    local branch_name=${1:-refactors}
 
     local options=$2
     local do_offline=$(bluer_ai_not $BLUER_AI_WEB_IS_ACCESSIBLE)

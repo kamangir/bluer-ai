@@ -96,10 +96,10 @@ def help_create_branch(
         [
             "@git",
             "create_branch",
-            "<branch-name>",
+            "[<branch-name>]",
             f"[{options}]",
         ],
-        "create <branch-name> in the repo.",
+        "create a branch in the repo.",
         mono=mono,
     )
 

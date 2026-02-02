@@ -22,9 +22,9 @@
  . clone <repo-name>.
 @git \
 	create_branch \
-	<branch-name> \
+	[<branch-name>] \
 	[~increment_version,offline,~push,~timestamp]
- . create <branch-name> in the repo.
+ . create a branch in the repo.
 @git \
 	create_pull_request
  . create a pull request in the repo.
