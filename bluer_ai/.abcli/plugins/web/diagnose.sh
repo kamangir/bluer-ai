@@ -10,7 +10,7 @@ function bluer_ai_web_diagnose() {
         bluer_ai_browse http://192.168.0.1/settings.html#Advanced/Wireless/OnlineClients
     elif [[ "$connection" == "Zagros" ]]; then
         bluer_ai_browse http://router.miwifi.com/cgi-bin/luci/diagnosis
-    else
-        bluer_ai_log_warning "cannot diagnose connection: $connection."
     fi
+
+    bluer_ai_browse https://radar.arvancloud.ir/
 }
