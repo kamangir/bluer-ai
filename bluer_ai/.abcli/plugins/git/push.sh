@@ -75,7 +75,7 @@ function bluer_ai_git_push() {
     [[ "$run_workflows" == 0 ]] &&
         message="$message - no-workflow 🪄"
 
-    [[ "$do_test" == 0 ]] &&
+    [[ "$do_test" == 1 ]] &&
         message="$message - tested ✅"
 
     git commit -a -m "$message"
