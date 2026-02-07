@@ -10,7 +10,7 @@ def help_identify(
 ) -> str:
     options = "".join(
         [
-            xtra("count=<count>,~log,", mono=mono),
+            xtra("count=<count>,force,~log,", mono=mono),
             "loop",
             xtra(",seconds=<seconds>,~update", mono=mono),
         ]
