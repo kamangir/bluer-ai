@@ -8,7 +8,7 @@ function bluer_ai_web_identify() {
 
     if [[ "$do_loop" == 1 ]]; then
         bluer_ai_watch \
-            ~clear,~log,seconds=5,$options \
+            ~clear,~log,~hr,seconds=5,$options \
             bluer_ai_web_identify \
             timestamp,$identification_options \
             "${@:3}"

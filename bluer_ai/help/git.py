@@ -25,7 +25,7 @@ def help_browse(
     tokens: List[str],
     mono: bool,
 ) -> str:
-    options = "actions"
+    options = "actions,code|web"
 
     return show_usage(
         [
@@ -188,8 +188,8 @@ def help_pull(
 ) -> str:
     options = "".join(
         [
-            xtra("~all,", mono=mono),
-            "init",
+            xtra("all,", mono=mono),
+            "init,scp",
         ]
     )
 

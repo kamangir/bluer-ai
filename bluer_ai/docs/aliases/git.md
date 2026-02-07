@@ -8,7 +8,7 @@
 @git \
 	browse \
 	[ . | - | <repo-name> ] \
-	[actions]
+	[actions,code|web]
  . browse <repo-name>.
 @git \
 	checkout \
@@ -44,7 +44,7 @@
  . increment repo version.
 @git \
 	pull \
-	[~all,init]
+	[all,init,scp]
  . pull.
 @git \
 	push \
