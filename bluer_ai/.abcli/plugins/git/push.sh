@@ -5,32 +5,52 @@ function bluer_ai_git_push() {
 
     local options=$2
 
-    local do_offline=$(bluer_ai_not $BLUER_AI_WEB_IS_ACCESSIBLE)
-
-    local do_test=0
-    if [[ -f "./.git-no-test" ]]; then
-        bluer_ai_log "git tests are disabled by default."
-        do_test=0
-    fi
-
-    local do_browse=$(bluer_ai_option_int "$options" browse 0)
-    local do_increment_version=$(bluer_ai_option_int "$options" increment_version 1)
-    do_offline=$(bluer_ai_option_int "$options" offline $do_offline)
-    local show_status=$(bluer_ai_option_int "$options" status 1)
-    local first_push=$(bluer_ai_option_int "$options" first 0)
-    local create_pull_request=$(bluer_ai_option_int "$options" create_pull_request $first_push)
-    local do_action=$(bluer_ai_option_int "$options" action 1)
     local do_scp=$(bluer_ai_option_int "$options" scp 0)
-    do_test=$(bluer_ai_option_int "$options" test $do_test)
-    local run_workflows=$(bluer_ai_option_int "$options" workflow 1)
-
     if [[ "$do_scp" == 1 ]]; then
         local machine_name=$(bluer_ai_option "$options" rpi)
         if [[ -z "$machine_name" ]]; then
             bluer_ai_log_error "machine name not found."
             return 1
         fi
+
+        if [[ ! -d ".git" ]]; then
+            bluer_ai_log_error "not a git repo."
+            return 1
+        fi
+
+        local repo_name=$(basename $(pwd))
+        bluer_ai_log "scp $repo_name -> $machine_name ..."
+
+        bluer_ai_eval - \
+            scp -r \
+            ./ \
+            pi@$machine_name.local:/home/pi/git/$repo_name
+
+        return
     fi
+
+    local do_action=$(bluer_ai_option_int "$options" action 1)
+
+    local do_browse=$(bluer_ai_option_int "$options" browse 0)
+
+    local first_push=$(bluer_ai_option_int "$options" first 0)
+    local create_pull_request=$(bluer_ai_option_int "$options" create_pull_request $first_push)
+
+    local do_increment_version=$(bluer_ai_option_int "$options" increment_version 1)
+
+    local do_offline=$(bluer_ai_not $BLUER_AI_WEB_IS_ACCESSIBLE)
+    do_offline=$(bluer_ai_option_int "$options" offline $do_offline)
+
+    local run_workflows=$(bluer_ai_option_int "$options" workflow 1)
+
+    local show_status=$(bluer_ai_option_int "$options" status 1)
+
+    local do_test=0
+    if [[ -f "./.git-no-test" ]]; then
+        bluer_ai_log "git tests are disabled by default."
+        do_test=0
+    fi
+    do_test=$(bluer_ai_option_int "$options" test $do_test)
 
     [[ "$do_offline" == 1 ]] &&
         bluer_ai_log "⛓️‍💥 offline mode."
@@ -96,22 +116,6 @@ function bluer_ai_git_push() {
 
         [[ "$do_browse" == 1 ]] &&
             bluer_ai_git_browse . actions
-    fi
-
-    if [[ "$do_scp" == 1 ]]; then
-        if [[ ! -d ".git" ]]; then
-            bluer_ai_log_error "not a git repo."
-            return 1
-        fi
-
-        local repo_name=$(basename $(pwd))
-        bluer_ai_log "scp $repo_name -> $machine_name ..."
-
-        bluer_ai_eval - \
-            scp -r \
-            ./ \
-            pi@$machine_name.local:/home/pi/git/$repo_name
-        [[ $? -ne 0 ]] && return 1
     fi
 
     local build_options=$3
