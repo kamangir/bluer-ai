@@ -59,5 +59,10 @@ function bluer_ai_git_pull() {
 }
 
 function bluer_ai_git_pull_scp() {
+    if [[ "$abcli_hostname" == "dev" ]]; then
+        bluer_ai_log "✅ scp pull host, skipping pull."
+        return
+    fi
+
     bluer_ai_log 🪄
 }
