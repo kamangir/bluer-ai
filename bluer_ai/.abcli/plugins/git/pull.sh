@@ -1,6 +1,11 @@
 #! /usr/bin/env bash
 
 function bluer_ai_git_pull() {
+    if [[ "$BLUER_AI_WEB_IS_ACCESSIBLE" == 0 ]]; then
+        bluer_ai_log_warning "⛓️‍💥 web is not accessible, git pull is disabled."
+        return 0
+    fi
+
     local options=$1
     local do_all=$(bluer_ai_option_int "$options" all 1)
     local do_init=$(bluer_ai_option_int "$options" init 0)
