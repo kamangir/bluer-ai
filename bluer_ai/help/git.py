@@ -188,8 +188,8 @@ def help_pull(
 ) -> str:
     options = "".join(
         [
-            xtra("~all,", mono=mono),
-            "init",
+            xtra("all,", mono=mono),
+            "init,scp",
         ]
     )
 

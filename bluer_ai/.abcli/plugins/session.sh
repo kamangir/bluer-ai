@@ -14,7 +14,7 @@ function bluer_ai_session() {
 
         while true; do
             [[ "$do_pull" == 1 ]] &&
-                bluer_ai_git_pull init
+                bluer_ai_git_pull all,init
 
             bluer_ai_log "session initialized: username=$USER, hostname=$(hostname), EUID=$EUID, python3=$(which python3)"
 
@@ -56,7 +56,7 @@ function bluer_ai_session() {
             if [ -f "$ABCLI_PATH_IGNORE/session_reply_seed" ]; then
                 bluer_ai_log "reply_to_bash(seed)"
 
-                bluer_ai_git_pull
+                bluer_ai_git_pull all
                 bluer_ai_init
 
                 cat "$ABCLI_PATH_IGNORE/session_reply_seed" | while read line; do

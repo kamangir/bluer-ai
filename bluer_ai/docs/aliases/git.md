@@ -44,7 +44,7 @@
  . increment repo version.
 @git \
 	pull \
-	[~all,init]
+	[all,init,scp]
  . pull.
 @git \
 	push \
