@@ -14,7 +14,7 @@ NAME = module.name(__file__, NAME)
 def is_accessible(
     url,
     timeout: int = 3,
-    verbose: bool = True,
+    verbose: bool = False,
 ) -> bool:
     if verbose:
         logger.info(
