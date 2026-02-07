@@ -11,11 +11,13 @@ def help_is_accessible(
     tokens: List[str],
     mono: bool,
 ) -> str:
+    options = "force"
 
     return show_usage(
         [
             "@web",
             "is_accessible",
+            f"[{options}]",
             "<url>",
         ]
         + args,

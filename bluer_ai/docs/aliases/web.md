@@ -10,12 +10,13 @@
  . get IP.
 @web \
 	identify \
-	[count=<count>,~log,loop,seconds=<seconds>] \
+	[count=<count>,force,~log,loop,seconds=<seconds>,~update] \
 	[timestamp] \
 	[--timeout 3]
  . identify web connection.
 @web \
 	is_accessible \
+	[force] \
 	<url> \
 	[--timeout 3]
  . is <url> accessible?
