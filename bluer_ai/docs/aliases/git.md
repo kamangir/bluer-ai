@@ -49,7 +49,7 @@
 @git \
 	push \
 	[<message>] \
-	[~action,browse,~create_pull_request,first,~increment_version,offline,test,~status,~workflow] \
+	[~action,browse,~create_pull_request,first,~increment_version,~offline,rpi=<machine-name>,scp,~test,~status,~workflow] \
 	[build,browse,install,~rm_dist,~upload]
  . push repo.
 @git \

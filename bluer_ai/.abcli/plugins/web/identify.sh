@@ -7,7 +7,7 @@ function bluer_ai_web_identify() {
     local identification_options=$2
 
     if [[ "$do_loop" == 1 ]]; then
-        bluer_ai_badge save 🔎
+        bluer_ai_badge save "🔎"
 
         bluer_ai_watch \
             ~clear,~log,~hr,seconds=5,$options \
