@@ -16,24 +16,27 @@ function bluer_ai_web_identify() {
         return
     fi
 
+    local do_update=$(bluer_ai_option_int "$options" update 1)
     local add_timestamp=$(bluer_ai_option_int "$options" timestamp 0)
     local do_log=$(bluer_ai_option_int "$options" log 1)
 
-    export BLUER_AI_PYPI_IS_ACCESSIBLE=$(
-        bluer_ai_web_is_accessible \
-            https://pypi.org/ \
-            "${@:2}"
-    )
-    export BLUER_AI_STORAGE_IS_ACCESSIBLE=$(
-        bluer_ai_web_is_accessible \
-            $BLUER_AI_STORAGE_CHECK_URL \
-            "${@:2}"
-    )
-    export BLUER_AI_WEB_IS_ACCESSIBLE=$(
-        bluer_ai_web_is_accessible \
-            $BLUER_AI_WEB_CHECK_URL \
-            "${@:2}"
-    )
+    if [[ "$do_update" == 1 ]]; then
+        export BLUER_AI_PYPI_IS_ACCESSIBLE=$(
+            bluer_ai_web_is_accessible \
+                https://pypi.org/ \
+                "${@:2}"
+        )
+        export BLUER_AI_STORAGE_IS_ACCESSIBLE=$(
+            bluer_ai_web_is_accessible \
+                $BLUER_AI_STORAGE_CHECK_URL \
+                "${@:2}"
+        )
+        export BLUER_AI_WEB_IS_ACCESSIBLE=$(
+            bluer_ai_web_is_accessible \
+                $BLUER_AI_WEB_CHECK_URL \
+                "${@:2}"
+        )
+    fi
 
     if [[ "$do_log" == 1 ]]; then
         bluer_ai_log $(

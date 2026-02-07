@@ -12,7 +12,7 @@ def help_identify(
         [
             xtra("count=<count>,~log,", mono=mono),
             "loop",
-            xtra(",seconds=<seconds>", mono=mono),
+            xtra(",seconds=<seconds>,~update", mono=mono),
         ]
     )
 
