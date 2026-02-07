@@ -4,7 +4,11 @@ function bluer_ai_git_browse() {
     local repo_name=$1
 
     local options=$2
-    local browse_actions=$(bluer_ai_option_int "$options" actions 0)
+
+    local where="web"
+    [[ "$BLUER_AI_WEB_IS_ACCESSIBLE" == 0 ]] &&
+        where="code"
+    where=$(bluer_ai_option_choice "$options" code,web $where)
 
     if [[ ",,.,-," == *",$repo_name,"* ]]; then
         repo_name=$(bluer_ai_git_get_repo_name)
@@ -12,8 +16,14 @@ function bluer_ai_git_browse() {
         repo_name=$(bluer_ai_unpack_repo_name $repo_name)
     fi
 
-    local url=https://github.com/kamangir/$repo_name
-    [[ "$browse_actions" == 1 ]] && url="$url/actions"
+    if [[ "$where" == "web" ]]; then
+        local browse_actions=$(bluer_ai_option_int "$options" actions 0)
 
-    bluer_ai_browse $url
+        local url=https://github.com/kamangir/$repo_name
+        [[ "$browse_actions" == 1 ]] && url="$url/actions"
+
+        bluer_ai_browse $url
+    else
+        bluer_ai_code $abcli_path_git/$repo_name/template.md
+    fi
 }

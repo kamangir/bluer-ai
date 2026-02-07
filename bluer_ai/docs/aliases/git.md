@@ -8,7 +8,7 @@
 @git \
 	browse \
 	[ . | - | <repo-name> ] \
-	[actions]
+	[actions,code|web]
  . browse <repo-name>.
 @git \
 	checkout \

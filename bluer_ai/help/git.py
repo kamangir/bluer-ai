@@ -25,7 +25,7 @@ def help_browse(
     tokens: List[str],
     mono: bool,
 ) -> str:
-    options = "actions"
+    options = "actions,code|web"
 
     return show_usage(
         [
