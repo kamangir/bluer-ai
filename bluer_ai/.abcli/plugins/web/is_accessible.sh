@@ -2,8 +2,8 @@
 
 function bluer_ai_web_is_accessible() {
     if [[ "$BLUER_AI_FORCE_OFFLINE" == 1 ]]; then
-        bluer_ai_log "⛓️‍💥 forcing offline operation."
         echo 0
+        return
     fi
 
     url=$1
