@@ -2,7 +2,7 @@
 
 function bluer_ai_git_pull() {
     if [[ "$BLUER_AI_WEB_IS_ACCESSIBLE" == 0 ]]; then
-        bluer_ai_log_warning "⛓️‍💥 web is not accessible, git pull is disabled."
+        bluer_ai_log_warning "⛓️‍💥 offline mode, git pull is disabled."
         return 0
     fi
 
