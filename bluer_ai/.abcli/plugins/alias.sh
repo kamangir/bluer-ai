@@ -40,7 +40,7 @@ alias @wifi=bluer_ai_wifi
 
 # ignore
 
-alias @clear="cd; clear"
+alias @clear=bluer_ai_clear
 
 alias @git++=bluer_ai_git_increment_version
 
