@@ -15,6 +15,8 @@ function bluer_ai_git_review() {
         return
     fi
 
+    bluer_ai_badge save "📜"
+
     local char="x"
     local index=0
     local count=$(bluer_ai_list_len "$list_of_files" --delim=space)
@@ -44,4 +46,6 @@ function bluer_ai_git_review() {
     done
 
     popd >/dev/null
+
+    bluer_ai_badge reset
 }

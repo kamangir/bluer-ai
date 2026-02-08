@@ -8,10 +8,16 @@ function bluer_ai_build_README() {
     local repo_name=$(bluer_ai_unpack_repo_name $plugin_name)
     local module_name=$(bluer_ai_plugins get_module_name $repo_name)
 
+    bluer_ai_badge save "⚙️📜"
+
     python3 -m $module_name \
         build_README \
         "${@:2}"
-    [[ $? -ne 0 ]] && return 1
+    local status="$?"
+
+    bluer_ai_badge reset
+
+    [[ "$status" -ne 0 ]] && return 1
 
     if [[ "$do_push" == 1 ]]; then
         bluer_ai_git $repo_name push \
