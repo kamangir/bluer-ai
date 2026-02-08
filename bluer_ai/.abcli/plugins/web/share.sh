@@ -26,7 +26,7 @@ function bluer_ai_web_share() {
     [[ "$do_open" == 1 ]] &&
         open $object_path
 
-    bluer_ai_badge save "⬆️⬇️"
+    bluer_ai_badge - "⬆️⬇️"
 
     local url=""
     if [[ "$do_send" == 1 ]]; then

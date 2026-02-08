@@ -36,7 +36,7 @@ function bluer_ai_log() {
                 return 1
             fi
 
-            bluer_ai_badge save "$machine_name"
+            bluer_ai_badge - "$machine_name"
 
             ssh \
                 pi@$machine_name.local \

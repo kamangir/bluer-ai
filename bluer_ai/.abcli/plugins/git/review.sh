@@ -15,7 +15,7 @@ function bluer_ai_git_review() {
         return
     fi
 
-    bluer_ai_badge save "📜"
+    bluer_ai_badge - "📜"
 
     local char="x"
     local index=0
