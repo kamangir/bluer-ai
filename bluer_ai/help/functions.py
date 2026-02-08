@@ -3,6 +3,7 @@ from bluer_ai.help.actions import help_perform_action
 from bluer_ai.help.assert_ import help_functions as help_assert
 from bluer_ai.help.blueness import help_blueness
 from bluer_ai.help.browse import help_browse
+from bluer_ai.help.clear import help_clear
 from bluer_ai.help.code import help_code
 from bluer_ai.help.conda import help_functions as help_conda
 from bluer_ai.help.env import help_functions as help_env
@@ -53,6 +54,7 @@ help_functions.update(
         "blueness": help_blueness,
         "browse": help_browse,
         "cat": help_cat,
+        "clear": help_clear,
         "code": help_code,
         "conda": help_conda,
         "env": help_env,

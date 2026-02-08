@@ -17,6 +17,8 @@ function test_bluer_ai_help() {
         \
         "@cat" \
         \
+        "@clear" \
+        \
         "@code" \
         \
         "@conda" \
