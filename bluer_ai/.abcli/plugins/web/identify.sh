@@ -31,10 +31,10 @@ function bluer_ai_web_identify() {
                 https://pypi.org/ \
                 "${@:2}"
         )
-        export BLUER_AI_STORAGE_IS_ACCESSIBLE=$(
+        export BLUER_AI_CLOUD_IS_ACCESSIBLE=$(
             bluer_ai_web_is_accessible \
                 ,$options \
-                $BLUER_AI_STORAGE_CHECK_URL \
+                $BLUER_AI_CLOUD_CHECK_URL \
                 "${@:2}"
         )
         export BLUER_AI_WEB_IS_ACCESSIBLE=$(
