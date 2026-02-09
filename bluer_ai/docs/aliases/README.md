@@ -1,5 +1,6 @@
 # aliases
 
+- [@access](./access.md)
 - [@build_README](./build_README.md)
 - [@conda](./conda.md)
 - [@error](./error.md)
