@@ -2,6 +2,7 @@ from typing import List
 
 from bluer_options.terminal import show_usage
 from bluer_options.web.access.vars import dict_of_variables
+from bluer_options import env
 
 from bluer_ai.help.watch import options as watch_options
 
@@ -54,7 +55,7 @@ def help_set(
         [
             "@access",
             "set",
-            " | ".join(sorted(dict_of_variables.keys())),
+            " | ".join(sorted(dict_of_variables().keys())),
             "0 | 1",
         ],
         "set access.",
@@ -64,7 +65,7 @@ def help_set(
                 info["name"],
                 info["value"],
             ): ""
-            for keyword, info in dict_of_variables.items()
+            for keyword, info in dict_of_variables().items()
         },
         mono=mono,
     )
