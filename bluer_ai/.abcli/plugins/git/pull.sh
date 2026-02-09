@@ -50,9 +50,18 @@ function bluer_ai_git_pull() {
 function bluer_ai_git_pull_scp() {
     local do_scp=$1
 
+    local repo_name=$(basename $(pwd))
+
     if [[ "$do_scp" == 0 ]]; then
+        bluer_ai_log "@git: pulling $repo_name..."
+        bluer_ai_badge - "@git pull"
+
         git pull
-        return
+        local status="$?"
+
+        bluer_ai_badge reset
+
+        return "$status"
     fi
 
     if [[ ! -d ".git" ]]; then
@@ -65,8 +74,7 @@ function bluer_ai_git_pull_scp() {
         return
     fi
 
-    local repo_name=$(basename $(pwd))
-    bluer_ai_log "scp $repo_name from dev ..."
+    bluer_ai_log "@git: pull: scp $repo_name from dev ..."
 
     bluer_ai_eval - \
         scp -r \

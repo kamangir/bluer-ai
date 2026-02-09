@@ -1,16 +1,15 @@
 from typing import List, Tuple
 import numpy as np
-import platform
 import shutil
 import os
 import pathlib
 
 from blueness import module
-from bluer_options import env, host, string
+from bluer_options import env, string
 from bluer_options.logger import crash_report
-from bluer_options.web.access import as_str as access_as_str
 
-from bluer_ai import NAME, fullname
+from bluer_ai import NAME
+from bluer_ai.host import signature
 from bluer_ai.logger import logger
 
 NAME = module.name(__file__, NAME)
@@ -45,6 +44,13 @@ def poster(filename: str) -> bool:
                 thickness=4,
             )
             for line in signature()
+            + [
+                string.pretty_date(include_time=False),
+                string.pretty_date(
+                    include_date=False,
+                    include_zone=True,
+                ),
+            ]
         ],
         axis=0,
     )
@@ -181,32 +187,6 @@ def terraform(
             success = False
 
     return success
-
-
-def signature() -> List[str]:
-    return [
-        fullname(),
-        host.get_name(),
-        env.abcli_hostname,
-        " | ".join(
-            host.tensor_processing_signature()
-            + [
-                f"Python {platform.python_version()}",
-                f"{platform.system()} {platform.release()}",
-            ]
-        ),
-        " | ".join(
-            [
-                string.pretty_date(include_time=False),
-                string.pretty_date(
-                    include_date=False,
-                    include_zone=True,
-                ),
-            ]
-            + ([env.BLUER_AI_WIFI_SSID] if env.BLUER_AI_WIFI_SSID else [])
-            + [access_as_str(emoji=False)]
-        ),
-    ]
 
 
 def ubuntu(user):
