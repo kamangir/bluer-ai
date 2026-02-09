@@ -175,10 +175,12 @@ function test_bluer_ai_help() {
         "@watch" \
         \
         "@web" \
+        "@web access" \
+        "@web access check" \
+        "@web access log" \
+        "@web access set" \
         "@web diagnose" \
         "@web get_ip" \
-        "@web identify" \
-        "@web is_accessible" \
         "@web open" \
         "@web share" \
         "@web where_am_i" \

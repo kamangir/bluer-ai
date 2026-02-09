@@ -106,8 +106,15 @@ function bluer_ai_git_push() {
         extra_args="--set-upstream origin $(bluer_ai_git get_branch)"
 
     if [[ "$do_offline" == 0 ]]; then
+        bluer_ai_log "@git: pushing $repo_name..."
+        bluer_ai_badge - "@git push"
+
         git push $extra_args
-        [[ $? -ne 0 ]] && return 1
+        local status="$?"
+
+        bluer_ai_badge reset
+
+        [[ "$status" -ne 0 ]] && return 1
 
         if [[ "$create_pull_request" == 1 ]]; then
             bluer_ai_git create_pull_request
