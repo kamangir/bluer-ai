@@ -1,4 +1,4 @@
-from bluer_options.testing import are_01, are_nonempty_strs
+from bluer_options.testing.lists import are_01, are_nonempty_strs
 
 from bluer_ai import env
 

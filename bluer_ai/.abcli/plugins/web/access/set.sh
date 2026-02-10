@@ -16,4 +16,11 @@ function bluer_ai_web_access_set() {
 
     bluer_ai_log "$var_name=$value"
     export $var_name=$value
+
+    if [[ "$keyword" == "forced_offline" ]]; then
+        bluer_ai_eval path=$abcli_path_git/bluer-ai \
+            dotenv set \
+            $var_name \
+            "$value"
+    fi
 }

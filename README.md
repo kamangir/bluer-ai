@@ -27,6 +27,7 @@ source $(python3 -m bluer_ai locate)/.abcli/bluer_ai.sh
 
 # aliases
 
+[@access](./bluer_ai/docs/aliases/access.md) 
 [@build_README](./bluer_ai/docs/aliases/build_README.md) 
 [@conda](./bluer_ai/docs/aliases/conda.md) 
 [@error](./bluer_ai/docs/aliases/error.md) 
@@ -56,4 +57,4 @@ source $(python3 -m bluer_ai locate)/.abcli/bluer_ai.sh
 
 [![pylint](https://github.com/kamangir/bluer-ai/actions/workflows/pylint.yml/badge.svg)](https://github.com/kamangir/bluer-ai/actions/workflows/pylint.yml) [![pytest](https://github.com/kamangir/bluer-ai/actions/workflows/pytest.yml/badge.svg)](https://github.com/kamangir/bluer-ai/actions/workflows/pytest.yml) [![bashtest](https://github.com/kamangir/bluer-ai/actions/workflows/bashtest.yml/badge.svg)](https://github.com/kamangir/bluer-ai/actions/workflows/bashtest.yml) [![PyPI version](https://img.shields.io/pypi/v/bluer_ai.svg)](https://pypi.org/project/bluer_ai/) [![PyPI - Downloads](https://img.shields.io/pypi/dd/bluer_ai)](https://pypistats.org/packages/bluer_ai)
 
-built by 🌀 [`bluer README`](https://github.com/kamangir/bluer-objects/tree/main/bluer_objects/README), based on 🌀 [`bluer_ai-12.587.1`](https://github.com/kamangir/bluer-ai).
+built by 🌀 [`bluer README`](https://github.com/kamangir/bluer-objects/tree/main/bluer_objects/README), based on 🌀 [`bluer_ai-12.600.1`](https://github.com/kamangir/bluer-ai).

@@ -6,6 +6,11 @@ function test_bluer_ai_help() {
     local module
     for module in \
         \
+        "@access" \
+        "@access check" \
+        "@access log" \
+        "@access set" \
+        \
         "@assert" \
         "@assert list" \
         \
