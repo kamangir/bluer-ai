@@ -6,12 +6,14 @@ function bluer_ai_web_access_check() {
     local options=$2
     local show_prep=$(bluer_ai_option_int "$options" prep 1)
 
+    [[ "$show_prep" == 1 ]] &&
+        bluer_ai_log "🔍 checking access..."
+
     if [[ "$url" == "all" ]]; then
         local do_loop=$(bluer_ai_option_int "$options" loop 0)
 
         if [[ "$do_loop" == 1 ]]; then
             bluer_ai_badge - "🔍"
-            bluer_ai_log "🔍 checking web access..."
 
             bluer_ai_watch \
                 ~clear,~hr,~log,seconds=5,$options \
@@ -25,9 +27,6 @@ function bluer_ai_web_access_check() {
 
             return
         fi
-
-        [[ "$show_prep" == 1 ]] &&
-            bluer_ai_log "🔍 checking web access..."
 
         export BLUER_AI_CLOUD_IS_ACCESSIBLE=$(
             bluer_ai_web_access_check \
