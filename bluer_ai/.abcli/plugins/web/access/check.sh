@@ -6,11 +6,11 @@ function bluer_ai_web_access_check() {
     local options=$2
     local show_prep=$(bluer_ai_option_int "$options" prep 1)
 
-    [[ "$show_prep" == 1 ]] &&
-        bluer_ai_log "🔍 checking access..."
-
     if [[ "$url" == "all" ]]; then
         local do_loop=$(bluer_ai_option_int "$options" loop 0)
+
+        [[ "$show_prep" == 1 ]] &&
+            bluer_ai_log "🔍 checking access..."
 
         if [[ "$do_loop" == 1 ]]; then
             bluer_ai_badge - "🔍"
