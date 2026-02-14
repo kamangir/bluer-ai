@@ -33,10 +33,7 @@ from bluer_ai.help.ssh import help_functions as help_ssh
 from bluer_ai.help.string import help_functions as help_string
 from bluer_ai.help.storage import help_functions as help_storage
 from bluer_ai.help.sleep import help_sleep
-from bluer_ai.help.source import (
-    help_source_caller_suffix_path,
-    help_source_path,
-)
+from bluer_ai.help.source import help_source_caller_suffix_path
 from bluer_ai.help.terminal import help_badge
 from bluer_ai.help.terraform import help_functions as help_terraform
 from bluer_ai.help.wait import help_wait
@@ -83,7 +80,6 @@ help_functions.update(
         "session": help_session,
         "storage": help_storage,
         "source_caller_suffix_path": help_source_caller_suffix_path,
-        "source_path": help_source_path,
         "ssh": help_ssh,
         "string": help_string,
         "terraform": help_terraform,
