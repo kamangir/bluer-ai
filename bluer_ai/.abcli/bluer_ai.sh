@@ -5,6 +5,8 @@ export BLUER_AI_STATUS_ICONS=""
 export abcli_path_bash="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
 function bluer_ai_main() {
+    export BLUER_AI_BOOT_TIME=$(python3 -c "import time; print(time.time())")
+
     echo -e "\033]1337;SetBadgeFormat=$(echo -n "🌀" | base64)\a"
 
     local options=$1
@@ -51,6 +53,11 @@ function bluer_ai_main() {
         bluer_ai_log "ssh session detected."
         return 0
     fi
+
+    local elapsed_time=$(python3 -m bluer_options.string \
+        time_since \
+        --start_time $BLUER_AI_BOOT_TIME)
+    bluer_ai_log "⏲️ @ai: took $elapsed_time to boot"
 
     local command_line="${@:2}"
     if [[ ! -z "$command_line" ]]; then

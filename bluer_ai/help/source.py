@@ -20,20 +20,3 @@ def help_source_caller_suffix_path(
         "source <caller-path>/<suffix>.",
         mono=mono,
     )
-
-
-def help_source_path(
-    tokens: List[str],
-    mono: bool,
-) -> str:
-    options = source_path_options
-
-    return show_usage(
-        [
-            "bluer_ai_source_path",
-            "<path>",
-            f"[{options}]",
-        ],
-        "source <path>.",
-        mono=mono,
-    )

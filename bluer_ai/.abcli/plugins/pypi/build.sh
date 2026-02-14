@@ -6,6 +6,8 @@ function bluer_ai_pypi_build() {
         return
     fi
 
+    bluer_ai_badge - "⚙️🗄️"
+
     local options=$1
 
     local plugin_name=$(bluer_ai_option "$options" plugin bluer_ai)
@@ -41,5 +43,6 @@ function bluer_ai_pypi_build() {
     [[ "$do_browse" == 1 ]] &&
         bluer_ai_pypi_browse "$@"
 
-    return 0
+    bluer_ai_badge reset
+    return
 }

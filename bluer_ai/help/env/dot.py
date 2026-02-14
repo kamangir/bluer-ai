@@ -104,7 +104,7 @@ def help_load(
     tokens: List[str],
     mono: bool,
 ) -> str:
-    options = "caller,filename=<.env>,plugin=<plugin-name>,ssm,suffix=/tests,verbose"
+    options = "filename=<.env>,plugin=<plugin-name>,ssm,suffix=/tests"
 
     return show_usage(
         [
