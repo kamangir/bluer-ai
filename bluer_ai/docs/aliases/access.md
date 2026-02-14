@@ -17,6 +17,6 @@
  . set access.
    cloud: BLUER_AI_CLOUD_IS_ACCESSIBLE (currently: 1)
    web: BLUER_AI_WEB_IS_ACCESSIBLE (currently: 1)
-   pypi: BLUER_AI_PYPI_IS_ACCESSIBLE (currently: 0)
+   pypi: BLUER_AI_PYPI_IS_ACCESSIBLE (currently: 1)
    forced_offline: BLUER_AI_FORCE_OFFLINE (currently: 0)
 ```
