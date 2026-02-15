@@ -1,4 +1,4 @@
-# Raspberry Pi + ROS
+# install: RPi-ROS
 
 1. Open [Raspberry Pi Imager](https://www.raspberrypi.com/software/) and select `Operating System` -> `Ubuntu 20.04 LTS Server` -> Then press `Shift+Ctrl+X` to open `Advanced options`, select `Set hostname`, and enter a unique host name. Then, `Set username and password` -> user: `pi` and password: `abcli2025`. Then, `Configure wireless LAN` and add the network name and password. Then, select `Services` -> `Enable SSH` and press `Save`. Proceed to write the SD Card.
 

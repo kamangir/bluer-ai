@@ -1,4 +1,4 @@
-# install: macOS
+title:::
 
 ```bash
 # change shell to bash

@@ -53,7 +53,9 @@ function bluer_ai_ssh() {
 
 function bluer_ai_ssh_args() {
     local machine_kind=$(bluer_ai_clarify_input $1 local)
+
     local machine_name=$2
+
     local options=$3
     local copy_seed=$(bluer_ai_option_int "$options" seed 1)
     local for_vnc=$(bluer_ai_option_int "$options" vnc 0)
@@ -93,6 +95,8 @@ function bluer_ai_ssh_args() {
     fi
 
     if [ "$machine_kind" == "rpi" ]; then
+        bluer_ai_copy_to_clipboard $BLUER_AI_SBC_PASSWORD
+
         echo pi@$machine_name.local
         return
     fi

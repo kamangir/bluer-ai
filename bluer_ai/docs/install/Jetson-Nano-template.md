@@ -1,4 +1,4 @@
-# install: Jetson-Nano
+title:::
 
 1. Download the image:
 
@@ -11,7 +11,7 @@
 
 1. Follow [these instructions](https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-2gb-devkit#write) w/ the image that you downloaded above. Boot the motherboard.
 
-1. Set username to `abcli` and password to `abcli2025` and Select `Log in automatically`.
+1. Set username to `abcli` and password to `password:::` and Select `Log in automatically`.
 
 1. `GNOME:` Go to `System Settings` > `Brightness & Lock`, set `Turn Screen off when inactive for` to `Never`, turn `Lock` off, disable `Require password when waking from suspend`.
 

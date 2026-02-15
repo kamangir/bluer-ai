@@ -9,6 +9,7 @@ def test_bluer_ai_env():
         [
             env.BLUER_AI_CLOUD_CHECK_URL,
             env.BLUER_AI_NATIONAL_INTERNET_INDEX,
+            env.BLUER_AI_SBC_PASSWORD,
             env.BLUER_AI_WEB_CHECK_URL,
             env.BLUER_AI_WEB_OBJECT,
             env.BLUER_AI_WEB_RECEIVE_PORT,
