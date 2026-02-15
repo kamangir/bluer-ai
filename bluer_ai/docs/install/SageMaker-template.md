@@ -1,4 +1,4 @@
-# install: SageMaker
+title:::
 
 open [SageMaker Studio, Jupyterlab](https://aws.amazon.com/sagemaker/) and paste the `sagemaker_jupyterlab` seed 🌱,
 

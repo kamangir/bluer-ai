@@ -1,4 +1,4 @@
-# install: RPi
+title:::
 
 1. Open [Raspberry Pi Imager](https://www.raspberrypi.com/software/) and select `Operating System` -> `Raspberry Pi OS (other)` and select an image, either lite (headless) or desktop (with lightweight GUI) or full (with GUI and most common packages and apps). 
 
