@@ -10,7 +10,7 @@ def help_build_README(
 ) -> str:
     options = "".join(
         [
-            "push",
+            "ai,push",
             xtra(",root=<root>", mono=mono),
         ]
     )
