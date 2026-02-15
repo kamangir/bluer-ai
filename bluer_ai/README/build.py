@@ -8,16 +8,16 @@ from bluer_ai.help.functions import help_functions
 from bluer_ai.README.docs import docs
 
 
-def build():
+def build(args):
     return all(
         README.build(
+            args=args,
             items=readme.get("items", []),
             path=os.path.join(file.path(__file__), readme["path"]),
             ICON=ICON,
             NAME=NAME,
             VERSION=VERSION,
             REPO_NAME=REPO_NAME,
-            MODULE_NAME=NAME,
             macros=readme.get("macros", {}),
             help_function=lambda tokens: get_help(
                 tokens,
