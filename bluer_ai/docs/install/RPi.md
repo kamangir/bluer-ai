@@ -4,7 +4,7 @@
 
 > ℹ️ A 32-bit legacy image, such as `Bullseye`, has better compatibility with the camera, but will be more challenging when trying to install the latest OpenCV and torch. **64-bit images, are, therefore, recommended**.
 
-2. Then press `Shift+Ctrl+X` to open `Advanced options`, select `Set hostname`, and enter a unique host name, the select `Set username and password` and set the user to `pi` and the password to `password:::`. Then select `Configure wireless LAN` and set the SSID to `Sion` and password to `HisCatness`. In `Services` select `Enable SSH` and `Use password authentication` and press `Save`. Proceed to write the SD Card.
+2. Then press `Shift+Ctrl+X` to open `Advanced options`, select `Set hostname`, and enter a unique host name, the select `Set username and password` and set the user to `pi` and the password to `abcli2025`. Then select `Configure wireless LAN` and set the SSID to `Sion` and password to `HisCatness`. In `Services` select `Enable SSH` and `Use password authentication` and press `Save`. Proceed to write the SD Card.
 
 3. After the write is complete, eject the SD card, insert it into the Raspberry Pi, turn the motherboard on, and wait for the motherboard to boot.
 
