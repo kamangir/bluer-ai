@@ -4,6 +4,8 @@ function bluer_ai_build_README() {
     local options=$1
     local plugin_name=$(bluer_ai_option "$options" plugin bluer_ai)
     local do_push=$(bluer_ai_option_int "$options" push 0)
+    local root=$(bluer_ai_option "$options" root root)
+    local use_ai=$(bluer_ai_option_int "$options" ai 0)
 
     local repo_name=$(bluer_ai_unpack_repo_name $plugin_name)
     local module_name=$(bluer_ai_plugins get_module_name $repo_name)
@@ -12,6 +14,8 @@ function bluer_ai_build_README() {
 
     python3 -m $module_name \
         build_README \
+        --ai $use_ai \
+        --root $root \
         "${@:2}"
     local status="$?"
 

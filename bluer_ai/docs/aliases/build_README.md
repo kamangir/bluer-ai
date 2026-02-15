@@ -2,6 +2,6 @@
 
 ```bash
 @build_README \
-	[push,plugin=<plugin-name>]
+	[ai,push,root=<root>,plugin=<plugin-name>]
  . build bluer_ai/README.md.
 ```

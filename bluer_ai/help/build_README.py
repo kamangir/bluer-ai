@@ -8,7 +8,12 @@ def help_build_README(
     mono: bool,
     plugin_name: str = "bluer_ai",
 ) -> str:
-    options = "push"
+    options = "".join(
+        [
+            "ai,push",
+            xtra(",root=<root>", mono=mono),
+        ]
+    )
 
     callable = f"{plugin_name} build_README"
 
