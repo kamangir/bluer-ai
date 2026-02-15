@@ -38,6 +38,9 @@ function bluer_ai_log() {
 
             bluer_ai_badge - "$machine_name"
 
+            bluer_ai_log "🔑 paste the password."
+            bluer_ai_copy_to_clipboard $BLUER_AI_SBC_PASSWORD
+
             ssh \
                 pi@$machine_name.local \
                 "tail -f /home/pi/git/bluer_ai.log"
