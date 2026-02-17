@@ -9,7 +9,7 @@ function bluer_ai_web() {
         return
     fi
 
-    python3 -m bluer_ai.plugins.web "$@"
+    python3 -m bluer_options.web "$@"
 }
 
 bluer_ai_source_caller_suffix_path /web
