@@ -2,6 +2,8 @@ from typing import List
 import glob
 import os
 
+from bluer_ai import env
+
 # https://chatgpt.com/c/683d39ac-34a8-8005-b780-71a6d2253ea9
 try:
     from importlib.metadata import distributions
@@ -51,6 +53,14 @@ def list_of_external(repo_names=False) -> List[str]:
             )
         ]
     )
+
+    output = [
+        thing
+        for thing in output
+        if thing not in env.BLUER_AI_IGNORED_EXTERNAL_PLUGINS.split(",")
+        and thing.replace("-", "_")
+        not in env.BLUER_AI_IGNORED_EXTERNAL_PLUGINS.split(",")
+    ]
 
     if not repo_names:
         output = [repo_name.replace("-", "_") for repo_name in output]

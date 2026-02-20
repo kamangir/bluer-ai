@@ -13,7 +13,7 @@ function bluer_ai_main() {
 
     if [[ ",$options," == *",verbose,"* ]]; then
         set -x
-        touch $abcli_path_bash/../../verbose
+        touch $abcli_path_bash/../../../verbose
     fi
 
     export abcli_is_silent=false
