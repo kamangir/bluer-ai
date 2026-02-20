@@ -3,7 +3,7 @@
 function bluer_ai_initialize() {
     if [[ "$abcli_is_docker" == false ]] &&
         [[ "$abcli_is_aws_batch" == false ]]; then
-        git config --global user.email "arash@kamangir.net"
+        git config --global user.email "arash.abadpour@gmail.com"
         git config --global user.name "kamangir"
         git config --global credential.helper store
     fi
