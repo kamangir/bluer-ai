@@ -9,7 +9,8 @@ function bluer_ai_web() {
         return
     fi
 
-    python3 -m bluer_options.web "$@"
+    bluer_ai_log_error "@web: $task: command not found."
+    return 1
 }
 
 bluer_ai_source_caller_suffix_path /web
