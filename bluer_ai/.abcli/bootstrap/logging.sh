@@ -36,7 +36,7 @@ function bluer_ai_log() {
                 return 1
             fi
 
-            bluer_ai_badge - "$machine_name"
+            bluer_ai_badge - "$machine_name 📜"
 
             bluer_ai_log "🔑 paste the password."
             bluer_ai_copy_to_clipboard $BLUER_AI_SBC_PASSWORD

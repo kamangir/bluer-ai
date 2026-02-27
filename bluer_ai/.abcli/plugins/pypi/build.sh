@@ -6,7 +6,7 @@ function bluer_ai_pypi_build() {
         return
     fi
 
-    bluer_ai_badge - "⚙️🗄️"
+    bluer_ai_badge - "pypi ⚙️"
 
     local options=$1
 

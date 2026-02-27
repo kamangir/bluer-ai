@@ -107,7 +107,7 @@ function bluer_ai_git_push() {
 
     if [[ "$do_offline" == 0 ]]; then
         bluer_ai_log "@git: pushing $repo_name..."
-        bluer_ai_badge - "@git push"
+        bluer_ai_badge - "@git push ⚙️"
 
         git push $extra_args
         local status="$?"
