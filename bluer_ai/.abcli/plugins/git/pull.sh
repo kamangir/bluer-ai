@@ -54,7 +54,7 @@ function bluer_ai_git_pull_scp() {
 
     if [[ "$do_scp" == 0 ]]; then
         bluer_ai_log "@git: pulling $repo_name..."
-        bluer_ai_badge - "@git pull ⚙️"
+        bluer_ai_badge - "git pull ⚙️"
 
         git pull
         local status="$?"

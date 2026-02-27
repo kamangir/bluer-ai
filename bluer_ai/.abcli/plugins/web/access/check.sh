@@ -13,7 +13,7 @@ function bluer_ai_web_access_check() {
             bluer_ai_log "🔍 checking access..."
 
         if [[ "$do_loop" == 1 ]]; then
-            bluer_ai_badge - "🔍"
+            bluer_ai_badge - "access check 🔍"
 
             bluer_ai_watch \
                 ~clear,~hr,~log,seconds=5,$options \
